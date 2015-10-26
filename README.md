@@ -1,2 +1,12 @@
-# om-next-kanban-demo
-A Kanban demo application written using Om Next
+# Om Next Kanban Demo
+
+A Kanban demo application written using Om Next.
+
+**WARNING: Like Om Next, this demo is in alpha status.**
+
+## Run
+
+1. Install [Boot](https://github.com/boot-clj/boot)
+2. Clone this repository
+3. Run `boot run` inside the cloned repository
+4. Open http://localhost:8000 in your browser

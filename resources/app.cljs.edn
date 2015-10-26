@@ -1,0 +1,2 @@
+{:require [kanban.app]
+ :init-fns [kanban.app/run]}
