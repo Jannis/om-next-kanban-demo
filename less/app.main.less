@@ -71,13 +71,36 @@ body {
 }
 
 .board {
-  .title {
+  .board-title {
     margin: 0rem;
     padding: 0.5rem;
     background: @blue;
     color: @white;
     font-size: 1rem;
     font-weight: 500;
+  }
+
+  .lanes {
+    display: table;
+    width: 100%;
+    border-spacing: 0.5rem;
+  }
+}
+
+.lane {
+  display: table-cell;
+  border: thin solid lighten(@black, 80%);
+
+  .lane-title {
+    margin: 0rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background: lighten(@black, 90%);
+    border-bottom: thin solid lighten(@black, 80%);
+  }
+
+  .cards {
+    min-height: 10rem;
   }
 }
 

@@ -4,15 +4,17 @@
             [kanban.reconciler :refer [reconciler]]
             [kanban.parsing.boards :as boards]
             [kanban.components.boards-menu :refer [BoardMenuItem boards-menu]]
-            [kanban.components.board :refer [Board board]]))
+            [kanban.components.board :refer [Board board]]
+            [kanban.components.lane :refer [Lane]]))
 
 (enable-console-print!)
 
 (defui App
   static om/IQuery
   (query [this]
-    [{:boards (om/get-query BoardMenuItem)}
-     {:boards/active (om/get-query Board)}])
+    [{:boards (om/get-query Board)}
+     {:boards/active (om/get-query Board)}
+     {:lanes (om/get-query Lane)}])
   Object
   (activate-board [this ref]
     (om/transact! this `[(boards/activate {:ref ~ref}) :boards/active]))

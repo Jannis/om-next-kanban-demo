@@ -1,8 +1,13 @@
 (ns kanban.parsing.boards
-  (:require [kanban.reconciler :refer [mutate read]]))
+  (:require [kanban.parsing.lanes :as lanes]
+            [kanban.reconciler :refer [mutate read]]))
+
+(defn resolve-lanes [st board]
+  (update board :lanes #(lanes/resolve-lanes st %)))
 
 (defn get-board [st ref]
-   (->> (get-in st ref)))
+   (->> (get-in st ref)
+        (resolve-lanes st)))
 
 (defn get-boards [st key]
   (->> (get st key)
