@@ -13,14 +13,18 @@
     [:id :name {:cards (om/get-query Card)}])
   Object
   (render [this]
-    (let [{:keys [name cards]} (om/props this)]
-      (dom/div #js {:className "lane"}
+    (let [{:keys [name cards card-drag-fns]} (om/props this)]
+      (dom/div #js {:className "lane"
+                    :onDragOver (fn [e] (.preventDefault e))}
         (dom/h3 #js {:className "lane-title"}
           name
           (dom/span #js {:className "count"}
             (count cards)))
         (dom/div #js {:className "cards"}
-          (for [c cards]
-            (card c)))))))
+          (let [ref      (om/get-ident this)
+                drag-fns (into {} (map (fn [[k f]] [k (partial f ref)])
+                                       card-drag-fns))]
+            (for [c cards]
+              (card (assoc c :drag-fns drag-fns)))))))))
 
 (def lane (om/factory Lane {:keyfn :id}))

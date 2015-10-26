@@ -20,6 +20,16 @@
   Object
   (activate-board [this ref]
     (om/transact! this `[(boards/activate {:ref ~ref}) :boards/active]))
+
+  (card-drag-start [this lane card]
+    (println "card drag start" lane card))
+
+  (card-drag-end [this lane card]
+    (println "card drag end" lane card))
+
+  (card-drag-drop [this lane card]
+    (println "card drag drop" lane card))
+
   (render [this]
     (dom/div #js {:className "app"}
       (dom/header #js {:className "header"}
@@ -33,7 +43,10 @@
                      :activate-fn #(.activate-board this %))))))
       (dom/main nil
         (if-let [active-board (-> this om/props :boards/active)]
-          (board active-board)
+          (board (assoc active-board
+                        :card-drag-fns {:start #(.card-drag-start this %)
+                                        :end #(.card-drag-end this %)
+                                        :drop #(.card-drag-drop this %)}))
           (dom/p #js {:className "introduction"}
             "How about selecting a board from the menu?"))))))
 
