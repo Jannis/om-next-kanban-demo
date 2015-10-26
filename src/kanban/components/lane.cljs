@@ -15,7 +15,10 @@
   (render [this]
     (let [{:keys [name cards]} (om/props this)]
       (dom/div #js {:className "lane"}
-        (dom/h3 #js {:className "lane-title"} name)
+        (dom/h3 #js {:className "lane-title"}
+          name
+          (dom/span #js {:className "count"}
+            (count cards)))
         (dom/div #js {:className "cards"}
           (for [c cards]
             (card c)))))))
