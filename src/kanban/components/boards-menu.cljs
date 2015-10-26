@@ -9,12 +9,13 @@
     [:board/by-id (:id props)])
   static om/IQuery
   (query [this]
-    [:id :name :lanes])
+    [:id :name])
   Object
   (render [this]
     (dom/li nil
-      (let [{:keys [name]} (om/props this)]
-        (dom/a nil name)))))
+      (let [{:keys [name activate-fn]} (om/props this)]
+        (dom/a #js {:onClick #(activate-fn (om/get-ident this))}
+          name)))))
 
 (def board-menu-item (om/factory BoardMenuItem {:keyfn :id}))
 
@@ -24,8 +25,9 @@
     (dom/div #js {:className "header-menu"}
       (dom/a nil "Boards")
       (dom/ul nil
-        (let [{:keys [boards]} (om/props this)]
+        (let [{:keys [boards activate-fn]} (om/props this)]
           (for [board boards]
-            (board-menu-item board)))))))
+            (board-menu-item
+              (assoc board :activate-fn activate-fn))))))))
 
 (def boards-menu (om/factory BoardsMenu))

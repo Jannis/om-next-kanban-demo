@@ -1,5 +1,6 @@
 @black: #111111;
 @white: #ffffff;
+@blue:  #00b8d4;
 
 body {
   padding: 0;
@@ -23,6 +24,10 @@ body {
     padding: 0.5rem;
     font-size: 1rem;
     font-weight: 500;
+
+    a {
+      cursor: pointer;
+    }
   }
 
   nav {
@@ -63,4 +68,19 @@ body {
   &:hover ul {
     display: block;
   }
+}
+
+.board {
+  .title {
+    margin: 0rem;
+    padding: 0.5rem;
+    background: @blue;
+    color: @white;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+.introduction {
+  margin: 0.5rem;
 }
