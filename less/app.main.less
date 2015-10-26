@@ -1,6 +1,7 @@
-@black: #111111;
-@white: #ffffff;
-@blue:  #00b8d4;
+@black:  #111111;
+@white:  #ffffff;
+@blue:   #00b8d4;
+@purple: #ec407a;
 
 body {
   padding: 0;
@@ -10,6 +11,8 @@ body {
 .app {
   font-family: Roboto, sans-serif;
   font-weight: 300;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .header {
@@ -84,6 +87,7 @@ body {
     display: table;
     width: 100%;
     border-spacing: 0.5rem;
+    table-layout: fixed;
   }
 }
 
@@ -101,6 +105,33 @@ body {
 
   .cards {
     min-height: 10rem;
+    padding: 0.5rem;
+  }
+}
+
+.card {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border: thin solid lighten(@black, 80%);
+  background: lighten(@black, 90%);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+
+  &:hover {
+    border: thin solid lighten(@black, 75%);
+    background: lighten(@black, 89%);
+  }
+
+  .id {
+    background: @purple;
+    color: @white;
+    border-radius: 0.5rem;
+    padding: 0rem 0.25rem;
+    margin-right: 0.5rem;
+    height: 1rem;
+    font-size: 1rem;
   }
 }
 
