@@ -17,8 +17,7 @@
         (dom/div #js {:className "card"
                       :draggable true
                       :onDragStart #((:start drag-fns) ref)
-                      :onDragEnd #((:end drag-fns) ref)
-                      :onDrop #((:drop drag-fns) ref)}
+                      :onDragEnd #((:end drag-fns) ref)}
           (dom/span #js {:className "id"} id)
           (dom/span #js {:className "text"} text))))))
 

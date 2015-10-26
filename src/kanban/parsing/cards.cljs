@@ -17,3 +17,13 @@
   [{:keys [state]} key _]
   (let [st @state]
     {:value (get-cards st key)}))
+
+(defmethod read :cards/dragged
+  [{:keys [state]} key _]
+  (let [st @state]
+    {:value (get st key)}))
+
+(defmethod mutate 'cards/drag
+  [{:keys [state]} _ params]
+  {:value [:cards/dragged]
+   :action (fn [] (swap! state assoc :cards/dragged params))})

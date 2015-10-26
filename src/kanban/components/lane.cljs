@@ -15,7 +15,8 @@
   (render [this]
     (let [{:keys [name cards card-drag-fns]} (om/props this)]
       (dom/div #js {:className "lane"
-                    :onDragOver (fn [e] (.preventDefault e))}
+                    :onDragOver (fn [e] (.preventDefault e))
+                    :onDrop #((:drop card-drag-fns) (om/get-ident this))}
         (dom/h3 #js {:className "lane-title"}
           name
           (dom/span #js {:className "count"}
