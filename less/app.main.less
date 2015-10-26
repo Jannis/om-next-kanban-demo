@@ -1,0 +1,66 @@
+@black: #111111;
+@white: #ffffff;
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.app {
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+}
+
+.header {
+  display: table;
+  width: 100%;
+  background: @black;
+  color: @white;
+
+  h1 {
+    display: table-cell;
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  nav {
+    display: table-cell;
+    text-align: right;
+  }
+}
+
+.header-menu {
+  position: relative;
+
+  a {
+    display: inline-block;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+
+  ul {
+    position: absolute;
+    right: 0%;
+    top: 100%;
+    display: none;
+    background: @black;
+    text-align: left;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+
+    a {
+      display: block;
+
+      &:hover {
+        background: lighten(@black, 10%);
+      }
+    }
+  }
+
+  &:hover ul {
+    display: block;
+  }
+}
