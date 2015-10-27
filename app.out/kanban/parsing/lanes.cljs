@@ -40,7 +40,6 @@
    :action #(swap! state move-card card from to)})
 
 (defn create-card [st lane]
-  (println "create-card" lane)
   (let [{:keys [card state]} (cards/create-card st)]
     (-> state
         (update-in (conj lane :cards) add-to-cards card)
@@ -50,3 +49,13 @@
   [{:keys [state]} _ {:keys [lane]}]
   {:value [:lanes :cards :cards/editing]
    :action #(swap! state create-card lane)})
+
+(defn delete-card [st lane card]
+  (-> st
+      (cards/delete-card card)
+      (update-in (conj lane :cards) #(remove #{%2} %1) card)))
+
+(defmethod mutate 'lanes/delete-card
+  [{:keys [state]} _ {:keys [lane card]}]
+  {:value [:lanes :cards]
+   :action #(swap! state delete-card lane card)})

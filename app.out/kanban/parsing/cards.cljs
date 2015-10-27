@@ -24,6 +24,11 @@
                 (assoc-in ref card)
                 (update :cards conj ref))}))
 
+(defn delete-card [st ref]
+  (-> st
+      (update :cards #(remove #{%2} %1) ref)
+      (update :card/by-id dissoc (second ref))))
+
 (defmethod read :cards
   [{:keys [state]} key _]
   (let [st @state]
@@ -37,7 +42,10 @@
 (defmethod mutate 'cards/drag
   [{:keys [state]} _ params]
   {:value [:cards/dragged]
-   :action (fn [] (swap! state assoc :cards/dragged params))})
+   :action (fn []
+             (if-not (empty? params)
+               (swap! state assoc :cards/dragged params)
+               (swap! state assoc :cards/dragged nil)))})
 
 (defmethod read :cards/editing
   [{:keys [state]} key _]

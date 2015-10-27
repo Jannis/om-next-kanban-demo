@@ -1,11 +1,10 @@
 goog.addDependency("base.js", ['goog'], []);
 goog.addDependency("../cljs/core.js", ['cljs.core'], ['goog.string', 'goog.object', 'goog.string.StringBuffer', 'goog.array']);
-goog.addDependency("../kanban/state.js", ['kanban.state'], ['cljs.core']);
-goog.addDependency("../clojure/zip.js", ['clojure.zip'], ['cljs.core']);
 goog.addDependency("../react.inc.js", ['cljsjs.react'], []);
 goog.addDependency("../react-dom.inc.js", ['cljsjs.react.dom'], ['cljsjs.react']);
 goog.addDependency("../om/dom.js", ['om.dom'], ['cljs.core', 'goog.object', 'cljsjs.react', 'cljsjs.react.dom']);
 goog.addDependency("../om/next/cache.js", ['om.next.cache'], ['cljs.core']);
+goog.addDependency("../clojure/zip.js", ['clojure.zip'], ['cljs.core']);
 goog.addDependency("../om/next/impl/parser.js", ['om.next.impl.parser'], ['cljs.core']);
 goog.addDependency("../om/next/protocols.js", ['om.next.protocols'], ['cljs.core']);
 goog.addDependency("../clojure/walk.js", ['clojure.walk'], ['cljs.core']);
@@ -14,6 +13,7 @@ goog.addDependency("../kanban/components/card.js", ['kanban.components.card'], [
 goog.addDependency("../kanban/components/card_editor.js", ['kanban.components.card_editor'], ['kanban.components.card', 'cljs.core', 'om.dom', 'goog.object', 'om.next']);
 goog.addDependency("../kanban/components/boards_menu.js", ['kanban.components.boards_menu'], ['cljs.core', 'om.dom', 'goog.object', 'om.next']);
 goog.addDependency("../kanban/components/about.js", ['kanban.components.about'], ['cljs.core', 'om.dom']);
+goog.addDependency("../kanban/state.js", ['kanban.state'], ['cljs.core']);
 goog.addDependency("../kanban/reconciler.js", ['kanban.reconciler'], ['cljs.core', 'goog.object', 'kanban.state', 'om.next']);
 goog.addDependency("../kanban/parsing/users.js", ['kanban.parsing.users'], ['cljs.core', 'kanban.reconciler']);
 goog.addDependency("../kanban/parsing/cards.js", ['kanban.parsing.cards'], ['kanban.parsing.users', 'cljs.core', 'kanban.reconciler']);
