@@ -13,11 +13,12 @@
     [:id :name {:lanes (om/get-query Lane)}])
   Object
   (render [this]
-    (let [{:keys [name lanes card-drag-fns]} (om/props this)]
+    (let [{:keys [name lanes card-drag-fns card-edit-fn]} (om/props this)]
       (dom/div #js {:className "board"}
         (dom/h2 #js {:className "board-title"} name " Board")
         (dom/div #js {:className "lanes"}
           (for [l lanes]
-            (lane (assoc l :card-drag-fns card-drag-fns))))))))
+            (lane (assoc l :card-drag-fns card-drag-fns
+                           :card-edit-fn card-edit-fn))))))))
 
 (def board (om/factory Board {:keyfn :id}))

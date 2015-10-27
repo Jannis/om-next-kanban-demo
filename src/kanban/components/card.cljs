@@ -12,13 +12,14 @@
     [:id :text])
   Object
   (render [this]
-    (let [{:keys [id text drag-fns]} (om/props this)]
+    (let [{:keys [id text drag-fns edit-fn]} (om/props this)]
       (let [ref (om/get-ident this)]
         (dom/div #js {:className "card"
+                      :onClick #(edit-fn ref)
                       :draggable true
                       :onDragStart #((:start drag-fns) ref)
                       :onDragEnd #((:end drag-fns) ref)}
-          (dom/span #js {:className "id"} id)
+          (dom/span #js {:className "card-id"} id)
           (dom/span #js {:className "text"} text))))))
 
 (def card (om/factory Card {:keyfn :id}))

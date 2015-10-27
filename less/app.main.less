@@ -132,14 +132,102 @@ body {
     background: lighten(@black, 89%);
   }
 
-  .id {
-    background: @purple;
-    color: @white;
-    border-radius: 0.5rem;
-    padding: 0rem 0.25rem;
+  .card-id {
     margin-right: 0.5rem;
-    height: 1rem;
+  }
+}
+
+.card-id {
+  background: @purple;
+  color: @white;
+  border-radius: 0.5rem;
+  padding: 0rem 0.25rem;
+  height: 1rem;
+  font-size: 1rem;
+}
+
+.card-editor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 4rem;
+  box-sizing: border-box;
+
+  .closer {
+    z-index: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .content {
+    z-index: 1;
+    position: fixed;
+    margin: auto;
+    max-width: 60rem;
+  }
+
+  .title {
     font-size: 1rem;
+    font-weight: 500;
+    padding-bottom: 0.5rem;
+    border-bottom: thin solid @black;
+
+    .card-id {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .form-row {
+    display: table;
+    border-spacing: 0.5rem;
+    margin: 0rem -0.5rem;
+
+    label {
+      display: table-cell;
+      vertical-align: top;
+    }
+
+    input, textarea {
+      display: table-cell;
+      vertical-align: top;
+      border: thin solid lighten(@black, 80%);
+      border-radius: 0.25rem;
+      outline: none;
+
+      &:focus {
+        border-color: lighten(@black, 50%);
+      }
+    }
+
+    textarea {
+      width: 30rem;
+      height: 5rem;
+    }
+  }
+
+  .buttons {
+    text-align: right;
+    margin: 0;
+
+    button {
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      border: thin solid lighten(@black, 80%);
+      background: lighten(@black, 90%);
+      cursor: pointer;
+
+      &:hover {
+        border: thin solid lighten(@black, 75%);
+        background: lighten(@black, 89%);
+      }
+    }
   }
 }
 

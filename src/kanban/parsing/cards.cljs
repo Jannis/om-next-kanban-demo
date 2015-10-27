@@ -27,3 +27,19 @@
   [{:keys [state]} _ params]
   {:value [:cards/dragged]
    :action (fn [] (swap! state assoc :cards/dragged params))})
+
+(defmethod read :cards/editing
+  [{:keys [state]} key _]
+  (let [st @state]
+    (if-let [ref (get st key)]
+      {:value (get-card st ref)}
+      {:value nil})))
+
+(defmethod mutate 'cards/edit
+  [{:keys [state]} _ {:keys [card]}]
+  {:value [:cards/editing]
+   :action (fn [] (swap! state assoc :cards/editing card))})
+
+(defmethod mutate 'cards/update
+  [{:keys [state]} _ {:keys [card data]}]
+  {:action (fn [] (swap! state update-in card #(merge % data)))})
