@@ -5,7 +5,7 @@
             [kanban.parsing.boards :as boards]
             [kanban.components.boards-menu :refer [BoardMenuItem boards-menu]]
             [kanban.components.board :refer [Board board]]
-            [kanban.components.card :refer [Card]]
+            [kanban.components.card :refer [Assignee Card]]
             [kanban.components.card-editor :refer [CardEditor card-editor]]
             [kanban.components.lane :refer [Lane]]))
 
@@ -18,6 +18,7 @@
      {:boards/active (om/get-query Board)}
      {:lanes (om/get-query Lane)}
      {:cards (om/get-query Card)}
+     {:users (om/get-query Assignee)}
      :cards/dragged
      {:cards/editing (om/get-query CardEditor)}])
   Object

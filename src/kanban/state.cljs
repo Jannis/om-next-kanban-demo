@@ -18,9 +18,21 @@
     {:id 14 :name "Testing" :cards []}
     {:id 15 :name "Done" :cards []}]
    :cards
-   [{:id 100 :text "Allow users to edit cards"}
-    {:id 101 :text "Allow users to change lane names"}
-    {:id 102 :text "Fix card drag-and-drop on IE8"}
-    {:id 103 :text "Implement basic Kanban demo app"}
-    {:id 104 :text "Figure out how to deploy the demo app on Heroku"}
-    {:id 105 :text "Write instructions on how to run the demo app"}]})
+   [{:id 100
+     :text "Allow users to edit cards"
+     :assignees [{:id 1000}]}
+    {:id 101
+     :text "Allow users to change lane names"
+     :assignees [{:id 1001}]}
+    {:id 102
+     :text "Fix card drag-and-drop on IE8 and Firefox"
+     :assignees [{:id 1000} {:id 1001}]}
+    {:id 103
+     :text "Implement basic Kanban demo app"}
+    {:id 104
+     :text "Figure out how to deploy the demo app on Heroku"}
+    {:id 105
+     :text "Write instructions on how to run the demo app"}]
+   :users
+   [{:id 1000 :username "konrad" :name "Konrad Zuse"}
+    {:id 1001 :username "ada" :name "Ada Lovelace"}]})

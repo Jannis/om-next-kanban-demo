@@ -1,8 +1,10 @@
 (ns kanban.parsing.cards
-  (:require [kanban.reconciler :refer [mutate read]]))
+  (:require [kanban.parsing.users :as users]
+            [kanban.reconciler :refer [mutate read]]))
 
 (defn get-card [st ref]
-   (->> (get-in st ref)))
+   (-> (get-in st ref)
+       (update :assignees #(users/resolve-users st %))))
 
 (defn get-cards [st key]
   (->> (get st key)

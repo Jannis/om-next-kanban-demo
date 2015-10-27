@@ -2,6 +2,8 @@
 @white:  #ffffff;
 @blue:   #00b8d4;
 @purple: #ec407a;
+@orange: #ffab00;
+@green:  #00C853;
 
 body {
   padding: 0;
@@ -133,7 +135,7 @@ body {
   }
 
   .card-id {
-    margin-right: 0.5rem;
+    margin-right: 0.25rem;
   }
 }
 
@@ -144,6 +146,10 @@ body {
   padding: 0rem 0.25rem;
   height: 1rem;
   font-size: 1rem;
+}
+
+.assignee {
+  color: @green;
 }
 
 .card-editor {
@@ -191,19 +197,23 @@ body {
     table-layout: fixed;
     box-sizing: border-box;
     margin: 0rem 0rem 0.5rem 0rem;
+    line-height: 2rem;
 
     label {
       display: table-cell;
       vertical-align: top;
-      width: 10%;
+      width: 5rem;
       padding-right: 0.5rem;
     }
 
-    input, textarea {
+    .input, input, textarea {
       display: table-cell;
       box-sizing: border-box;
       width: 100%;
       vertical-align: top;
+    }
+
+    input, textarea {
       border: thin solid lighten(@black, 80%);
       border-radius: 0.25rem;
       outline: none;
@@ -216,6 +226,11 @@ body {
     textarea {
       height: 5rem;
     }
+  }
+
+  .assignee {
+    &:after { content: ' / '; }
+    &:last-child::after { content: ''; }
   }
 
   .buttons {
