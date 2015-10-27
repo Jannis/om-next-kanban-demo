@@ -1,6 +1,6 @@
 # Om Next Kanban Demo
 
-A Kanban demo application written using Om Next.
+A Kanban demo application written using [Om Next](https://github.com/omcljs/om).
 
 **WARNING: Like Om Next, this demo is in alpha status.**
 
