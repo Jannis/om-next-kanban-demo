@@ -259,6 +259,34 @@ body {
   }
 }
 
-.introduction {
-  margin: 0.5rem;
+.about {
+  margin: 1rem 0.5rem;
+  line-height: 1.5rem;
+  max-width: 40rem;
+
+  h2 {
+    color: @black;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  a {
+    color: @black;
+    text-decoration: none;
+    border-bottom: thin solid @blue;
+
+    &:hover {
+      color: lighten(@black, 25%);
+    }
+  }
+
+  p {
+    margin-top: 0;
+  }
+
+  ul {
+    list-style: circle;
+    margin-top: 0;
+    padding-left: 2rem;
+  }
 }

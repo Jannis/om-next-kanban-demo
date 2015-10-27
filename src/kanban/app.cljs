@@ -7,7 +7,8 @@
             [kanban.components.board :refer [Board board]]
             [kanban.components.card :refer [Assignee Card]]
             [kanban.components.card-editor :refer [CardEditor card-editor]]
-            [kanban.components.lane :refer [Lane]]))
+            [kanban.components.lane :refer [Lane]]
+            [kanban.components.about :refer [about]]))
 
 (enable-console-print!)
 
@@ -66,8 +67,7 @@
                         :card-drag-fns {:start #(.card-drag-start this %1 %2)
                                         :end #(.card-drag-end this %1 %2)
                                         :drop #(.card-drag-drop this %)}))
-          (dom/p #js {:className "introduction"}
-            "How about selecting a board from the menu?"))
+          (about))
         (if-let [card (-> this om/props :cards/editing)]
           (card-editor (assoc card
                               :close-fn #(.card-edit this nil)
