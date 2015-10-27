@@ -1,0 +1,245 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+.app {
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.header {
+  display: table;
+  width: 100%;
+  background: #111111;
+  color: #ffffff;
+}
+.header h1 {
+  display: table-cell;
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.header h1 a {
+  cursor: pointer;
+}
+.header nav {
+  display: table-cell;
+  text-align: right;
+}
+.header-menu {
+  position: relative;
+}
+.header-menu a {
+  display: inline-block;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.header-menu ul {
+  position: absolute;
+  right: 0%;
+  top: 100%;
+  display: none;
+  background: #111111;
+  text-align: left;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+.header-menu ul a {
+  display: block;
+}
+.header-menu ul a:hover {
+  background: #2b2b2b;
+}
+.header-menu:hover ul {
+  display: block;
+}
+.board .board-title {
+  margin: 0rem;
+  padding: 0.5rem;
+  background: #00b8d4;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.board .board-description {
+  margin: 1rem 0.5rem 1rem 0.5rem;
+  color: #515151;
+}
+.board .lanes {
+  display: table;
+  width: 100%;
+  border-spacing: 0.5rem;
+  table-layout: fixed;
+}
+.lane {
+  display: table-cell;
+  border: thin solid #dddddd;
+  height: 100%;
+}
+.lane .lane-title {
+  margin: 0rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background: #f7f7f7;
+  border-bottom: thin solid #dddddd;
+}
+.lane .lane-title .count {
+  float: right;
+  line-height: 1.5rem;
+  font-weight: 300;
+}
+.lane .cards {
+  min-height: 10rem;
+  padding: 0.5rem;
+}
+.card {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border: thin solid #dddddd;
+  background: #f7f7f7;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.card:hover {
+  border: thin solid #d0d0d0;
+  background: #f4f4f4;
+}
+.card .card-id {
+  margin-right: 0.25rem;
+}
+.card-id {
+  background: #ec407a;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 0rem 0.25rem;
+  height: 1rem;
+  font-size: 1rem;
+}
+.assignee {
+  color: #00C853;
+}
+.card-editor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 4rem;
+  box-sizing: border-box;
+}
+.card-editor .closer {
+  z-index: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.card-editor .content {
+  z-index: 1;
+  position: relative;
+  max-width: 40rem;
+  margin: auto;
+}
+.card-editor .title {
+  font-size: 1rem;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+  border-bottom: thin solid #111111;
+}
+.card-editor .title .card-id {
+  margin-left: 0.5rem;
+}
+.card-editor .form-row {
+  display: table;
+  width: 100%;
+  border-spacing: 0rem;
+  table-layout: fixed;
+  box-sizing: border-box;
+  margin: 0rem 0rem 0.5rem 0rem;
+  line-height: 2rem;
+}
+.card-editor .form-row label {
+  display: table-cell;
+  vertical-align: top;
+  width: 5rem;
+  padding-right: 0.5rem;
+}
+.card-editor .form-row .input,
+.card-editor .form-row input,
+.card-editor .form-row textarea {
+  display: table-cell;
+  box-sizing: border-box;
+  width: 100%;
+  vertical-align: top;
+}
+.card-editor .form-row input,
+.card-editor .form-row textarea {
+  border: thin solid #dddddd;
+  border-radius: 0.25rem;
+  outline: none;
+  font: inherit;
+  padding: 0rem 0.5rem;
+}
+.card-editor .form-row input:focus,
+.card-editor .form-row textarea:focus {
+  border-color: #919191;
+}
+.card-editor .form-row textarea {
+  height: 5rem;
+}
+.card-editor .assignee:after {
+  content: ' / ';
+}
+.card-editor .assignee:last-child::after {
+  content: '';
+}
+.card-editor .buttons {
+  text-align: right;
+  margin: 0;
+}
+.card-editor .buttons button {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: thin solid #dddddd;
+  background: #f7f7f7;
+  cursor: pointer;
+}
+.card-editor .buttons button:hover {
+  border: thin solid #d0d0d0;
+  background: #f4f4f4;
+}
+.about {
+  margin: 1rem 0.5rem;
+  line-height: 1.5rem;
+  max-width: 40rem;
+}
+.about h2 {
+  color: #111111;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.about a {
+  color: #111111;
+  text-decoration: none;
+  border-bottom: thin solid #00b8d4;
+}
+.about a:hover {
+  color: #515151;
+}
+.about p {
+  margin-top: 0;
+}
+.about ul {
+  list-style: circle;
+  margin-top: 0;
+  padding-left: 2rem;
+}
