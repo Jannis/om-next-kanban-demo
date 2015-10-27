@@ -37,7 +37,10 @@
 (defmethod mutate 'cards/drag
   [{:keys [state]} _ params]
   {:value [:cards/dragged]
-   :action (fn [] (swap! state assoc :cards/dragged params))})
+   :action (fn []
+             (if-not (empty? params)
+               (swap! state assoc :cards/dragged params)
+               (swap! state assoc :cards/dragged nil)))})
 
 (defmethod read :cards/editing
   [{:keys [state]} key _]
