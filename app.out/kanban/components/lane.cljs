@@ -13,7 +13,10 @@
     [:id :name {:cards (om/get-query Card)}])
   Object
   (render [this]
-    (let [{:keys [name cards card-drag-fns card-edit-fn]} (om/props this)]
+    (let [{:keys [name cards
+                  card-add-fn
+                  card-drag-fns
+                  card-edit-fn]} (om/props this)]
       (dom/div #js {:className "lane"
                     :onDragOver (fn [e] (.preventDefault e))
                     :onDrop #((:drop card-drag-fns) (om/get-ident this))}
@@ -21,6 +24,8 @@
           name
           (dom/span #js {:className "count"}
             (count cards)))
+        (dom/div #js {:className "add"}
+          (dom/a #js {:onClick #(card-add-fn (om/get-ident this))} "+"))
         (dom/div #js {:className "cards"}
           (let [ref      (om/get-ident this)
                 drag-fns (into {} (map (fn [[k f]] [k (partial f ref)])

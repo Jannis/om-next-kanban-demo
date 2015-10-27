@@ -30,6 +30,7 @@
               (dom/label nil "Text:")
               (dom/textarea
                 #js {:value text
+                     :placeholder "Enter a card description here..."
                      :onChange
                      #(update-fn (om/get-ident this)
                                  {:text (.. % -target -value)})})))

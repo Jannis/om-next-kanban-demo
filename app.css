@@ -92,6 +92,17 @@ body {
   line-height: 1.5rem;
   font-weight: 300;
 }
+.lane .add a {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #c3c3c3;
+  cursor: pointer;
+}
+.lane .add a:hover {
+  color: #111111;
+}
 .lane .cards {
   min-height: 10rem;
   padding: 0.5rem;

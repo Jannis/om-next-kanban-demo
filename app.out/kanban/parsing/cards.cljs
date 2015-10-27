@@ -15,6 +15,15 @@
        (map #(get-card st %))
        (into [])))
 
+(defn create-card [st]
+  (let [id   (->> (get-cards st :cards) (map :id) (reduce max) inc)
+        card {:id id :text "" :assignees []}
+        ref  [:card/by-id id]]
+    {:card ref
+     :state (-> st
+                (assoc-in ref card)
+                (update :cards conj ref))}))
+
 (defmethod read :cards
   [{:keys [state]} key _]
   (let [st @state]

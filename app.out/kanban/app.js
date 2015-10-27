@@ -30,17 +30,17 @@ return this__7580__auto__;
 
 kanban.app.App.prototype = goog.object.clone(React.Component.prototype);
 
-var x10486_10494 = kanban.app.App.prototype;
-x10486_10494.componentWillUpdate = ((function (x10486_10494){
+var x16463_16471 = kanban.app.App.prototype;
+x16463_16471.componentWillUpdate = ((function (x16463_16471){
 return (function (next_props__7521__auto__,next_state__7522__auto__){
 var this__7520__auto__ = this;
 om.next.merge_pending_props_BANG_.call(null,this__7520__auto__);
 
 return om.next.merge_pending_state_BANG_.call(null,this__7520__auto__);
-});})(x10486_10494))
+});})(x16463_16471))
 ;
 
-x10486_10494.shouldComponentUpdate = ((function (x10486_10494){
+x16463_16471.shouldComponentUpdate = ((function (x16463_16471){
 return (function (next_props__7521__auto__,next_state__7522__auto__){
 var this__7520__auto__ = this;
 var or__5094__auto__ = cljs.core.not_EQ_.call(null,om.next.props.call(null,this__7520__auto__),goog.object.get(next_props__7521__auto__,"omcljs$value"));
@@ -54,10 +54,10 @@ return cljs.core.not_EQ_.call(null,goog.object.get(this__7520__auto__.state,"omc
 return and__5082__auto__;
 }
 }
-});})(x10486_10494))
+});})(x16463_16471))
 ;
 
-x10486_10494.componentWillUnmount = ((function (x10486_10494){
+x16463_16471.componentWillUnmount = ((function (x16463_16471){
 return (function (){
 var this__7520__auto__ = this;
 var r__7526__auto__ = om.next.get_reconciler.call(null,this__7520__auto__);
@@ -74,24 +74,24 @@ return null;
 } else {
 return om.next.protocols.drop_component_BANG_.call(null,indexer__7525__auto__,this__7520__auto__);
 }
-});})(x10486_10494))
+});})(x16463_16471))
 ;
 
-x10486_10494.componentDidUpdate = ((function (x10486_10494){
+x16463_16471.componentDidUpdate = ((function (x16463_16471){
 return (function (prev_props__7523__auto__,prev_state__7524__auto__){
 var this__7520__auto__ = this;
 return om.next.clear_prev_props_BANG_.call(null,this__7520__auto__);
-});})(x10486_10494))
+});})(x16463_16471))
 ;
 
-x10486_10494.isMounted = ((function (x10486_10494){
+x16463_16471.isMounted = ((function (x16463_16471){
 return (function (){
 var this__7520__auto__ = this;
 return cljs.core.boolean$.call(null,goog.object.getValueByKeys(this__7520__auto__,"_reactInternalInstance","_renderedComponent"));
-});})(x10486_10494))
+});})(x16463_16471))
 ;
 
-x10486_10494.componentWillMount = ((function (x10486_10494){
+x16463_16471.componentWillMount = ((function (x16463_16471){
 return (function (){
 var this__7520__auto__ = this;
 var indexer__7525__auto__ = cljs.core.get_in.call(null,om.next.get_reconciler.call(null,this__7520__auto__),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"config","config",994861415),new cljs.core.Keyword(null,"indexer","indexer",-1774914315)], null));
@@ -100,31 +100,31 @@ return null;
 } else {
 return om.next.protocols.index_component_BANG_.call(null,indexer__7525__auto__,this__7520__auto__);
 }
-});})(x10486_10494))
+});})(x16463_16471))
 ;
 
-x10486_10494.activate_board = ((function (x10486_10494){
+x16463_16471.activate_board = ((function (x16463_16471){
 return (function (ref){
 var this$ = this;
 return om.next.transact_BANG_.call(null,this$,cljs.core.vec.call(null,cljs.core.sequence.call(null,cljs.core.seq.call(null,cljs.core.concat.call(null,cljs.core._conj.call(null,cljs.core.List.EMPTY,cljs.core.sequence.call(null,cljs.core.seq.call(null,cljs.core.concat.call(null,cljs.core._conj.call(null,cljs.core.List.EMPTY,new cljs.core.Symbol("boards","activate","boards/activate",714241560,null)),cljs.core._conj.call(null,cljs.core.List.EMPTY,cljs.core.apply.call(null,cljs.core.array_map,cljs.core.sequence.call(null,cljs.core.seq.call(null,cljs.core.concat.call(null,cljs.core._conj.call(null,cljs.core.List.EMPTY,new cljs.core.Keyword(null,"ref","ref",1289896967)),cljs.core._conj.call(null,cljs.core.List.EMPTY,ref)))))))))),cljs.core._conj.call(null,cljs.core.List.EMPTY,new cljs.core.Keyword("boards","active","boards/active",1298990951)))))));
-});})(x10486_10494))
+});})(x16463_16471))
 ;
 
-x10486_10494.card_drag_start = ((function (x10486_10494){
+x16463_16471.card_drag_start = ((function (x16463_16471){
 return (function (lane,card){
 var this$ = this;
 return om.next.transact_BANG_.call(null,this$,cljs.core.vec.call(null,cljs.core.sequence.call(null,cljs.core.seq.call(null,cljs.core.concat.call(null,cljs.core._conj.call(null,cljs.core.List.EMPTY,cljs.core.sequence.call(null,cljs.core.seq.call(null,cljs.core.concat.call(null,cljs.core._conj.call(null,cljs.core.List.EMPTY,new cljs.core.Symbol("cards","drag","cards/drag",1929040996,null)),cljs.core._conj.call(null,cljs.core.List.EMPTY,cljs.core.apply.call(null,cljs.core.array_map,cljs.core.sequence.call(null,cljs.core.seq.call(null,cljs.core.concat.call(null,cljs.core._conj.call(null,cljs.core.List.EMPTY,new cljs.core.Keyword(null,"lane","lane",463787757)),cljs.core._conj.call(null,cljs.core.List.EMPTY,lane),cljs.core._conj.call(null,cljs.core.List.EMPTY,new cljs.core.Keyword(null,"card","card",-1430355152)),cljs.core._conj.call(null,cljs.core.List.EMPTY,card)))))))))),cljs.core._conj.call(null,cljs.core.List.EMPTY,new cljs.core.Keyword("cards","dragged","cards/dragged",311055420)))))));
-});})(x10486_10494))
+});})(x16463_16471))
 ;
 
-x10486_10494.card_drag_end = ((function (x10486_10494){
+x16463_16471.card_drag_end = ((function (x16463_16471){
 return (function (lane,card){
 var this$ = this;
 return om.next.transact_BANG_.call(null,this$,cljs.core.vec.call(null,cljs.core.sequence.call(null,cljs.core.seq.call(null,cljs.core.concat.call(null,cljs.core._conj.call(null,cljs.core.List.EMPTY,cljs.core.sequence.call(null,cljs.core.seq.call(null,cljs.core.concat.call(null,cljs.core._conj.call(null,cljs.core.List.EMPTY,new cljs.core.Symbol("cards","drag","cards/drag",1929040996,null)),cljs.core._conj.call(null,cljs.core.List.EMPTY,null))))),cljs.core._conj.call(null,cljs.core.List.EMPTY,new cljs.core.Keyword("cards","dragged","cards/dragged",311055420)))))));
-});})(x10486_10494))
+});})(x16463_16471))
 ;
 
-x10486_10494.card_drag_drop = ((function (x10486_10494){
+x16463_16471.card_drag_drop = ((function (x16463_16471){
 return (function (lane){
 var this$ = this;
 var temp__4423__auto__ = new cljs.core.Keyword("cards","dragged","cards/dragged",311055420).cljs$core$IFn$_invoke$arity$1(om.next.props.call(null,this$));
@@ -134,31 +134,38 @@ return om.next.transact_BANG_.call(null,this$,cljs.core.vec.call(null,cljs.core.
 } else {
 return null;
 }
-});})(x10486_10494))
+});})(x16463_16471))
 ;
 
-x10486_10494.card_edit = ((function (x10486_10494){
+x16463_16471.card_add = ((function (x16463_16471){
+return (function (lane){
+var this$ = this;
+return om.next.transact_BANG_.call(null,this$,cljs.core.vec.call(null,cljs.core.sequence.call(null,cljs.core.seq.call(null,cljs.core.concat.call(null,cljs.core._conj.call(null,cljs.core.List.EMPTY,cljs.core.sequence.call(null,cljs.core.seq.call(null,cljs.core.concat.call(null,cljs.core._conj.call(null,cljs.core.List.EMPTY,new cljs.core.Symbol("lanes","create-card","lanes/create-card",-1197172887,null)),cljs.core._conj.call(null,cljs.core.List.EMPTY,cljs.core.apply.call(null,cljs.core.array_map,cljs.core.sequence.call(null,cljs.core.seq.call(null,cljs.core.concat.call(null,cljs.core._conj.call(null,cljs.core.List.EMPTY,new cljs.core.Keyword(null,"lane","lane",463787757)),cljs.core._conj.call(null,cljs.core.List.EMPTY,lane)))))))))),cljs.core._conj.call(null,cljs.core.List.EMPTY,new cljs.core.Keyword(null,"lanes","lanes",1843627072)),cljs.core._conj.call(null,cljs.core.List.EMPTY,new cljs.core.Keyword(null,"cards","cards",169174038)),cljs.core._conj.call(null,cljs.core.List.EMPTY,new cljs.core.Keyword("cards","editing","cards/editing",1422138420)))))));
+});})(x16463_16471))
+;
+
+x16463_16471.card_edit = ((function (x16463_16471){
 return (function (card){
 var this$ = this;
 return om.next.transact_BANG_.call(null,this$,cljs.core.vec.call(null,cljs.core.sequence.call(null,cljs.core.seq.call(null,cljs.core.concat.call(null,cljs.core._conj.call(null,cljs.core.List.EMPTY,cljs.core.sequence.call(null,cljs.core.seq.call(null,cljs.core.concat.call(null,cljs.core._conj.call(null,cljs.core.List.EMPTY,new cljs.core.Symbol("cards","edit","cards/edit",93128254,null)),cljs.core._conj.call(null,cljs.core.List.EMPTY,cljs.core.apply.call(null,cljs.core.array_map,cljs.core.sequence.call(null,cljs.core.seq.call(null,cljs.core.concat.call(null,cljs.core._conj.call(null,cljs.core.List.EMPTY,new cljs.core.Keyword(null,"card","card",-1430355152)),cljs.core._conj.call(null,cljs.core.List.EMPTY,card)))))))))),cljs.core._conj.call(null,cljs.core.List.EMPTY,new cljs.core.Keyword("cards","editing","cards/editing",1422138420)))))));
-});})(x10486_10494))
+});})(x16463_16471))
 ;
 
-x10486_10494.card_update = ((function (x10486_10494){
+x16463_16471.card_update = ((function (x16463_16471){
 return (function (card,data){
 var this$ = this;
 return om.next.transact_BANG_.call(null,this$,cljs.core.vec.call(null,cljs.core.sequence.call(null,cljs.core.seq.call(null,cljs.core.concat.call(null,cljs.core._conj.call(null,cljs.core.List.EMPTY,cljs.core.sequence.call(null,cljs.core.seq.call(null,cljs.core.concat.call(null,cljs.core._conj.call(null,cljs.core.List.EMPTY,new cljs.core.Symbol("cards","update","cards/update",-1682200138,null)),cljs.core._conj.call(null,cljs.core.List.EMPTY,cljs.core.apply.call(null,cljs.core.array_map,cljs.core.sequence.call(null,cljs.core.seq.call(null,cljs.core.concat.call(null,cljs.core._conj.call(null,cljs.core.List.EMPTY,new cljs.core.Keyword(null,"card","card",-1430355152)),cljs.core._conj.call(null,cljs.core.List.EMPTY,card),cljs.core._conj.call(null,cljs.core.List.EMPTY,new cljs.core.Keyword(null,"data","data",-232669377)),cljs.core._conj.call(null,cljs.core.List.EMPTY,data)))))))))),cljs.core._conj.call(null,cljs.core.List.EMPTY,new cljs.core.Keyword("cards","editing","cards/editing",1422138420)),cljs.core._conj.call(null,cljs.core.List.EMPTY,new cljs.core.Keyword(null,"cards","cards",169174038)))))));
-});})(x10486_10494))
+});})(x16463_16471))
 ;
 
-x10486_10494.render = ((function (x10486_10494){
+x16463_16471.render = ((function (x16463_16471){
 return (function (){
 var this$ = this;
-var _STAR_reconciler_STAR_10487 = om.next._STAR_reconciler_STAR_;
-var _STAR_depth_STAR_10488 = om.next._STAR_depth_STAR_;
-var _STAR_shared_STAR_10489 = om.next._STAR_shared_STAR_;
-var _STAR_instrument_STAR_10490 = om.next._STAR_instrument_STAR_;
-var _STAR_parent_STAR_10491 = om.next._STAR_parent_STAR_;
+var _STAR_reconciler_STAR_16464 = om.next._STAR_reconciler_STAR_;
+var _STAR_depth_STAR_16465 = om.next._STAR_depth_STAR_;
+var _STAR_shared_STAR_16466 = om.next._STAR_shared_STAR_;
+var _STAR_instrument_STAR_16467 = om.next._STAR_instrument_STAR_;
+var _STAR_parent_STAR_16468 = om.next._STAR_parent_STAR_;
 om.next._STAR_reconciler_STAR_ = om.next.get_reconciler.call(null,this$);
 
 om.next._STAR_depth_STAR_ = (om.next.depth.call(null,this$) + (1));
@@ -169,35 +176,39 @@ om.next._STAR_instrument_STAR_ = om.next.instrument.call(null,this$);
 
 om.next._STAR_parent_STAR_ = this$;
 
-try{return React.DOM.div({"className": "app"},React.DOM.header({"className": "header"},React.DOM.h1(null,React.DOM.a({"onClick": ((function (_STAR_reconciler_STAR_10487,_STAR_depth_STAR_10488,_STAR_shared_STAR_10489,_STAR_instrument_STAR_10490,_STAR_parent_STAR_10491,this$,x10486_10494){
+try{return React.DOM.div({"className": "app"},React.DOM.header({"className": "header"},React.DOM.h1(null,React.DOM.a({"onClick": ((function (_STAR_reconciler_STAR_16464,_STAR_depth_STAR_16465,_STAR_shared_STAR_16466,_STAR_instrument_STAR_16467,_STAR_parent_STAR_16468,this$,x16463_16471){
 return (function (){
 return this$.activate_board(null);
-});})(_STAR_reconciler_STAR_10487,_STAR_depth_STAR_10488,_STAR_shared_STAR_10489,_STAR_instrument_STAR_10490,_STAR_parent_STAR_10491,this$,x10486_10494))
+});})(_STAR_reconciler_STAR_16464,_STAR_depth_STAR_16465,_STAR_shared_STAR_16466,_STAR_instrument_STAR_16467,_STAR_parent_STAR_16468,this$,x16463_16471))
 },"Om Next Kanban Demo")),React.DOM.nav(null,(function (){var props = cljs.core.select_keys.call(null,om.next.props.call(null,this$),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"boards","boards",1912049694)], null));
-return kanban.components.boards_menu.boards_menu.call(null,cljs.core.assoc.call(null,props,new cljs.core.Keyword(null,"activate-fn","activate-fn",1968898886),((function (props,_STAR_reconciler_STAR_10487,_STAR_depth_STAR_10488,_STAR_shared_STAR_10489,_STAR_instrument_STAR_10490,_STAR_parent_STAR_10491,this$,x10486_10494){
-return (function (p1__10473_SHARP_){
-return this$.activate_board(p1__10473_SHARP_);
-});})(props,_STAR_reconciler_STAR_10487,_STAR_depth_STAR_10488,_STAR_shared_STAR_10489,_STAR_instrument_STAR_10490,_STAR_parent_STAR_10491,this$,x10486_10494))
+return kanban.components.boards_menu.boards_menu.call(null,cljs.core.assoc.call(null,props,new cljs.core.Keyword(null,"activate-fn","activate-fn",1968898886),((function (props,_STAR_reconciler_STAR_16464,_STAR_depth_STAR_16465,_STAR_shared_STAR_16466,_STAR_instrument_STAR_16467,_STAR_parent_STAR_16468,this$,x16463_16471){
+return (function (p1__16449_SHARP_){
+return this$.activate_board(p1__16449_SHARP_);
+});})(props,_STAR_reconciler_STAR_16464,_STAR_depth_STAR_16465,_STAR_shared_STAR_16466,_STAR_instrument_STAR_16467,_STAR_parent_STAR_16468,this$,x16463_16471))
 ));
 })())),React.DOM.main(null,(function (){var temp__4423__auto__ = new cljs.core.Keyword("boards","active","boards/active",1298990951).cljs$core$IFn$_invoke$arity$1(om.next.props.call(null,this$));
 if(cljs.core.truth_(temp__4423__auto__)){
 var active_board = temp__4423__auto__;
-return kanban.components.board.board.call(null,cljs.core.assoc.call(null,active_board,new cljs.core.Keyword(null,"card-edit-fn","card-edit-fn",-1723920421),((function (active_board,temp__4423__auto__,_STAR_reconciler_STAR_10487,_STAR_depth_STAR_10488,_STAR_shared_STAR_10489,_STAR_instrument_STAR_10490,_STAR_parent_STAR_10491,this$,x10486_10494){
-return (function (p1__10474_SHARP_){
-return this$.card_edit(p1__10474_SHARP_);
-});})(active_board,temp__4423__auto__,_STAR_reconciler_STAR_10487,_STAR_depth_STAR_10488,_STAR_shared_STAR_10489,_STAR_instrument_STAR_10490,_STAR_parent_STAR_10491,this$,x10486_10494))
-,new cljs.core.Keyword(null,"card-drag-fns","card-drag-fns",-295465238),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"start","start",-355208981),((function (active_board,temp__4423__auto__,_STAR_reconciler_STAR_10487,_STAR_depth_STAR_10488,_STAR_shared_STAR_10489,_STAR_instrument_STAR_10490,_STAR_parent_STAR_10491,this$,x10486_10494){
-return (function (p1__10475_SHARP_,p2__10476_SHARP_){
-return this$.card_drag_start(p1__10475_SHARP_,p2__10476_SHARP_);
-});})(active_board,temp__4423__auto__,_STAR_reconciler_STAR_10487,_STAR_depth_STAR_10488,_STAR_shared_STAR_10489,_STAR_instrument_STAR_10490,_STAR_parent_STAR_10491,this$,x10486_10494))
-,new cljs.core.Keyword(null,"end","end",-268185958),((function (active_board,temp__4423__auto__,_STAR_reconciler_STAR_10487,_STAR_depth_STAR_10488,_STAR_shared_STAR_10489,_STAR_instrument_STAR_10490,_STAR_parent_STAR_10491,this$,x10486_10494){
-return (function (p1__10477_SHARP_,p2__10478_SHARP_){
-return this$.card_drag_end(p1__10477_SHARP_,p2__10478_SHARP_);
-});})(active_board,temp__4423__auto__,_STAR_reconciler_STAR_10487,_STAR_depth_STAR_10488,_STAR_shared_STAR_10489,_STAR_instrument_STAR_10490,_STAR_parent_STAR_10491,this$,x10486_10494))
-,new cljs.core.Keyword(null,"drop","drop",364481611),((function (active_board,temp__4423__auto__,_STAR_reconciler_STAR_10487,_STAR_depth_STAR_10488,_STAR_shared_STAR_10489,_STAR_instrument_STAR_10490,_STAR_parent_STAR_10491,this$,x10486_10494){
-return (function (p1__10479_SHARP_){
-return this$.card_drag_drop(p1__10479_SHARP_);
-});})(active_board,temp__4423__auto__,_STAR_reconciler_STAR_10487,_STAR_depth_STAR_10488,_STAR_shared_STAR_10489,_STAR_instrument_STAR_10490,_STAR_parent_STAR_10491,this$,x10486_10494))
+return kanban.components.board.board.call(null,cljs.core.assoc.call(null,active_board,new cljs.core.Keyword(null,"card-add-fn","card-add-fn",-1277517446),((function (active_board,temp__4423__auto__,_STAR_reconciler_STAR_16464,_STAR_depth_STAR_16465,_STAR_shared_STAR_16466,_STAR_instrument_STAR_16467,_STAR_parent_STAR_16468,this$,x16463_16471){
+return (function (p1__16450_SHARP_){
+return this$.card_add(p1__16450_SHARP_);
+});})(active_board,temp__4423__auto__,_STAR_reconciler_STAR_16464,_STAR_depth_STAR_16465,_STAR_shared_STAR_16466,_STAR_instrument_STAR_16467,_STAR_parent_STAR_16468,this$,x16463_16471))
+,new cljs.core.Keyword(null,"card-edit-fn","card-edit-fn",-1723920421),((function (active_board,temp__4423__auto__,_STAR_reconciler_STAR_16464,_STAR_depth_STAR_16465,_STAR_shared_STAR_16466,_STAR_instrument_STAR_16467,_STAR_parent_STAR_16468,this$,x16463_16471){
+return (function (p1__16451_SHARP_){
+return this$.card_edit(p1__16451_SHARP_);
+});})(active_board,temp__4423__auto__,_STAR_reconciler_STAR_16464,_STAR_depth_STAR_16465,_STAR_shared_STAR_16466,_STAR_instrument_STAR_16467,_STAR_parent_STAR_16468,this$,x16463_16471))
+,new cljs.core.Keyword(null,"card-drag-fns","card-drag-fns",-295465238),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"start","start",-355208981),((function (active_board,temp__4423__auto__,_STAR_reconciler_STAR_16464,_STAR_depth_STAR_16465,_STAR_shared_STAR_16466,_STAR_instrument_STAR_16467,_STAR_parent_STAR_16468,this$,x16463_16471){
+return (function (p1__16452_SHARP_,p2__16453_SHARP_){
+return this$.card_drag_start(p1__16452_SHARP_,p2__16453_SHARP_);
+});})(active_board,temp__4423__auto__,_STAR_reconciler_STAR_16464,_STAR_depth_STAR_16465,_STAR_shared_STAR_16466,_STAR_instrument_STAR_16467,_STAR_parent_STAR_16468,this$,x16463_16471))
+,new cljs.core.Keyword(null,"end","end",-268185958),((function (active_board,temp__4423__auto__,_STAR_reconciler_STAR_16464,_STAR_depth_STAR_16465,_STAR_shared_STAR_16466,_STAR_instrument_STAR_16467,_STAR_parent_STAR_16468,this$,x16463_16471){
+return (function (p1__16454_SHARP_,p2__16455_SHARP_){
+return this$.card_drag_end(p1__16454_SHARP_,p2__16455_SHARP_);
+});})(active_board,temp__4423__auto__,_STAR_reconciler_STAR_16464,_STAR_depth_STAR_16465,_STAR_shared_STAR_16466,_STAR_instrument_STAR_16467,_STAR_parent_STAR_16468,this$,x16463_16471))
+,new cljs.core.Keyword(null,"drop","drop",364481611),((function (active_board,temp__4423__auto__,_STAR_reconciler_STAR_16464,_STAR_depth_STAR_16465,_STAR_shared_STAR_16466,_STAR_instrument_STAR_16467,_STAR_parent_STAR_16468,this$,x16463_16471){
+return (function (p1__16456_SHARP_){
+return this$.card_drag_drop(p1__16456_SHARP_);
+});})(active_board,temp__4423__auto__,_STAR_reconciler_STAR_16464,_STAR_depth_STAR_16465,_STAR_shared_STAR_16466,_STAR_instrument_STAR_16467,_STAR_parent_STAR_16468,this$,x16463_16471))
 ], null)));
 } else {
 return kanban.components.about.about.call(null);
@@ -205,29 +216,29 @@ return kanban.components.about.about.call(null);
 })(),(function (){var temp__4423__auto__ = new cljs.core.Keyword("cards","editing","cards/editing",1422138420).cljs$core$IFn$_invoke$arity$1(om.next.props.call(null,this$));
 if(cljs.core.truth_(temp__4423__auto__)){
 var card = temp__4423__auto__;
-return kanban.components.card_editor.card_editor.call(null,cljs.core.assoc.call(null,card,new cljs.core.Keyword(null,"close-fn","close-fn",-1779772512),((function (card,temp__4423__auto__,_STAR_reconciler_STAR_10487,_STAR_depth_STAR_10488,_STAR_shared_STAR_10489,_STAR_instrument_STAR_10490,_STAR_parent_STAR_10491,this$,x10486_10494){
+return kanban.components.card_editor.card_editor.call(null,cljs.core.assoc.call(null,card,new cljs.core.Keyword(null,"close-fn","close-fn",-1779772512),((function (card,temp__4423__auto__,_STAR_reconciler_STAR_16464,_STAR_depth_STAR_16465,_STAR_shared_STAR_16466,_STAR_instrument_STAR_16467,_STAR_parent_STAR_16468,this$,x16463_16471){
 return (function (){
 return this$.card_edit(null);
-});})(card,temp__4423__auto__,_STAR_reconciler_STAR_10487,_STAR_depth_STAR_10488,_STAR_shared_STAR_10489,_STAR_instrument_STAR_10490,_STAR_parent_STAR_10491,this$,x10486_10494))
-,new cljs.core.Keyword(null,"update-fn","update-fn",711087313),((function (card,temp__4423__auto__,_STAR_reconciler_STAR_10487,_STAR_depth_STAR_10488,_STAR_shared_STAR_10489,_STAR_instrument_STAR_10490,_STAR_parent_STAR_10491,this$,x10486_10494){
-return (function (p1__10480_SHARP_,p2__10481_SHARP_){
-return this$.card_update(p1__10480_SHARP_,p2__10481_SHARP_);
-});})(card,temp__4423__auto__,_STAR_reconciler_STAR_10487,_STAR_depth_STAR_10488,_STAR_shared_STAR_10489,_STAR_instrument_STAR_10490,_STAR_parent_STAR_10491,this$,x10486_10494))
+});})(card,temp__4423__auto__,_STAR_reconciler_STAR_16464,_STAR_depth_STAR_16465,_STAR_shared_STAR_16466,_STAR_instrument_STAR_16467,_STAR_parent_STAR_16468,this$,x16463_16471))
+,new cljs.core.Keyword(null,"update-fn","update-fn",711087313),((function (card,temp__4423__auto__,_STAR_reconciler_STAR_16464,_STAR_depth_STAR_16465,_STAR_shared_STAR_16466,_STAR_instrument_STAR_16467,_STAR_parent_STAR_16468,this$,x16463_16471){
+return (function (p1__16457_SHARP_,p2__16458_SHARP_){
+return this$.card_update(p1__16457_SHARP_,p2__16458_SHARP_);
+});})(card,temp__4423__auto__,_STAR_reconciler_STAR_16464,_STAR_depth_STAR_16465,_STAR_shared_STAR_16466,_STAR_instrument_STAR_16467,_STAR_parent_STAR_16468,this$,x16463_16471))
 ));
 } else {
 return null;
 }
 })()));
-}finally {om.next._STAR_parent_STAR_ = _STAR_parent_STAR_10491;
+}finally {om.next._STAR_parent_STAR_ = _STAR_parent_STAR_16468;
 
-om.next._STAR_instrument_STAR_ = _STAR_instrument_STAR_10490;
+om.next._STAR_instrument_STAR_ = _STAR_instrument_STAR_16467;
 
-om.next._STAR_shared_STAR_ = _STAR_shared_STAR_10489;
+om.next._STAR_shared_STAR_ = _STAR_shared_STAR_16466;
 
-om.next._STAR_depth_STAR_ = _STAR_depth_STAR_10488;
+om.next._STAR_depth_STAR_ = _STAR_depth_STAR_16465;
 
-om.next._STAR_reconciler_STAR_ = _STAR_reconciler_STAR_10487;
-}});})(x10486_10494))
+om.next._STAR_reconciler_STAR_ = _STAR_reconciler_STAR_16464;
+}});})(x16463_16471))
 ;
 
 
@@ -235,25 +246,25 @@ kanban.app.App.prototype.constructor = kanban.app.App;
 
 kanban.app.App.prototype.om$isComponent = true;
 
-var x10492_10495 = kanban.app.App;
-x10492_10495.om$next$IQuery$ = true;
+var x16469_16472 = kanban.app.App;
+x16469_16472.om$next$IQuery$ = true;
 
-x10492_10495.om$next$IQuery$query$arity$1 = ((function (x10492_10495){
+x16469_16472.om$next$IQuery$query$arity$1 = ((function (x16469_16472){
 return (function (this$){
 var this$__$1 = this;
 return new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"boards","boards",1912049694),om.next.get_query.call(null,kanban.components.board.Board)], null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword("boards","active","boards/active",1298990951),om.next.get_query.call(null,kanban.components.board.Board)], null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"lanes","lanes",1843627072),om.next.get_query.call(null,kanban.components.lane.Lane)], null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"cards","cards",169174038),om.next.get_query.call(null,kanban.components.card.Card)], null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"users","users",-713552705),om.next.get_query.call(null,kanban.components.card.Assignee)], null),new cljs.core.Keyword("cards","dragged","cards/dragged",311055420),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword("cards","editing","cards/editing",1422138420),om.next.get_query.call(null,kanban.components.card_editor.CardEditor)], null)], null);
-});})(x10492_10495))
+});})(x16469_16472))
 ;
 
 
-var x10493_10496 = kanban.app.App.prototype;
-x10493_10496.om$next$IQuery$ = true;
+var x16470_16473 = kanban.app.App.prototype;
+x16470_16473.om$next$IQuery$ = true;
 
-x10493_10496.om$next$IQuery$query$arity$1 = ((function (x10493_10496){
+x16470_16473.om$next$IQuery$query$arity$1 = ((function (x16470_16473){
 return (function (this$){
 var this$__$1 = this;
 return new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"boards","boards",1912049694),om.next.get_query.call(null,kanban.components.board.Board)], null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword("boards","active","boards/active",1298990951),om.next.get_query.call(null,kanban.components.board.Board)], null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"lanes","lanes",1843627072),om.next.get_query.call(null,kanban.components.lane.Lane)], null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"cards","cards",169174038),om.next.get_query.call(null,kanban.components.card.Card)], null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"users","users",-713552705),om.next.get_query.call(null,kanban.components.card.Assignee)], null),new cljs.core.Keyword("cards","dragged","cards/dragged",311055420),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword("cards","editing","cards/editing",1422138420),om.next.get_query.call(null,kanban.components.card_editor.CardEditor)], null)], null);
-});})(x10493_10496))
+});})(x16470_16473))
 ;
 
 

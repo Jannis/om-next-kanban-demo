@@ -41,6 +41,10 @@
                                              :to   ~lane})
                            :boards/active])))
 
+  (card-add [this lane]
+    (om/transact! this `[(lanes/create-card {:lane ~lane})
+                         :lanes :cards :cards/editing]))
+
   (card-edit [this card]
     (om/transact! this `[(cards/edit {:card ~card}) :cards/editing]))
 
@@ -63,6 +67,7 @@
       (dom/main nil
         (if-let [active-board (-> this om/props :boards/active)]
           (board (assoc active-board
+                        :card-add-fn #(.card-add this %)
                         :card-edit-fn #(.card-edit this %)
                         :card-drag-fns {:start #(.card-drag-start this %1 %2)
                                         :end #(.card-drag-end this %1 %2)
