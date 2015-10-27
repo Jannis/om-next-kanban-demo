@@ -152,7 +152,7 @@ body {
   top: 0;
   height: 100%;
   width: 100%;
-  z-index: 99;
+  z-index: 1;
   background: rgba(255, 255, 255, 0.95);
   padding: 4rem;
   box-sizing: border-box;
@@ -168,9 +168,9 @@ body {
 
   .content {
     z-index: 1;
-    position: fixed;
+    position: relative;
+    max-width: 40rem;
     margin: auto;
-    max-width: 60rem;
   }
 
   .title {
@@ -186,16 +186,23 @@ body {
 
   .form-row {
     display: table;
-    border-spacing: 0.5rem;
-    margin: 0rem -0.5rem;
+    width: 100%;
+    border-spacing: 0rem;
+    table-layout: fixed;
+    box-sizing: border-box;
+    margin: 0rem 0rem 0.5rem 0rem;
 
     label {
       display: table-cell;
       vertical-align: top;
+      width: 10%;
+      padding-right: 0.5rem;
     }
 
     input, textarea {
       display: table-cell;
+      box-sizing: border-box;
+      width: 100%;
       vertical-align: top;
       border: thin solid lighten(@black, 80%);
       border-radius: 0.25rem;
@@ -207,7 +214,6 @@ body {
     }
 
     textarea {
-      width: 30rem;
       height: 5rem;
     }
   }
