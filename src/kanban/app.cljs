@@ -31,15 +31,22 @@
                          :cards/dragged]))
 
   (card-drag-end [this lane card]
-    (om/transact! this `[(cards/drag nil)
-                         :cards/dragged]))
+    (om/transact! this `[(cards/drag nil) :cards/dragged]))
 
   (card-drag-drop [this lane]
     (if-let [source (-> this om/props :cards/dragged)]
       (om/transact! this `[(lanes/move-card {:card ~(:card source)
                                              :from ~(:lane source)
                                              :to   ~lane})
-                           :boards/active])))
+                           (cards/drag nil)
+                           :boards/active :cards/dragged])))
+
+  (card-drag-delete [this]
+    (if-let [source (-> this om/props :cards/dragged)]
+      (om/transact! this `[(lanes/delete-card {:card ~(:card source)
+                                               :lane ~(:lane source)})
+                           (cards/drag nil)
+                           :boards/active :cards/dragged])))
 
   (card-add [this lane]
     (om/transact! this `[(lanes/create-card {:lane ~lane})
@@ -67,11 +74,13 @@
       (dom/main nil
         (if-let [active-board (-> this om/props :boards/active)]
           (board (assoc active-board
+                        :dragging (-> this om/props :cards/dragged)
                         :card-add-fn #(.card-add this %)
                         :card-edit-fn #(.card-edit this %)
                         :card-drag-fns {:start #(.card-drag-start this %1 %2)
                                         :end #(.card-drag-end this %1 %2)
-                                        :drop #(.card-drag-drop this %)}))
+                                        :drop #(.card-drag-drop this %)
+                                        :delete #(.card-drag-delete this)}))
           (about))
         (if-let [card (-> this om/props :cards/editing)]
           (card-editor (assoc card
