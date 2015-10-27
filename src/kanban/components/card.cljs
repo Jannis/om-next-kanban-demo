@@ -38,7 +38,6 @@
                       :onDragStart #((:start drag-fns) ref)
                       :onDragEnd #((:end drag-fns) ref)}
           (dom/span #js {:className "card-id"} id)
-          (println "assignees" assignees "\n")
           (for [a assignees]
             (assignee a))
           (dom/span #js {:className "text"} text))))))
