@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Create temporary directory
+
+tmpdir=$(mktemp -d)
+
+# Copy the latest build to it
+
+cp -R target/app.* target/index.html "$tmpdir"
+
+# Switch to the gh-pages branch
+git checkout gh-pages
+
+# Copy the build into it
+
+cp -R "$tmpdir"/* .
+
+# Determine the latest commit in master
+commit=$(git log -n1 --format="%H" master)
+
+# Create a new commit
+git commit -a -m "Update to $commit"
+
+# Push gh-pages to GitHub
+git push origin gh-pages:gh-pages
+
+# Switch back to master
+git checkout master
