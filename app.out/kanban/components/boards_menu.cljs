@@ -23,7 +23,7 @@
   Object
   (render [this]
     (dom/div #js {:className "header-menu"}
-      (dom/a nil "Boards")
+      (dom/a nil "▾ Boards")
       (dom/ul nil
         (let [{:keys [boards activate-fn]} (om/props this)]
           (for [board boards]
