@@ -332,3 +332,29 @@ body {
     padding-left: 2rem;
   }
 }
+
+.help {
+  padding: 0.5rem;
+
+  .help-title {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0.5rem 0rem;
+  }
+
+  .instructions {
+    margin: 0;
+    padding: 0rem;
+
+    li {
+      text-indent: 0.5rem;
+      list-style: none;
+
+      &:before {
+        content: "\2192";
+        position: relative;
+        left: -0.5rem
+      }
+    }
+  }
+}

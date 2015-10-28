@@ -27,6 +27,13 @@
           (for [l lanes]
             (lane (assoc l :card-add-fn card-add-fn
                            :card-drag-fns card-drag-fns
-                           :card-edit-fn card-edit-fn))))))))
+                           :card-edit-fn card-edit-fn))))
+        (dom/div #js {:className "help"}
+          (dom/h3 #js {:className "help-title"} "Help")
+          (dom/ul #js {:className "instructions"}
+            (dom/li nil "Move cards between lanes by dragging them")
+            (dom/li nil "Create new cards by clicking on the + in a lane")
+            (dom/li nil "Delete cards by dragging them to the delete area")
+            (dom/li nil "Edit cards by clicking on them")))))))
 
 (def board (om/factory Board {:keyfn #(-> [:board/by-id (:id %)])}))
