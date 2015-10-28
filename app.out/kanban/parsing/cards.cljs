@@ -16,7 +16,7 @@
        (into [])))
 
 (defn create-card [st]
-  (let [id   (->> (get-cards st :cards) (map :id) (reduce max) inc)
+  (let [id   (->> (get-cards st :cards) (map :id) (cons 0) (reduce max) inc)
         card {:id id :text "" :assignees []}
         ref  [:card/by-id id]]
     {:card ref

@@ -55,6 +55,12 @@
                      :placeholder "Enter a card description here..."
                      :onChange #(.update-text this (.. % -target -value))})))
           (dom/p #js {:className "buttons"}
-            (dom/button #js {:onClick close-fn} "Close")))))))
+            (dom/button #js {:onClick close-fn} "Close"))
+          (dom/div #js {:className "help"}
+            (dom/h3 #js {:className "help-title"} "Help")
+            (dom/ul #js {:className "instructions"}
+              (dom/li nil "Edit card assignees by clicking on their names")
+              (dom/li nil "Change the card description via the text field")
+              (dom/li nil "Click anywhere to close the dialog"))))))))
 
-(def card-editor (om/factory CardEditor {:keyfn :id}))
+(def card-editor (om/factory CardEditor {:keyfn #(-> [:card-editor (:id %)])}))
