@@ -1,5 +1,6 @@
 (ns kanban.components.card
-  (:require [goog.object :as gobj]
+  (:require [clojure.string :as str]
+            [goog.object :as gobj]
             [om.next :as om :refer-macros [defui]]
             [om.dom :as dom]))
 
@@ -12,8 +13,12 @@
     [:id :username :name])
   Object
   (render [this]
-    (let [{:keys [username name with-name]} (om/props this)]
-      (dom/span #js {:className "assignee"
+    (let [{:keys [username name
+                  selected with-name activate-fn]} (om/props this)]
+      (dom/span #js {:className (str/join " " ["assignee"
+                                               (when selected "selected")])
+                     :onClick #(when activate-fn
+                                 (activate-fn (om/get-ident this)))
                      :title name}
         (if with-name
           (str name " (@" username ")" " ")

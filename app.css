@@ -144,6 +144,12 @@ body {
 .assignee {
   color: #00C853;
 }
+.assignee.selected {
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+  background: #00C853;
+  color: #ffffff;
+}
 .card-editor {
   position: fixed;
   left: 0;
@@ -216,11 +222,12 @@ body {
 .card-editor .form-row textarea {
   height: 5rem;
 }
-.card-editor .assignee:after {
-  content: ' / ';
-}
-.card-editor .assignee:last-child::after {
-  content: '';
+.card-editor .assignee {
+  padding: 0.25rem;
+  margin-right: 0.5rem;
+  border: thin solid #00C853;
+  border-radius: 0.25rem;
+  cursor: pointer;
 }
 .card-editor .buttons {
   text-align: right;

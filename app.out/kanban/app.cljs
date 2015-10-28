@@ -84,6 +84,7 @@
           (about))
         (if-let [card (-> this om/props :cards/editing)]
           (card-editor (assoc card
+                              :users (-> this om/props :users)
                               :close-fn #(.card-edit this nil)
                               :update-fn #(.card-update this %1 %2))))))))
 
