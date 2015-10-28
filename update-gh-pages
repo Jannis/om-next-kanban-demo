@@ -14,6 +14,7 @@ git checkout gh-pages
 # Copy the build into it
 
 cp -R "$tmpdir"/* .
+rm -rf "$tmpdir"
 
 # Determine the latest commit in master
 commit=$(git log -n1 --format="%H" master)
