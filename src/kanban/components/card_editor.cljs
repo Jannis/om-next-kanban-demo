@@ -12,8 +12,23 @@
   (query [this]
     [:id :text {:assignees (om/get-query Assignee)}])
   Object
+  (toggle-assignee [this ref]
+    (println "toggle assignee" ref)
+    (let [{:keys [assignees update-fn]} (om/props this)]
+      (println "assignees" assignees)
+      (letfn [(add-or-remove* [x xs]
+                (if (some #{x} xs)
+                  (remove #{x} xs)
+                  (conj xs x)))]
+        (->> assignees
+            (map #(-> [:user/by-id (:id %)]))
+            (add-or-remove* ref)
+            (into [])
+            (assoc {} :assignees)
+            (update-fn (om/get-ident this))))))
+
   (render [this]
-    (let [{:keys [id text assignees close-fn update-fn]} (om/props this)]
+    (let [{:keys [id text assignees users close-fn update-fn]} (om/props this)]
       (dom/div #js {:className "card-editor"}
         (dom/div #js {:className "closer" :onClick close-fn})
         (dom/div #js {:className "content"}
@@ -24,8 +39,13 @@
             (dom/div #js {:className "form-row"}
               (dom/label nil "Assignees:")
               (dom/div #js {:className "input"} nil
-                (for [a assignees]
-                  (assignee (assoc a :with-name true)))))
+                (for [user users]
+                  (let [selected (some #{user} assignees)]
+                    (assignee
+                      (assoc user :with-name true
+                                  :activate-fn
+                                  #(.toggle-assignee this %)
+                                  :selected selected))))))
             (dom/div #js {:className "form-row"}
               (dom/label nil "Text:")
               (dom/textarea
