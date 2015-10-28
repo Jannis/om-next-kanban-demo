@@ -57,4 +57,4 @@
           (dom/p #js {:className "buttons"}
             (dom/button #js {:onClick close-fn} "Close")))))))
 
-(def card-editor (om/factory CardEditor {:keyfn :id}))
+(def card-editor (om/factory CardEditor {:keyfn #(-> [:card-editor (:id %)])}))

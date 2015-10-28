@@ -29,4 +29,4 @@
                            :card-drag-fns card-drag-fns
                            :card-edit-fn card-edit-fn))))))))
 
-(def board (om/factory Board {:keyfn :id}))
+(def board (om/factory Board {:keyfn #(-> [:board/by-id (:id %)])}))
