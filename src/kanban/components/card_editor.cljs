@@ -13,9 +13,7 @@
     [:id :text {:assignees (om/get-query Assignee)}])
   Object
   (toggle-assignee [this ref]
-    (println "toggle assignee" ref)
     (let [{:keys [assignees update-fn]} (om/props this)]
-      (println "assignees" assignees)
       (letfn [(add-or-remove* [x xs]
                 (if (some #{x} xs)
                   (remove #{x} xs)
@@ -26,6 +24,10 @@
             (into [])
             (assoc {} :assignees)
             (update-fn (om/get-ident this))))))
+
+  (update-text [this text]
+    (let [{:keys [update-fn]} (om/props this)]
+      (update-fn (om/get-ident this) {:text text})))
 
   (render [this]
     (let [{:keys [id text assignees users close-fn update-fn]} (om/props this)]
@@ -51,9 +53,7 @@
               (dom/textarea
                 #js {:value text
                      :placeholder "Enter a card description here..."
-                     :onChange
-                     #(update-fn (om/get-ident this)
-                                 {:text (.. % -target -value)})})))
+                     :onChange #(.update-text this (.. % -target -value))})))
           (dom/p #js {:className "buttons"}
             (dom/button #js {:onClick close-fn} "Close")))))))
 
