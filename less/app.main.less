@@ -91,13 +91,21 @@ body {
   }
 
   .delete {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    margin: 0.5rem;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 30%;
+    margin: 0rem 0rem 0rem -15%;
+    box-sizing: border-box;
+    background: @white;
     text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    padding: 1rem;
     text-transform: uppercase;
     color: lighten(@black, 70%);
-    border: thin dashed lighten(@black, 70%);
+    border-radius: 0rem 0rem 0.25rem 0.25rem;
   }
 
   .lanes {
