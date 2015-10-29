@@ -24,41 +24,35 @@
      {:cards/editing (om/get-query CardEditor)}])
   Object
   (activate-board [this ref]
-    (om/transact! this `[(boards/activate {:ref ~ref}) :boards/active]))
+    (om/transact! this `[(boards/activate {:ref ~ref})]))
 
   (card-drag-start [this lane card]
-    (om/transact! this `[(cards/drag {:lane ~lane :card ~card})
-                         :cards/dragged]))
+    (om/transact! this `[(cards/drag {:lane ~lane :card ~card})]))
 
   (card-drag-end [this lane card]
-    (om/transact! this `[(cards/drag nil) :cards/dragged]))
+    (om/transact! this `[(cards/drag nil)]))
 
   (card-drag-drop [this lane]
     (if-let [source (-> this om/props :cards/dragged)]
       (om/transact! this `[(lanes/move-card {:card ~(:card source)
                                              :from ~(:lane source)
                                              :to   ~lane})
-                           (cards/drag nil)
-                           :boards/active :cards/dragged])))
+                           (cards/drag nil)])))
 
   (card-drag-delete [this]
     (if-let [source (-> this om/props :cards/dragged)]
       (om/transact! this `[(lanes/delete-card {:card ~(:card source)
                                                :lane ~(:lane source)})
-                           (cards/drag nil)
-                           :boards/active :cards/dragged])))
+                           (cards/drag nil)])))
 
   (card-add [this lane]
-    (om/transact! this `[(lanes/create-card {:lane ~lane})
-                         :lanes :cards :cards/editing]))
+    (om/transact! this `[(lanes/create-card {:lane ~lane})]))
 
   (card-edit [this card]
-    (om/transact! this `[(cards/edit {:card ~card}) :cards/editing]))
+    (om/transact! this `[(cards/edit {:card ~card})]))
 
   (card-update [this card data]
-    (om/transact! this `[(cards/update {:card ~card :data ~data})
-                         :cards/editing
-                         :cards]))
+    (om/transact! this `[(cards/update {:card ~card :data ~data})]))
 
   (render [this]
     (dom/div #js {:className "app"}
