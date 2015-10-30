@@ -63,24 +63,24 @@
         (dom/nav nil
           (let [props (-> this om/props (select-keys [:boards]))]
             (boards-menu
-              (assoc props
-                     :activate-fn #(.activate-board this %))))))
+              (om/computed props {:activate-fn #(.activate-board this %)})))))
       (dom/main nil
         (if-let [active-board (-> this om/props :boards/active)]
-          (board (assoc active-board
-                        :dragging (-> this om/props :cards/dragged)
-                        :card-add-fn #(.card-add this %)
-                        :card-edit-fn #(.card-edit this %)
-                        :card-drag-fns {:start #(.card-drag-start this %1 %2)
-                                        :end #(.card-drag-end this %1 %2)
-                                        :drop #(.card-drag-drop this %)
-                                        :delete #(.card-drag-delete this)}))
+          (board
+            (om/computed active-board
+                         {:dragging (-> this om/props :cards/dragged)
+                          :card-add-fn #(.card-add this %)
+                          :card-edit-fn #(.card-edit this %)
+                          :card-drag-fns {:start #(.card-drag-start this %1 %2)
+                                          :end #(.card-drag-end this %1 %2)
+                                          :drop #(.card-drag-drop this %)
+                                          :delete #(.card-drag-delete this)}}))
           (about))
         (if-let [card (-> this om/props :cards/editing)]
-          (card-editor (assoc card
-                              :users (-> this om/props :users)
-                              :close-fn #(.card-edit this nil)
-                              :update-fn #(.card-update this %1 %2))))))))
+          (card-editor
+            (om/computed card {:users (-> this om/props :users)
+                               :close-fn #(.card-edit this nil)
+                               :update-fn #(.card-update this %1 %2)})))))))
 
 (defn run []
   (om/add-root! reconciler

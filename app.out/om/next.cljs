@@ -3,13 +3,11 @@
   (:require-macros [om.next :refer [defui]])
   (:require [goog.string :as gstring]
             [goog.object :as gobj]
-            [goog.dom :as gdom]
             [goog.log :as glog]
             [clojure.walk :as walk]
             [om.next.protocols :as p]
             [om.next.impl.parser :as parser]
             [om.next.cache :as c]
-            [om.dom :as dom]
             [clojure.zip :as zip])
   (:import [goog.debug Console]))
 
@@ -114,12 +112,16 @@
           (into [] (comp (filter match) (map value) (take 1)) query))))))
 
 (defn- focus->path
-  ([focus] (focus->path focus []))
-  ([focus path]
-   (if (and (some map? focus)
+  ([focus]
+   (focus->path focus '* []))
+  ([focus bound]
+   (focus->path focus bound []))
+  ([focus bound path]
+   (if (and (or (= bound '*) (not= path bound))
+            (some map? focus)
             (== 1 (count focus)))
      (let [[k focus'] (ffirst focus)]
-       (recur focus' (conj path k)))
+       (recur focus' bound (conj path k)))
      path)))
 
 ;; =============================================================================
@@ -179,10 +181,12 @@
   (:params (get-local-query-data component) (params component)))
 
 (defn- get-component-query [c]
-  (let [qps (get-local-query-data c)]
+  (let [qps (get-local-query-data c)
+        q   (:query qps (query c))
+        c'  (-> q meta :component)]
+    (assert (nil? c') (str "Query violation, " c , " reuses " c' " query"))
     (with-meta
-      (bind-query
-        (:query qps (query c)) (:params qps (params c)))
+      (bind-query q (:params qps (params c)))
       {:component (type c)})))
 
 (defn get-query
@@ -192,12 +196,18 @@
   (if (satisfies? IQuery x)
     (if (component? x)
       (get-component-query x)
-      (with-meta (bind-query (query x) (params x)) {:component x}))
+      (let [q (query x)
+            c (-> q meta :component)]
+        (assert (nil? c) (str "Query violation, " x , " reuses " c " query"))
+        (with-meta (bind-query q (params x)) {:component x})))
     ;; in advanced, statics will get elided
     (when (goog/isFunction x)
       (let [x (js/Object.create (. x -prototype))]
         (when (satisfies? IQuery x)
-          (with-meta (bind-query (query x) (params x)) {:component x}))))))
+          (let [q (query x)
+                c (-> q meta :component)]
+            (assert (nil? c) (str "Query violation, " x , " reuses " c " query"))
+            (with-meta (bind-query q (params x)) {:component x})))))))
 
 (defn iquery? [x]
   (satisfies? IQuery x))
@@ -407,6 +417,28 @@
       (-> component .-props get-props)
       (-> component .-state get-props))))
 
+(defn computed
+  "Add computed properties to props."
+  [props computed-map]
+  (if (vector? props)
+    (cond-> props
+      (not (empty? computed-map)) (vary-meta assoc :om.next/computed computed-map))
+    (cond-> props
+      (not (empty? computed-map)) (assoc :om.next/computed computed-map))))
+
+(defn get-computed
+  "Return the computed properties on a component or its props."
+  ([x]
+   (get-computed x []))
+  ([x k-or-ks]
+   (let [props (cond-> x (component? x) props)
+         ks    (into [:om.next/computed]
+                 (cond-> k-or-ks
+                   (not (sequential? k-or-ks)) vector))]
+     (if (vector? props)
+       (-> props meta (get-in ks))
+       (get-in props ks)))))
+
 (defn get-ident
   "Given a component return its ident"
   [component]
@@ -530,13 +562,6 @@
   [x]
   (and (component? x) ^boolean (.isMounted x)))
 
-(defn dom-node
-  "Returns the dom node associated with a component's React ref."
-  ([component]
-   (js/ReactDOM.findDOMNode component))
-  ([component name]
-   (some-> (.-refs component) (gobj/get name) (js/ReactDOM.findDOMNode))))
-
 (defn react-ref
   "Returns the component associated with a component's React ref."
   [component name]
@@ -568,7 +593,13 @@
       (if (iquery? p)
         (recur p (cons (type p) ret))
         (recur p ret))
-      ret)))
+      (let [seen (atom #{})]
+        (take-while
+          (fn [x]
+            (when-not (contains? @seen x)
+              (swap! seen conj x)
+              x))
+          ret)))))
 
 (defn- join-value [node]
   (if (seq? node)
@@ -622,7 +653,7 @@
   ([reconciler root-class target]
    (add-root! reconciler root-class target nil))
   ([reconciler root-class target options]
-   {:pre [(reconciler? reconciler) (fn? root-class) (gdom/isElement target)]}
+   {:pre [(reconciler? reconciler) (fn? root-class)]}
    (when-let [old-reconciler (get @roots target)]
      (remove-root! old-reconciler target))
    (swap! roots assoc target reconciler)
@@ -694,13 +725,17 @@
    {:pre [(vector? tx)]}
    (if (reconciler? x)
      (transact* x nil nil tx)
-     (loop [p (parent x) tx tx]
-       (if (nil? p)
-         (transact* (get-reconciler x) x nil tx)
-         (let [tx (if (satisfies? ITxIntercept p)
-                    (tx-intercept p tx)
-                    tx)]
-           (recur (parent p) tx))))))
+     (do
+       (assert (satisfies? IQuery x)
+         (str "transact! invoked by component " x
+              " that does not implement IQuery"))
+       (loop [p (parent x) tx tx]
+         (if (nil? p)
+           (transact* (get-reconciler x) x nil tx)
+           (let [tx (if (satisfies? ITxIntercept p)
+                      (tx-intercept p tx)
+                      tx)]
+             (recur (parent p) tx)))))))
   ([r ref tx]
    (transact* r nil ref tx)))
 
@@ -859,8 +894,14 @@
            qs    (get-in @(-> component get-reconciler get-indexer)
                    [:class-path->query cp])]
        (if-not (empty? qs)
-         (replace (first (filter #(= path' (-> % zip/root focus->path)) qs))
-           (get-query component))
+         ;; handle case where child appears multiple times at same class-path
+         ;; but with different queries
+         (let [q (first (filter #(= path' (-> % zip/root (focus->path path'))) qs))]
+           (if-not (nil? q)
+             (replace q (get-query component))
+             (throw
+               (ex-info (str "No queries exist for component path " cp " or data path " path')
+                 {:type :om.next/no-queries}))))
          (throw
            (ex-info (str "No queries exist for component path " cp)
              {:type :om.next/no-queries})))))))
@@ -1032,7 +1073,7 @@
       (let [renderf (fn [data]
                       (binding [*reconciler* this
                                 *shared*     (:shared config)]
-                        (let [c (js/ReactDOM.render (rctor data) target)]
+                        (let [c ((:root-render config) (rctor data) target)]
                           (when (nil? @ret)
                             (swap! state assoc :root c)
                             (reset! ret c)))))
@@ -1059,9 +1100,11 @@
                        #(-> %
                          (dissoc :target) (dissoc :render) (dissoc :root)
                          (dissoc :remove)))
-                     (js/ReactDOM.unmountComponentAtNode target))})
+                     ((:root-unmount config) target))})
         (add-watch (:state config) target
-          (fn [_ _ _ _] (schedule-render! this)))
+          (fn [_ _ _ _]
+            (swap! state update-in [:t] inc)
+            (schedule-render! this)))
         (parsef)
         ret)))
 
@@ -1075,11 +1118,7 @@
         (p/index-root (:indexer config) root))))
 
   (queue! [_ ks]
-    (swap! state
-      (fn [state]
-        (-> state
-          (update-in [:t] inc) ;; TODO: probably should revisit doing this here
-          (update-in [:queue] into ks)))))
+    (swap! state update-in [:queue] into ks))
 
   (queue-sends! [_ sends]
     (swap! state update-in [:queued-sends]
@@ -1113,12 +1152,13 @@
               {:keys [ui->props]} config
               env (to-env config)]
           (doseq [c ((:optimize config) cs)]
-            (let [next-props (ui->props env c)]
-              (when (and (should-update? c next-props (get-state c))
-                         (mounted? c))
-                (if-not (nil? next-props)
-                  (update-component! c next-props)
-                  (.forceUpdate c)))))))
+            (when (mounted? c)
+              (let [computed   (get-computed (props c))
+                    next-props (om.next/computed (ui->props env c) computed)]
+                (when (should-update? c next-props (get-state c))
+                  (if-not (nil? next-props)
+                    (update-component! c next-props)
+                    (.forceUpdate c))))))))
       (swap! state assoc :queue [])
       (swap! state update-in [:queued] not)))
 
@@ -1140,7 +1180,14 @@
   (let [path (path c)
         fq   (full-query c path)]
     (when-not (nil? fq)
-      (get-in (parser env fq) path))))
+      (let [s  (system-time)
+            ui (parser env fq)
+            e  (system-time)]
+        (when-not (nil? *logger*)
+          (let [dt (- e s)]
+            (when (< 16 dt)
+              (glog/warning *logger* (str c " query took " dt " msecs")))))
+        (get-in ui path)))))
 
 (defn- default-merge-ref
   [_ tree ref props]
@@ -1166,15 +1213,18 @@
            send merge-sends remotes
            merge-tree merge-ref
            optimize
-           history]
-    :or {ui->props   default-ui->props
-         indexer     om.next/indexer
-         merge-sends #(merge-with into %1 %2)
-         remotes     [:remote]
-         merge-tree  #(merge-with merge %1 %2)
-         merge-ref   default-merge-ref
-         optimize    (fn [cs] (sort-by depth cs))
-         history     100}
+           history
+           root-render root-unmount]
+    :or {ui->props    default-ui->props
+         indexer      om.next/indexer
+         merge-sends  #(merge-with into %1 %2)
+         remotes      [:remote]
+         merge-tree   #(merge-with merge %1 %2)
+         merge-ref    default-merge-ref
+         optimize     (fn [cs] (sort-by depth cs))
+         history      100
+         root-render  #(js/ReactDOM.render %1 %2)
+         root-unmount #(js/ReactDOM.unmountComponentAtNode %)}
     :as config}]
   {:pre [(map? config)]}
   (let [idxr   (indexer)
@@ -1187,7 +1237,8 @@
                   :merge-tree merge-tree :merge-ref merge-ref
                   :optimize optimize
                   :normalize (or (not norm?) normalize)
-                  :history (c/cache history)}
+                  :history (c/cache history)
+                  :root-render root-render :root-unmount root-unmount}
                  (atom {:queue [] :queued false :queued-sends {}
                         :sends-queued false
                         :target nil :root nil :render nil :remove nil

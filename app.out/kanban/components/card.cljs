@@ -1,8 +1,10 @@
 (ns kanban.components.card
-  (:require [clojure.string :as str]
-            [goog.object :as gobj]
+  (:require [goog.object :as gobj]
+            [goog.string :as gstring]
+            [goog.string.format]
             [om.next :as om :refer-macros [defui]]
-            [om.dom :as dom]))
+            [om.dom :as dom]
+            [kanban.util :refer [class-names]]))
 
 (defui Assignee
   static om/Ident
@@ -13,16 +15,15 @@
     [:id :username :name])
   Object
   (render [this]
-    (let [{:keys [username name
-                  selected with-name activate-fn]} (om/props this)]
-      (dom/span #js {:className (str/join " " ["assignee"
-                                               (when selected "selected")])
-                     :onClick #(when activate-fn
-                                 (activate-fn (om/get-ident this)))
+    (let [{:keys [username name]} (om/props this)
+          {:keys [selected with-name activate-fn]} (om/get-computed this)]
+      (dom/span #js {:className (class-names {:assignee true
+                                              :selected selected})
+                     :onClick #(activate-fn (om/get-ident this))
                      :title name}
         (if with-name
-          (str name " (@" username ")" " ")
-          (str "@" username " "))))))
+          (gstring/format "%s (@%s) " name username)
+          (gstring/format "@%s " username))))))
 
 (def assignee (om/factory Assignee {:keyfn :id}))
 
@@ -35,7 +36,8 @@
     [:id :text {:assignees (om/get-query Assignee)}])
   Object
   (render [this]
-    (let [{:keys [id text assignees drag-fns edit-fn]} (om/props this)]
+    (let [{:keys [id text assignees]} (om/props this)
+          {:keys [drag-fns edit-fn]} (om/get-computed this)]
       (let [ref (om/get-ident this)]
         (dom/div #js {:className "card"
                       :onClick #(edit-fn ref)
