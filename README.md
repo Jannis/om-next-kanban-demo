@@ -9,4 +9,4 @@ A Kanban demo application written using [Om Next](https://github.com/omcljs/om).
 1. Install [Boot](https://github.com/boot-clj/boot)
 2. Clone this repository
 3. Run `boot run` inside the cloned repository
-4. Open http://localhost:8000 in your browser
+4. Open http://localhost:3000 in your browser
