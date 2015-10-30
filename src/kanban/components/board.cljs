@@ -13,8 +13,9 @@
     [:id :name :description {:lanes (om/get-query Lane)}])
   Object
   (render [this]
-    (let [{:keys [name description lanes dragging
-                  card-add-fn card-drag-fns card-edit-fn]} (om/props this)]
+    (let [{:keys [name description lanes]} (om/props this)
+          {:keys [dragging card-add-fn card-drag-fns card-edit-fn]}
+            (om/get-computed this)]
       (dom/div #js {:className "board"}
         (dom/h2 #js {:className "board-title"} name " Board")
         (dom/p #js {:className "board-description"} description)
@@ -25,9 +26,9 @@
             "Delete"))
         (dom/div #js {:className "lanes"}
           (for [l lanes]
-            (lane (assoc l :card-add-fn card-add-fn
-                           :card-drag-fns card-drag-fns
-                           :card-edit-fn card-edit-fn))))
+            (lane (om/computed l {:card-add-fn card-add-fn
+                                  :card-drag-fns card-drag-fns
+                                  :card-edit-fn card-edit-fn}))))
         (dom/div #js {:className "help"}
           (dom/h3 #js {:className "help-title"} "Help")
           (dom/ul #js {:className "instructions"}

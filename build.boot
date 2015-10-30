@@ -11,7 +11,7 @@
 
                   ; App dependencies
                   [org.clojure/clojurescript "1.7.145"]
-                  [org.omcljs/om "1.0.0-alpha9"]])
+                  [org.omcljs/om "1.0.0-alpha14-SNAPSHOT"]])
 
 (task-options!
   pom {:project "om-next-kanban-demo"

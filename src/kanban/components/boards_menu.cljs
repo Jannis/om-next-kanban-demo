@@ -13,7 +13,8 @@
   Object
   (render [this]
     (dom/li nil
-      (let [{:keys [name activate-fn]} (om/props this)]
+      (let [{:keys [name]} (om/props this)
+            {:keys [activate-fn]} (om/get-computed this)]
         (dom/a #js {:onClick #(activate-fn (om/get-ident this))}
           name)))))
 
@@ -25,9 +26,10 @@
     (dom/div #js {:className "header-menu"}
       (dom/a nil "▾ Boards")
       (dom/ul nil
-        (let [{:keys [boards activate-fn]} (om/props this)]
+        (let [{:keys [boards]} (om/props this)
+              {:keys [activate-fn]} (om/get-computed this)]
           (for [board boards]
             (board-menu-item
-              (assoc board :activate-fn activate-fn))))))))
+              (om/computed board {:activate-fn activate-fn}))))))))
 
 (def boards-menu (om/factory BoardsMenu))

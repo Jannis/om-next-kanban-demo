@@ -13,10 +13,9 @@
     [:id :name {:cards (om/get-query Card)}])
   Object
   (render [this]
-    (let [{:keys [name cards
-                  card-add-fn
-                  card-drag-fns
-                  card-edit-fn]} (om/props this)]
+    (let [{:keys [name cards]} (om/props this)
+          {:keys [card-add-fn card-drag-fns card-edit-fn]}
+            (om/get-computed this)]
       (dom/div #js {:className "lane"
                     :onDragOver (fn [e] (.preventDefault e))
                     :onDrop #((:drop card-drag-fns) (om/get-ident this))}
@@ -31,7 +30,7 @@
                 drag-fns (into {} (map (fn [[k f]] [k (partial f ref)])
                                        card-drag-fns))]
             (for [c cards]
-              (card (assoc c :drag-fns drag-fns
-                             :edit-fn card-edit-fn)))))))))
+              (card (om/computed c {:drag-fns drag-fns
+                                    :edit-fn card-edit-fn})))))))))
 
 (def lane (om/factory Lane {:keyfn :id}))

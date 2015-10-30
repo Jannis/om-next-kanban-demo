@@ -13,7 +13,8 @@
     [:id :text {:assignees (om/get-query Assignee)}])
   Object
   (toggle-assignee [this ref]
-    (let [{:keys [assignees update-fn]} (om/props this)]
+    (let [{:keys [assignees]} (om/props this)
+          {:keys [update-fn]} (om/get-computed this)]
       (letfn [(add-or-remove* [x xs]
                 (if (some #{x} xs)
                   (remove #{x} xs)
@@ -26,11 +27,12 @@
             (update-fn (om/get-ident this))))))
 
   (update-text [this text]
-    (let [{:keys [update-fn]} (om/props this)]
+    (let [{:keys [update-fn]} (om/get-computed this)]
       (update-fn (om/get-ident this) {:text text})))
 
   (render [this]
-    (let [{:keys [id text assignees users close-fn update-fn]} (om/props this)]
+    (let [{:keys [id text assignees]} (om/props this)
+          {:keys [users close-fn update-fn]} (om/get-computed this)]
       (dom/div #js {:className "card-editor"}
         (dom/div #js {:className "closer" :onClick close-fn})
         (dom/div #js {:className "content"}
@@ -44,10 +46,10 @@
                 (for [user users]
                   (let [selected (some #{user} assignees)]
                     (assignee
-                      (assoc user :with-name true
-                                  :activate-fn
-                                  #(.toggle-assignee this %)
-                                  :selected selected))))))
+                      (om/computed user
+                                   {:with-name true
+                                    :activate-fn #(.toggle-assignee this %)
+                                    :selected selected}))))))
             (dom/div #js {:className "form-row"}
               (dom/label nil "Text:")
               (dom/textarea
