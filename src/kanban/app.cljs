@@ -6,7 +6,7 @@
             [kanban.components.boards-menu :refer [BoardMenuItem boards-menu]]
             [kanban.components.board :refer [Board board]]
             [kanban.components.card :refer [Assignee Card]]
-            [kanban.components.card-editor :refer [CardEditor card-editor]]
+            [kanban.components.card-dialog :refer [CardDialog card-dialog]]
             [kanban.components.lane :refer [Lane]]
             [kanban.components.about :refer [about]]))
 
@@ -21,7 +21,7 @@
      {:cards (om/get-query Card)}
      {:users (om/get-query Assignee)}
      :cards/dragged
-     {:cards/editing (om/get-query CardEditor)}])
+     {:cards/editing (om/get-query CardDialog)}])
   Object
   (activate-board [this ref]
     (om/transact! this `[(boards/activate {:ref ~ref})]))
@@ -77,7 +77,7 @@
                                           :delete #(.card-drag-delete this)}}))
           (about))
         (if-let [card (-> this om/props :cards/editing)]
-          (card-editor
+          (card-dialog
             (om/computed card {:users (-> this om/props :users)
                                :close-fn #(.card-edit this nil)
                                :update-fn #(.card-update this %1 %2)})))))))

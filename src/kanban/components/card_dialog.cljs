@@ -1,10 +1,10 @@
-(ns kanban.components.card-editor
+(ns kanban.components.card-dialog
   (:require [goog.object :as gobj]
             [om.next :as om :refer-macros [defui]]
             [om.dom :as dom]
             [kanban.components.card :refer [Assignee assignee]]))
 
-(defui CardEditor
+(defui CardDialog
   static om/Ident
   (ident [this props]
     [:card/by-id (:id props)])
@@ -64,4 +64,4 @@
               (dom/li nil "Change the card description via the text field")
               (dom/li nil "Click anywhere to close the dialog"))))))))
 
-(def card-editor (om/factory CardEditor {:keyfn #(-> [:card-editor (:id %)])}))
+(def card-dialog (om/factory CardDialog {:keyfn #(-> [:card-dialog (:id %)])}))
