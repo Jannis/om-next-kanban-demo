@@ -20,6 +20,7 @@ rm -rf "$tmpdir"
 commit=$(git log -n1 --format="%H" master)
 
 # Create a new commit
+git add app.* index.html
 git commit -a -m "Update to $commit"
 
 # Push gh-pages to GitHub
