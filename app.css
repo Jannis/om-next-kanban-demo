@@ -229,6 +229,12 @@ body {
 .card-editor .form-row textarea {
   height: 5rem;
 }
+.card-editor .form-row .errors {
+  margin: 0rem;
+  padding: 0rem;
+  list-style: none;
+  color: red;
+}
 .card-editor .assignee {
   padding: 0.25rem;
   margin-right: 0.5rem;

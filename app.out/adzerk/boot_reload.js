@@ -3,7 +3,7 @@ goog.provide('adzerk.boot_reload');
 goog.require('cljs.core');
 goog.require('adzerk.boot_reload.client');
 goog.require('kanban.app');
-adzerk.boot_reload.client.connect.call(null,"ws://localhost:36942",new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on-jsload","on-jsload",-395756602),(function (){
+adzerk.boot_reload.client.connect.call(null,"ws://localhost:41541",new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on-jsload","on-jsload",-395756602),(function (){
 return kanban.app.run.call(null);
 })], null));
 

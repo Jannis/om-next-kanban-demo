@@ -4,29 +4,29 @@ goog.require('cljs.core');
 goog.require('kanban.parsing.lanes');
 goog.require('kanban.reconciler');
 kanban.parsing.boards.resolve_lanes = (function kanban$parsing$boards$resolve_lanes(st,board){
-return cljs.core.update.call(null,board,new cljs.core.Keyword(null,"lanes","lanes",1843627072),(function (p1__17607_SHARP_){
-return kanban.parsing.lanes.resolve_lanes.call(null,st,p1__17607_SHARP_);
+return cljs.core.update.call(null,board,new cljs.core.Keyword(null,"lanes","lanes",1843627072),(function (p1__8455_SHARP_){
+return kanban.parsing.lanes.resolve_lanes.call(null,st,p1__8455_SHARP_);
 }));
 });
 kanban.parsing.boards.get_board = (function kanban$parsing$boards$get_board(st,ref){
 return kanban.parsing.boards.resolve_lanes.call(null,st,cljs.core.get_in.call(null,st,ref));
 });
 kanban.parsing.boards.get_boards = (function kanban$parsing$boards$get_boards(st,key){
-return cljs.core.into.call(null,cljs.core.PersistentVector.EMPTY,cljs.core.map.call(null,(function (p1__17608_SHARP_){
-return kanban.parsing.boards.get_board.call(null,st,p1__17608_SHARP_);
+return cljs.core.into.call(null,cljs.core.PersistentVector.EMPTY,cljs.core.map.call(null,(function (p1__8456_SHARP_){
+return kanban.parsing.boards.get_board.call(null,st,p1__8456_SHARP_);
 })),cljs.core.get.call(null,st,key));
 });
-cljs.core._add_method.call(null,kanban.reconciler.read,new cljs.core.Keyword(null,"boards","boards",1912049694),(function (p__17609,key,_){
-var map__17610 = p__17609;
-var map__17610__$1 = ((((!((map__17610 == null)))?((((map__17610.cljs$lang$protocol_mask$partition0$ & (64))) || (map__17610.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__17610):map__17610);
-var state = cljs.core.get.call(null,map__17610__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
+cljs.core._add_method.call(null,kanban.reconciler.read,new cljs.core.Keyword(null,"boards","boards",1912049694),(function (p__8457,key,_){
+var map__8458 = p__8457;
+var map__8458__$1 = ((((!((map__8458 == null)))?((((map__8458.cljs$lang$protocol_mask$partition0$ & (64))) || (map__8458.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__8458):map__8458);
+var state = cljs.core.get.call(null,map__8458__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
 var st = cljs.core.deref.call(null,state);
 return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"value","value",305978217),kanban.parsing.boards.get_boards.call(null,st,key)], null);
 }));
-cljs.core._add_method.call(null,kanban.reconciler.read,new cljs.core.Keyword("boards","active","boards/active",1298990951),(function (p__17612,key,_){
-var map__17613 = p__17612;
-var map__17613__$1 = ((((!((map__17613 == null)))?((((map__17613.cljs$lang$protocol_mask$partition0$ & (64))) || (map__17613.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__17613):map__17613);
-var state = cljs.core.get.call(null,map__17613__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
+cljs.core._add_method.call(null,kanban.reconciler.read,new cljs.core.Keyword("boards","active","boards/active",1298990951),(function (p__8460,key,_){
+var map__8461 = p__8460;
+var map__8461__$1 = ((((!((map__8461 == null)))?((((map__8461.cljs$lang$protocol_mask$partition0$ & (64))) || (map__8461.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__8461):map__8461);
+var state = cljs.core.get.call(null,map__8461__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
 var st = cljs.core.deref.call(null,state);
 var temp__4423__auto__ = cljs.core.get.call(null,st,key);
 if(cljs.core.truth_(temp__4423__auto__)){
@@ -36,17 +36,17 @@ return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"va
 return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"value","value",305978217),null], null);
 }
 }));
-cljs.core._add_method.call(null,kanban.reconciler.mutate,new cljs.core.Symbol("boards","activate","boards/activate",714241560,null),(function (p__17615,_,p__17616){
-var map__17617 = p__17615;
-var map__17617__$1 = ((((!((map__17617 == null)))?((((map__17617.cljs$lang$protocol_mask$partition0$ & (64))) || (map__17617.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__17617):map__17617);
-var state = cljs.core.get.call(null,map__17617__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
-var map__17618 = p__17616;
-var map__17618__$1 = ((((!((map__17618 == null)))?((((map__17618.cljs$lang$protocol_mask$partition0$ & (64))) || (map__17618.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__17618):map__17618);
-var ref = cljs.core.get.call(null,map__17618__$1,new cljs.core.Keyword(null,"ref","ref",1289896967));
-return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"action","action",-811238024),((function (map__17617,map__17617__$1,state,map__17618,map__17618__$1,ref){
+cljs.core._add_method.call(null,kanban.reconciler.mutate,new cljs.core.Symbol("boards","activate","boards/activate",714241560,null),(function (p__8463,_,p__8464){
+var map__8465 = p__8463;
+var map__8465__$1 = ((((!((map__8465 == null)))?((((map__8465.cljs$lang$protocol_mask$partition0$ & (64))) || (map__8465.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__8465):map__8465);
+var state = cljs.core.get.call(null,map__8465__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
+var map__8466 = p__8464;
+var map__8466__$1 = ((((!((map__8466 == null)))?((((map__8466.cljs$lang$protocol_mask$partition0$ & (64))) || (map__8466.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__8466):map__8466);
+var ref = cljs.core.get.call(null,map__8466__$1,new cljs.core.Keyword(null,"ref","ref",1289896967));
+return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"action","action",-811238024),((function (map__8465,map__8465__$1,state,map__8466,map__8466__$1,ref){
 return (function (){
 return cljs.core.swap_BANG_.call(null,state,cljs.core.assoc,new cljs.core.Keyword("boards","active","boards/active",1298990951),ref);
-});})(map__17617,map__17617__$1,state,map__17618,map__17618__$1,ref))
+});})(map__8465,map__8465__$1,state,map__8466,map__8466__$1,ref))
 ], null);
 }));
 

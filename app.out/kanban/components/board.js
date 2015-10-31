@@ -23,17 +23,17 @@ return this__7584__auto__;
 
 kanban.components.board.Board.prototype = goog.object.clone(React.Component.prototype);
 
-var x10681_10697 = kanban.components.board.Board.prototype;
-x10681_10697.componentWillUpdate = ((function (x10681_10697){
+var x8503_8519 = kanban.components.board.Board.prototype;
+x8503_8519.componentWillUpdate = ((function (x8503_8519){
 return (function (next_props__7525__auto__,next_state__7526__auto__){
 var this__7524__auto__ = this;
 om.next.merge_pending_props_BANG_.call(null,this__7524__auto__);
 
 return om.next.merge_pending_state_BANG_.call(null,this__7524__auto__);
-});})(x10681_10697))
+});})(x8503_8519))
 ;
 
-x10681_10697.shouldComponentUpdate = ((function (x10681_10697){
+x8503_8519.shouldComponentUpdate = ((function (x8503_8519){
 return (function (next_props__7525__auto__,next_state__7526__auto__){
 var this__7524__auto__ = this;
 var or__5094__auto__ = cljs.core.not_EQ_.call(null,om.next.props.call(null,this__7524__auto__),goog.object.get(next_props__7525__auto__,"omcljs$value"));
@@ -47,10 +47,10 @@ return cljs.core.not_EQ_.call(null,goog.object.get(this__7524__auto__.state,"omc
 return and__5082__auto__;
 }
 }
-});})(x10681_10697))
+});})(x8503_8519))
 ;
 
-x10681_10697.componentWillUnmount = ((function (x10681_10697){
+x8503_8519.componentWillUnmount = ((function (x8503_8519){
 return (function (){
 var this__7524__auto__ = this;
 var r__7530__auto__ = om.next.get_reconciler.call(null,this__7524__auto__);
@@ -67,24 +67,24 @@ return null;
 } else {
 return om.next.protocols.drop_component_BANG_.call(null,indexer__7529__auto__,this__7524__auto__);
 }
-});})(x10681_10697))
+});})(x8503_8519))
 ;
 
-x10681_10697.componentDidUpdate = ((function (x10681_10697){
+x8503_8519.componentDidUpdate = ((function (x8503_8519){
 return (function (prev_props__7527__auto__,prev_state__7528__auto__){
 var this__7524__auto__ = this;
 return om.next.clear_prev_props_BANG_.call(null,this__7524__auto__);
-});})(x10681_10697))
+});})(x8503_8519))
 ;
 
-x10681_10697.isMounted = ((function (x10681_10697){
+x8503_8519.isMounted = ((function (x8503_8519){
 return (function (){
 var this__7524__auto__ = this;
 return cljs.core.boolean$.call(null,goog.object.getValueByKeys(this__7524__auto__,"_reactInternalInstance","_renderedComponent"));
-});})(x10681_10697))
+});})(x8503_8519))
 ;
 
-x10681_10697.componentWillMount = ((function (x10681_10697){
+x8503_8519.componentWillMount = ((function (x8503_8519){
 return (function (){
 var this__7524__auto__ = this;
 var indexer__7529__auto__ = cljs.core.get_in.call(null,om.next.get_reconciler.call(null,this__7524__auto__),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"config","config",994861415),new cljs.core.Keyword(null,"indexer","indexer",-1774914315)], null));
@@ -93,17 +93,17 @@ return null;
 } else {
 return om.next.protocols.index_component_BANG_.call(null,indexer__7529__auto__,this__7524__auto__);
 }
-});})(x10681_10697))
+});})(x8503_8519))
 ;
 
-x10681_10697.render = ((function (x10681_10697){
+x8503_8519.render = ((function (x8503_8519){
 return (function (){
 var this$ = this;
-var _STAR_reconciler_STAR_10682 = om.next._STAR_reconciler_STAR_;
-var _STAR_depth_STAR_10683 = om.next._STAR_depth_STAR_;
-var _STAR_shared_STAR_10684 = om.next._STAR_shared_STAR_;
-var _STAR_instrument_STAR_10685 = om.next._STAR_instrument_STAR_;
-var _STAR_parent_STAR_10686 = om.next._STAR_parent_STAR_;
+var _STAR_reconciler_STAR_8504 = om.next._STAR_reconciler_STAR_;
+var _STAR_depth_STAR_8505 = om.next._STAR_depth_STAR_;
+var _STAR_shared_STAR_8506 = om.next._STAR_shared_STAR_;
+var _STAR_instrument_STAR_8507 = om.next._STAR_instrument_STAR_;
+var _STAR_parent_STAR_8508 = om.next._STAR_parent_STAR_;
 om.next._STAR_reconciler_STAR_ = om.next.get_reconciler.call(null,this$);
 
 om.next._STAR_depth_STAR_ = (om.next.depth.call(null,this$) + (1));
@@ -114,42 +114,42 @@ om.next._STAR_instrument_STAR_ = om.next.instrument.call(null,this$);
 
 om.next._STAR_parent_STAR_ = this$;
 
-try{var map__10687 = om.next.props.call(null,this$);
-var map__10687__$1 = ((((!((map__10687 == null)))?((((map__10687.cljs$lang$protocol_mask$partition0$ & (64))) || (map__10687.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__10687):map__10687);
-var name = cljs.core.get.call(null,map__10687__$1,new cljs.core.Keyword(null,"name","name",1843675177));
-var description = cljs.core.get.call(null,map__10687__$1,new cljs.core.Keyword(null,"description","description",-1428560544));
-var lanes = cljs.core.get.call(null,map__10687__$1,new cljs.core.Keyword(null,"lanes","lanes",1843627072));
-var map__10688 = om.next.get_computed.call(null,this$);
-var map__10688__$1 = ((((!((map__10688 == null)))?((((map__10688.cljs$lang$protocol_mask$partition0$ & (64))) || (map__10688.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__10688):map__10688);
-var dragging = cljs.core.get.call(null,map__10688__$1,new cljs.core.Keyword(null,"dragging","dragging",1185097613));
-var card_add_fn = cljs.core.get.call(null,map__10688__$1,new cljs.core.Keyword(null,"card-add-fn","card-add-fn",-1277517446));
-var card_drag_fns = cljs.core.get.call(null,map__10688__$1,new cljs.core.Keyword(null,"card-drag-fns","card-drag-fns",-295465238));
-var card_edit_fn = cljs.core.get.call(null,map__10688__$1,new cljs.core.Keyword(null,"card-edit-fn","card-edit-fn",-1723920421));
-return React.DOM.div({"className": "board"},React.DOM.h2({"className": "board-title"},name," Board"),React.DOM.p({"className": "board-description"},description),(cljs.core.truth_(dragging)?React.DOM.div({"className": "delete", "onDragOver": ((function (map__10687,map__10687__$1,name,description,lanes,map__10688,map__10688__$1,dragging,card_add_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_10682,_STAR_depth_STAR_10683,_STAR_shared_STAR_10684,_STAR_instrument_STAR_10685,_STAR_parent_STAR_10686,this$,x10681_10697){
+try{var map__8509 = om.next.props.call(null,this$);
+var map__8509__$1 = ((((!((map__8509 == null)))?((((map__8509.cljs$lang$protocol_mask$partition0$ & (64))) || (map__8509.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__8509):map__8509);
+var name = cljs.core.get.call(null,map__8509__$1,new cljs.core.Keyword(null,"name","name",1843675177));
+var description = cljs.core.get.call(null,map__8509__$1,new cljs.core.Keyword(null,"description","description",-1428560544));
+var lanes = cljs.core.get.call(null,map__8509__$1,new cljs.core.Keyword(null,"lanes","lanes",1843627072));
+var map__8510 = om.next.get_computed.call(null,this$);
+var map__8510__$1 = ((((!((map__8510 == null)))?((((map__8510.cljs$lang$protocol_mask$partition0$ & (64))) || (map__8510.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__8510):map__8510);
+var dragging = cljs.core.get.call(null,map__8510__$1,new cljs.core.Keyword(null,"dragging","dragging",1185097613));
+var card_add_fn = cljs.core.get.call(null,map__8510__$1,new cljs.core.Keyword(null,"card-add-fn","card-add-fn",-1277517446));
+var card_drag_fns = cljs.core.get.call(null,map__8510__$1,new cljs.core.Keyword(null,"card-drag-fns","card-drag-fns",-295465238));
+var card_edit_fn = cljs.core.get.call(null,map__8510__$1,new cljs.core.Keyword(null,"card-edit-fn","card-edit-fn",-1723920421));
+return React.DOM.div({"className": "board"},React.DOM.h2({"className": "board-title"},name," Board"),React.DOM.p({"className": "board-description"},description),(cljs.core.truth_(dragging)?React.DOM.div({"className": "delete", "onDragOver": ((function (map__8509,map__8509__$1,name,description,lanes,map__8510,map__8510__$1,dragging,card_add_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_8504,_STAR_depth_STAR_8505,_STAR_shared_STAR_8506,_STAR_instrument_STAR_8507,_STAR_parent_STAR_8508,this$,x8503_8519){
 return (function (e){
 return e.preventDefault();
-});})(map__10687,map__10687__$1,name,description,lanes,map__10688,map__10688__$1,dragging,card_add_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_10682,_STAR_depth_STAR_10683,_STAR_shared_STAR_10684,_STAR_instrument_STAR_10685,_STAR_parent_STAR_10686,this$,x10681_10697))
-, "onDrop": new cljs.core.Keyword(null,"delete","delete",-1768633620).cljs$core$IFn$_invoke$arity$1(card_drag_fns)},"Delete"):null),React.DOM.div({"className": "lanes"},(function (){var iter__5866__auto__ = ((function (map__10687,map__10687__$1,name,description,lanes,map__10688,map__10688__$1,dragging,card_add_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_10682,_STAR_depth_STAR_10683,_STAR_shared_STAR_10684,_STAR_instrument_STAR_10685,_STAR_parent_STAR_10686,this$,x10681_10697){
-return (function kanban$components$board$iter__10691(s__10692){
-return (new cljs.core.LazySeq(null,((function (map__10687,map__10687__$1,name,description,lanes,map__10688,map__10688__$1,dragging,card_add_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_10682,_STAR_depth_STAR_10683,_STAR_shared_STAR_10684,_STAR_instrument_STAR_10685,_STAR_parent_STAR_10686,this$,x10681_10697){
+});})(map__8509,map__8509__$1,name,description,lanes,map__8510,map__8510__$1,dragging,card_add_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_8504,_STAR_depth_STAR_8505,_STAR_shared_STAR_8506,_STAR_instrument_STAR_8507,_STAR_parent_STAR_8508,this$,x8503_8519))
+, "onDrop": new cljs.core.Keyword(null,"delete","delete",-1768633620).cljs$core$IFn$_invoke$arity$1(card_drag_fns)},"Delete"):null),React.DOM.div({"className": "lanes"},(function (){var iter__5866__auto__ = ((function (map__8509,map__8509__$1,name,description,lanes,map__8510,map__8510__$1,dragging,card_add_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_8504,_STAR_depth_STAR_8505,_STAR_shared_STAR_8506,_STAR_instrument_STAR_8507,_STAR_parent_STAR_8508,this$,x8503_8519){
+return (function kanban$components$board$iter__8513(s__8514){
+return (new cljs.core.LazySeq(null,((function (map__8509,map__8509__$1,name,description,lanes,map__8510,map__8510__$1,dragging,card_add_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_8504,_STAR_depth_STAR_8505,_STAR_shared_STAR_8506,_STAR_instrument_STAR_8507,_STAR_parent_STAR_8508,this$,x8503_8519){
 return (function (){
-var s__10692__$1 = s__10692;
+var s__8514__$1 = s__8514;
 while(true){
-var temp__4425__auto__ = cljs.core.seq.call(null,s__10692__$1);
+var temp__4425__auto__ = cljs.core.seq.call(null,s__8514__$1);
 if(temp__4425__auto__){
-var s__10692__$2 = temp__4425__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,s__10692__$2)){
-var c__5864__auto__ = cljs.core.chunk_first.call(null,s__10692__$2);
+var s__8514__$2 = temp__4425__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,s__8514__$2)){
+var c__5864__auto__ = cljs.core.chunk_first.call(null,s__8514__$2);
 var size__5865__auto__ = cljs.core.count.call(null,c__5864__auto__);
-var b__10694 = cljs.core.chunk_buffer.call(null,size__5865__auto__);
-if((function (){var i__10693 = (0);
+var b__8516 = cljs.core.chunk_buffer.call(null,size__5865__auto__);
+if((function (){var i__8515 = (0);
 while(true){
-if((i__10693 < size__5865__auto__)){
-var l = cljs.core._nth.call(null,c__5864__auto__,i__10693);
-cljs.core.chunk_append.call(null,b__10694,kanban.components.lane.lane.call(null,om.next.computed.call(null,l,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"card-add-fn","card-add-fn",-1277517446),card_add_fn,new cljs.core.Keyword(null,"card-drag-fns","card-drag-fns",-295465238),card_drag_fns,new cljs.core.Keyword(null,"card-edit-fn","card-edit-fn",-1723920421),card_edit_fn], null))));
+if((i__8515 < size__5865__auto__)){
+var l = cljs.core._nth.call(null,c__5864__auto__,i__8515);
+cljs.core.chunk_append.call(null,b__8516,kanban.components.lane.lane.call(null,om.next.computed.call(null,l,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"card-add-fn","card-add-fn",-1277517446),card_add_fn,new cljs.core.Keyword(null,"card-drag-fns","card-drag-fns",-295465238),card_drag_fns,new cljs.core.Keyword(null,"card-edit-fn","card-edit-fn",-1723920421),card_edit_fn], null))));
 
-var G__10698 = (i__10693 + (1));
-i__10693 = G__10698;
+var G__8520 = (i__8515 + (1));
+i__8515 = G__8520;
 continue;
 } else {
 return true;
@@ -157,35 +157,35 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__10694),kanban$components$board$iter__10691.call(null,cljs.core.chunk_rest.call(null,s__10692__$2)));
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__8516),kanban$components$board$iter__8513.call(null,cljs.core.chunk_rest.call(null,s__8514__$2)));
 } else {
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__10694),null);
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__8516),null);
 }
 } else {
-var l = cljs.core.first.call(null,s__10692__$2);
-return cljs.core.cons.call(null,kanban.components.lane.lane.call(null,om.next.computed.call(null,l,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"card-add-fn","card-add-fn",-1277517446),card_add_fn,new cljs.core.Keyword(null,"card-drag-fns","card-drag-fns",-295465238),card_drag_fns,new cljs.core.Keyword(null,"card-edit-fn","card-edit-fn",-1723920421),card_edit_fn], null))),kanban$components$board$iter__10691.call(null,cljs.core.rest.call(null,s__10692__$2)));
+var l = cljs.core.first.call(null,s__8514__$2);
+return cljs.core.cons.call(null,kanban.components.lane.lane.call(null,om.next.computed.call(null,l,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"card-add-fn","card-add-fn",-1277517446),card_add_fn,new cljs.core.Keyword(null,"card-drag-fns","card-drag-fns",-295465238),card_drag_fns,new cljs.core.Keyword(null,"card-edit-fn","card-edit-fn",-1723920421),card_edit_fn], null))),kanban$components$board$iter__8513.call(null,cljs.core.rest.call(null,s__8514__$2)));
 }
 } else {
 return null;
 }
 break;
 }
-});})(map__10687,map__10687__$1,name,description,lanes,map__10688,map__10688__$1,dragging,card_add_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_10682,_STAR_depth_STAR_10683,_STAR_shared_STAR_10684,_STAR_instrument_STAR_10685,_STAR_parent_STAR_10686,this$,x10681_10697))
+});})(map__8509,map__8509__$1,name,description,lanes,map__8510,map__8510__$1,dragging,card_add_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_8504,_STAR_depth_STAR_8505,_STAR_shared_STAR_8506,_STAR_instrument_STAR_8507,_STAR_parent_STAR_8508,this$,x8503_8519))
 ,null,null));
-});})(map__10687,map__10687__$1,name,description,lanes,map__10688,map__10688__$1,dragging,card_add_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_10682,_STAR_depth_STAR_10683,_STAR_shared_STAR_10684,_STAR_instrument_STAR_10685,_STAR_parent_STAR_10686,this$,x10681_10697))
+});})(map__8509,map__8509__$1,name,description,lanes,map__8510,map__8510__$1,dragging,card_add_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_8504,_STAR_depth_STAR_8505,_STAR_shared_STAR_8506,_STAR_instrument_STAR_8507,_STAR_parent_STAR_8508,this$,x8503_8519))
 ;
 return iter__5866__auto__.call(null,lanes);
 })()),React.DOM.div({"className": "help"},React.DOM.h3({"className": "help-title"},"Help"),React.DOM.ul({"className": "instructions"},React.DOM.li(null,"Move cards between lanes by dragging them"),React.DOM.li(null,"Create new cards by clicking on the + in a lane"),React.DOM.li(null,"Delete cards by dragging them to the delete area"),React.DOM.li(null,"Edit cards by clicking on them"))));
-}finally {om.next._STAR_parent_STAR_ = _STAR_parent_STAR_10686;
+}finally {om.next._STAR_parent_STAR_ = _STAR_parent_STAR_8508;
 
-om.next._STAR_instrument_STAR_ = _STAR_instrument_STAR_10685;
+om.next._STAR_instrument_STAR_ = _STAR_instrument_STAR_8507;
 
-om.next._STAR_shared_STAR_ = _STAR_shared_STAR_10684;
+om.next._STAR_shared_STAR_ = _STAR_shared_STAR_8506;
 
-om.next._STAR_depth_STAR_ = _STAR_depth_STAR_10683;
+om.next._STAR_depth_STAR_ = _STAR_depth_STAR_8505;
 
-om.next._STAR_reconciler_STAR_ = _STAR_reconciler_STAR_10682;
-}});})(x10681_10697))
+om.next._STAR_reconciler_STAR_ = _STAR_reconciler_STAR_8504;
+}});})(x8503_8519))
 ;
 
 
@@ -193,43 +193,43 @@ kanban.components.board.Board.prototype.constructor = kanban.components.board.Bo
 
 kanban.components.board.Board.prototype.om$isComponent = true;
 
-var x10695_10699 = kanban.components.board.Board;
-x10695_10699.om$next$Ident$ = true;
+var x8517_8521 = kanban.components.board.Board;
+x8517_8521.om$next$Ident$ = true;
 
-x10695_10699.om$next$Ident$ident$arity$2 = ((function (x10695_10699){
+x8517_8521.om$next$Ident$ident$arity$2 = ((function (x8517_8521){
 return (function (this$,props){
 var this$__$1 = this;
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("board","by-id","board/by-id",-2089033891),new cljs.core.Keyword(null,"id","id",-1388402092).cljs$core$IFn$_invoke$arity$1(props)], null);
-});})(x10695_10699))
+});})(x8517_8521))
 ;
 
-x10695_10699.om$next$IQuery$ = true;
+x8517_8521.om$next$IQuery$ = true;
 
-x10695_10699.om$next$IQuery$query$arity$1 = ((function (x10695_10699){
+x8517_8521.om$next$IQuery$query$arity$1 = ((function (x8517_8521){
 return (function (this$){
 var this$__$1 = this;
 return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"id","id",-1388402092),new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"description","description",-1428560544),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"lanes","lanes",1843627072),om.next.get_query.call(null,kanban.components.lane.Lane)], null)], null);
-});})(x10695_10699))
+});})(x8517_8521))
 ;
 
 
-var x10696_10700 = kanban.components.board.Board.prototype;
-x10696_10700.om$next$Ident$ = true;
+var x8518_8522 = kanban.components.board.Board.prototype;
+x8518_8522.om$next$Ident$ = true;
 
-x10696_10700.om$next$Ident$ident$arity$2 = ((function (x10696_10700){
+x8518_8522.om$next$Ident$ident$arity$2 = ((function (x8518_8522){
 return (function (this$,props){
 var this$__$1 = this;
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("board","by-id","board/by-id",-2089033891),new cljs.core.Keyword(null,"id","id",-1388402092).cljs$core$IFn$_invoke$arity$1(props)], null);
-});})(x10696_10700))
+});})(x8518_8522))
 ;
 
-x10696_10700.om$next$IQuery$ = true;
+x8518_8522.om$next$IQuery$ = true;
 
-x10696_10700.om$next$IQuery$query$arity$1 = ((function (x10696_10700){
+x8518_8522.om$next$IQuery$query$arity$1 = ((function (x8518_8522){
 return (function (this$){
 var this$__$1 = this;
 return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"id","id",-1388402092),new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"description","description",-1428560544),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"lanes","lanes",1843627072),om.next.get_query.call(null,kanban.components.lane.Lane)], null)], null);
-});})(x10696_10700))
+});})(x8518_8522))
 ;
 
 
@@ -240,8 +240,8 @@ kanban.components.board.Board.cljs$lang$ctorStr = "kanban.components.board/Board
 kanban.components.board.Board.cljs$lang$ctorPrWriter = (function (this__7586__auto__,writer__7587__auto__,opt__7588__auto__){
 return cljs.core._write.call(null,writer__7587__auto__,"kanban.components.board/Board");
 });
-kanban.components.board.board = om.next.factory.call(null,kanban.components.board.Board,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keyfn","keyfn",780060332),(function (p1__10701_SHARP_){
-return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("board","by-id","board/by-id",-2089033891),new cljs.core.Keyword(null,"id","id",-1388402092).cljs$core$IFn$_invoke$arity$1(p1__10701_SHARP_)], null);
+kanban.components.board.board = om.next.factory.call(null,kanban.components.board.Board,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keyfn","keyfn",780060332),(function (p1__8523_SHARP_){
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("board","by-id","board/by-id",-2089033891),new cljs.core.Keyword(null,"id","id",-1388402092).cljs$core$IFn$_invoke$arity$1(p1__8523_SHARP_)], null);
 })], null));
 
 //# sourceMappingURL=board.js.map

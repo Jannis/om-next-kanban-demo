@@ -10,7 +10,7 @@
     [:card/by-id (:id props)])
   static om/IQuery
   (query [this]
-    [:id :text {:assignees (om/get-query Assignee)}])
+    [:id :text {:assignees (om/get-query Assignee)} :errors])
   Object
   (toggle-assignee [this ref]
     (let [{:keys [assignees]} (om/props this)
@@ -31,7 +31,7 @@
       (update-fn (om/get-ident this) {:text text})))
 
   (render [this]
-    (let [{:keys [id text assignees]} (om/props this)
+    (let [{:keys [id text assignees errors]} (om/props this)
           {:keys [users close-fn update-fn]} (om/get-computed this)]
       (dom/div #js {:className "card-editor"}
         (dom/div #js {:className "closer" :onClick close-fn})
@@ -49,13 +49,19 @@
                       (om/computed user
                                    {:with-name true
                                     :activate-fn #(.toggle-assignee this %)
-                                    :selected selected}))))))
+                                    :selected selected})))))
+              (when (:assignees errors)
+                (dom/ul #js {:className "errors"}
+                  (map-indexed #(dom/li #js {:key %1} %2) (:assignees errors)))))
             (dom/div #js {:className "form-row"}
               (dom/label nil "Text:")
               (dom/textarea
                 #js {:value text
                      :placeholder "Enter a card description here..."
-                     :onChange #(.update-text this (.. % -target -value))})))
+                     :onChange #(.update-text this (.. % -target -value))})
+              (when (:text errors)
+                (dom/ul #js {:className "errors"}
+                  (map-indexed #(dom/li #js {:key %1} %2) (:text errors))))))
           (dom/p #js {:className "buttons"}
             (dom/button #js {:onClick close-fn} "Close"))
           (dom/div #js {:className "help"}
