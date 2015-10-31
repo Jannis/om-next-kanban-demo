@@ -196,7 +196,7 @@ body {
   }
 }
 
-.card-editor {
+.dialog {
   position: fixed;
   left: 0;
   top: 0;
@@ -207,7 +207,7 @@ body {
   padding: 4rem;
   box-sizing: border-box;
 
-  .closer {
+  .dialog-closer {
     z-index: 0;
     position: fixed;
     height: 100%;
@@ -216,14 +216,10 @@ body {
     left: 0;
   }
 
-  .content {
-    z-index: 1;
-    position: relative;
-    max-width: 40rem;
-    margin: auto;
+  .dialog-header {
   }
 
-  .title {
+  .dialog-title {
     font-size: 1rem;
     font-weight: 500;
     padding-bottom: 0.5rem;
@@ -234,44 +230,11 @@ body {
     }
   }
 
-  .form-row {
-    display: table;
-    width: 100%;
-    border-spacing: 0rem;
-    table-layout: fixed;
-    box-sizing: border-box;
-    margin: 0rem 0rem 0.5rem 0rem;
-    line-height: 2rem;
-
-    label {
-      display: table-cell;
-      vertical-align: top;
-      width: 5rem;
-      padding-right: 0.5rem;
-    }
-
-    .input, input, textarea {
-      display: table-cell;
-      box-sizing: border-box;
-      width: 100%;
-      vertical-align: top;
-    }
-
-    input, textarea {
-      border: thin solid lighten(@black, 80%);
-      border-radius: 0.25rem;
-      outline: none;
-      font: inherit;
-      padding: 0rem 0.5rem;
-
-      &:focus {
-        border-color: lighten(@black, 50%);
-      }
-    }
-
-    textarea {
-      height: 5rem;
-    }
+  .dialog-content {
+    z-index: 1;
+    position: relative;
+    max-width: 40rem;
+    margin: auto;
   }
 
   .assignee {
@@ -282,7 +245,7 @@ body {
     cursor: pointer;
   }
 
-  .buttons {
+  .dialog-buttons {
     text-align: right;
     margin: 0;
 
@@ -355,6 +318,48 @@ body {
         position: relative;
         left: -0.5rem
       }
+    }
+  }
+}
+
+form {
+  .form-row {
+    display: table;
+    width: 100%;
+    border-spacing: 0rem;
+    table-layout: fixed;
+    box-sizing: border-box;
+    margin: 0rem 0rem 0.5rem 0rem;
+    line-height: 2rem;
+
+    label {
+      display: table-cell;
+      vertical-align: top;
+      width: 5rem;
+      padding-right: 0.5rem;
+    }
+
+    .input, input, textarea {
+      display: table-cell;
+      box-sizing: border-box;
+      width: 100%;
+      vertical-align: top;
+    }
+
+    input, textarea {
+      border: thin solid lighten(@black, 80%);
+      border-radius: 0.25rem;
+      outline: none;
+      font: inherit;
+      padding: 0rem 0.5rem;
+
+      &:focus {
+        border-color: lighten(@black, 50%);
+      }
+    }
+
+    textarea {
+      height: 5rem;
     }
   }
 }

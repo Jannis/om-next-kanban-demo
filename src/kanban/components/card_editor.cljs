@@ -33,12 +33,11 @@
   (render [this]
     (let [{:keys [id text assignees]} (om/props this)
           {:keys [users close-fn update-fn]} (om/get-computed this)]
-      (dom/div #js {:className "card-editor"}
-        (dom/div #js {:className "closer" :onClick close-fn})
-        (dom/div #js {:className "content"}
-          (dom/h1 #js {:className "title"}
-            "Edit card"
-            (dom/span #js {:className "card-id"} id))
+      (dom/div #js {:className "dialog"}
+        (dom/div #js {:className "dialog-closer" :onClick close-fn})
+        (dom/div #js {:className "dialog-content"}
+          (dom/h1 #js {:className "dialog-title"}
+            "Edit card" (dom/span #js {:className "card-id"} id))
           (dom/form #js {:onSubmit #(.preventDefault %)}
             (dom/div #js {:className "form-row"}
               (dom/label nil "Assignees:")
@@ -56,7 +55,7 @@
                 #js {:value text
                      :placeholder "Enter a card description here..."
                      :onChange #(.update-text this (.. % -target -value))})))
-          (dom/p #js {:className "buttons"}
+          (dom/p #js {:className "dialog-buttons"}
             (dom/button #js {:onClick close-fn} "Close"))
           (dom/div #js {:className "help"}
             (dom/h3 #js {:className "help-title"} "Help")
