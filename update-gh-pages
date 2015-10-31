@@ -11,15 +11,17 @@ cp -R target/app.* target/index.html "$tmpdir"
 # Switch to the gh-pages branch
 git checkout gh-pages
 
-# Copy the build into it
+# Remove the old sources
+git rm -rf app.* index.html
 
+# Copy the build into it
 cp -R "$tmpdir"/* .
 rm -rf "$tmpdir"
 
 # Determine the latest commit in master
 commit=$(git log -n1 --format="%H" master)
 
-# Create a new commit
+# Create a new commit from the new sources
 git add app.* index.html
 git commit -a -m "Update to $commit"
 
