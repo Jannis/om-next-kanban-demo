@@ -14,10 +14,14 @@
   Object
   (render [this]
     (let [{:keys [name description lanes]} (om/props this)
-          {:keys [dragging card-add-fn card-drag-fns card-edit-fn]}
+          {:keys [dragging edit-fn
+                  card-create-fn card-drag-fns card-edit-fn]}
             (om/get-computed this)]
       (dom/div #js {:className "board"}
-        (dom/h2 #js {:className "board-title"} name " Board")
+        (dom/h2 #js {:className "board-title"}
+          name " Board "
+          (dom/a #js {:className "board-edit"
+                      :onClick #(edit-fn (om/get-ident this))} "Edit"))
         (dom/p #js {:className "board-description"} description)
         (when dragging
           (dom/div #js {:className "delete"
@@ -26,7 +30,7 @@
             "Delete"))
         (dom/div #js {:className "lanes"}
           (for [l lanes]
-            (lane (om/computed l {:card-add-fn card-add-fn
+            (lane (om/computed l {:card-create-fn card-create-fn
                                   :card-drag-fns card-drag-fns
                                   :card-edit-fn card-edit-fn}))))
         (dom/div #js {:className "help"}

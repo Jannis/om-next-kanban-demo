@@ -43,6 +43,7 @@ body {
 
 .header-menu {
   position: relative;
+  z-index: 1;
 
   a {
     display: inline-block;
@@ -75,14 +76,36 @@ body {
   }
 }
 
+.header-menu-separator {
+  border-top: thin solid lighten(@black, 10%);
+}
+
 .board {
   .board-title {
+    position: relative;
     margin: 0rem;
     padding: 0.5rem;
     background: @blue;
     color: @white;
     font-size: 1rem;
     font-weight: 500;
+
+    .board-edit {
+      position: absolute;
+      z-index: 0;
+      box-sizing: border-box;
+      right: 0.25rem;
+      padding: 0.25rem;
+      top: 0.25rem;
+      display: inline-block;
+      font-weight: 300;
+      cursor: pointer;
+      opacity: 0.8;
+
+      &:hover {
+        opacity: 1.0;
+      }
+    }
   }
 
   .board-description {
@@ -185,6 +208,15 @@ body {
   font-size: 1rem;
 }
 
+.board-name {
+  background: @blue;
+  color: @white;
+  border-radius: 0.5rem;
+  padding: 0rem 0.25rem;
+  height: 1rem;
+  font-size: 1rem;
+}
+
 .assignee {
   color: @green;
 
@@ -225,7 +257,7 @@ body {
     padding-bottom: 0.5rem;
     border-bottom: thin solid @black;
 
-    .card-id {
+    .card-id, .board-name {
       margin-left: 0.5rem;
     }
   }

@@ -23,13 +23,17 @@
 (defui BoardsMenu
   Object
   (render [this]
-    (dom/div #js {:className "header-menu"}
-      (dom/a nil "▾ Boards")
-      (dom/ul nil
-        (let [{:keys [boards]} (om/props this)
-              {:keys [activate-fn]} (om/get-computed this)]
+    (let [{:keys [boards]} (om/props this)
+          {:keys [activate-fn create-fn]} (om/get-computed this)]
+      (dom/div #js {:className "header-menu"}
+        (dom/a nil "▾ Boards")
+        (dom/ul nil
           (for [board boards]
             (board-menu-item
-              (om/computed board {:activate-fn activate-fn}))))))))
+              (om/computed board {:activate-fn activate-fn})))
+          (dom/li #js {:className "header-menu-separator"})
+          (dom/li nil
+            (dom/a #js {:onClick create-fn}
+              "Create")))))))
 
 (def boards-menu (om/factory BoardsMenu))
