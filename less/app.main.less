@@ -286,6 +286,13 @@ body {
     cursor: pointer;
   }
 
+  .lane-name {
+    padding: 0.25rem;
+    border: thin solid @purple;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+
   .dialog-buttons {
     text-align: right;
     margin: 0;
@@ -409,13 +416,13 @@ form {
   list-style: none;
   padding: 0rem;
   margin: 0rem;
-  width: 100%;
 
   .sortable-item {
-    display: inline-block;
     margin-right: 0.5rem;
+    display: inline-block;
     box-sizing: border-box;
     border: thin dotted transparent;
+    border-radius: 0.25rem;
     cursor: pointer;
 
     &.placeholder {
