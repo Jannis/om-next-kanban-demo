@@ -63,8 +63,8 @@
                (om/update-state! this assoc :items))))))
 
   (drag-drop [this e target-item]
-    (let [{:keys [update-fn]} (om/props this)]
-      (update-fn (map :data (om/get-state this :items)))))
+    (let [{:keys [change-fn]} (om/props this)]
+      (change-fn (map :data (om/get-state this :items)))))
 
   (render [this]
     (let [items (or (:items (om/get-state this)

@@ -42,7 +42,7 @@
             (dom/div #js {:className "form-row"}
               (dom/label nil "Lanes:")
               (sortable-list
-                {:update-fn (fn [lanes]
+                {:change-fn (fn [lanes]
                               (->> lanes
                                    (map #(-> [:lane/by-id (:id %)]))
                                    (.update this :lanes)))
