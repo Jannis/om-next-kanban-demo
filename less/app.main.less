@@ -395,3 +395,25 @@ form {
     }
   }
 }
+
+.sortable-list {
+  list-style: none;
+  padding: 0rem;
+  margin: 0rem;
+  width: 100%;
+
+  .sortable-item {
+    display: inline-block;
+    margin-right: 0.5rem;
+    box-sizing: border-box;
+    border: thin dotted transparent;
+
+    &.placeholder {
+      border: thin dotted lighten(@black, 80%);
+
+      * {
+        opacity: 0;
+      }
+    }
+  }
+}
