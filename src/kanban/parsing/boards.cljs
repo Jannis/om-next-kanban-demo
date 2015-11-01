@@ -27,7 +27,8 @@
 
 (defmethod mutate 'boards/activate
   [{:keys [state]} _ {:keys [ref]}]
-  {:action #(swap! state assoc :boards/active ref)})
+  {:value [:boards/active]
+   :action #(swap! state assoc :boards/active ref)})
 
 (defmethod read :boards/editing
   [{:keys [state]} key _]
@@ -43,7 +44,8 @@
 
 (defmethod mutate 'boards/update
   [{:keys [state]} _ {:keys [board data]}]
-  {:action (fn [] (swap! state update-in board #(merge % data)))})
+  {:value [:boards :boards/active]
+   :action (fn [] (swap! state update-in board #(merge % data)))})
 
 (defn create-board [st]
   (let [id    (->> (get-boards st :boards) (map :id) (cons 0) (reduce max) inc)
@@ -56,5 +58,5 @@
 
 (defmethod mutate 'boards/create-board
   [{:keys [state]} _ _]
-  {:value [:boards]
+  {:value [:boards :boards/editing]
    :action #(swap! state create-board)})
