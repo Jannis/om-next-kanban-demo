@@ -3,82 +3,88 @@
             [om.dom :as dom]
             [kanban.util :refer [class-names index-of]]))
 
-(defui SortableItem
+(defn sortable-key [x]
+  (let [props (cond-> x (om/component? x) om/props)]
+    ((:key-fn (om/get-computed props)) props)))
+
+(defui Sortable
   Object
-  (get-item [this]
-    (select-keys (om/props this) [:key :data :element]))
-
-  (drag-start [this e]
-    (let [{:keys [key data element]} (om/props this)
-          {:keys [drag-fns]} (om/get-computed this)]
-      (-> e .-dataTransfer .-effectAllowed (set! "move"))
-      (.. e -dataTransfer (setData "text/html" element))
-      ((:start drag-fns) e this)))
-
   (render [this]
-    (let [{:keys [key data element]} (om/props this)
-          {:keys [placeholder drag-fns]} (om/get-computed this)]
-      (dom/li #js {:className (class-names {:sortable-item true
+    (let [{:keys [placeholder element-fn drag-fns]} (om/get-computed this)]
+      (dom/li #js {:className (class-names {:sortable true
                                             :placeholder placeholder})
                    :draggable true
-                   :onDragStart #(.drag-start this %)
+                   :onDragStart #((:start drag-fns) % this)
                    :onDragEnd #((:end drag-fns) % this)
                    :onDragOver #((:over drag-fns) % this)
                    :onDrop #((:drop drag-fns) % this)}
-        element))))
+        (element-fn (om/props this))))))
 
-(def sortable-item (om/factory SortableItem {:keyfn :key}))
+(def sortable (om/factory Sortable {:keyfn sortable-key}))
 
 (defui SortableList
   Object
-  (drag-start [this e item]
-    (let [node (dom/node item)]
-      (om/update-state! this assoc :drag-item item)))
+  (item-for-key [this key]
+    (let [{:keys [items key-fn]} (om/props this)]
+      (first (filter #(= key (key-fn %)) items))))
 
-  (drag-end [this e item]
-    (om/update-state! this dissoc :drag-item))
+  (drag-start [this e child]
+    (let [key (sortable-key child)]
+      (om/update-state! this assoc :drag-key key)))
 
-  (drag-over-item [this e target-item]
-    (let [drag-item (:drag-item (om/get-state this))]
-      (-> e .-dataTransfer .-dropEffect (set! "move"))
-      (.preventDefault e)
-      (when-not (= drag-item target-item)
+  (drag-end [this e child]
+    (om/update-state! this dissoc :drag-key))
+
+  (drag-over [this e]
+    (.preventDefault e))
+
+  (drag-over-item [this e target-child]
+    (-> e .-dataTransfer .-dropEffect (set! "move"))
+    (.preventDefault e)
+    (let [target-key (sortable-key target-child)
+          drag-key   (:drag-key (om/get-state this))
+          key-fn     (:key-fn (om/props this))]
+      (when-not (= drag-key target-key)
         (let [x (.-clientX e)
               y (.-clientY e)
-              node (dom/node target-item)
+              node (dom/node target-child)
               rect (.getBoundingClientRect node)
               center-x (-> (.-left rect) (+ (.-right rect)) (/ 2))
               center-y (-> (.-top rect) (+ (.-bottom rect)) (/ 2))
               where (if (< x center-x) :before :after)
               items (or (:items (om/get-state this))
-                        (:items (om/props this)))
-              items-without-drag (remove #{(.get-item drag-item)} items)
-              index (-> (.get-item target-item)
-                        (index-of items-without-drag)
-                        (cond-> (= where :before) identity
-                                (= where :after)  inc))]
+                     (:items (om/props this)))
+              items-without-drag (remove #(= drag-key (key-fn %)) items)
+              index (-> target-key
+                        (index-of (map key-fn items-without-drag))
+                        (cond-> (= where :after) inc))]
           (->> items-without-drag
                (split-at index)
-               (#(concat (first %) [(.get-item drag-item)] (second %)))
+               (#(concat (first %) [(.item-for-key this drag-key)] (second %)))
                (om/update-state! this assoc :items))))))
 
-  (drag-drop [this e target-item]
+  (drag-drop [this e]
     (let [{:keys [change-fn]} (om/props this)]
-      (change-fn (map :data (om/get-state this :items)))))
+      (change-fn (om/get-state this :items))))
 
   (render [this]
     (let [items (or (:items (om/get-state this)
                     (:items (om/props this))))
-          {:keys [drag-item]} (om/get-state this)]
-      (dom/ul #js {:className "sortable-list"}
+          {:keys [key-fn element-fn]} (om/props this)
+          {:keys [drag-key]} (om/get-state this)]
+      (dom/ul #js {:className "sortable-list"
+                   :onDragOver #(.drag-over this %)
+                   :onDrop #(.drag-drop this %)}
         (for [item items]
-          (sortable-item
+          (sortable
             (om/computed
               item
-              {:placeholder (= item (some-> drag-item .get-item))
+              {:placeholder (= drag-key (key-fn item))
+               :key-fn key-fn
+               :element-fn element-fn
                :drag-fns {:start #(.drag-start this %1 %2)
                           :end #(.drag-end this %1 %2)
                           :over #(.drag-over-item this %1 %2)
-                          :drop #(.drag-drop this %1 %2)}})))))))
+                          :drop #(.drag-drop this %1)}})))))))
 
 (def sortable-list (om/factory SortableList))
