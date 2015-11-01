@@ -1,16 +1,16 @@
-(ns kanban.components.card-editor
+(ns kanban.components.card-dialog
   (:require [goog.object :as gobj]
             [om.next :as om :refer-macros [defui]]
             [om.dom :as dom]
             [kanban.components.card :refer [Assignee assignee]]))
 
-(defui CardEditor
+(defui CardDialog
   static om/Ident
   (ident [this props]
     [:card/by-id (:id props)])
   static om/IQuery
   (query [this]
-    [:id :text {:assignees (om/get-query Assignee)} :errors])
+    [:id :text {:assignees (om/get-query Assignee)}])
   Object
   (toggle-assignee [this ref]
     (let [{:keys [assignees]} (om/props this)
@@ -31,14 +31,13 @@
       (update-fn (om/get-ident this) {:text text})))
 
   (render [this]
-    (let [{:keys [id text assignees errors]} (om/props this)
+    (let [{:keys [id text assignees]} (om/props this)
           {:keys [users close-fn update-fn]} (om/get-computed this)]
-      (dom/div #js {:className "card-editor"}
-        (dom/div #js {:className "closer" :onClick close-fn})
-        (dom/div #js {:className "content"}
-          (dom/h1 #js {:className "title"}
-            "Edit card"
-            (dom/span #js {:className "card-id"} id))
+      (dom/div #js {:className "dialog"}
+        (dom/div #js {:className "dialog-closer" :onClick close-fn})
+        (dom/div #js {:className "dialog-content"}
+          (dom/h1 #js {:className "dialog-title"}
+            "Edit card" (dom/span #js {:className "card-id"} id))
           (dom/form #js {:onSubmit #(.preventDefault %)}
             (dom/div #js {:className "form-row"}
               (dom/label nil "Assignees:")
@@ -49,20 +48,14 @@
                       (om/computed user
                                    {:with-name true
                                     :activate-fn #(.toggle-assignee this %)
-                                    :selected selected})))))
-              (when (:assignees errors)
-                (dom/ul #js {:className "errors"}
-                  (map-indexed #(dom/li #js {:key %1} %2) (:assignees errors)))))
+                                    :selected selected}))))))
             (dom/div #js {:className "form-row"}
               (dom/label nil "Text:")
               (dom/textarea
                 #js {:value text
                      :placeholder "Enter a card description here..."
-                     :onChange #(.update-text this (.. % -target -value))})
-              (when (:text errors)
-                (dom/ul #js {:className "errors"}
-                  (map-indexed #(dom/li #js {:key %1} %2) (:text errors))))))
-          (dom/p #js {:className "buttons"}
+                     :onChange #(.update-text this (.. % -target -value))})))
+          (dom/p #js {:className "dialog-buttons"}
             (dom/button #js {:onClick close-fn} "Close"))
           (dom/div #js {:className "help"}
             (dom/h3 #js {:className "help-title"} "Help")
@@ -71,4 +64,4 @@
               (dom/li nil "Change the card description via the text field")
               (dom/li nil "Click anywhere to close the dialog"))))))))
 
-(def card-editor (om/factory CardEditor {:keyfn #(-> [:card-editor (:id %)])}))
+(def card-dialog (om/factory CardDialog {:keyfn #(-> [:card-dialog (:id %)])}))

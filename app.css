@@ -30,6 +30,7 @@ body {
 }
 .header-menu {
   position: relative;
+  z-index: 1;
 }
 .header-menu a {
   display: inline-block;
@@ -56,13 +57,32 @@ body {
 .header-menu:hover ul {
   display: block;
 }
+.header-menu-separator {
+  border-top: thin solid #2b2b2b;
+}
 .board .board-title {
+  position: relative;
   margin: 0rem;
   padding: 0.5rem;
   background: #00b8d4;
   color: #ffffff;
   font-size: 1rem;
   font-weight: 500;
+}
+.board .board-title .board-edit {
+  position: absolute;
+  z-index: 0;
+  box-sizing: border-box;
+  right: 0.25rem;
+  padding: 0.25rem;
+  top: 0.25rem;
+  display: inline-block;
+  font-weight: 300;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.board .board-title .board-edit:hover {
+  opacity: 1.0;
 }
 .board .board-description {
   margin: 1rem 0.5rem 1rem 0.5rem;
@@ -148,6 +168,22 @@ body {
   height: 1rem;
   font-size: 1rem;
 }
+.board-name {
+  background: #00b8d4;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 0rem 0.25rem;
+  height: 1rem;
+  font-size: 1rem;
+}
+.lane-name {
+  background: #ec407a;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 0rem 0.25rem;
+  height: 1rem;
+  font-size: 1rem;
+}
 .assignee {
   color: #00C853;
 }
@@ -157,7 +193,7 @@ body {
   background: #00C853;
   color: #ffffff;
 }
-.card-editor {
+.dialog {
   position: fixed;
   left: 0;
   top: 0;
@@ -168,7 +204,7 @@ body {
   padding: 4rem;
   box-sizing: border-box;
 }
-.card-editor .closer {
+.dialog .dialog-closer {
   z-index: 0;
   position: fixed;
   height: 100%;
@@ -176,84 +212,41 @@ body {
   top: 0;
   left: 0;
 }
-.card-editor .content {
-  z-index: 1;
-  position: relative;
-  max-width: 40rem;
-  margin: auto;
-}
-.card-editor .title {
+.dialog .dialog-title {
   font-size: 1rem;
   font-weight: 500;
   padding-bottom: 0.5rem;
   border-bottom: thin solid #111111;
 }
-.card-editor .title .card-id {
+.dialog .dialog-title .card-id,
+.dialog .dialog-title .board-name {
   margin-left: 0.5rem;
 }
-.card-editor .form-row {
-  display: table;
-  width: 100%;
-  border-spacing: 0rem;
-  table-layout: fixed;
-  box-sizing: border-box;
-  margin: 0rem 0rem 0.5rem 0rem;
-  line-height: 2rem;
+.dialog .dialog-content {
+  z-index: 1;
+  position: relative;
+  max-width: 40rem;
+  margin: auto;
 }
-.card-editor .form-row label {
-  display: table-cell;
-  vertical-align: top;
-  width: 5rem;
-  padding-right: 0.5rem;
-}
-.card-editor .form-row .input,
-.card-editor .form-row input,
-.card-editor .form-row textarea {
-  display: table-cell;
-  box-sizing: border-box;
-  width: 100%;
-  vertical-align: top;
-}
-.card-editor .form-row input,
-.card-editor .form-row textarea {
-  border: thin solid #dddddd;
-  border-radius: 0.25rem;
-  outline: none;
-  font: inherit;
-  padding: 0rem 0.5rem;
-}
-.card-editor .form-row input:focus,
-.card-editor .form-row textarea:focus {
-  border-color: #919191;
-}
-.card-editor .form-row textarea {
-  height: 5rem;
-}
-.card-editor .form-row .errors {
-  margin: 0rem;
-  padding: 0rem;
-  list-style: none;
-  color: red;
-}
-.card-editor .assignee {
+.dialog .assignee {
   padding: 0.25rem;
   margin-right: 0.5rem;
   border: thin solid #00C853;
   border-radius: 0.25rem;
   cursor: pointer;
 }
-.card-editor .buttons {
+.dialog .dialog-buttons {
   text-align: right;
   margin: 0;
 }
-.card-editor .buttons button {
+.dialog .dialog-buttons button {
   padding: 0.5rem;
   border-radius: 0.25rem;
   border: thin solid #dddddd;
   background: #f7f7f7;
   cursor: pointer;
 }
-.card-editor .buttons button:hover {
+.dialog .dialog-buttons button:hover {
   border: thin solid #d0d0d0;
   background: #f4f4f4;
 }
@@ -303,4 +296,60 @@ body {
   content: "\2192";
   position: relative;
   left: -0.5rem;
+}
+form .form-row {
+  display: table;
+  width: 100%;
+  border-spacing: 0rem;
+  table-layout: fixed;
+  box-sizing: border-box;
+  margin: 0rem 0rem 0.5rem 0rem;
+  line-height: 2rem;
+}
+form .form-row label {
+  display: table-cell;
+  vertical-align: top;
+  width: 5rem;
+  padding-right: 0.5rem;
+}
+form .form-row .input,
+form .form-row input,
+form .form-row textarea {
+  display: table-cell;
+  box-sizing: border-box;
+  width: 100%;
+  vertical-align: top;
+}
+form .form-row input,
+form .form-row textarea {
+  border: thin solid #dddddd;
+  border-radius: 0.25rem;
+  outline: none;
+  font: inherit;
+  padding: 0rem 0.5rem;
+}
+form .form-row input:focus,
+form .form-row textarea:focus {
+  border-color: #919191;
+}
+form .form-row textarea {
+  height: 15rem;
+}
+.sortable-list {
+  list-style: none;
+  padding: 0rem;
+  margin: 0rem;
+  width: 100%;
+}
+.sortable-list .sortable-item {
+  display: inline-block;
+  margin-right: 0.5rem;
+  box-sizing: border-box;
+  border: thin dotted transparent;
+}
+.sortable-list .sortable-item.placeholder {
+  border: thin dotted #dddddd;
+}
+.sortable-list .sortable-item.placeholder * {
+  opacity: 0;
 }

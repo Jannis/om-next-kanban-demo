@@ -1,6 +1,5 @@
 (ns kanban.parsing.cards
-  (:require [thi.ng.validate.core :as v]
-            [kanban.parsing.users :as users]
+  (:require [kanban.parsing.users :as users]
             [kanban.reconciler :refer [mutate read]]))
 
 (defn get-card [st ref]
@@ -55,26 +54,11 @@
       {:value (get-card st ref)}
       {:value nil})))
 
-(defmethod read :cards/editing-errors
-  [{:keys [state]} key _]
-  (let [st @state]
-    (println (get st key))
-    {:value (or (get st key) {})}))
-
 (defmethod mutate 'cards/edit
   [{:keys [state]} _ {:keys [card]}]
   {:value [:cards/editing]
    :action (fn [] (swap! state assoc :cards/editing card))})
 
-(def card-schema
-  {:id        [(v/number) (v/pos)]
-   :assignees [(v/optional (v/vector))]
-   :text      [(v/string) (v/min-length 1 "The description may not be empty")]})
-
-(defn validate-card [card]
-  (assoc card :errors (second (v/validate card card-schema))))
-
 (defmethod mutate 'cards/update
   [{:keys [state]} _ {:keys [card data]}]
-  {:value [:cards]
-   :action #(swap! state update-in card (comp validate-card merge) data)})
+  {:action (fn [] (swap! state update-in card #(merge % data)))})

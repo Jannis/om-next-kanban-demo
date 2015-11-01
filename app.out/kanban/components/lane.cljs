@@ -14,7 +14,7 @@
   Object
   (render [this]
     (let [{:keys [name cards]} (om/props this)
-          {:keys [card-add-fn card-drag-fns card-edit-fn]}
+          {:keys [card-create-fn card-drag-fns card-edit-fn]}
             (om/get-computed this)]
       (dom/div #js {:className "lane"
                     :onDragOver (fn [e] (.preventDefault e))
@@ -24,7 +24,7 @@
           (dom/span #js {:className "count"}
             (count cards)))
         (dom/div #js {:className "add"}
-          (dom/a #js {:onClick #(card-add-fn (om/get-ident this))} "+"))
+          (dom/a #js {:onClick #(card-create-fn (om/get-ident this))} "+"))
         (dom/div #js {:className "cards"}
           (let [ref      (om/get-ident this)
                 drag-fns (into {} (map (fn [[k f]] [k (partial f ref)])
