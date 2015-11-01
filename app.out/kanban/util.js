@@ -6,9 +6,9 @@ kanban.util.class_names = (function kanban$util$class_names(m){
 return clojure.string.join.call(null," ",cljs.core.map.call(null,cljs.core.comp.call(null,cljs.core.name,cljs.core.first),cljs.core.filter.call(null,cljs.core.second,m)));
 });
 kanban.util.indexes_of = (function kanban$util$indexes_of(x,coll){
-return cljs.core.keep_indexed.call(null,(function (p1__10407_SHARP_,p2__10406_SHARP_){
-if(cljs.core._EQ_.call(null,x,p2__10406_SHARP_)){
-return p1__10407_SHARP_;
+return cljs.core.keep_indexed.call(null,(function (p1__8246_SHARP_,p2__8245_SHARP_){
+if(cljs.core._EQ_.call(null,x,p2__8245_SHARP_)){
+return p1__8246_SHARP_;
 } else {
 return null;
 }

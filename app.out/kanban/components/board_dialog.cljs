@@ -59,6 +59,7 @@
             (dom/ul #js {:className "instructions"}
               (dom/li nil "Change the board name via the name field")
               (dom/li nil "Change the board description via the description field")
+              (dom/li nil "Change the order of lanes via drag and drop")
               (dom/li nil "Click anywhere to close the dialog"))))))))
 
 (def board-dialog (om/factory BoardDialog {:keyfn #(-> [:board-dialog (:id %)])}))

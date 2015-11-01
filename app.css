@@ -346,6 +346,7 @@ form .form-row textarea {
   margin-right: 0.5rem;
   box-sizing: border-box;
   border: thin dotted transparent;
+  cursor: pointer;
 }
 .sortable-list .sortable-item.placeholder {
   border: thin dotted #dddddd;
