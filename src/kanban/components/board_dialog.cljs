@@ -2,7 +2,8 @@
   (:require [goog.object :as gobj]
             [om.next :as om :refer-macros [defui]]
             [om.dom :as dom]
-            [kanban.components.card :refer [Assignee assignee]]))
+            [kanban.components.card :refer [Assignee assignee]]
+            [kanban.components.sortable-list :refer [sortable-list]]))
 
 (defui BoardDialog
   static om/Ident
@@ -37,7 +38,20 @@
                 #js {:value description
                      :placeholder "Enter a description for the board here..."
                      :onChange
-                     #(.update this :description (.. % -target -value))})))
+                     #(.update this :description (.. % -target -value))}))
+            (dom/div #js {:className "form-row"}
+              (dom/label nil "Lanes:")
+              (sortable-list
+                {:update-fn (fn [lanes]
+                              (->> lanes
+                                   (map #(-> [:lane/by-id (:id %)]))
+                                   (.update this :lanes)))
+                 :items
+                  (for [lane lanes]
+                    {:key (:id lane)
+                     :data lane
+                     :element
+                     (dom/span #js {:className "lane-name"} (:name lane))})})))
           (dom/p #js {:className "dialog-buttons"}
             (dom/button #js {:onClick close-fn} "Close"))
           (dom/div #js {:className "help"}
@@ -45,6 +59,7 @@
             (dom/ul #js {:className "instructions"}
               (dom/li nil "Change the board name via the name field")
               (dom/li nil "Change the board description via the description field")
+              (dom/li nil "Change the order of lanes via drag and drop")
               (dom/li nil "Click anywhere to close the dialog"))))))))
 
 (def board-dialog (om/factory BoardDialog {:keyfn #(-> [:board-dialog (:id %)])}))
