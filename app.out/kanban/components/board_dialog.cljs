@@ -42,16 +42,13 @@
             (dom/div #js {:className "form-row"}
               (dom/label nil "Lanes:")
               (sortable-list
-                {:update-fn (fn [lanes]
+                {:items lanes
+                 :key-fn :id
+                 :element-fn #(dom/span #js {:className "lane-name"} (:name %))
+                 :change-fn (fn [lanes]
                               (->> lanes
                                    (map #(-> [:lane/by-id (:id %)]))
-                                   (.update this :lanes)))
-                 :items
-                  (for [lane lanes]
-                    {:key (:id lane)
-                     :data lane
-                     :element
-                     (dom/span #js {:className "lane-name"} (:name lane))})})))
+                                   (.update this :lanes)))})))
           (dom/p #js {:className "dialog-buttons"}
             (dom/button #js {:onClick close-fn} "Close"))
           (dom/div #js {:className "help"}

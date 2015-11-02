@@ -152,6 +152,7 @@ body {
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none;
+  overflow: hidden;
 }
 .card:hover {
   border: thin solid #d0d0d0;
@@ -345,18 +346,23 @@ form .form-row textarea {
   list-style: none;
   padding: 0rem;
   margin: 0rem;
+  width: 100%;
 }
-.sortable-list .sortable-item {
+.sortable-list .sortable {
   margin-right: 0.5rem;
   display: inline-block;
   box-sizing: border-box;
-  border: thin dotted transparent;
+  box-shadow: inset 0px 0px 0px 1px transparent;
   border-radius: 0.25rem;
+  padding: 0rem;
   cursor: pointer;
 }
-.sortable-list .sortable-item.placeholder {
-  border: thin dotted #dddddd;
+.sortable-list .sortable:last-child {
+  margin-right: 0rem;
 }
-.sortable-list .sortable-item.placeholder * {
+.sortable-list .sortable.placeholder {
+  background: #eaeaea;
+}
+.sortable-list .sortable.placeholder * {
   opacity: 0;
 }

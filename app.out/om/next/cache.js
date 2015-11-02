@@ -15,11 +15,11 @@ om.next.cache.Cache.prototype.add = (function (id,x){
 var self__ = this;
 var this$ = this;
 if((self__.size <= self__.arr.length)){
-var id_SINGLEQUOTE__10354 = self__.arr.shift();
-cljs.core.swap_BANG_.call(null,self__.index,((function (id_SINGLEQUOTE__10354,this$){
-return (function (p1__10353_SHARP_){
-return cljs.core.assoc.call(null,cljs.core.dissoc.call(null,p1__10353_SHARP_,id_SINGLEQUOTE__10354),id,x);
-});})(id_SINGLEQUOTE__10354,this$))
+var id_SINGLEQUOTE__22567 = self__.arr.shift();
+cljs.core.swap_BANG_.call(null,self__.index,((function (id_SINGLEQUOTE__22567,this$){
+return (function (p1__22566_SHARP_){
+return cljs.core.assoc.call(null,cljs.core.dissoc.call(null,p1__22566_SHARP_,id_SINGLEQUOTE__22567),id,x);
+});})(id_SINGLEQUOTE__22567,this$))
 );
 } else {
 cljs.core.swap_BANG_.call(null,self__.index,cljs.core.assoc,id,x);

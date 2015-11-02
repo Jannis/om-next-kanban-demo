@@ -23,17 +23,17 @@ return this__7586__auto__;
 
 kanban.components.lane.Lane.prototype = goog.object.clone(React.Component.prototype);
 
-var x10718_10736 = kanban.components.lane.Lane.prototype;
-x10718_10736.componentWillUpdate = ((function (x10718_10736){
+var x8548_8566 = kanban.components.lane.Lane.prototype;
+x8548_8566.componentWillUpdate = ((function (x8548_8566){
 return (function (next_props__7527__auto__,next_state__7528__auto__){
 var this__7526__auto__ = this;
 om.next.merge_pending_props_BANG_.call(null,this__7526__auto__);
 
 return om.next.merge_pending_state_BANG_.call(null,this__7526__auto__);
-});})(x10718_10736))
+});})(x8548_8566))
 ;
 
-x10718_10736.shouldComponentUpdate = ((function (x10718_10736){
+x8548_8566.shouldComponentUpdate = ((function (x8548_8566){
 return (function (next_props__7527__auto__,next_state__7528__auto__){
 var this__7526__auto__ = this;
 var or__5094__auto__ = cljs.core.not_EQ_.call(null,om.next.props.call(null,this__7526__auto__),goog.object.get(next_props__7527__auto__,"omcljs$value"));
@@ -47,10 +47,10 @@ return cljs.core.not_EQ_.call(null,goog.object.get(this__7526__auto__.state,"omc
 return and__5082__auto__;
 }
 }
-});})(x10718_10736))
+});})(x8548_8566))
 ;
 
-x10718_10736.componentWillUnmount = ((function (x10718_10736){
+x8548_8566.componentWillUnmount = ((function (x8548_8566){
 return (function (){
 var this__7526__auto__ = this;
 var r__7532__auto__ = om.next.get_reconciler.call(null,this__7526__auto__);
@@ -67,24 +67,24 @@ return null;
 } else {
 return om.next.protocols.drop_component_BANG_.call(null,indexer__7531__auto__,this__7526__auto__);
 }
-});})(x10718_10736))
+});})(x8548_8566))
 ;
 
-x10718_10736.componentDidUpdate = ((function (x10718_10736){
+x8548_8566.componentDidUpdate = ((function (x8548_8566){
 return (function (prev_props__7529__auto__,prev_state__7530__auto__){
 var this__7526__auto__ = this;
 return om.next.clear_prev_props_BANG_.call(null,this__7526__auto__);
-});})(x10718_10736))
+});})(x8548_8566))
 ;
 
-x10718_10736.isMounted = ((function (x10718_10736){
+x8548_8566.isMounted = ((function (x8548_8566){
 return (function (){
 var this__7526__auto__ = this;
 return cljs.core.boolean$.call(null,goog.object.getValueByKeys(this__7526__auto__,"_reactInternalInstance","_renderedComponent"));
-});})(x10718_10736))
+});})(x8548_8566))
 ;
 
-x10718_10736.componentWillMount = ((function (x10718_10736){
+x8548_8566.componentWillMount = ((function (x8548_8566){
 return (function (){
 var this__7526__auto__ = this;
 var indexer__7531__auto__ = cljs.core.get_in.call(null,om.next.get_reconciler.call(null,this__7526__auto__),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"config","config",994861415),new cljs.core.Keyword(null,"indexer","indexer",-1774914315)], null));
@@ -93,17 +93,17 @@ return null;
 } else {
 return om.next.protocols.index_component_BANG_.call(null,indexer__7531__auto__,this__7526__auto__);
 }
-});})(x10718_10736))
+});})(x8548_8566))
 ;
 
-x10718_10736.render = ((function (x10718_10736){
+x8548_8566.render = ((function (x8548_8566){
 return (function (){
 var this$ = this;
-var _STAR_reconciler_STAR_10719 = om.next._STAR_reconciler_STAR_;
-var _STAR_depth_STAR_10720 = om.next._STAR_depth_STAR_;
-var _STAR_shared_STAR_10721 = om.next._STAR_shared_STAR_;
-var _STAR_instrument_STAR_10722 = om.next._STAR_instrument_STAR_;
-var _STAR_parent_STAR_10723 = om.next._STAR_parent_STAR_;
+var _STAR_reconciler_STAR_8549 = om.next._STAR_reconciler_STAR_;
+var _STAR_depth_STAR_8550 = om.next._STAR_depth_STAR_;
+var _STAR_shared_STAR_8551 = om.next._STAR_shared_STAR_;
+var _STAR_instrument_STAR_8552 = om.next._STAR_instrument_STAR_;
+var _STAR_parent_STAR_8553 = om.next._STAR_parent_STAR_;
 om.next._STAR_reconciler_STAR_ = om.next.get_reconciler.call(null,this$);
 
 om.next._STAR_depth_STAR_ = (om.next.depth.call(null,this$) + (1));
@@ -114,57 +114,57 @@ om.next._STAR_instrument_STAR_ = om.next.instrument.call(null,this$);
 
 om.next._STAR_parent_STAR_ = this$;
 
-try{var map__10724 = om.next.props.call(null,this$);
-var map__10724__$1 = ((((!((map__10724 == null)))?((((map__10724.cljs$lang$protocol_mask$partition0$ & (64))) || (map__10724.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__10724):map__10724);
-var name = cljs.core.get.call(null,map__10724__$1,new cljs.core.Keyword(null,"name","name",1843675177));
-var cards = cljs.core.get.call(null,map__10724__$1,new cljs.core.Keyword(null,"cards","cards",169174038));
-var map__10725 = om.next.get_computed.call(null,this$);
-var map__10725__$1 = ((((!((map__10725 == null)))?((((map__10725.cljs$lang$protocol_mask$partition0$ & (64))) || (map__10725.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__10725):map__10725);
-var card_create_fn = cljs.core.get.call(null,map__10725__$1,new cljs.core.Keyword(null,"card-create-fn","card-create-fn",1899085335));
-var card_drag_fns = cljs.core.get.call(null,map__10725__$1,new cljs.core.Keyword(null,"card-drag-fns","card-drag-fns",-295465238));
-var card_edit_fn = cljs.core.get.call(null,map__10725__$1,new cljs.core.Keyword(null,"card-edit-fn","card-edit-fn",-1723920421));
-return React.DOM.div({"className": "lane", "onDragOver": ((function (map__10724,map__10724__$1,name,cards,map__10725,map__10725__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_10719,_STAR_depth_STAR_10720,_STAR_shared_STAR_10721,_STAR_instrument_STAR_10722,_STAR_parent_STAR_10723,this$,x10718_10736){
+try{var map__8554 = om.next.props.call(null,this$);
+var map__8554__$1 = ((((!((map__8554 == null)))?((((map__8554.cljs$lang$protocol_mask$partition0$ & (64))) || (map__8554.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__8554):map__8554);
+var name = cljs.core.get.call(null,map__8554__$1,new cljs.core.Keyword(null,"name","name",1843675177));
+var cards = cljs.core.get.call(null,map__8554__$1,new cljs.core.Keyword(null,"cards","cards",169174038));
+var map__8555 = om.next.get_computed.call(null,this$);
+var map__8555__$1 = ((((!((map__8555 == null)))?((((map__8555.cljs$lang$protocol_mask$partition0$ & (64))) || (map__8555.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__8555):map__8555);
+var card_create_fn = cljs.core.get.call(null,map__8555__$1,new cljs.core.Keyword(null,"card-create-fn","card-create-fn",1899085335));
+var card_drag_fns = cljs.core.get.call(null,map__8555__$1,new cljs.core.Keyword(null,"card-drag-fns","card-drag-fns",-295465238));
+var card_edit_fn = cljs.core.get.call(null,map__8555__$1,new cljs.core.Keyword(null,"card-edit-fn","card-edit-fn",-1723920421));
+return React.DOM.div({"className": "lane", "onDragOver": ((function (map__8554,map__8554__$1,name,cards,map__8555,map__8555__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_8549,_STAR_depth_STAR_8550,_STAR_shared_STAR_8551,_STAR_instrument_STAR_8552,_STAR_parent_STAR_8553,this$,x8548_8566){
 return (function (e){
 return e.preventDefault();
-});})(map__10724,map__10724__$1,name,cards,map__10725,map__10725__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_10719,_STAR_depth_STAR_10720,_STAR_shared_STAR_10721,_STAR_instrument_STAR_10722,_STAR_parent_STAR_10723,this$,x10718_10736))
-, "onDrop": ((function (map__10724,map__10724__$1,name,cards,map__10725,map__10725__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_10719,_STAR_depth_STAR_10720,_STAR_shared_STAR_10721,_STAR_instrument_STAR_10722,_STAR_parent_STAR_10723,this$,x10718_10736){
+});})(map__8554,map__8554__$1,name,cards,map__8555,map__8555__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_8549,_STAR_depth_STAR_8550,_STAR_shared_STAR_8551,_STAR_instrument_STAR_8552,_STAR_parent_STAR_8553,this$,x8548_8566))
+, "onDrop": ((function (map__8554,map__8554__$1,name,cards,map__8555,map__8555__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_8549,_STAR_depth_STAR_8550,_STAR_shared_STAR_8551,_STAR_instrument_STAR_8552,_STAR_parent_STAR_8553,this$,x8548_8566){
 return (function (){
 return new cljs.core.Keyword(null,"drop","drop",364481611).cljs$core$IFn$_invoke$arity$1(card_drag_fns).call(null,om.next.get_ident.call(null,this$));
-});})(map__10724,map__10724__$1,name,cards,map__10725,map__10725__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_10719,_STAR_depth_STAR_10720,_STAR_shared_STAR_10721,_STAR_instrument_STAR_10722,_STAR_parent_STAR_10723,this$,x10718_10736))
-},React.DOM.h3({"className": "lane-title"},name,React.DOM.span({"className": "count"},cljs.core.count.call(null,cards))),React.DOM.div({"className": "add"},React.DOM.a({"onClick": ((function (map__10724,map__10724__$1,name,cards,map__10725,map__10725__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_10719,_STAR_depth_STAR_10720,_STAR_shared_STAR_10721,_STAR_instrument_STAR_10722,_STAR_parent_STAR_10723,this$,x10718_10736){
+});})(map__8554,map__8554__$1,name,cards,map__8555,map__8555__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_8549,_STAR_depth_STAR_8550,_STAR_shared_STAR_8551,_STAR_instrument_STAR_8552,_STAR_parent_STAR_8553,this$,x8548_8566))
+},React.DOM.h3({"className": "lane-title"},name,React.DOM.span({"className": "count"},cljs.core.count.call(null,cards))),React.DOM.div({"className": "add"},React.DOM.a({"onClick": ((function (map__8554,map__8554__$1,name,cards,map__8555,map__8555__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_8549,_STAR_depth_STAR_8550,_STAR_shared_STAR_8551,_STAR_instrument_STAR_8552,_STAR_parent_STAR_8553,this$,x8548_8566){
 return (function (){
 return card_create_fn.call(null,om.next.get_ident.call(null,this$));
-});})(map__10724,map__10724__$1,name,cards,map__10725,map__10725__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_10719,_STAR_depth_STAR_10720,_STAR_shared_STAR_10721,_STAR_instrument_STAR_10722,_STAR_parent_STAR_10723,this$,x10718_10736))
+});})(map__8554,map__8554__$1,name,cards,map__8555,map__8555__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_8549,_STAR_depth_STAR_8550,_STAR_shared_STAR_8551,_STAR_instrument_STAR_8552,_STAR_parent_STAR_8553,this$,x8548_8566))
 },"+")),React.DOM.div({"className": "cards"},(function (){var ref = om.next.get_ident.call(null,this$);
-var drag_fns = cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.call(null,((function (ref,map__10724,map__10724__$1,name,cards,map__10725,map__10725__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_10719,_STAR_depth_STAR_10720,_STAR_shared_STAR_10721,_STAR_instrument_STAR_10722,_STAR_parent_STAR_10723,this$,x10718_10736){
-return (function (p__10728){
-var vec__10729 = p__10728;
-var k = cljs.core.nth.call(null,vec__10729,(0),null);
-var f = cljs.core.nth.call(null,vec__10729,(1),null);
+var drag_fns = cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.call(null,((function (ref,map__8554,map__8554__$1,name,cards,map__8555,map__8555__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_8549,_STAR_depth_STAR_8550,_STAR_shared_STAR_8551,_STAR_instrument_STAR_8552,_STAR_parent_STAR_8553,this$,x8548_8566){
+return (function (p__8558){
+var vec__8559 = p__8558;
+var k = cljs.core.nth.call(null,vec__8559,(0),null);
+var f = cljs.core.nth.call(null,vec__8559,(1),null);
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [k,cljs.core.partial.call(null,f,ref)], null);
-});})(ref,map__10724,map__10724__$1,name,cards,map__10725,map__10725__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_10719,_STAR_depth_STAR_10720,_STAR_shared_STAR_10721,_STAR_instrument_STAR_10722,_STAR_parent_STAR_10723,this$,x10718_10736))
+});})(ref,map__8554,map__8554__$1,name,cards,map__8555,map__8555__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_8549,_STAR_depth_STAR_8550,_STAR_shared_STAR_8551,_STAR_instrument_STAR_8552,_STAR_parent_STAR_8553,this$,x8548_8566))
 ,card_drag_fns));
-var iter__5866__auto__ = ((function (ref,drag_fns,map__10724,map__10724__$1,name,cards,map__10725,map__10725__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_10719,_STAR_depth_STAR_10720,_STAR_shared_STAR_10721,_STAR_instrument_STAR_10722,_STAR_parent_STAR_10723,this$,x10718_10736){
-return (function kanban$components$lane$iter__10730(s__10731){
-return (new cljs.core.LazySeq(null,((function (ref,drag_fns,map__10724,map__10724__$1,name,cards,map__10725,map__10725__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_10719,_STAR_depth_STAR_10720,_STAR_shared_STAR_10721,_STAR_instrument_STAR_10722,_STAR_parent_STAR_10723,this$,x10718_10736){
+var iter__5866__auto__ = ((function (ref,drag_fns,map__8554,map__8554__$1,name,cards,map__8555,map__8555__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_8549,_STAR_depth_STAR_8550,_STAR_shared_STAR_8551,_STAR_instrument_STAR_8552,_STAR_parent_STAR_8553,this$,x8548_8566){
+return (function kanban$components$lane$iter__8560(s__8561){
+return (new cljs.core.LazySeq(null,((function (ref,drag_fns,map__8554,map__8554__$1,name,cards,map__8555,map__8555__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_8549,_STAR_depth_STAR_8550,_STAR_shared_STAR_8551,_STAR_instrument_STAR_8552,_STAR_parent_STAR_8553,this$,x8548_8566){
 return (function (){
-var s__10731__$1 = s__10731;
+var s__8561__$1 = s__8561;
 while(true){
-var temp__4425__auto__ = cljs.core.seq.call(null,s__10731__$1);
+var temp__4425__auto__ = cljs.core.seq.call(null,s__8561__$1);
 if(temp__4425__auto__){
-var s__10731__$2 = temp__4425__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,s__10731__$2)){
-var c__5864__auto__ = cljs.core.chunk_first.call(null,s__10731__$2);
+var s__8561__$2 = temp__4425__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,s__8561__$2)){
+var c__5864__auto__ = cljs.core.chunk_first.call(null,s__8561__$2);
 var size__5865__auto__ = cljs.core.count.call(null,c__5864__auto__);
-var b__10733 = cljs.core.chunk_buffer.call(null,size__5865__auto__);
-if((function (){var i__10732 = (0);
+var b__8563 = cljs.core.chunk_buffer.call(null,size__5865__auto__);
+if((function (){var i__8562 = (0);
 while(true){
-if((i__10732 < size__5865__auto__)){
-var c = cljs.core._nth.call(null,c__5864__auto__,i__10732);
-cljs.core.chunk_append.call(null,b__10733,kanban.components.card.card.call(null,om.next.computed.call(null,c,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"drag-fns","drag-fns",133281761),drag_fns,new cljs.core.Keyword(null,"edit-fn","edit-fn",-1974067620),card_edit_fn], null))));
+if((i__8562 < size__5865__auto__)){
+var c = cljs.core._nth.call(null,c__5864__auto__,i__8562);
+cljs.core.chunk_append.call(null,b__8563,kanban.components.card.card.call(null,om.next.computed.call(null,c,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"drag-fns","drag-fns",133281761),drag_fns,new cljs.core.Keyword(null,"edit-fn","edit-fn",-1974067620),card_edit_fn], null))));
 
-var G__10737 = (i__10732 + (1));
-i__10732 = G__10737;
+var G__8567 = (i__8562 + (1));
+i__8562 = G__8567;
 continue;
 } else {
 return true;
@@ -172,35 +172,35 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__10733),kanban$components$lane$iter__10730.call(null,cljs.core.chunk_rest.call(null,s__10731__$2)));
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__8563),kanban$components$lane$iter__8560.call(null,cljs.core.chunk_rest.call(null,s__8561__$2)));
 } else {
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__10733),null);
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__8563),null);
 }
 } else {
-var c = cljs.core.first.call(null,s__10731__$2);
-return cljs.core.cons.call(null,kanban.components.card.card.call(null,om.next.computed.call(null,c,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"drag-fns","drag-fns",133281761),drag_fns,new cljs.core.Keyword(null,"edit-fn","edit-fn",-1974067620),card_edit_fn], null))),kanban$components$lane$iter__10730.call(null,cljs.core.rest.call(null,s__10731__$2)));
+var c = cljs.core.first.call(null,s__8561__$2);
+return cljs.core.cons.call(null,kanban.components.card.card.call(null,om.next.computed.call(null,c,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"drag-fns","drag-fns",133281761),drag_fns,new cljs.core.Keyword(null,"edit-fn","edit-fn",-1974067620),card_edit_fn], null))),kanban$components$lane$iter__8560.call(null,cljs.core.rest.call(null,s__8561__$2)));
 }
 } else {
 return null;
 }
 break;
 }
-});})(ref,drag_fns,map__10724,map__10724__$1,name,cards,map__10725,map__10725__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_10719,_STAR_depth_STAR_10720,_STAR_shared_STAR_10721,_STAR_instrument_STAR_10722,_STAR_parent_STAR_10723,this$,x10718_10736))
+});})(ref,drag_fns,map__8554,map__8554__$1,name,cards,map__8555,map__8555__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_8549,_STAR_depth_STAR_8550,_STAR_shared_STAR_8551,_STAR_instrument_STAR_8552,_STAR_parent_STAR_8553,this$,x8548_8566))
 ,null,null));
-});})(ref,drag_fns,map__10724,map__10724__$1,name,cards,map__10725,map__10725__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_10719,_STAR_depth_STAR_10720,_STAR_shared_STAR_10721,_STAR_instrument_STAR_10722,_STAR_parent_STAR_10723,this$,x10718_10736))
+});})(ref,drag_fns,map__8554,map__8554__$1,name,cards,map__8555,map__8555__$1,card_create_fn,card_drag_fns,card_edit_fn,_STAR_reconciler_STAR_8549,_STAR_depth_STAR_8550,_STAR_shared_STAR_8551,_STAR_instrument_STAR_8552,_STAR_parent_STAR_8553,this$,x8548_8566))
 ;
 return iter__5866__auto__.call(null,cards);
 })()));
-}finally {om.next._STAR_parent_STAR_ = _STAR_parent_STAR_10723;
+}finally {om.next._STAR_parent_STAR_ = _STAR_parent_STAR_8553;
 
-om.next._STAR_instrument_STAR_ = _STAR_instrument_STAR_10722;
+om.next._STAR_instrument_STAR_ = _STAR_instrument_STAR_8552;
 
-om.next._STAR_shared_STAR_ = _STAR_shared_STAR_10721;
+om.next._STAR_shared_STAR_ = _STAR_shared_STAR_8551;
 
-om.next._STAR_depth_STAR_ = _STAR_depth_STAR_10720;
+om.next._STAR_depth_STAR_ = _STAR_depth_STAR_8550;
 
-om.next._STAR_reconciler_STAR_ = _STAR_reconciler_STAR_10719;
-}});})(x10718_10736))
+om.next._STAR_reconciler_STAR_ = _STAR_reconciler_STAR_8549;
+}});})(x8548_8566))
 ;
 
 
@@ -208,43 +208,43 @@ kanban.components.lane.Lane.prototype.constructor = kanban.components.lane.Lane;
 
 kanban.components.lane.Lane.prototype.om$isComponent = true;
 
-var x10734_10738 = kanban.components.lane.Lane;
-x10734_10738.om$next$Ident$ = true;
+var x8564_8568 = kanban.components.lane.Lane;
+x8564_8568.om$next$Ident$ = true;
 
-x10734_10738.om$next$Ident$ident$arity$2 = ((function (x10734_10738){
+x8564_8568.om$next$Ident$ident$arity$2 = ((function (x8564_8568){
 return (function (this$,props){
 var this$__$1 = this;
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("lane","by-id","lane/by-id",-2140783497),new cljs.core.Keyword(null,"id","id",-1388402092).cljs$core$IFn$_invoke$arity$1(props)], null);
-});})(x10734_10738))
+});})(x8564_8568))
 ;
 
-x10734_10738.om$next$IQuery$ = true;
+x8564_8568.om$next$IQuery$ = true;
 
-x10734_10738.om$next$IQuery$query$arity$1 = ((function (x10734_10738){
+x8564_8568.om$next$IQuery$query$arity$1 = ((function (x8564_8568){
 return (function (this$){
 var this$__$1 = this;
 return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"id","id",-1388402092),new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"cards","cards",169174038),om.next.get_query.call(null,kanban.components.card.Card)], null)], null);
-});})(x10734_10738))
+});})(x8564_8568))
 ;
 
 
-var x10735_10739 = kanban.components.lane.Lane.prototype;
-x10735_10739.om$next$Ident$ = true;
+var x8565_8569 = kanban.components.lane.Lane.prototype;
+x8565_8569.om$next$Ident$ = true;
 
-x10735_10739.om$next$Ident$ident$arity$2 = ((function (x10735_10739){
+x8565_8569.om$next$Ident$ident$arity$2 = ((function (x8565_8569){
 return (function (this$,props){
 var this$__$1 = this;
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("lane","by-id","lane/by-id",-2140783497),new cljs.core.Keyword(null,"id","id",-1388402092).cljs$core$IFn$_invoke$arity$1(props)], null);
-});})(x10735_10739))
+});})(x8565_8569))
 ;
 
-x10735_10739.om$next$IQuery$ = true;
+x8565_8569.om$next$IQuery$ = true;
 
-x10735_10739.om$next$IQuery$query$arity$1 = ((function (x10735_10739){
+x8565_8569.om$next$IQuery$query$arity$1 = ((function (x8565_8569){
 return (function (this$){
 var this$__$1 = this;
 return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"id","id",-1388402092),new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"cards","cards",169174038),om.next.get_query.call(null,kanban.components.card.Card)], null)], null);
-});})(x10735_10739))
+});})(x8565_8569))
 ;
 
 
