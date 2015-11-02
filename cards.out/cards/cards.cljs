@@ -99,15 +99,29 @@
 (defcard
   "## Behaviour")
 
+(defn update-cb-info [state & params]
+  (swap! state (fn [state] (-> state
+                               (update :counter inc)
+                               (assoc :params params)))))
+
+(defn render-cb-info [state name]
+  (let [{:keys [counter params]} @state]
+    (dom/div nil
+      (dom/div nil (str name ": " counter " times"))
+      (dom/div nil
+        (str "Parameters: ")
+        (dom/code nil (str params))))))
+
 (defcard
   "### Card with an activate callback"
   (fn [state _]
     (dom/div nil
       (kanban-card/card
         (om/computed (:card @state)
-                     {:activate-fn #(swap! state update :counter inc)}))
-      (dom/div nil (str "Activated: " (:counter @state) " times"))))
-  {:card {:id 1 :text "Initial text"} :counter 0}
+                     {:activate-fn (partial update-cb-info state)}))
+      (render-cb-info state "Activated")))
+  {:card {:id 1 :text "Initial text"}
+   :counter 0}
   {:inspect-data true :history true})
 
 (defcard
@@ -116,8 +130,8 @@
     (dom/div nil
       (kanban-card/card
         (om/computed (:card @state)
-                     {:drag-fns {:start #(swap! state update :counter inc)}}))
-      (dom/div nil (str "Drag initiated: " (:counter @state) " times"))))
+                     {:drag-fns {:start (partial update-cb-info state)}}))
+      (render-cb-info state "Drag initiated")))
   {:card {:id 1 :text "Initial text"} :counter 0}
   {:inspect-data true :history true})
 
@@ -127,7 +141,7 @@
     (dom/div nil
       (kanban-card/card
         (om/computed (:card @state)
-                     {:drag-fns {:end #(swap! state update :counter inc)}}))
-      (dom/div nil (str "Drag ended: " (:counter @state) " times"))))
+                     {:drag-fns {:end (partial update-cb-info state)}}))
+      (render-cb-info state "Drag ended")))
   {:card {:id 1 :text "Initial text"} :counter 0}
   {:inspect-data true :history true})

@@ -9,6 +9,7 @@ goog.addDependency("../clojure/walk.js", ['clojure.walk'], ['cljs.core']);
 goog.addDependency("../om/next.js", ['om.next'], ['om.next.cache', 'clojure.zip', 'om.next.impl.parser', 'goog.string', 'goog.debug.Console', 'cljs.core', 'goog.object', 'goog.log', 'om.next.protocols', 'clojure.walk']);
 goog.addDependency("../kanban/reconciler.js", ['kanban.reconciler'], ['cljs.core', 'goog.object', 'kanban.state', 'om.next']);
 goog.addDependency("../kanban/parsing/users.js", ['kanban.parsing.users'], ['cljs.core', 'kanban.reconciler']);
+goog.addDependency("../kanban/parsing/cards.js", ['kanban.parsing.cards'], ['kanban.parsing.users', 'cljs.core', 'kanban.reconciler']);
 goog.addDependency("../react.inc.js", ['cljsjs.react'], []);
 goog.addDependency("../react-dom.inc.js", ['cljsjs.react.dom'], ['cljsjs.react']);
 goog.addDependency("../om/dom.js", ['om.dom'], ['cljs.core', 'goog.object', 'cljsjs.react', 'cljsjs.react.dom']);
@@ -19,7 +20,6 @@ goog.addDependency("../kanban/components/boards_menu.js", ['kanban.components.bo
 goog.addDependency("../kanban/components/sortable_list.js", ['kanban.components.sortable_list'], ['cljs.core', 'om.dom', 'kanban.util', 'om.next']);
 goog.addDependency("../kanban/components/board_dialog.js", ['kanban.components.board_dialog'], ['kanban.components.card', 'cljs.core', 'kanban.components.sortable_list', 'om.dom', 'goog.object', 'om.next']);
 goog.addDependency("../kanban/components/about.js", ['kanban.components.about'], ['cljs.core', 'om.dom']);
-goog.addDependency("../kanban/parsing/cards.js", ['kanban.parsing.cards'], ['kanban.parsing.users', 'cljs.core', 'kanban.reconciler']);
 goog.addDependency("../kanban/parsing/lanes.js", ['kanban.parsing.lanes'], ['kanban.parsing.cards', 'cljs.core', 'kanban.reconciler']);
 goog.addDependency("../kanban/parsing/boards.js", ['kanban.parsing.boards'], ['cljs.core', 'kanban.reconciler', 'kanban.parsing.lanes']);
 goog.addDependency("../kanban/components/lane.js", ['kanban.components.lane'], ['kanban.components.card', 'cljs.core', 'om.dom', 'goog.object', 'om.next']);
