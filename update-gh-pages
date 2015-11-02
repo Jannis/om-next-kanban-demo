@@ -6,7 +6,7 @@ tmpdir=$(mktemp -d)
 
 # Copy the latest build to it
 
-cp -R target/app.* target/cards.*target/*.html "$tmpdir"
+cp -R target/app.* target/cards.* target/*.html "$tmpdir"
 
 # Switch to the gh-pages branch
 git checkout gh-pages
