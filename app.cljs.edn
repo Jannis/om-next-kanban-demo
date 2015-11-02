@@ -1,1 +1,0 @@
-{:require [kanban.app adzerk.boot-reload], :init-fns [kanban.app/run]}
