@@ -188,6 +188,7 @@ body {
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none;
+  overflow: hidden;
 
   &:hover {
     border: thin solid lighten(@black, 75%);
@@ -422,12 +423,17 @@ form {
     margin-right: 0.5rem;
     display: inline-block;
     box-sizing: border-box;
-    border: thin dotted transparent;
+    box-shadow: inset 0px 0px 0px 1px transparent;
     border-radius: 0.25rem;
+    padding: 0rem;
     cursor: pointer;
 
+    &:last-child {
+      margin-right: 0rem;
+    }
+
     &.placeholder {
-      border: thin dotted lighten(@black, 80%);
+      background: lighten(@black, 85%);
 
       * {
         opacity: 0;

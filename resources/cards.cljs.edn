@@ -1,0 +1,2 @@
+{:require [cards.ui]
+ :init-fns [cards.ui/start]}

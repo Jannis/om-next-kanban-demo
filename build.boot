@@ -11,7 +11,10 @@
 
                   ; App dependencies
                   [org.clojure/clojurescript "1.7.145"]
-                  [org.omcljs/om "1.0.0-alpha14-SNAPSHOT"]])
+                  [org.omcljs/om "1.0.0-alpha14-SNAPSHOT"]
+
+                  ; Other dependencies
+                  [devcards "0.2.0-8"]])
 
 (task-options!
   pom {:project "om-next-kanban-demo"
@@ -30,5 +33,6 @@
     (reload :on-jsload 'kanban.app/run)
     (less)
     (cljs :source-map true
-          :optimizations :none)
+          :optimizations :none
+          :compiler-options {:devcards true})
     (serve :dir "target")))

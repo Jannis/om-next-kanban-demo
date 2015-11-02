@@ -10,6 +10,12 @@
       ". It demonstrates how Om Next can be used to write a "
       "Kanban web app with drag and drop, modal dialogs and more. "
       "Why not start by selecting a Kanban board from the menu?")
+    (dom/h2 nil "How about user interface tests?")
+    (dom/p nil
+      "There aren't any for this demo. However, there is a "
+      (dom/a #js {:href "/cards.html"} "devcard interface") " exercising "
+      "some of the user interface components in isolation from the demo "
+      "app itself.")
     (dom/h2 nil "Where can I find the source code?")
     (dom/p nil
       "The source code for this demo app is " (dom/a
