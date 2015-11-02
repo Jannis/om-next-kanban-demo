@@ -12,10 +12,9 @@ goog.addDependency("../om/next/protocols.js", ['om.next.protocols'], ['cljs.core
 goog.addDependency("../clojure/walk.js", ['clojure.walk'], ['cljs.core']);
 goog.addDependency("../om/next.js", ['om.next'], ['om.next.cache', 'clojure.zip', 'om.next.impl.parser', 'goog.string', 'goog.debug.Console', 'cljs.core', 'goog.object', 'goog.log', 'om.next.protocols', 'clojure.walk']);
 goog.addDependency("../kanban/components/card.js", ['kanban.components.card'], ['goog.string', 'cljs.core', 'om.dom', 'goog.object', 'goog.string.format', 'kanban.util', 'om.next']);
-goog.addDependency("../kanban/components/lane.js", ['kanban.components.lane'], ['kanban.components.card', 'cljs.core', 'om.dom', 'goog.object', 'om.next']);
-goog.addDependency("../kanban/components/boards_menu.js", ['kanban.components.boards_menu'], ['cljs.core', 'om.dom', 'goog.object', 'om.next']);
 goog.addDependency("../kanban/components/sortable_list.js", ['kanban.components.sortable_list'], ['cljs.core', 'om.dom', 'kanban.util', 'om.next']);
 goog.addDependency("../kanban/components/board_dialog.js", ['kanban.components.board_dialog'], ['kanban.components.card', 'cljs.core', 'kanban.components.sortable_list', 'om.dom', 'goog.object', 'om.next']);
+goog.addDependency("../kanban/components/boards_menu.js", ['kanban.components.boards_menu'], ['cljs.core', 'om.dom', 'goog.object', 'om.next']);
 goog.addDependency("../kanban/components/about.js", ['kanban.components.about'], ['cljs.core', 'om.dom']);
 goog.addDependency("../kanban/state.js", ['kanban.state'], ['cljs.core']);
 goog.addDependency("../kanban/reconciler.js", ['kanban.reconciler'], ['cljs.core', 'goog.object', 'kanban.state', 'om.next']);
@@ -23,6 +22,7 @@ goog.addDependency("../kanban/parsing/users.js", ['kanban.parsing.users'], ['clj
 goog.addDependency("../kanban/parsing/cards.js", ['kanban.parsing.cards'], ['kanban.parsing.users', 'cljs.core', 'kanban.reconciler']);
 goog.addDependency("../kanban/parsing/lanes.js", ['kanban.parsing.lanes'], ['kanban.parsing.cards', 'cljs.core', 'kanban.reconciler']);
 goog.addDependency("../kanban/parsing/boards.js", ['kanban.parsing.boards'], ['cljs.core', 'kanban.reconciler', 'kanban.parsing.lanes']);
+goog.addDependency("../kanban/components/lane.js", ['kanban.components.lane'], ['kanban.components.card', 'cljs.core', 'om.dom', 'goog.object', 'om.next']);
 goog.addDependency("../kanban/components/board.js", ['kanban.components.board'], ['cljs.core', 'om.dom', 'goog.object', 'kanban.components.lane', 'om.next']);
 goog.addDependency("../kanban/components/card_dialog.js", ['kanban.components.card_dialog'], ['kanban.components.card', 'cljs.core', 'om.dom', 'goog.object', 'om.next']);
 goog.addDependency("../kanban/app.js", ['kanban.app'], ['kanban.components.card', 'cljs.core', 'om.dom', 'kanban.components.boards_menu', 'kanban.components.board_dialog', 'kanban.components.about', 'kanban.parsing.boards', 'kanban.components.board', 'kanban.reconciler', 'kanban.components.lane', 'kanban.components.card_dialog', 'om.next']);

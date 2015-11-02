@@ -5,9 +5,9 @@ goog.require('om.next');
 goog.require('om.dom');
 goog.require('kanban.util');
 kanban.components.sortable_list.sortable_key = (function kanban$components$sortable_list$sortable_key(x){
-var props = (function (){var G__8336 = x;
-var G__8336__$1 = ((om.next.component_QMARK_.call(null,x))?om.next.props.call(null,G__8336):G__8336);
-return G__8336__$1;
+var props = (function (){var G__23267 = x;
+var G__23267__$1 = ((om.next.component_QMARK_.call(null,x))?om.next.props.call(null,G__23267):G__23267);
+return G__23267__$1;
 })();
 return new cljs.core.Keyword(null,"key-fn","key-fn",-636154479).cljs$core$IFn$_invoke$arity$1(om.next.get_computed.call(null,props)).call(null,props);
 });
@@ -29,17 +29,17 @@ return this__7586__auto__;
 
 kanban.components.sortable_list.Sortable.prototype = goog.object.clone(React.Component.prototype);
 
-var x8345_8355 = kanban.components.sortable_list.Sortable.prototype;
-x8345_8355.componentWillUpdate = ((function (x8345_8355){
+var x23276_23286 = kanban.components.sortable_list.Sortable.prototype;
+x23276_23286.componentWillUpdate = ((function (x23276_23286){
 return (function (next_props__7527__auto__,next_state__7528__auto__){
 var this__7526__auto__ = this;
 om.next.merge_pending_props_BANG_.call(null,this__7526__auto__);
 
 return om.next.merge_pending_state_BANG_.call(null,this__7526__auto__);
-});})(x8345_8355))
+});})(x23276_23286))
 ;
 
-x8345_8355.shouldComponentUpdate = ((function (x8345_8355){
+x23276_23286.shouldComponentUpdate = ((function (x23276_23286){
 return (function (next_props__7527__auto__,next_state__7528__auto__){
 var this__7526__auto__ = this;
 var or__5094__auto__ = cljs.core.not_EQ_.call(null,om.next.props.call(null,this__7526__auto__),goog.object.get(next_props__7527__auto__,"omcljs$value"));
@@ -53,10 +53,10 @@ return cljs.core.not_EQ_.call(null,goog.object.get(this__7526__auto__.state,"omc
 return and__5082__auto__;
 }
 }
-});})(x8345_8355))
+});})(x23276_23286))
 ;
 
-x8345_8355.componentWillUnmount = ((function (x8345_8355){
+x23276_23286.componentWillUnmount = ((function (x23276_23286){
 return (function (){
 var this__7526__auto__ = this;
 var r__7532__auto__ = om.next.get_reconciler.call(null,this__7526__auto__);
@@ -73,24 +73,24 @@ return null;
 } else {
 return om.next.protocols.drop_component_BANG_.call(null,indexer__7531__auto__,this__7526__auto__);
 }
-});})(x8345_8355))
+});})(x23276_23286))
 ;
 
-x8345_8355.componentDidUpdate = ((function (x8345_8355){
+x23276_23286.componentDidUpdate = ((function (x23276_23286){
 return (function (prev_props__7529__auto__,prev_state__7530__auto__){
 var this__7526__auto__ = this;
 return om.next.clear_prev_props_BANG_.call(null,this__7526__auto__);
-});})(x8345_8355))
+});})(x23276_23286))
 ;
 
-x8345_8355.isMounted = ((function (x8345_8355){
+x23276_23286.isMounted = ((function (x23276_23286){
 return (function (){
 var this__7526__auto__ = this;
 return cljs.core.boolean$.call(null,goog.object.getValueByKeys(this__7526__auto__,"_reactInternalInstance","_renderedComponent"));
-});})(x8345_8355))
+});})(x23276_23286))
 ;
 
-x8345_8355.componentWillMount = ((function (x8345_8355){
+x23276_23286.componentWillMount = ((function (x23276_23286){
 return (function (){
 var this__7526__auto__ = this;
 var indexer__7531__auto__ = cljs.core.get_in.call(null,om.next.get_reconciler.call(null,this__7526__auto__),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"config","config",994861415),new cljs.core.Keyword(null,"indexer","indexer",-1774914315)], null));
@@ -99,17 +99,17 @@ return null;
 } else {
 return om.next.protocols.index_component_BANG_.call(null,indexer__7531__auto__,this__7526__auto__);
 }
-});})(x8345_8355))
+});})(x23276_23286))
 ;
 
-x8345_8355.render = ((function (x8345_8355){
+x23276_23286.render = ((function (x23276_23286){
 return (function (){
 var this$ = this;
-var _STAR_reconciler_STAR_8346 = om.next._STAR_reconciler_STAR_;
-var _STAR_depth_STAR_8347 = om.next._STAR_depth_STAR_;
-var _STAR_shared_STAR_8348 = om.next._STAR_shared_STAR_;
-var _STAR_instrument_STAR_8349 = om.next._STAR_instrument_STAR_;
-var _STAR_parent_STAR_8350 = om.next._STAR_parent_STAR_;
+var _STAR_reconciler_STAR_23277 = om.next._STAR_reconciler_STAR_;
+var _STAR_depth_STAR_23278 = om.next._STAR_depth_STAR_;
+var _STAR_shared_STAR_23279 = om.next._STAR_shared_STAR_;
+var _STAR_instrument_STAR_23280 = om.next._STAR_instrument_STAR_;
+var _STAR_parent_STAR_23281 = om.next._STAR_parent_STAR_;
 om.next._STAR_reconciler_STAR_ = om.next.get_reconciler.call(null,this$);
 
 om.next._STAR_depth_STAR_ = (om.next.depth.call(null,this$) + (1));
@@ -120,38 +120,38 @@ om.next._STAR_instrument_STAR_ = om.next.instrument.call(null,this$);
 
 om.next._STAR_parent_STAR_ = this$;
 
-try{var map__8351 = om.next.get_computed.call(null,this$);
-var map__8351__$1 = ((((!((map__8351 == null)))?((((map__8351.cljs$lang$protocol_mask$partition0$ & (64))) || (map__8351.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__8351):map__8351);
-var placeholder = cljs.core.get.call(null,map__8351__$1,new cljs.core.Keyword(null,"placeholder","placeholder",-104873083));
-var element_fn = cljs.core.get.call(null,map__8351__$1,new cljs.core.Keyword(null,"element-fn","element-fn",554034748));
-var drag_fns = cljs.core.get.call(null,map__8351__$1,new cljs.core.Keyword(null,"drag-fns","drag-fns",133281761));
-return React.DOM.li({"className": kanban.util.class_names.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"sortable","sortable",2109633621),true,new cljs.core.Keyword(null,"placeholder","placeholder",-104873083),placeholder], null)), "draggable": true, "onDragStart": ((function (map__8351,map__8351__$1,placeholder,element_fn,drag_fns,_STAR_reconciler_STAR_8346,_STAR_depth_STAR_8347,_STAR_shared_STAR_8348,_STAR_instrument_STAR_8349,_STAR_parent_STAR_8350,this$,x8345_8355){
-return (function (p1__8337_SHARP_){
-return new cljs.core.Keyword(null,"start","start",-355208981).cljs$core$IFn$_invoke$arity$1(drag_fns).call(null,p1__8337_SHARP_,this$);
-});})(map__8351,map__8351__$1,placeholder,element_fn,drag_fns,_STAR_reconciler_STAR_8346,_STAR_depth_STAR_8347,_STAR_shared_STAR_8348,_STAR_instrument_STAR_8349,_STAR_parent_STAR_8350,this$,x8345_8355))
-, "onDragEnd": ((function (map__8351,map__8351__$1,placeholder,element_fn,drag_fns,_STAR_reconciler_STAR_8346,_STAR_depth_STAR_8347,_STAR_shared_STAR_8348,_STAR_instrument_STAR_8349,_STAR_parent_STAR_8350,this$,x8345_8355){
-return (function (p1__8338_SHARP_){
-return new cljs.core.Keyword(null,"end","end",-268185958).cljs$core$IFn$_invoke$arity$1(drag_fns).call(null,p1__8338_SHARP_,this$);
-});})(map__8351,map__8351__$1,placeholder,element_fn,drag_fns,_STAR_reconciler_STAR_8346,_STAR_depth_STAR_8347,_STAR_shared_STAR_8348,_STAR_instrument_STAR_8349,_STAR_parent_STAR_8350,this$,x8345_8355))
-, "onDragOver": ((function (map__8351,map__8351__$1,placeholder,element_fn,drag_fns,_STAR_reconciler_STAR_8346,_STAR_depth_STAR_8347,_STAR_shared_STAR_8348,_STAR_instrument_STAR_8349,_STAR_parent_STAR_8350,this$,x8345_8355){
-return (function (p1__8339_SHARP_){
-return new cljs.core.Keyword(null,"over","over",192553051).cljs$core$IFn$_invoke$arity$1(drag_fns).call(null,p1__8339_SHARP_,this$);
-});})(map__8351,map__8351__$1,placeholder,element_fn,drag_fns,_STAR_reconciler_STAR_8346,_STAR_depth_STAR_8347,_STAR_shared_STAR_8348,_STAR_instrument_STAR_8349,_STAR_parent_STAR_8350,this$,x8345_8355))
-, "onDrop": ((function (map__8351,map__8351__$1,placeholder,element_fn,drag_fns,_STAR_reconciler_STAR_8346,_STAR_depth_STAR_8347,_STAR_shared_STAR_8348,_STAR_instrument_STAR_8349,_STAR_parent_STAR_8350,this$,x8345_8355){
-return (function (p1__8340_SHARP_){
-return new cljs.core.Keyword(null,"drop","drop",364481611).cljs$core$IFn$_invoke$arity$1(drag_fns).call(null,p1__8340_SHARP_,this$);
-});})(map__8351,map__8351__$1,placeholder,element_fn,drag_fns,_STAR_reconciler_STAR_8346,_STAR_depth_STAR_8347,_STAR_shared_STAR_8348,_STAR_instrument_STAR_8349,_STAR_parent_STAR_8350,this$,x8345_8355))
+try{var map__23282 = om.next.get_computed.call(null,this$);
+var map__23282__$1 = ((((!((map__23282 == null)))?((((map__23282.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23282.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23282):map__23282);
+var placeholder = cljs.core.get.call(null,map__23282__$1,new cljs.core.Keyword(null,"placeholder","placeholder",-104873083));
+var element_fn = cljs.core.get.call(null,map__23282__$1,new cljs.core.Keyword(null,"element-fn","element-fn",554034748));
+var drag_fns = cljs.core.get.call(null,map__23282__$1,new cljs.core.Keyword(null,"drag-fns","drag-fns",133281761));
+return React.DOM.li({"className": kanban.util.class_names.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"sortable","sortable",2109633621),true,new cljs.core.Keyword(null,"placeholder","placeholder",-104873083),placeholder], null)), "draggable": true, "onDragStart": ((function (map__23282,map__23282__$1,placeholder,element_fn,drag_fns,_STAR_reconciler_STAR_23277,_STAR_depth_STAR_23278,_STAR_shared_STAR_23279,_STAR_instrument_STAR_23280,_STAR_parent_STAR_23281,this$,x23276_23286){
+return (function (p1__23268_SHARP_){
+return new cljs.core.Keyword(null,"start","start",-355208981).cljs$core$IFn$_invoke$arity$1(drag_fns).call(null,p1__23268_SHARP_,this$);
+});})(map__23282,map__23282__$1,placeholder,element_fn,drag_fns,_STAR_reconciler_STAR_23277,_STAR_depth_STAR_23278,_STAR_shared_STAR_23279,_STAR_instrument_STAR_23280,_STAR_parent_STAR_23281,this$,x23276_23286))
+, "onDragEnd": ((function (map__23282,map__23282__$1,placeholder,element_fn,drag_fns,_STAR_reconciler_STAR_23277,_STAR_depth_STAR_23278,_STAR_shared_STAR_23279,_STAR_instrument_STAR_23280,_STAR_parent_STAR_23281,this$,x23276_23286){
+return (function (p1__23269_SHARP_){
+return new cljs.core.Keyword(null,"end","end",-268185958).cljs$core$IFn$_invoke$arity$1(drag_fns).call(null,p1__23269_SHARP_,this$);
+});})(map__23282,map__23282__$1,placeholder,element_fn,drag_fns,_STAR_reconciler_STAR_23277,_STAR_depth_STAR_23278,_STAR_shared_STAR_23279,_STAR_instrument_STAR_23280,_STAR_parent_STAR_23281,this$,x23276_23286))
+, "onDragOver": ((function (map__23282,map__23282__$1,placeholder,element_fn,drag_fns,_STAR_reconciler_STAR_23277,_STAR_depth_STAR_23278,_STAR_shared_STAR_23279,_STAR_instrument_STAR_23280,_STAR_parent_STAR_23281,this$,x23276_23286){
+return (function (p1__23270_SHARP_){
+return new cljs.core.Keyword(null,"over","over",192553051).cljs$core$IFn$_invoke$arity$1(drag_fns).call(null,p1__23270_SHARP_,this$);
+});})(map__23282,map__23282__$1,placeholder,element_fn,drag_fns,_STAR_reconciler_STAR_23277,_STAR_depth_STAR_23278,_STAR_shared_STAR_23279,_STAR_instrument_STAR_23280,_STAR_parent_STAR_23281,this$,x23276_23286))
+, "onDrop": ((function (map__23282,map__23282__$1,placeholder,element_fn,drag_fns,_STAR_reconciler_STAR_23277,_STAR_depth_STAR_23278,_STAR_shared_STAR_23279,_STAR_instrument_STAR_23280,_STAR_parent_STAR_23281,this$,x23276_23286){
+return (function (p1__23271_SHARP_){
+return new cljs.core.Keyword(null,"drop","drop",364481611).cljs$core$IFn$_invoke$arity$1(drag_fns).call(null,p1__23271_SHARP_,this$);
+});})(map__23282,map__23282__$1,placeholder,element_fn,drag_fns,_STAR_reconciler_STAR_23277,_STAR_depth_STAR_23278,_STAR_shared_STAR_23279,_STAR_instrument_STAR_23280,_STAR_parent_STAR_23281,this$,x23276_23286))
 },element_fn.call(null,om.next.props.call(null,this$)));
-}finally {om.next._STAR_parent_STAR_ = _STAR_parent_STAR_8350;
+}finally {om.next._STAR_parent_STAR_ = _STAR_parent_STAR_23281;
 
-om.next._STAR_instrument_STAR_ = _STAR_instrument_STAR_8349;
+om.next._STAR_instrument_STAR_ = _STAR_instrument_STAR_23280;
 
-om.next._STAR_shared_STAR_ = _STAR_shared_STAR_8348;
+om.next._STAR_shared_STAR_ = _STAR_shared_STAR_23279;
 
-om.next._STAR_depth_STAR_ = _STAR_depth_STAR_8347;
+om.next._STAR_depth_STAR_ = _STAR_depth_STAR_23278;
 
-om.next._STAR_reconciler_STAR_ = _STAR_reconciler_STAR_8346;
-}});})(x8345_8355))
+om.next._STAR_reconciler_STAR_ = _STAR_reconciler_STAR_23277;
+}});})(x23276_23286))
 ;
 
 
@@ -159,10 +159,10 @@ kanban.components.sortable_list.Sortable.prototype.constructor = kanban.componen
 
 kanban.components.sortable_list.Sortable.prototype.om$isComponent = true;
 
-var x8353_8356 = kanban.components.sortable_list.Sortable;
+var x23284_23287 = kanban.components.sortable_list.Sortable;
 
 
-var x8354_8357 = kanban.components.sortable_list.Sortable.prototype;
+var x23285_23288 = kanban.components.sortable_list.Sortable.prototype;
 
 
 kanban.components.sortable_list.Sortable.cljs$lang$type = true;
@@ -191,17 +191,17 @@ return this__7586__auto__;
 
 kanban.components.sortable_list.SortableList.prototype = goog.object.clone(React.Component.prototype);
 
-var x8374_8395 = kanban.components.sortable_list.SortableList.prototype;
-x8374_8395.componentWillUpdate = ((function (x8374_8395){
+var x23305_23326 = kanban.components.sortable_list.SortableList.prototype;
+x23305_23326.componentWillUpdate = ((function (x23305_23326){
 return (function (next_props__7527__auto__,next_state__7528__auto__){
 var this__7526__auto__ = this;
 om.next.merge_pending_props_BANG_.call(null,this__7526__auto__);
 
 return om.next.merge_pending_state_BANG_.call(null,this__7526__auto__);
-});})(x8374_8395))
+});})(x23305_23326))
 ;
 
-x8374_8395.shouldComponentUpdate = ((function (x8374_8395){
+x23305_23326.shouldComponentUpdate = ((function (x23305_23326){
 return (function (next_props__7527__auto__,next_state__7528__auto__){
 var this__7526__auto__ = this;
 var or__5094__auto__ = cljs.core.not_EQ_.call(null,om.next.props.call(null,this__7526__auto__),goog.object.get(next_props__7527__auto__,"omcljs$value"));
@@ -215,10 +215,10 @@ return cljs.core.not_EQ_.call(null,goog.object.get(this__7526__auto__.state,"omc
 return and__5082__auto__;
 }
 }
-});})(x8374_8395))
+});})(x23305_23326))
 ;
 
-x8374_8395.componentWillUnmount = ((function (x8374_8395){
+x23305_23326.componentWillUnmount = ((function (x23305_23326){
 return (function (){
 var this__7526__auto__ = this;
 var r__7532__auto__ = om.next.get_reconciler.call(null,this__7526__auto__);
@@ -235,24 +235,24 @@ return null;
 } else {
 return om.next.protocols.drop_component_BANG_.call(null,indexer__7531__auto__,this__7526__auto__);
 }
-});})(x8374_8395))
+});})(x23305_23326))
 ;
 
-x8374_8395.componentDidUpdate = ((function (x8374_8395){
+x23305_23326.componentDidUpdate = ((function (x23305_23326){
 return (function (prev_props__7529__auto__,prev_state__7530__auto__){
 var this__7526__auto__ = this;
 return om.next.clear_prev_props_BANG_.call(null,this__7526__auto__);
-});})(x8374_8395))
+});})(x23305_23326))
 ;
 
-x8374_8395.isMounted = ((function (x8374_8395){
+x23305_23326.isMounted = ((function (x23305_23326){
 return (function (){
 var this__7526__auto__ = this;
 return cljs.core.boolean$.call(null,goog.object.getValueByKeys(this__7526__auto__,"_reactInternalInstance","_renderedComponent"));
-});})(x8374_8395))
+});})(x23305_23326))
 ;
 
-x8374_8395.componentWillMount = ((function (x8374_8395){
+x23305_23326.componentWillMount = ((function (x23305_23326){
 return (function (){
 var this__7526__auto__ = this;
 var indexer__7531__auto__ = cljs.core.get_in.call(null,om.next.get_reconciler.call(null,this__7526__auto__),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"config","config",994861415),new cljs.core.Keyword(null,"indexer","indexer",-1774914315)], null));
@@ -261,47 +261,47 @@ return null;
 } else {
 return om.next.protocols.index_component_BANG_.call(null,indexer__7531__auto__,this__7526__auto__);
 }
-});})(x8374_8395))
+});})(x23305_23326))
 ;
 
-x8374_8395.item_for_key = ((function (x8374_8395){
+x23305_23326.item_for_key = ((function (x23305_23326){
 return (function (key){
 var this$ = this;
-var map__8375 = om.next.props.call(null,this$);
-var map__8375__$1 = ((((!((map__8375 == null)))?((((map__8375.cljs$lang$protocol_mask$partition0$ & (64))) || (map__8375.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__8375):map__8375);
-var items = cljs.core.get.call(null,map__8375__$1,new cljs.core.Keyword(null,"items","items",1031954938));
-var key_fn = cljs.core.get.call(null,map__8375__$1,new cljs.core.Keyword(null,"key-fn","key-fn",-636154479));
-return cljs.core.first.call(null,cljs.core.filter.call(null,((function (map__8375,map__8375__$1,items,key_fn,this$,x8374_8395){
-return (function (p1__8358_SHARP_){
-return cljs.core._EQ_.call(null,key,key_fn.call(null,p1__8358_SHARP_));
-});})(map__8375,map__8375__$1,items,key_fn,this$,x8374_8395))
+var map__23306 = om.next.props.call(null,this$);
+var map__23306__$1 = ((((!((map__23306 == null)))?((((map__23306.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23306.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23306):map__23306);
+var items = cljs.core.get.call(null,map__23306__$1,new cljs.core.Keyword(null,"items","items",1031954938));
+var key_fn = cljs.core.get.call(null,map__23306__$1,new cljs.core.Keyword(null,"key-fn","key-fn",-636154479));
+return cljs.core.first.call(null,cljs.core.filter.call(null,((function (map__23306,map__23306__$1,items,key_fn,this$,x23305_23326){
+return (function (p1__23289_SHARP_){
+return cljs.core._EQ_.call(null,key,key_fn.call(null,p1__23289_SHARP_));
+});})(map__23306,map__23306__$1,items,key_fn,this$,x23305_23326))
 ,items));
-});})(x8374_8395))
+});})(x23305_23326))
 ;
 
-x8374_8395.drag_start = ((function (x8374_8395){
+x23305_23326.drag_start = ((function (x23305_23326){
 return (function (e,child){
 var this$ = this;
 var key = kanban.components.sortable_list.sortable_key.call(null,child);
 return om.next.update_state_BANG_.call(null,this$,cljs.core.assoc,new cljs.core.Keyword(null,"drag-key","drag-key",-1423488949),key);
-});})(x8374_8395))
+});})(x23305_23326))
 ;
 
-x8374_8395.drag_end = ((function (x8374_8395){
+x23305_23326.drag_end = ((function (x23305_23326){
 return (function (e,child){
 var this$ = this;
 return om.next.update_state_BANG_.call(null,this$,cljs.core.dissoc,new cljs.core.Keyword(null,"drag-key","drag-key",-1423488949));
-});})(x8374_8395))
+});})(x23305_23326))
 ;
 
-x8374_8395.drag_over = ((function (x8374_8395){
+x23305_23326.drag_over = ((function (x23305_23326){
 return (function (e){
 var this$ = this;
 return e.preventDefault();
-});})(x8374_8395))
+});})(x23305_23326))
 ;
 
-x8374_8395.drag_over_item = ((function (x8374_8395){
+x23305_23326.drag_over_item = ((function (x23305_23326){
 return (function (e,target_child){
 var this$ = this;
 e.dataTransfer.dropEffect = "move";
@@ -328,42 +328,42 @@ return or__5094__auto__;
 return new cljs.core.Keyword(null,"items","items",1031954938).cljs$core$IFn$_invoke$arity$1(om.next.props.call(null,this$));
 }
 })();
-var items_without_drag = cljs.core.remove.call(null,((function (x,y,node,rect,center_x,center_y,where,items,target_key,drag_key,key_fn,this$,x8374_8395){
-return (function (p1__8359_SHARP_){
-return cljs.core._EQ_.call(null,drag_key,key_fn.call(null,p1__8359_SHARP_));
-});})(x,y,node,rect,center_x,center_y,where,items,target_key,drag_key,key_fn,this$,x8374_8395))
+var items_without_drag = cljs.core.remove.call(null,((function (x,y,node,rect,center_x,center_y,where,items,target_key,drag_key,key_fn,this$,x23305_23326){
+return (function (p1__23290_SHARP_){
+return cljs.core._EQ_.call(null,drag_key,key_fn.call(null,p1__23290_SHARP_));
+});})(x,y,node,rect,center_x,center_y,where,items,target_key,drag_key,key_fn,this$,x23305_23326))
 ,items);
-var index = (function (){var G__8377 = kanban.util.index_of.call(null,target_key,cljs.core.map.call(null,key_fn,items_without_drag));
-var G__8377__$1 = ((cljs.core._EQ_.call(null,where,new cljs.core.Keyword(null,"after","after",594996914)))?(G__8377 + (1)):G__8377);
-return G__8377__$1;
+var index = (function (){var G__23308 = kanban.util.index_of.call(null,target_key,cljs.core.map.call(null,key_fn,items_without_drag));
+var G__23308__$1 = ((cljs.core._EQ_.call(null,where,new cljs.core.Keyword(null,"after","after",594996914)))?(G__23308 + (1)):G__23308);
+return G__23308__$1;
 })();
-return om.next.update_state_BANG_.call(null,this$,cljs.core.assoc,new cljs.core.Keyword(null,"items","items",1031954938),((function (x,y,node,rect,center_x,center_y,where,items,items_without_drag,index,target_key,drag_key,key_fn,this$,x8374_8395){
-return (function (p1__8360_SHARP_){
-return cljs.core.concat.call(null,cljs.core.first.call(null,p1__8360_SHARP_),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [this$.item_for_key(drag_key)], null),cljs.core.second.call(null,p1__8360_SHARP_));
-});})(x,y,node,rect,center_x,center_y,where,items,items_without_drag,index,target_key,drag_key,key_fn,this$,x8374_8395))
+return om.next.update_state_BANG_.call(null,this$,cljs.core.assoc,new cljs.core.Keyword(null,"items","items",1031954938),((function (x,y,node,rect,center_x,center_y,where,items,items_without_drag,index,target_key,drag_key,key_fn,this$,x23305_23326){
+return (function (p1__23291_SHARP_){
+return cljs.core.concat.call(null,cljs.core.first.call(null,p1__23291_SHARP_),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [this$.item_for_key(drag_key)], null),cljs.core.second.call(null,p1__23291_SHARP_));
+});})(x,y,node,rect,center_x,center_y,where,items,items_without_drag,index,target_key,drag_key,key_fn,this$,x23305_23326))
 .call(null,cljs.core.split_at.call(null,index,items_without_drag)));
 }
-});})(x8374_8395))
+});})(x23305_23326))
 ;
 
-x8374_8395.drag_drop = ((function (x8374_8395){
+x23305_23326.drag_drop = ((function (x23305_23326){
 return (function (e){
 var this$ = this;
-var map__8378 = om.next.props.call(null,this$);
-var map__8378__$1 = ((((!((map__8378 == null)))?((((map__8378.cljs$lang$protocol_mask$partition0$ & (64))) || (map__8378.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__8378):map__8378);
-var change_fn = cljs.core.get.call(null,map__8378__$1,new cljs.core.Keyword(null,"change-fn","change-fn",1566440825));
+var map__23309 = om.next.props.call(null,this$);
+var map__23309__$1 = ((((!((map__23309 == null)))?((((map__23309.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23309.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23309):map__23309);
+var change_fn = cljs.core.get.call(null,map__23309__$1,new cljs.core.Keyword(null,"change-fn","change-fn",1566440825));
 return change_fn.call(null,om.next.get_state.call(null,this$,new cljs.core.Keyword(null,"items","items",1031954938)));
-});})(x8374_8395))
+});})(x23305_23326))
 ;
 
-x8374_8395.render = ((function (x8374_8395){
+x23305_23326.render = ((function (x23305_23326){
 return (function (){
 var this$ = this;
-var _STAR_reconciler_STAR_8380 = om.next._STAR_reconciler_STAR_;
-var _STAR_depth_STAR_8381 = om.next._STAR_depth_STAR_;
-var _STAR_shared_STAR_8382 = om.next._STAR_shared_STAR_;
-var _STAR_instrument_STAR_8383 = om.next._STAR_instrument_STAR_;
-var _STAR_parent_STAR_8384 = om.next._STAR_parent_STAR_;
+var _STAR_reconciler_STAR_23311 = om.next._STAR_reconciler_STAR_;
+var _STAR_depth_STAR_23312 = om.next._STAR_depth_STAR_;
+var _STAR_shared_STAR_23313 = om.next._STAR_shared_STAR_;
+var _STAR_instrument_STAR_23314 = om.next._STAR_instrument_STAR_;
+var _STAR_parent_STAR_23315 = om.next._STAR_parent_STAR_;
 om.next._STAR_reconciler_STAR_ = om.next.get_reconciler.call(null,this$);
 
 om.next._STAR_depth_STAR_ = (om.next.depth.call(null,this$) + (1));
@@ -375,58 +375,58 @@ om.next._STAR_instrument_STAR_ = om.next.instrument.call(null,this$);
 om.next._STAR_parent_STAR_ = this$;
 
 try{var items = new cljs.core.Keyword(null,"items","items",1031954938).cljs$core$IFn$_invoke$arity$2(om.next.get_state.call(null,this$),new cljs.core.Keyword(null,"items","items",1031954938).cljs$core$IFn$_invoke$arity$1(om.next.props.call(null,this$)));
-var map__8385 = om.next.props.call(null,this$);
-var map__8385__$1 = ((((!((map__8385 == null)))?((((map__8385.cljs$lang$protocol_mask$partition0$ & (64))) || (map__8385.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__8385):map__8385);
-var key_fn = cljs.core.get.call(null,map__8385__$1,new cljs.core.Keyword(null,"key-fn","key-fn",-636154479));
-var element_fn = cljs.core.get.call(null,map__8385__$1,new cljs.core.Keyword(null,"element-fn","element-fn",554034748));
-var map__8386 = om.next.get_state.call(null,this$);
-var map__8386__$1 = ((((!((map__8386 == null)))?((((map__8386.cljs$lang$protocol_mask$partition0$ & (64))) || (map__8386.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__8386):map__8386);
-var drag_key = cljs.core.get.call(null,map__8386__$1,new cljs.core.Keyword(null,"drag-key","drag-key",-1423488949));
-return React.DOM.ul({"className": "sortable-list", "onDragOver": ((function (items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395){
-return (function (p1__8361_SHARP_){
-return this$.drag_over(p1__8361_SHARP_);
-});})(items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395))
-, "onDrop": ((function (items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395){
-return (function (p1__8362_SHARP_){
-return this$.drag_drop(p1__8362_SHARP_);
-});})(items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395))
-},(function (){var iter__5866__auto__ = ((function (items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395){
-return (function kanban$components$sortable_list$iter__8389(s__8390){
-return (new cljs.core.LazySeq(null,((function (items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395){
+var map__23316 = om.next.props.call(null,this$);
+var map__23316__$1 = ((((!((map__23316 == null)))?((((map__23316.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23316.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23316):map__23316);
+var key_fn = cljs.core.get.call(null,map__23316__$1,new cljs.core.Keyword(null,"key-fn","key-fn",-636154479));
+var element_fn = cljs.core.get.call(null,map__23316__$1,new cljs.core.Keyword(null,"element-fn","element-fn",554034748));
+var map__23317 = om.next.get_state.call(null,this$);
+var map__23317__$1 = ((((!((map__23317 == null)))?((((map__23317.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23317.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23317):map__23317);
+var drag_key = cljs.core.get.call(null,map__23317__$1,new cljs.core.Keyword(null,"drag-key","drag-key",-1423488949));
+return React.DOM.ul({"className": "sortable-list", "onDragOver": ((function (items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326){
+return (function (p1__23292_SHARP_){
+return this$.drag_over(p1__23292_SHARP_);
+});})(items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326))
+, "onDrop": ((function (items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326){
+return (function (p1__23293_SHARP_){
+return this$.drag_drop(p1__23293_SHARP_);
+});})(items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326))
+},(function (){var iter__5866__auto__ = ((function (items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326){
+return (function kanban$components$sortable_list$iter__23320(s__23321){
+return (new cljs.core.LazySeq(null,((function (items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326){
 return (function (){
-var s__8390__$1 = s__8390;
+var s__23321__$1 = s__23321;
 while(true){
-var temp__4425__auto__ = cljs.core.seq.call(null,s__8390__$1);
+var temp__4425__auto__ = cljs.core.seq.call(null,s__23321__$1);
 if(temp__4425__auto__){
-var s__8390__$2 = temp__4425__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,s__8390__$2)){
-var c__5864__auto__ = cljs.core.chunk_first.call(null,s__8390__$2);
+var s__23321__$2 = temp__4425__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,s__23321__$2)){
+var c__5864__auto__ = cljs.core.chunk_first.call(null,s__23321__$2);
 var size__5865__auto__ = cljs.core.count.call(null,c__5864__auto__);
-var b__8392 = cljs.core.chunk_buffer.call(null,size__5865__auto__);
-if((function (){var i__8391 = (0);
+var b__23323 = cljs.core.chunk_buffer.call(null,size__5865__auto__);
+if((function (){var i__23322 = (0);
 while(true){
-if((i__8391 < size__5865__auto__)){
-var item = cljs.core._nth.call(null,c__5864__auto__,i__8391);
-cljs.core.chunk_append.call(null,b__8392,kanban.components.sortable_list.sortable.call(null,om.next.computed.call(null,item,new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"placeholder","placeholder",-104873083),cljs.core._EQ_.call(null,drag_key,key_fn.call(null,item)),new cljs.core.Keyword(null,"key-fn","key-fn",-636154479),key_fn,new cljs.core.Keyword(null,"element-fn","element-fn",554034748),element_fn,new cljs.core.Keyword(null,"drag-fns","drag-fns",133281761),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"start","start",-355208981),((function (i__8391,item,c__5864__auto__,size__5865__auto__,b__8392,s__8390__$2,temp__4425__auto__,items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395){
-return (function (p1__8363_SHARP_,p2__8364_SHARP_){
-return this$.drag_start(p1__8363_SHARP_,p2__8364_SHARP_);
-});})(i__8391,item,c__5864__auto__,size__5865__auto__,b__8392,s__8390__$2,temp__4425__auto__,items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395))
-,new cljs.core.Keyword(null,"end","end",-268185958),((function (i__8391,item,c__5864__auto__,size__5865__auto__,b__8392,s__8390__$2,temp__4425__auto__,items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395){
-return (function (p1__8365_SHARP_,p2__8366_SHARP_){
-return this$.drag_end(p1__8365_SHARP_,p2__8366_SHARP_);
-});})(i__8391,item,c__5864__auto__,size__5865__auto__,b__8392,s__8390__$2,temp__4425__auto__,items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395))
-,new cljs.core.Keyword(null,"over","over",192553051),((function (i__8391,item,c__5864__auto__,size__5865__auto__,b__8392,s__8390__$2,temp__4425__auto__,items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395){
-return (function (p1__8367_SHARP_,p2__8368_SHARP_){
-return this$.drag_over_item(p1__8367_SHARP_,p2__8368_SHARP_);
-});})(i__8391,item,c__5864__auto__,size__5865__auto__,b__8392,s__8390__$2,temp__4425__auto__,items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395))
-,new cljs.core.Keyword(null,"drop","drop",364481611),((function (i__8391,item,c__5864__auto__,size__5865__auto__,b__8392,s__8390__$2,temp__4425__auto__,items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395){
-return (function (p1__8369_SHARP_){
-return this$.drag_drop(p1__8369_SHARP_);
-});})(i__8391,item,c__5864__auto__,size__5865__auto__,b__8392,s__8390__$2,temp__4425__auto__,items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395))
+if((i__23322 < size__5865__auto__)){
+var item = cljs.core._nth.call(null,c__5864__auto__,i__23322);
+cljs.core.chunk_append.call(null,b__23323,kanban.components.sortable_list.sortable.call(null,om.next.computed.call(null,item,new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"placeholder","placeholder",-104873083),cljs.core._EQ_.call(null,drag_key,key_fn.call(null,item)),new cljs.core.Keyword(null,"key-fn","key-fn",-636154479),key_fn,new cljs.core.Keyword(null,"element-fn","element-fn",554034748),element_fn,new cljs.core.Keyword(null,"drag-fns","drag-fns",133281761),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"start","start",-355208981),((function (i__23322,item,c__5864__auto__,size__5865__auto__,b__23323,s__23321__$2,temp__4425__auto__,items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326){
+return (function (p1__23294_SHARP_,p2__23295_SHARP_){
+return this$.drag_start(p1__23294_SHARP_,p2__23295_SHARP_);
+});})(i__23322,item,c__5864__auto__,size__5865__auto__,b__23323,s__23321__$2,temp__4425__auto__,items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326))
+,new cljs.core.Keyword(null,"end","end",-268185958),((function (i__23322,item,c__5864__auto__,size__5865__auto__,b__23323,s__23321__$2,temp__4425__auto__,items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326){
+return (function (p1__23296_SHARP_,p2__23297_SHARP_){
+return this$.drag_end(p1__23296_SHARP_,p2__23297_SHARP_);
+});})(i__23322,item,c__5864__auto__,size__5865__auto__,b__23323,s__23321__$2,temp__4425__auto__,items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326))
+,new cljs.core.Keyword(null,"over","over",192553051),((function (i__23322,item,c__5864__auto__,size__5865__auto__,b__23323,s__23321__$2,temp__4425__auto__,items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326){
+return (function (p1__23298_SHARP_,p2__23299_SHARP_){
+return this$.drag_over_item(p1__23298_SHARP_,p2__23299_SHARP_);
+});})(i__23322,item,c__5864__auto__,size__5865__auto__,b__23323,s__23321__$2,temp__4425__auto__,items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326))
+,new cljs.core.Keyword(null,"drop","drop",364481611),((function (i__23322,item,c__5864__auto__,size__5865__auto__,b__23323,s__23321__$2,temp__4425__auto__,items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326){
+return (function (p1__23300_SHARP_){
+return this$.drag_drop(p1__23300_SHARP_);
+});})(i__23322,item,c__5864__auto__,size__5865__auto__,b__23323,s__23321__$2,temp__4425__auto__,items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326))
 ], null)], null))));
 
-var G__8396 = (i__8391 + (1));
-i__8391 = G__8396;
+var G__23327 = (i__23322 + (1));
+i__23322 = G__23327;
 continue;
 } else {
 return true;
@@ -434,51 +434,51 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__8392),kanban$components$sortable_list$iter__8389.call(null,cljs.core.chunk_rest.call(null,s__8390__$2)));
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__23323),kanban$components$sortable_list$iter__23320.call(null,cljs.core.chunk_rest.call(null,s__23321__$2)));
 } else {
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__8392),null);
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__23323),null);
 }
 } else {
-var item = cljs.core.first.call(null,s__8390__$2);
-return cljs.core.cons.call(null,kanban.components.sortable_list.sortable.call(null,om.next.computed.call(null,item,new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"placeholder","placeholder",-104873083),cljs.core._EQ_.call(null,drag_key,key_fn.call(null,item)),new cljs.core.Keyword(null,"key-fn","key-fn",-636154479),key_fn,new cljs.core.Keyword(null,"element-fn","element-fn",554034748),element_fn,new cljs.core.Keyword(null,"drag-fns","drag-fns",133281761),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"start","start",-355208981),((function (item,s__8390__$2,temp__4425__auto__,items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395){
-return (function (p1__8363_SHARP_,p2__8364_SHARP_){
-return this$.drag_start(p1__8363_SHARP_,p2__8364_SHARP_);
-});})(item,s__8390__$2,temp__4425__auto__,items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395))
-,new cljs.core.Keyword(null,"end","end",-268185958),((function (item,s__8390__$2,temp__4425__auto__,items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395){
-return (function (p1__8365_SHARP_,p2__8366_SHARP_){
-return this$.drag_end(p1__8365_SHARP_,p2__8366_SHARP_);
-});})(item,s__8390__$2,temp__4425__auto__,items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395))
-,new cljs.core.Keyword(null,"over","over",192553051),((function (item,s__8390__$2,temp__4425__auto__,items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395){
-return (function (p1__8367_SHARP_,p2__8368_SHARP_){
-return this$.drag_over_item(p1__8367_SHARP_,p2__8368_SHARP_);
-});})(item,s__8390__$2,temp__4425__auto__,items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395))
-,new cljs.core.Keyword(null,"drop","drop",364481611),((function (item,s__8390__$2,temp__4425__auto__,items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395){
-return (function (p1__8369_SHARP_){
-return this$.drag_drop(p1__8369_SHARP_);
-});})(item,s__8390__$2,temp__4425__auto__,items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395))
-], null)], null))),kanban$components$sortable_list$iter__8389.call(null,cljs.core.rest.call(null,s__8390__$2)));
+var item = cljs.core.first.call(null,s__23321__$2);
+return cljs.core.cons.call(null,kanban.components.sortable_list.sortable.call(null,om.next.computed.call(null,item,new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"placeholder","placeholder",-104873083),cljs.core._EQ_.call(null,drag_key,key_fn.call(null,item)),new cljs.core.Keyword(null,"key-fn","key-fn",-636154479),key_fn,new cljs.core.Keyword(null,"element-fn","element-fn",554034748),element_fn,new cljs.core.Keyword(null,"drag-fns","drag-fns",133281761),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"start","start",-355208981),((function (item,s__23321__$2,temp__4425__auto__,items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326){
+return (function (p1__23294_SHARP_,p2__23295_SHARP_){
+return this$.drag_start(p1__23294_SHARP_,p2__23295_SHARP_);
+});})(item,s__23321__$2,temp__4425__auto__,items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326))
+,new cljs.core.Keyword(null,"end","end",-268185958),((function (item,s__23321__$2,temp__4425__auto__,items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326){
+return (function (p1__23296_SHARP_,p2__23297_SHARP_){
+return this$.drag_end(p1__23296_SHARP_,p2__23297_SHARP_);
+});})(item,s__23321__$2,temp__4425__auto__,items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326))
+,new cljs.core.Keyword(null,"over","over",192553051),((function (item,s__23321__$2,temp__4425__auto__,items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326){
+return (function (p1__23298_SHARP_,p2__23299_SHARP_){
+return this$.drag_over_item(p1__23298_SHARP_,p2__23299_SHARP_);
+});})(item,s__23321__$2,temp__4425__auto__,items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326))
+,new cljs.core.Keyword(null,"drop","drop",364481611),((function (item,s__23321__$2,temp__4425__auto__,items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326){
+return (function (p1__23300_SHARP_){
+return this$.drag_drop(p1__23300_SHARP_);
+});})(item,s__23321__$2,temp__4425__auto__,items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326))
+], null)], null))),kanban$components$sortable_list$iter__23320.call(null,cljs.core.rest.call(null,s__23321__$2)));
 }
 } else {
 return null;
 }
 break;
 }
-});})(items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395))
+});})(items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326))
 ,null,null));
-});})(items,map__8385,map__8385__$1,key_fn,element_fn,map__8386,map__8386__$1,drag_key,_STAR_reconciler_STAR_8380,_STAR_depth_STAR_8381,_STAR_shared_STAR_8382,_STAR_instrument_STAR_8383,_STAR_parent_STAR_8384,this$,x8374_8395))
+});})(items,map__23316,map__23316__$1,key_fn,element_fn,map__23317,map__23317__$1,drag_key,_STAR_reconciler_STAR_23311,_STAR_depth_STAR_23312,_STAR_shared_STAR_23313,_STAR_instrument_STAR_23314,_STAR_parent_STAR_23315,this$,x23305_23326))
 ;
 return iter__5866__auto__.call(null,items);
 })());
-}finally {om.next._STAR_parent_STAR_ = _STAR_parent_STAR_8384;
+}finally {om.next._STAR_parent_STAR_ = _STAR_parent_STAR_23315;
 
-om.next._STAR_instrument_STAR_ = _STAR_instrument_STAR_8383;
+om.next._STAR_instrument_STAR_ = _STAR_instrument_STAR_23314;
 
-om.next._STAR_shared_STAR_ = _STAR_shared_STAR_8382;
+om.next._STAR_shared_STAR_ = _STAR_shared_STAR_23313;
 
-om.next._STAR_depth_STAR_ = _STAR_depth_STAR_8381;
+om.next._STAR_depth_STAR_ = _STAR_depth_STAR_23312;
 
-om.next._STAR_reconciler_STAR_ = _STAR_reconciler_STAR_8380;
-}});})(x8374_8395))
+om.next._STAR_reconciler_STAR_ = _STAR_reconciler_STAR_23311;
+}});})(x23305_23326))
 ;
 
 
@@ -486,10 +486,10 @@ kanban.components.sortable_list.SortableList.prototype.constructor = kanban.comp
 
 kanban.components.sortable_list.SortableList.prototype.om$isComponent = true;
 
-var x8393_8397 = kanban.components.sortable_list.SortableList;
+var x23324_23328 = kanban.components.sortable_list.SortableList;
 
 
-var x8394_8398 = kanban.components.sortable_list.SortableList.prototype;
+var x23325_23329 = kanban.components.sortable_list.SortableList.prototype;
 
 
 kanban.components.sortable_list.SortableList.cljs$lang$type = true;
