@@ -37,25 +37,25 @@ return kanban.components.lane.lane.call(null,cljs.core.deref.call(null,props));
 devcards.core.register_card.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"path","path",-188191168),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"cards.lanes","cards.lanes",-589564641),new cljs.core.Keyword(null,"card","card",-1430355152)], null),new cljs.core.Keyword(null,"func","func",-238706040),(function (){
 return devcards.core.card_base.call(null,new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),"card",new cljs.core.Keyword(null,"documentation","documentation",1889593999),"### Lane with 50 cards",new cljs.core.Keyword(null,"main-obj","main-obj",-1544409742),(function (props,_){
 return kanban.components.lane.lane.call(null,cljs.core.deref.call(null,props));
-}),new cljs.core.Keyword(null,"initial-data","initial-data",-1315709804),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",-1388402092),(1),new cljs.core.Keyword(null,"name","name",1843675177),"Backlog",new cljs.core.Keyword(null,"cards","cards",169174038),(function (){var iter__5866__auto__ = (function cards$lanes$iter__29818(s__29819){
+}),new cljs.core.Keyword(null,"initial-data","initial-data",-1315709804),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",-1388402092),(1),new cljs.core.Keyword(null,"name","name",1843675177),"Backlog",new cljs.core.Keyword(null,"cards","cards",169174038),(function (){var iter__5866__auto__ = (function cards$lanes$iter__31242(s__31243){
 return (new cljs.core.LazySeq(null,(function (){
-var s__29819__$1 = s__29819;
+var s__31243__$1 = s__31243;
 while(true){
-var temp__4425__auto__ = cljs.core.seq.call(null,s__29819__$1);
+var temp__4425__auto__ = cljs.core.seq.call(null,s__31243__$1);
 if(temp__4425__auto__){
-var s__29819__$2 = temp__4425__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,s__29819__$2)){
-var c__5864__auto__ = cljs.core.chunk_first.call(null,s__29819__$2);
+var s__31243__$2 = temp__4425__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,s__31243__$2)){
+var c__5864__auto__ = cljs.core.chunk_first.call(null,s__31243__$2);
 var size__5865__auto__ = cljs.core.count.call(null,c__5864__auto__);
-var b__29821 = cljs.core.chunk_buffer.call(null,size__5865__auto__);
-if((function (){var i__29820 = (0);
+var b__31245 = cljs.core.chunk_buffer.call(null,size__5865__auto__);
+if((function (){var i__31244 = (0);
 while(true){
-if((i__29820 < size__5865__auto__)){
-var i = cljs.core._nth.call(null,c__5864__auto__,i__29820);
-cljs.core.chunk_append.call(null,b__29821,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",-1388402092),i,new cljs.core.Keyword(null,"text","text",-1790561697),[cljs.core.str("Card number "),cljs.core.str(i),cljs.core.str(" in this lane. "),cljs.core.str("This one has a rather long caption.")].join(''),new cljs.core.Keyword(null,"assignees","assignees",-298534943),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",-1388402092),(1),new cljs.core.Keyword(null,"username","username",1605666410),"ada",new cljs.core.Keyword(null,"name","name",1843675177),"Ada Lovelace"], null)], null)], null));
+if((i__31244 < size__5865__auto__)){
+var i = cljs.core._nth.call(null,c__5864__auto__,i__31244);
+cljs.core.chunk_append.call(null,b__31245,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",-1388402092),i,new cljs.core.Keyword(null,"text","text",-1790561697),[cljs.core.str("Card number "),cljs.core.str(i),cljs.core.str(" in this lane. "),cljs.core.str("This one has a rather long caption.")].join(''),new cljs.core.Keyword(null,"assignees","assignees",-298534943),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",-1388402092),(1),new cljs.core.Keyword(null,"username","username",1605666410),"ada",new cljs.core.Keyword(null,"name","name",1843675177),"Ada Lovelace"], null)], null)], null));
 
-var G__29822 = (i__29820 + (1));
-i__29820 = G__29822;
+var G__31246 = (i__31244 + (1));
+i__31244 = G__31246;
 continue;
 } else {
 return true;
@@ -63,13 +63,13 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__29821),cards$lanes$iter__29818.call(null,cljs.core.chunk_rest.call(null,s__29819__$2)));
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__31245),cards$lanes$iter__31242.call(null,cljs.core.chunk_rest.call(null,s__31243__$2)));
 } else {
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__29821),null);
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__31245),null);
 }
 } else {
-var i = cljs.core.first.call(null,s__29819__$2);
-return cljs.core.cons.call(null,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",-1388402092),i,new cljs.core.Keyword(null,"text","text",-1790561697),[cljs.core.str("Card number "),cljs.core.str(i),cljs.core.str(" in this lane. "),cljs.core.str("This one has a rather long caption.")].join(''),new cljs.core.Keyword(null,"assignees","assignees",-298534943),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",-1388402092),(1),new cljs.core.Keyword(null,"username","username",1605666410),"ada",new cljs.core.Keyword(null,"name","name",1843675177),"Ada Lovelace"], null)], null)], null),cards$lanes$iter__29818.call(null,cljs.core.rest.call(null,s__29819__$2)));
+var i = cljs.core.first.call(null,s__31243__$2);
+return cljs.core.cons.call(null,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",-1388402092),i,new cljs.core.Keyword(null,"text","text",-1790561697),[cljs.core.str("Card number "),cljs.core.str(i),cljs.core.str(" in this lane. "),cljs.core.str("This one has a rather long caption.")].join(''),new cljs.core.Keyword(null,"assignees","assignees",-298534943),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",-1388402092),(1),new cljs.core.Keyword(null,"username","username",1605666410),"ada",new cljs.core.Keyword(null,"name","name",1843675177),"Ada Lovelace"], null)], null)], null),cards$lanes$iter__31242.call(null,cljs.core.rest.call(null,s__31243__$2)));
 }
 } else {
 return null;
@@ -112,25 +112,25 @@ return React.DOM.div({"style": {"display": "table", "width": "300px", "border": 
 devcards.core.register_card.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"path","path",-188191168),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"cards.lanes","cards.lanes",-589564641),new cljs.core.Keyword(null,"card","card",-1430355152)], null),new cljs.core.Keyword(null,"func","func",-238706040),(function (){
 return devcards.core.card_base.call(null,new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),"card",new cljs.core.Keyword(null,"documentation","documentation",1889593999),"### Lane with 50 cards in a 300px high parent with no overflow\n\n   The resulting layout should be 300px high with the lane providing\n   a way to scroll up and down.",new cljs.core.Keyword(null,"main-obj","main-obj",-1544409742),(function (props,_){
 return React.DOM.div({"style": {"display": "table", "width": "300px", "height": "300px", "border": "thin solid black"}},kanban.components.lane.lane.call(null,cljs.core.deref.call(null,props)));
-}),new cljs.core.Keyword(null,"initial-data","initial-data",-1315709804),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",-1388402092),(1),new cljs.core.Keyword(null,"name","name",1843675177),"Backlog",new cljs.core.Keyword(null,"cards","cards",169174038),(function (){var iter__5866__auto__ = (function cards$lanes$iter__29823(s__29824){
+}),new cljs.core.Keyword(null,"initial-data","initial-data",-1315709804),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",-1388402092),(1),new cljs.core.Keyword(null,"name","name",1843675177),"Backlog",new cljs.core.Keyword(null,"cards","cards",169174038),(function (){var iter__5866__auto__ = (function cards$lanes$iter__31247(s__31248){
 return (new cljs.core.LazySeq(null,(function (){
-var s__29824__$1 = s__29824;
+var s__31248__$1 = s__31248;
 while(true){
-var temp__4425__auto__ = cljs.core.seq.call(null,s__29824__$1);
+var temp__4425__auto__ = cljs.core.seq.call(null,s__31248__$1);
 if(temp__4425__auto__){
-var s__29824__$2 = temp__4425__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,s__29824__$2)){
-var c__5864__auto__ = cljs.core.chunk_first.call(null,s__29824__$2);
+var s__31248__$2 = temp__4425__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,s__31248__$2)){
+var c__5864__auto__ = cljs.core.chunk_first.call(null,s__31248__$2);
 var size__5865__auto__ = cljs.core.count.call(null,c__5864__auto__);
-var b__29826 = cljs.core.chunk_buffer.call(null,size__5865__auto__);
-if((function (){var i__29825 = (0);
+var b__31250 = cljs.core.chunk_buffer.call(null,size__5865__auto__);
+if((function (){var i__31249 = (0);
 while(true){
-if((i__29825 < size__5865__auto__)){
-var i = cljs.core._nth.call(null,c__5864__auto__,i__29825);
-cljs.core.chunk_append.call(null,b__29826,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",-1388402092),i,new cljs.core.Keyword(null,"text","text",-1790561697),[cljs.core.str("Card number "),cljs.core.str(i),cljs.core.str(" in this lane. "),cljs.core.str("This one has a rather long caption.")].join(''),new cljs.core.Keyword(null,"assignees","assignees",-298534943),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",-1388402092),(1),new cljs.core.Keyword(null,"username","username",1605666410),"ada",new cljs.core.Keyword(null,"name","name",1843675177),"Ada Lovelace"], null)], null)], null));
+if((i__31249 < size__5865__auto__)){
+var i = cljs.core._nth.call(null,c__5864__auto__,i__31249);
+cljs.core.chunk_append.call(null,b__31250,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",-1388402092),i,new cljs.core.Keyword(null,"text","text",-1790561697),[cljs.core.str("Card number "),cljs.core.str(i),cljs.core.str(" in this lane. "),cljs.core.str("This one has a rather long caption.")].join(''),new cljs.core.Keyword(null,"assignees","assignees",-298534943),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",-1388402092),(1),new cljs.core.Keyword(null,"username","username",1605666410),"ada",new cljs.core.Keyword(null,"name","name",1843675177),"Ada Lovelace"], null)], null)], null));
 
-var G__29827 = (i__29825 + (1));
-i__29825 = G__29827;
+var G__31251 = (i__31249 + (1));
+i__31249 = G__31251;
 continue;
 } else {
 return true;
@@ -138,13 +138,13 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__29826),cards$lanes$iter__29823.call(null,cljs.core.chunk_rest.call(null,s__29824__$2)));
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__31250),cards$lanes$iter__31247.call(null,cljs.core.chunk_rest.call(null,s__31248__$2)));
 } else {
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__29826),null);
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__31250),null);
 }
 } else {
-var i = cljs.core.first.call(null,s__29824__$2);
-return cljs.core.cons.call(null,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",-1388402092),i,new cljs.core.Keyword(null,"text","text",-1790561697),[cljs.core.str("Card number "),cljs.core.str(i),cljs.core.str(" in this lane. "),cljs.core.str("This one has a rather long caption.")].join(''),new cljs.core.Keyword(null,"assignees","assignees",-298534943),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",-1388402092),(1),new cljs.core.Keyword(null,"username","username",1605666410),"ada",new cljs.core.Keyword(null,"name","name",1843675177),"Ada Lovelace"], null)], null)], null),cards$lanes$iter__29823.call(null,cljs.core.rest.call(null,s__29824__$2)));
+var i = cljs.core.first.call(null,s__31248__$2);
+return cljs.core.cons.call(null,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",-1388402092),i,new cljs.core.Keyword(null,"text","text",-1790561697),[cljs.core.str("Card number "),cljs.core.str(i),cljs.core.str(" in this lane. "),cljs.core.str("This one has a rather long caption.")].join(''),new cljs.core.Keyword(null,"assignees","assignees",-298534943),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",-1388402092),(1),new cljs.core.Keyword(null,"username","username",1605666410),"ada",new cljs.core.Keyword(null,"name","name",1843675177),"Ada Lovelace"], null)], null)], null),cards$lanes$iter__31247.call(null,cljs.core.rest.call(null,s__31248__$2)));
 }
 } else {
 return null;

@@ -40,10 +40,10 @@
           {:keys [drag-fns activate-fn]} (om/get-computed this)]
       (let [ref (om/get-ident this)]
         (dom/div #js {:className "card"
-                      :onClick #(some-> activate-fn (apply ref))
+                      :onClick #(some-> activate-fn (apply [ref]))
                       :draggable true
-                      :onDragStart #(some-> drag-fns :start (apply ref))
-                      :onDragEnd #(some-> drag-fns :end (apply ref))}
+                      :onDragStart #(some-> drag-fns :start (apply [ref]))
+                      :onDragEnd #(some-> drag-fns :end (apply [ref]))}
           (dom/span #js {:className "card-id"} id)
           (for [a assignees]
             (assignee a))
