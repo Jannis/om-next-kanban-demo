@@ -13,7 +13,7 @@
     (dom/h2 nil "How about user interface tests?")
     (dom/p nil
       "There aren't any for this demo. However, there is a "
-      (dom/a #js {:href "/cards.html"} "devcard interface") " exercising "
+      (dom/a #js {:href "cards.html"} "devcard interface") " exercising "
       "some of the user interface components in isolation from the demo "
       "app itself.")
     (dom/h2 nil "Where can I find the source code?")
