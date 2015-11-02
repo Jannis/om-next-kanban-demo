@@ -37,13 +37,13 @@
   Object
   (render [this]
     (let [{:keys [id text assignees]} (om/props this)
-          {:keys [drag-fns edit-fn]} (om/get-computed this)]
+          {:keys [drag-fns activate-fn]} (om/get-computed this)]
       (let [ref (om/get-ident this)]
         (dom/div #js {:className "card"
-                      :onClick #(edit-fn ref)
+                      :onClick #(some-> activate-fn (apply ref))
                       :draggable true
-                      :onDragStart #((:start drag-fns) ref)
-                      :onDragEnd #((:end drag-fns) ref)}
+                      :onDragStart #(some-> drag-fns :start (apply ref))
+                      :onDragEnd #(some-> drag-fns :end (apply ref))}
           (dom/span #js {:className "card-id"} id)
           (for [a assignees]
             (assignee a))
