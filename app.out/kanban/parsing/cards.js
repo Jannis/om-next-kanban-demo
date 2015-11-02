@@ -4,18 +4,18 @@ goog.require('cljs.core');
 goog.require('kanban.parsing.users');
 goog.require('kanban.reconciler');
 kanban.parsing.cards.get_card = (function kanban$parsing$cards$get_card(st,ref){
-return cljs.core.update.call(null,cljs.core.get_in.call(null,st,ref),new cljs.core.Keyword(null,"assignees","assignees",-298534943),(function (p1__33391_SHARP_){
-return kanban.parsing.users.resolve_users.call(null,st,p1__33391_SHARP_);
+return cljs.core.update.call(null,cljs.core.get_in.call(null,st,ref),new cljs.core.Keyword(null,"assignees","assignees",-298534943),(function (p1__29998_SHARP_){
+return kanban.parsing.users.resolve_users.call(null,st,p1__29998_SHARP_);
 }));
 });
 kanban.parsing.cards.get_cards = (function kanban$parsing$cards$get_cards(st,key){
-return cljs.core.into.call(null,cljs.core.PersistentVector.EMPTY,cljs.core.map.call(null,(function (p1__33392_SHARP_){
-return kanban.parsing.cards.get_card.call(null,st,p1__33392_SHARP_);
+return cljs.core.into.call(null,cljs.core.PersistentVector.EMPTY,cljs.core.map.call(null,(function (p1__29999_SHARP_){
+return kanban.parsing.cards.get_card.call(null,st,p1__29999_SHARP_);
 })),cljs.core.get.call(null,st,key));
 });
 kanban.parsing.cards.resolve_cards = (function kanban$parsing$cards$resolve_cards(st,refs){
-return cljs.core.into.call(null,cljs.core.PersistentVector.EMPTY,cljs.core.map.call(null,(function (p1__33393_SHARP_){
-return kanban.parsing.cards.get_card.call(null,st,p1__33393_SHARP_);
+return cljs.core.into.call(null,cljs.core.PersistentVector.EMPTY,cljs.core.map.call(null,(function (p1__30000_SHARP_){
+return kanban.parsing.cards.get_card.call(null,st,p1__30000_SHARP_);
 }),refs));
 });
 kanban.parsing.cards.create_card = (function kanban$parsing$cards$create_card(st){
@@ -25,42 +25,42 @@ var ref = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.
 return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"card","card",-1430355152),ref,new cljs.core.Keyword(null,"state","state",-1988618099),cljs.core.update.call(null,cljs.core.assoc_in.call(null,st,ref,card),new cljs.core.Keyword(null,"cards","cards",169174038),cljs.core.conj,ref)], null);
 });
 kanban.parsing.cards.delete_card = (function kanban$parsing$cards$delete_card(st,ref){
-return cljs.core.update.call(null,cljs.core.update.call(null,st,new cljs.core.Keyword(null,"cards","cards",169174038),(function (p1__33395_SHARP_,p2__33394_SHARP_){
-return cljs.core.remove.call(null,cljs.core.PersistentHashSet.fromArray([p2__33394_SHARP_], true),p1__33395_SHARP_);
+return cljs.core.update.call(null,cljs.core.update.call(null,st,new cljs.core.Keyword(null,"cards","cards",169174038),(function (p1__30002_SHARP_,p2__30001_SHARP_){
+return cljs.core.remove.call(null,cljs.core.PersistentHashSet.fromArray([p2__30001_SHARP_], true),p1__30002_SHARP_);
 }),ref),new cljs.core.Keyword("card","by-id","card/by-id",-2141035693),cljs.core.dissoc,cljs.core.second.call(null,ref));
 });
-cljs.core._add_method.call(null,kanban.reconciler.read,new cljs.core.Keyword(null,"cards","cards",169174038),(function (p__33396,key,_){
-var map__33397 = p__33396;
-var map__33397__$1 = ((((!((map__33397 == null)))?((((map__33397.cljs$lang$protocol_mask$partition0$ & (64))) || (map__33397.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__33397):map__33397);
-var state = cljs.core.get.call(null,map__33397__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
+cljs.core._add_method.call(null,kanban.reconciler.read,new cljs.core.Keyword(null,"cards","cards",169174038),(function (p__30003,key,_){
+var map__30004 = p__30003;
+var map__30004__$1 = ((((!((map__30004 == null)))?((((map__30004.cljs$lang$protocol_mask$partition0$ & (64))) || (map__30004.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__30004):map__30004);
+var state = cljs.core.get.call(null,map__30004__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
 var st = cljs.core.deref.call(null,state);
 return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"value","value",305978217),kanban.parsing.cards.get_cards.call(null,st,key)], null);
 }));
-cljs.core._add_method.call(null,kanban.reconciler.read,new cljs.core.Keyword("cards","dragged","cards/dragged",311055420),(function (p__33399,key,_){
-var map__33400 = p__33399;
-var map__33400__$1 = ((((!((map__33400 == null)))?((((map__33400.cljs$lang$protocol_mask$partition0$ & (64))) || (map__33400.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__33400):map__33400);
-var state = cljs.core.get.call(null,map__33400__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
+cljs.core._add_method.call(null,kanban.reconciler.read,new cljs.core.Keyword("cards","dragged","cards/dragged",311055420),(function (p__30006,key,_){
+var map__30007 = p__30006;
+var map__30007__$1 = ((((!((map__30007 == null)))?((((map__30007.cljs$lang$protocol_mask$partition0$ & (64))) || (map__30007.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__30007):map__30007);
+var state = cljs.core.get.call(null,map__30007__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
 var st = cljs.core.deref.call(null,state);
 return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"value","value",305978217),cljs.core.get.call(null,st,key)], null);
 }));
-cljs.core._add_method.call(null,kanban.reconciler.mutate,new cljs.core.Symbol("cards","drag","cards/drag",1929040996,null),(function (p__33402,_,params){
-var map__33403 = p__33402;
-var map__33403__$1 = ((((!((map__33403 == null)))?((((map__33403.cljs$lang$protocol_mask$partition0$ & (64))) || (map__33403.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__33403):map__33403);
-var state = cljs.core.get.call(null,map__33403__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
-return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"value","value",305978217),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("cards","dragged","cards/dragged",311055420)], null),new cljs.core.Keyword(null,"action","action",-811238024),((function (map__33403,map__33403__$1,state){
+cljs.core._add_method.call(null,kanban.reconciler.mutate,new cljs.core.Symbol("cards","drag","cards/drag",1929040996,null),(function (p__30009,_,params){
+var map__30010 = p__30009;
+var map__30010__$1 = ((((!((map__30010 == null)))?((((map__30010.cljs$lang$protocol_mask$partition0$ & (64))) || (map__30010.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__30010):map__30010);
+var state = cljs.core.get.call(null,map__30010__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
+return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"value","value",305978217),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("cards","dragged","cards/dragged",311055420)], null),new cljs.core.Keyword(null,"action","action",-811238024),((function (map__30010,map__30010__$1,state){
 return (function (){
 if(!(cljs.core.empty_QMARK_.call(null,params))){
 return cljs.core.swap_BANG_.call(null,state,cljs.core.assoc,new cljs.core.Keyword("cards","dragged","cards/dragged",311055420),params);
 } else {
 return cljs.core.swap_BANG_.call(null,state,cljs.core.assoc,new cljs.core.Keyword("cards","dragged","cards/dragged",311055420),null);
 }
-});})(map__33403,map__33403__$1,state))
+});})(map__30010,map__30010__$1,state))
 ], null);
 }));
-cljs.core._add_method.call(null,kanban.reconciler.read,new cljs.core.Keyword("cards","editing","cards/editing",1422138420),(function (p__33405,key,_){
-var map__33406 = p__33405;
-var map__33406__$1 = ((((!((map__33406 == null)))?((((map__33406.cljs$lang$protocol_mask$partition0$ & (64))) || (map__33406.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__33406):map__33406);
-var state = cljs.core.get.call(null,map__33406__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
+cljs.core._add_method.call(null,kanban.reconciler.read,new cljs.core.Keyword("cards","editing","cards/editing",1422138420),(function (p__30012,key,_){
+var map__30013 = p__30012;
+var map__30013__$1 = ((((!((map__30013 == null)))?((((map__30013.cljs$lang$protocol_mask$partition0$ & (64))) || (map__30013.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__30013):map__30013);
+var state = cljs.core.get.call(null,map__30013__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
 var st = cljs.core.deref.call(null,state);
 var temp__4423__auto__ = cljs.core.get.call(null,st,key);
 if(cljs.core.truth_(temp__4423__auto__)){
@@ -70,35 +70,35 @@ return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"va
 return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"value","value",305978217),null], null);
 }
 }));
-cljs.core._add_method.call(null,kanban.reconciler.mutate,new cljs.core.Symbol("cards","edit","cards/edit",93128254,null),(function (p__33408,_,p__33409){
-var map__33410 = p__33408;
-var map__33410__$1 = ((((!((map__33410 == null)))?((((map__33410.cljs$lang$protocol_mask$partition0$ & (64))) || (map__33410.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__33410):map__33410);
-var state = cljs.core.get.call(null,map__33410__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
-var map__33411 = p__33409;
-var map__33411__$1 = ((((!((map__33411 == null)))?((((map__33411.cljs$lang$protocol_mask$partition0$ & (64))) || (map__33411.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__33411):map__33411);
-var card = cljs.core.get.call(null,map__33411__$1,new cljs.core.Keyword(null,"card","card",-1430355152));
-return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"value","value",305978217),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("cards","editing","cards/editing",1422138420)], null),new cljs.core.Keyword(null,"action","action",-811238024),((function (map__33410,map__33410__$1,state,map__33411,map__33411__$1,card){
+cljs.core._add_method.call(null,kanban.reconciler.mutate,new cljs.core.Symbol("cards","edit","cards/edit",93128254,null),(function (p__30015,_,p__30016){
+var map__30017 = p__30015;
+var map__30017__$1 = ((((!((map__30017 == null)))?((((map__30017.cljs$lang$protocol_mask$partition0$ & (64))) || (map__30017.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__30017):map__30017);
+var state = cljs.core.get.call(null,map__30017__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
+var map__30018 = p__30016;
+var map__30018__$1 = ((((!((map__30018 == null)))?((((map__30018.cljs$lang$protocol_mask$partition0$ & (64))) || (map__30018.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__30018):map__30018);
+var card = cljs.core.get.call(null,map__30018__$1,new cljs.core.Keyword(null,"card","card",-1430355152));
+return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"value","value",305978217),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("cards","editing","cards/editing",1422138420)], null),new cljs.core.Keyword(null,"action","action",-811238024),((function (map__30017,map__30017__$1,state,map__30018,map__30018__$1,card){
 return (function (){
 return cljs.core.swap_BANG_.call(null,state,cljs.core.assoc,new cljs.core.Keyword("cards","editing","cards/editing",1422138420),card);
-});})(map__33410,map__33410__$1,state,map__33411,map__33411__$1,card))
+});})(map__30017,map__30017__$1,state,map__30018,map__30018__$1,card))
 ], null);
 }));
-cljs.core._add_method.call(null,kanban.reconciler.mutate,new cljs.core.Symbol("cards","update","cards/update",-1682200138,null),(function (p__33415,_,p__33416){
-var map__33417 = p__33415;
-var map__33417__$1 = ((((!((map__33417 == null)))?((((map__33417.cljs$lang$protocol_mask$partition0$ & (64))) || (map__33417.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__33417):map__33417);
-var state = cljs.core.get.call(null,map__33417__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
-var map__33418 = p__33416;
-var map__33418__$1 = ((((!((map__33418 == null)))?((((map__33418.cljs$lang$protocol_mask$partition0$ & (64))) || (map__33418.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__33418):map__33418);
-var card = cljs.core.get.call(null,map__33418__$1,new cljs.core.Keyword(null,"card","card",-1430355152));
-var data = cljs.core.get.call(null,map__33418__$1,new cljs.core.Keyword(null,"data","data",-232669377));
-return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"action","action",-811238024),((function (map__33417,map__33417__$1,state,map__33418,map__33418__$1,card,data){
+cljs.core._add_method.call(null,kanban.reconciler.mutate,new cljs.core.Symbol("cards","update","cards/update",-1682200138,null),(function (p__30022,_,p__30023){
+var map__30024 = p__30022;
+var map__30024__$1 = ((((!((map__30024 == null)))?((((map__30024.cljs$lang$protocol_mask$partition0$ & (64))) || (map__30024.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__30024):map__30024);
+var state = cljs.core.get.call(null,map__30024__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
+var map__30025 = p__30023;
+var map__30025__$1 = ((((!((map__30025 == null)))?((((map__30025.cljs$lang$protocol_mask$partition0$ & (64))) || (map__30025.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__30025):map__30025);
+var card = cljs.core.get.call(null,map__30025__$1,new cljs.core.Keyword(null,"card","card",-1430355152));
+var data = cljs.core.get.call(null,map__30025__$1,new cljs.core.Keyword(null,"data","data",-232669377));
+return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"action","action",-811238024),((function (map__30024,map__30024__$1,state,map__30025,map__30025__$1,card,data){
 return (function (){
-return cljs.core.swap_BANG_.call(null,state,cljs.core.update_in,card,((function (map__33417,map__33417__$1,state,map__33418,map__33418__$1,card,data){
-return (function (p1__33414_SHARP_){
-return cljs.core.merge.call(null,p1__33414_SHARP_,data);
-});})(map__33417,map__33417__$1,state,map__33418,map__33418__$1,card,data))
+return cljs.core.swap_BANG_.call(null,state,cljs.core.update_in,card,((function (map__30024,map__30024__$1,state,map__30025,map__30025__$1,card,data){
+return (function (p1__30021_SHARP_){
+return cljs.core.merge.call(null,p1__30021_SHARP_,data);
+});})(map__30024,map__30024__$1,state,map__30025,map__30025__$1,card,data))
 );
-});})(map__33417,map__33417__$1,state,map__33418,map__33418__$1,card,data))
+});})(map__30024,map__30024__$1,state,map__30025,map__30025__$1,card,data))
 ], null);
 }));
 

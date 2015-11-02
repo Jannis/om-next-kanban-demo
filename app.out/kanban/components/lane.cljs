@@ -31,6 +31,6 @@
                                        card-drag-fns))]
             (for [c cards]
               (card (om/computed c {:drag-fns drag-fns
-                                    :edit-fn card-edit-fn})))))))))
+                                    :activate-fn card-edit-fn})))))))))
 
 (def lane (om/factory Lane {:keyfn :id}))

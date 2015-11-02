@@ -95,3 +95,39 @@
   {:id 1 :text "Card with a reasonable amount of text in a 300px wide parent"
    :assignees [{:id 2 :username "ada" :name "Ada Lovelace"}
                {:id 3 :username "zuse" :name "Konrad Zuse"}]})
+
+(defcard
+  "## Behaviour")
+
+(defcard
+  "### Card with an activate callback"
+  (fn [state _]
+    (dom/div nil
+      (kanban-card/card
+        (om/computed (:card @state)
+                     {:activate-fn #(swap! state update :counter inc)}))
+      (dom/div nil (str "Activated: " (:counter @state) " times"))))
+  {:card {:id 1 :text "Initial text"} :counter 0}
+  {:inspect-data true :history true})
+
+(defcard
+  "### Card with a drag start callback"
+  (fn [state _]
+    (dom/div nil
+      (kanban-card/card
+        (om/computed (:card @state)
+                     {:drag-fns {:start #(swap! state update :counter inc)}}))
+      (dom/div nil (str "Drag initiated: " (:counter @state) " times"))))
+  {:card {:id 1 :text "Initial text"} :counter 0}
+  {:inspect-data true :history true})
+
+(defcard
+  "### Card with a drag end callback"
+  (fn [state _]
+    (dom/div nil
+      (kanban-card/card
+        (om/computed (:card @state)
+                     {:drag-fns {:end #(swap! state update :counter inc)}}))
+      (dom/div nil (str "Drag ended: " (:counter @state) " times"))))
+  {:card {:id 1 :text "Initial text"} :counter 0}
+  {:inspect-data true :history true})
