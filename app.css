@@ -114,6 +114,7 @@ body {
   display: table-cell;
   border: thin solid #dddddd;
   height: 100%;
+  width: 100%;
 }
 .lane .lane-title {
   margin: 0rem;
