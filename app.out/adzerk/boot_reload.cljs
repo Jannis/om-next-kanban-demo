@@ -1,2 +1,2 @@
-(ns adzerk.boot-reload (:require [adzerk.boot-reload.client :as client] kanban.app))
-(client/connect "ws://localhost:41107" {:on-jsload (fn* [] (kanban.app/run))})
+(ns adzerk.boot-reload (:require [adzerk.boot-reload.client :as client]))
+(client/connect "ws://localhost:49087" {:on-jsload (fn* [] (+))})

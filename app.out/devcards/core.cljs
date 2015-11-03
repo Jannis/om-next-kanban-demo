@@ -4,10 +4,10 @@
 
    [devcards.util.markdown :as mark]
    [devcards.util.utils :as utils :refer [html-env?]]
-   
+
    [sablono.core :as sab :include-macros true]
    [devcards.util.edn-renderer :as edn-rend]
-   
+
    [clojure.string :as string]
 
    [cljs.test]
@@ -44,7 +44,16 @@
                          #(put! devcard-event-chan [:jsreload (.-detail %)]))
       true)))
 
-(defn start-devcard-ui!* []
+(defn assert-options-map [m]
+  (if-not (or (nil? m) (map? m))
+    {:propagated-errors [{:label :options
+                          :message "should be a Map or nil."
+                          :value m}]}
+    m))
+
+(defn start-devcard-ui!* [& [options]]
+  (let [options (or options {})]
+    (swap! dev/app-state assoc :default-options (assert-options-map options)))
   (dev/start-ui devcard-event-chan)
   (register-figwheel-listeners!))
 
@@ -132,7 +141,7 @@
          [:div.com-rigsomelight-devcards-markdown.com-rigsomelight-devcards-typog
           (map markdown-block->react blocks)]))
       (do
-        (let [message "Devcards Error: Didn't pass a seq of strings to less-sensitive-markdown. 
+        (let [message "Devcards Error: Didn't pass a seq of strings to less-sensitive-markdown.
  You are probably trying to pass react to markdown instead of strings. (defcard-doc (doc ...)) won't work."]
           (try (.error js/console message))
           (sab/html [:div {:style {:color "#a94442"}}
@@ -293,7 +302,7 @@
                  main-obj (if (and (not (nil? main-obj'))
                                    (not (react-element? main-obj')))
                              (code-highlight (utils/pprint-code main-obj') "clojure")
-                             main-obj') 
+                             main-obj')
                  main      main-obj
                  hist-ctl  (when (:history options)
                              (hist-recorder* data-atom))
@@ -328,7 +337,7 @@
        (fn [prevP, prevS]
          (this-as
           this
-          (when (and (get-props this :node_fn) 
+          (when (and (get-props this :node_fn)
                      (not= (get-props this :node_fn)
                            (aget prevP "node_fn")))
             (render-into-dom this))))
@@ -353,7 +362,7 @@
 (defn booler? [key opts]
   (let [x (get opts key)]
     (or (true? x) (false? x) (nil? x)
-     {:label key 
+     {:label key
       :message "should be boolean or nil"
       :value x})))
 
@@ -379,12 +388,12 @@
                             options]} opts]
                 (concat
                  propagated-errors
-                 [(or (map? options) 
+                 [(or (map? options)
                       (nil? options)
-                      {:label   :options 
+                      {:label   :options
                        :message "should be a Map or nil"
                        :value options})
-                  (stringer? :name opts)                
+                  (stringer? :name opts)
                   (stringer? :documentation opts)
                   #_(or (nil? main-obj) (fn? main-obj) (react-element? main-obj)
                         {:label   :main-obj
@@ -426,13 +435,6 @@
               {:style { :flex "1 100px" }}
               " Received: " [:code (pr-str (:value e))]]]))
 
-(defn assert-options-map [m]
-  (if-not (or (nil? m) (map? m))
-    {:propagated-errors [{:label :options 
-                          :message "should be a Map or nil."
-                          :value m}]}
-    m))
-
 (defn render-errors [opts errors]
   (sab/html
    [:div.com-rigsomelight-devcards-card-base-no-pad
@@ -441,7 +443,7 @@
             (str (:name opts) ": ")) "Devcard received bad options")]
     (naked-card
      (sab/html
-      [:div 
+      [:div
        [:div
         (map error-line errors)]
        (when (map? opts)
@@ -499,7 +501,9 @@
       :else (IdentiyOptions. main-obj))))
 
 (defn card-base [opts]
-  (let [opts (assoc opts :path (:path devcards.system/*devcard-data*))]
+  (let [opts (-> opts
+                 (assoc :path (:path devcards.system/*devcard-data*))
+                 (update :options #(merge (:default-options @dev/app-state) %)))]
     (if (satisfies? IDevcard (:main-obj opts))
       (-devcard (:main-obj opts) opts)
       (card-with-errors
@@ -620,7 +624,7 @@
        (fn []
          (this-as this
                   (swap! (get-state this :history_atom)
-                         assoc-in [:history] (list @(get-props this :data_atom)))))        
+                         assoc-in [:history] (list @(get-props this :data_atom)))))
        :componentDidMount
        (fn []
          (this-as
@@ -650,7 +654,7 @@
                                                  (cons n hist)
                                                  hist))
                                     :ignore-click false))))))))
-       
+
        :render
        (fn []
          (this-as
@@ -730,7 +734,7 @@
   m)
 
 (defmethod cljs.test/report [:_devcards_test_card_reporter :fail] [m]
-  (cljs.test/inc-report-counter! :fail)  
+  (cljs.test/inc-report-counter! :fail)
   (collect-test m)
   m)
 
@@ -756,8 +760,8 @@
 
 (defn- display-message [{:keys [message]} body]
   (if message
-    (sab/html [:div 
-               [:span.com-rigsomelight-devcards-test-message 
+    (sab/html [:div
+               [:span.com-rigsomelight-devcards-test-message
                 message]
                body])
       body))
@@ -800,10 +804,10 @@
   (sab/html
    [:div.com-rigsomelight-devcards-test-card
     (:html-list
-     (reduce 
+     (reduce
       (fn [{:keys [last-context html-list]} t]
         { :last-context (:testing-contexts t)
-         :html-list 
+         :html-list
          (let [res (list (test-renderer t))
                res (if (= last-context
                           (:testing-contexts t))
@@ -855,7 +859,7 @@
                           (.setState this
                                      #js {:filter (fn [{:keys [type]}]
                                                     (#{:fail :error} type))})))}
-             (str (+ fail error))]))          
+             (str (+ fail error))]))
          (when-not (or (nil? pass) (zero? pass))
            (sab/html
             [:button.com-rigsomelight-devcards-badge
@@ -999,7 +1003,7 @@
   (dev/start-ui-with-renderer devcards.core/devcard-event-chan (partial render-ns ns-symbol)))
 
 #_(devcards.core/defcard render-namespace-to-string
-  "# Support rendering a namespace to a string 
+  "# Support rendering a namespace to a string
 
    This is to support writing blog posts and publishing static pages.
 
@@ -1009,4 +1013,3 @@
    This is pretty darn cool.
    "
   (render-namespace-to-string 'devdemos.core))
-

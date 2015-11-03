@@ -2,7 +2,8 @@
   (:require [devcards.core :as dc :refer-macros [defcard]]
             [om.next :as om]
             [om.dom :as dom]
-            [kanban.components.lane :as kanban-lane]))
+            [kanban.components.lane :as kanban-lane]
+            [cards.util :refer [render-cb-info update-cb-info]]))
 
 (def ^:export front-matter
   {:base-card-options {:frame false}})
@@ -146,3 +147,150 @@
               :text (str "Card number " i " in this lane. "
                          "This one has a rather long caption.")
               :assignees [{:id 1 :username "ada" :name "Ada Lovelace"}]})})
+
+(defcard
+  "## Behaviour")
+
+(defcard
+  "### Lane with a card create callback"
+  (fn [state _]
+    (dom/div nil
+      (kanban-lane/lane
+        (om/computed (:lane @state)
+                     {:card-create-fn (partial update-cb-info :create state)}))
+      (render-cb-info :create state "Asked for a card to be created")))
+  {:lane {:id 1 :name "Backlog"}}
+  {:inspect-data true :history true})
+
+(defcard
+  "### Lane with a card edit callback"
+  (fn [state _]
+    (dom/div nil
+      (kanban-lane/lane
+        (om/computed (:lane @state)
+                     {:card-edit-fn (partial update-cb-info :edit state)}))
+      (render-cb-info :edit state "Asked for a card to be edited")))
+  {:lane {:id 1
+          :name "Backlog"
+          :cards [{:id 2 :text "This card can be clicked to be edited"}
+                  {:id 3 :text "And so can this one"}]}}
+  {:inspect-data true :history true})
+
+(defcard
+  "### Lane with a card drag start callback"
+  (fn [state _]
+    (dom/div nil
+      (kanban-lane/lane
+        (om/computed (:lane @state)
+                     {:card-drag-fns
+                      {:start (partial update-cb-info :drag-start state)}}))
+      (render-cb-info :drag-start state "Drag for a card initiated")))
+  {:lane {:id 1
+          :name "Backlog"
+          :cards [{:id 2 :text "This card can be dragged around"}
+                  {:id 3 :text "And so can this one"}]}}
+  {:inspect-data true :history true})
+
+(defcard
+  "### Lane with a card drag end callback"
+  (fn [state _]
+    (dom/div nil
+      (kanban-lane/lane
+        (om/computed (:lane @state)
+                     {:card-drag-fns
+                      {:end (partial update-cb-info :drag-end state)}}))
+      (render-cb-info :drag-end state "Drag for a card ended")))
+  {:lane {:id 1
+          :name "Backlog"
+          :cards [{:id 2 :text "This card can be dragged around"}
+                  {:id 3 :text "And so can this one"}]}}
+  {:inspect-data true :history true})
+
+(defcard
+  "### Lane with a card drop callback"
+  (fn [state _]
+    (dom/div nil
+      (kanban-lane/lane
+        (om/computed (:lane @state)
+                     {:card-drag-fns
+                      {:drop (partial update-cb-info :drop state)}}))
+      (render-cb-info :drop state "Card dropped in the lane")))
+  {:lane {:id 1
+          :name "Backlog"
+          :cards [{:id 2 :text "This card can be dragged around"}
+                  {:id 3 :text "And so can this one"}]}}
+  {:inspect-data true :history true})
+
+(defcard
+  "### Two lanes with a card drag and drop callbacks"
+  (fn [state _]
+    (dom/div nil
+      (dom/div #js {:style #js {:display "table"
+                                :width "100%"
+                                :tableLayout "fixed"
+                                :borderSpacing "0.5rem"}}
+        (for [lane (:lanes @state)]
+          (kanban-lane/lane
+            (om/computed lane
+                         {:card-drag-fns
+                          {:start (partial update-cb-info :start state)
+                           :end (partial update-cb-info :end state)
+                           :drop (partial update-cb-info :drop state)}}))))
+      (render-cb-info :start state "Drag started")
+      (render-cb-info :end state "Drag ended")
+      (render-cb-info :drop state "Card dropped")))
+  {:lanes [{:id 1
+            :name "Backlog"
+            :cards [{:id 20 :text "This is a card from backlog"}
+                    {:id 30 :text "This is also a card from backlog"}]}
+           {:id 2
+            :name "Doing"
+            :cards [{:id 40 :text "This is a card from doing"}
+                    {:id 50 :text "This is also a card from doing"}]}]}
+  {:inspect-data true :history true})
+
+(defn item-with-id [coll id]
+  (println "item-with-id" coll id)
+  (->> coll (filter #(= id (:id %))) first))
+
+(defn move-card [state to-ref]
+  (swap! state
+    (fn [state]
+      (let [[from-ref card-ref] (:drag-info state)]
+        (if (= to-ref from-ref)
+          state
+          (let [from (-> state :lanes (item-with-id (second from-ref)))
+                to   (-> state :lanes (item-with-id (second to-ref)))
+                card (-> from :cards (item-with-id (second card-ref)))
+                new-from (update from :cards #(remove #{%2} %1) card)
+                new-to (update to :cards conj card)]
+            (-> state
+                (dissoc :drag-info)
+                (update :lanes #(replace {from new-from
+                                          to new-to} %)))))))))
+
+(defcard
+  "### Two lanes with working drag and drop"
+  (fn [state _]
+    (dom/div nil
+      (dom/div #js {:style #js {:display "table"
+                                :width "100%"
+                                :tableLayout "fixed"
+                                :borderSpacing "0.5rem"}}
+        (for [lane (:lanes @state)]
+          (kanban-lane/lane
+            (om/computed
+              lane
+              {:card-drag-fns
+               {:start #(swap! state assoc :drag-info [%1 %2])
+                :end #(swap! state dissoc :drag-info)
+                :drop #(move-card state %)}}))))))
+  {:lanes [{:id 1
+            :name "Backlog"
+            :cards [{:id 20 :text "This is a card from backlog"}
+                    {:id 30 :text "This is also a card from backlog"}]}
+           {:id 2
+            :name "Doing"
+            :cards [{:id 40 :text "This is a card from doing"}
+                    {:id 50 :text "This is also a card from doing"}]}]}
+  {:inspect-data true :history true})

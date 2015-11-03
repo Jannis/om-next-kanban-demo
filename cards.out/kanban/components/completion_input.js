@@ -5,9 +5,9 @@ goog.require('om.next');
 goog.require('om.dom');
 goog.require('kanban.util');
 kanban.components.completion_input.match_key = (function kanban$components$completion_input$match_key(x){
-var props = (function (){var G__23093 = x;
-var G__23093__$1 = ((om.next.component_QMARK_.call(null,x))?om.next.props.call(null,G__23093):G__23093);
-return G__23093__$1;
+var props = (function (){var G__81823 = x;
+var G__81823__$1 = ((om.next.component_QMARK_.call(null,x))?om.next.props.call(null,G__81823):G__81823);
+return G__81823__$1;
 })();
 return new cljs.core.Keyword(null,"key-fn","key-fn",-636154479).cljs$core$IFn$_invoke$arity$1(om.next.get_computed.call(null,props)).call(null,props);
 });
@@ -29,17 +29,17 @@ return this__7586__auto__;
 
 kanban.components.completion_input.CompletionMatch.prototype = goog.object.clone(React.Component.prototype);
 
-var x23098_23108 = kanban.components.completion_input.CompletionMatch.prototype;
-x23098_23108.componentWillUpdate = ((function (x23098_23108){
+var x81828_81838 = kanban.components.completion_input.CompletionMatch.prototype;
+x81828_81838.componentWillUpdate = ((function (x81828_81838){
 return (function (next_props__7527__auto__,next_state__7528__auto__){
 var this__7526__auto__ = this;
 om.next.merge_pending_props_BANG_.call(null,this__7526__auto__);
 
 return om.next.merge_pending_state_BANG_.call(null,this__7526__auto__);
-});})(x23098_23108))
+});})(x81828_81838))
 ;
 
-x23098_23108.shouldComponentUpdate = ((function (x23098_23108){
+x81828_81838.shouldComponentUpdate = ((function (x81828_81838){
 return (function (next_props__7527__auto__,next_state__7528__auto__){
 var this__7526__auto__ = this;
 var or__5094__auto__ = cljs.core.not_EQ_.call(null,om.next.props.call(null,this__7526__auto__),goog.object.get(next_props__7527__auto__,"omcljs$value"));
@@ -53,10 +53,10 @@ return cljs.core.not_EQ_.call(null,goog.object.get(this__7526__auto__.state,"omc
 return and__5082__auto__;
 }
 }
-});})(x23098_23108))
+});})(x81828_81838))
 ;
 
-x23098_23108.componentWillUnmount = ((function (x23098_23108){
+x81828_81838.componentWillUnmount = ((function (x81828_81838){
 return (function (){
 var this__7526__auto__ = this;
 var r__7532__auto__ = om.next.get_reconciler.call(null,this__7526__auto__);
@@ -73,24 +73,24 @@ return null;
 } else {
 return om.next.protocols.drop_component_BANG_.call(null,indexer__7531__auto__,this__7526__auto__);
 }
-});})(x23098_23108))
+});})(x81828_81838))
 ;
 
-x23098_23108.componentDidUpdate = ((function (x23098_23108){
+x81828_81838.componentDidUpdate = ((function (x81828_81838){
 return (function (prev_props__7529__auto__,prev_state__7530__auto__){
 var this__7526__auto__ = this;
 return om.next.clear_prev_props_BANG_.call(null,this__7526__auto__);
-});})(x23098_23108))
+});})(x81828_81838))
 ;
 
-x23098_23108.isMounted = ((function (x23098_23108){
+x81828_81838.isMounted = ((function (x81828_81838){
 return (function (){
 var this__7526__auto__ = this;
 return cljs.core.boolean$.call(null,goog.object.getValueByKeys(this__7526__auto__,"_reactInternalInstance","_renderedComponent"));
-});})(x23098_23108))
+});})(x81828_81838))
 ;
 
-x23098_23108.componentWillMount = ((function (x23098_23108){
+x81828_81838.componentWillMount = ((function (x81828_81838){
 return (function (){
 var this__7526__auto__ = this;
 var indexer__7531__auto__ = cljs.core.get_in.call(null,om.next.get_reconciler.call(null,this__7526__auto__),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"config","config",994861415),new cljs.core.Keyword(null,"indexer","indexer",-1774914315)], null));
@@ -99,17 +99,17 @@ return null;
 } else {
 return om.next.protocols.index_component_BANG_.call(null,indexer__7531__auto__,this__7526__auto__);
 }
-});})(x23098_23108))
+});})(x81828_81838))
 ;
 
-x23098_23108.render = ((function (x23098_23108){
+x81828_81838.render = ((function (x81828_81838){
 return (function (){
 var this$ = this;
-var _STAR_reconciler_STAR_23099 = om.next._STAR_reconciler_STAR_;
-var _STAR_depth_STAR_23100 = om.next._STAR_depth_STAR_;
-var _STAR_shared_STAR_23101 = om.next._STAR_shared_STAR_;
-var _STAR_instrument_STAR_23102 = om.next._STAR_instrument_STAR_;
-var _STAR_parent_STAR_23103 = om.next._STAR_parent_STAR_;
+var _STAR_reconciler_STAR_81829 = om.next._STAR_reconciler_STAR_;
+var _STAR_depth_STAR_81830 = om.next._STAR_depth_STAR_;
+var _STAR_shared_STAR_81831 = om.next._STAR_shared_STAR_;
+var _STAR_instrument_STAR_81832 = om.next._STAR_instrument_STAR_;
+var _STAR_parent_STAR_81833 = om.next._STAR_parent_STAR_;
 om.next._STAR_reconciler_STAR_ = om.next.get_reconciler.call(null,this$);
 
 om.next._STAR_depth_STAR_ = (om.next.depth.call(null,this$) + (1));
@@ -120,30 +120,30 @@ om.next._STAR_instrument_STAR_ = om.next.instrument.call(null,this$);
 
 om.next._STAR_parent_STAR_ = this$;
 
-try{var map__23104 = om.next.get_computed.call(null,this$);
-var map__23104__$1 = ((((!((map__23104 == null)))?((((map__23104.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23104.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23104):map__23104);
-var selected = cljs.core.get.call(null,map__23104__$1,new cljs.core.Keyword(null,"selected","selected",574897764));
-var activate_fn = cljs.core.get.call(null,map__23104__$1,new cljs.core.Keyword(null,"activate-fn","activate-fn",1968898886));
-var element_fn = cljs.core.get.call(null,map__23104__$1,new cljs.core.Keyword(null,"element-fn","element-fn",554034748));
-return React.DOM.div({"className": kanban.util.class_names.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"completion-input-match","completion-input-match",1327544031),true,new cljs.core.Keyword(null,"selected","selected",574897764),selected], null)), "onClick": ((function (map__23104,map__23104__$1,selected,activate_fn,element_fn,_STAR_reconciler_STAR_23099,_STAR_depth_STAR_23100,_STAR_shared_STAR_23101,_STAR_instrument_STAR_23102,_STAR_parent_STAR_23103,this$,x23098_23108){
+try{var map__81834 = om.next.get_computed.call(null,this$);
+var map__81834__$1 = ((((!((map__81834 == null)))?((((map__81834.cljs$lang$protocol_mask$partition0$ & (64))) || (map__81834.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__81834):map__81834);
+var selected = cljs.core.get.call(null,map__81834__$1,new cljs.core.Keyword(null,"selected","selected",574897764));
+var activate_fn = cljs.core.get.call(null,map__81834__$1,new cljs.core.Keyword(null,"activate-fn","activate-fn",1968898886));
+var element_fn = cljs.core.get.call(null,map__81834__$1,new cljs.core.Keyword(null,"element-fn","element-fn",554034748));
+return React.DOM.div({"className": kanban.util.class_names.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"completion-input-match","completion-input-match",1327544031),true,new cljs.core.Keyword(null,"selected","selected",574897764),selected], null)), "onClick": ((function (map__81834,map__81834__$1,selected,activate_fn,element_fn,_STAR_reconciler_STAR_81829,_STAR_depth_STAR_81830,_STAR_shared_STAR_81831,_STAR_instrument_STAR_81832,_STAR_parent_STAR_81833,this$,x81828_81838){
 return (function (){
 if(cljs.core.truth_(activate_fn)){
 return activate_fn.call(null);
 } else {
 return null;
 }
-});})(map__23104,map__23104__$1,selected,activate_fn,element_fn,_STAR_reconciler_STAR_23099,_STAR_depth_STAR_23100,_STAR_shared_STAR_23101,_STAR_instrument_STAR_23102,_STAR_parent_STAR_23103,this$,x23098_23108))
+});})(map__81834,map__81834__$1,selected,activate_fn,element_fn,_STAR_reconciler_STAR_81829,_STAR_depth_STAR_81830,_STAR_shared_STAR_81831,_STAR_instrument_STAR_81832,_STAR_parent_STAR_81833,this$,x81828_81838))
 },element_fn.call(null,om.next.props.call(null,this$)));
-}finally {om.next._STAR_parent_STAR_ = _STAR_parent_STAR_23103;
+}finally {om.next._STAR_parent_STAR_ = _STAR_parent_STAR_81833;
 
-om.next._STAR_instrument_STAR_ = _STAR_instrument_STAR_23102;
+om.next._STAR_instrument_STAR_ = _STAR_instrument_STAR_81832;
 
-om.next._STAR_shared_STAR_ = _STAR_shared_STAR_23101;
+om.next._STAR_shared_STAR_ = _STAR_shared_STAR_81831;
 
-om.next._STAR_depth_STAR_ = _STAR_depth_STAR_23100;
+om.next._STAR_depth_STAR_ = _STAR_depth_STAR_81830;
 
-om.next._STAR_reconciler_STAR_ = _STAR_reconciler_STAR_23099;
-}});})(x23098_23108))
+om.next._STAR_reconciler_STAR_ = _STAR_reconciler_STAR_81829;
+}});})(x81828_81838))
 ;
 
 
@@ -151,10 +151,10 @@ kanban.components.completion_input.CompletionMatch.prototype.constructor = kanba
 
 kanban.components.completion_input.CompletionMatch.prototype.om$isComponent = true;
 
-var x23106_23109 = kanban.components.completion_input.CompletionMatch;
+var x81836_81839 = kanban.components.completion_input.CompletionMatch;
 
 
-var x23107_23110 = kanban.components.completion_input.CompletionMatch.prototype;
+var x81837_81840 = kanban.components.completion_input.CompletionMatch.prototype;
 
 
 kanban.components.completion_input.CompletionMatch.cljs$lang$type = true;
@@ -183,17 +183,17 @@ return this__7586__auto__;
 
 kanban.components.completion_input.CompletionInput.prototype = goog.object.clone(React.Component.prototype);
 
-var x23117_23142 = kanban.components.completion_input.CompletionInput.prototype;
-x23117_23142.componentWillUpdate = ((function (x23117_23142){
+var x81847_81872 = kanban.components.completion_input.CompletionInput.prototype;
+x81847_81872.componentWillUpdate = ((function (x81847_81872){
 return (function (next_props__7527__auto__,next_state__7528__auto__){
 var this__7526__auto__ = this;
 om.next.merge_pending_props_BANG_.call(null,this__7526__auto__);
 
 return om.next.merge_pending_state_BANG_.call(null,this__7526__auto__);
-});})(x23117_23142))
+});})(x81847_81872))
 ;
 
-x23117_23142.shouldComponentUpdate = ((function (x23117_23142){
+x81847_81872.shouldComponentUpdate = ((function (x81847_81872){
 return (function (next_props__7527__auto__,next_state__7528__auto__){
 var this__7526__auto__ = this;
 var or__5094__auto__ = cljs.core.not_EQ_.call(null,om.next.props.call(null,this__7526__auto__),goog.object.get(next_props__7527__auto__,"omcljs$value"));
@@ -207,10 +207,10 @@ return cljs.core.not_EQ_.call(null,goog.object.get(this__7526__auto__.state,"omc
 return and__5082__auto__;
 }
 }
-});})(x23117_23142))
+});})(x81847_81872))
 ;
 
-x23117_23142.componentWillUnmount = ((function (x23117_23142){
+x81847_81872.componentWillUnmount = ((function (x81847_81872){
 return (function (){
 var this__7526__auto__ = this;
 var r__7532__auto__ = om.next.get_reconciler.call(null,this__7526__auto__);
@@ -227,61 +227,61 @@ return null;
 } else {
 return om.next.protocols.drop_component_BANG_.call(null,indexer__7531__auto__,this__7526__auto__);
 }
-});})(x23117_23142))
+});})(x81847_81872))
 ;
 
-x23117_23142.componentDidUpdate = ((function (x23117_23142){
+x81847_81872.componentDidUpdate = ((function (x81847_81872){
 return (function (prev_props__7529__auto__,prev_state__7530__auto__){
 var this__7526__auto__ = this;
 return om.next.clear_prev_props_BANG_.call(null,this__7526__auto__);
-});})(x23117_23142))
+});})(x81847_81872))
 ;
 
-x23117_23142.isMounted = ((function (x23117_23142){
+x81847_81872.isMounted = ((function (x81847_81872){
 return (function (){
 var this__7526__auto__ = this;
 return cljs.core.boolean$.call(null,goog.object.getValueByKeys(this__7526__auto__,"_reactInternalInstance","_renderedComponent"));
-});})(x23117_23142))
+});})(x81847_81872))
 ;
 
-x23117_23142.update_matches = ((function (x23117_23142){
+x81847_81872.update_matches = ((function (x81847_81872){
 return (function (text){
 var this$ = this;
-return om.next.update_state_BANG_.call(null,this$,((function (this$,x23117_23142){
+return om.next.update_state_BANG_.call(null,this$,((function (this$,x81847_81872){
 return (function (state,matches){
-return cljs.core.update.call(null,cljs.core.assoc.call(null,state,new cljs.core.Keyword(null,"matches","matches",635497998),matches),new cljs.core.Keyword(null,"selected-match","selected-match",2125084326),((function (this$,x23117_23142){
+return cljs.core.update.call(null,cljs.core.assoc.call(null,state,new cljs.core.Keyword(null,"matches","matches",635497998),matches),new cljs.core.Keyword(null,"selected-match","selected-match",2125084326),((function (this$,x81847_81872){
 return (function (state__$1,selected_match){
 if(cljs.core.truth_(cljs.core.some.call(null,cljs.core.PersistentHashSet.fromArray([selected_match], true),matches))){
 return selected_match;
 } else {
 return cljs.core.first.call(null,matches);
 }
-});})(this$,x23117_23142))
+});})(this$,x81847_81872))
 );
-});})(this$,x23117_23142))
+});})(this$,x81847_81872))
 ,cljs.core.into.call(null,cljs.core.PersistentVector.EMPTY,cljs.core.filter.call(null,cljs.core.partial.call(null,new cljs.core.Keyword(null,"match-fn","match-fn",1859208916).cljs$core$IFn$_invoke$arity$1(om.next.props.call(null,this$)),text),new cljs.core.Keyword(null,"items","items",1031954938).cljs$core$IFn$_invoke$arity$1(om.next.props.call(null,this$)))));
-});})(x23117_23142))
+});})(x81847_81872))
 ;
 
-x23117_23142.update_text = ((function (x23117_23142){
+x81847_81872.update_text = ((function (x81847_81872){
 return (function (text){
 var this$ = this;
 om.next.update_state_BANG_.call(null,this$,cljs.core.assoc,new cljs.core.Keyword(null,"text","text",-1790561697),text);
 
 return this$.update_matches(text);
-});})(x23117_23142))
+});})(x81847_81872))
 ;
 
-x23117_23142.show_matches = ((function (x23117_23142){
+x81847_81872.show_matches = ((function (x81847_81872){
 return (function (show){
 var this$ = this;
 cljs.core.println.call(null,"show matches",show);
 
 return om.next.update_state_BANG_.call(null,this$,cljs.core.assoc,new cljs.core.Keyword(null,"show-matches","show-matches",410578763),show);
-});})(x23117_23142))
+});})(x81847_81872))
 ;
 
-x23117_23142.activate_match = ((function (x23117_23142){
+x81847_81872.activate_match = ((function (x81847_81872){
 return (function (match){
 var this$ = this;
 this$.show_matches(false);
@@ -290,9 +290,9 @@ this$.update_text("");
 
 om.dom.node.call(null,om.next.react_ref.call(null,this$,new cljs.core.Keyword(null,"input","input",556931961))).focus();
 
-var map__23118 = om.next.props.call(null,this$);
-var map__23118__$1 = ((((!((map__23118 == null)))?((((map__23118.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23118.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23118):map__23118);
-var activate_fn = cljs.core.get.call(null,map__23118__$1,new cljs.core.Keyword(null,"activate-fn","activate-fn",1968898886));
+var map__81848 = om.next.props.call(null,this$);
+var map__81848__$1 = ((((!((map__81848 == null)))?((((map__81848.cljs$lang$protocol_mask$partition0$ & (64))) || (map__81848.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__81848):map__81848);
+var activate_fn = cljs.core.get.call(null,map__81848__$1,new cljs.core.Keyword(null,"activate-fn","activate-fn",1968898886));
 if(cljs.core.truth_((function (){var and__5082__auto__ = activate_fn;
 if(cljs.core.truth_(and__5082__auto__)){
 return match;
@@ -304,16 +304,16 @@ return activate_fn.call(null,match);
 } else {
 return null;
 }
-});})(x23117_23142))
+});})(x81847_81872))
 ;
 
-x23117_23142.handle_backspace = ((function (x23117_23142){
+x81847_81872.handle_backspace = ((function (x81847_81872){
 return (function (e){
 var this$ = this;
 if(((e.target.selectionStart === (0))) && (cljs.core._EQ_.call(null,e.target.selectionStart,e.target.selectionEnd))){
-var map__23120 = om.next.props.call(null,this$);
-var map__23120__$1 = ((((!((map__23120 == null)))?((((map__23120.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23120.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23120):map__23120);
-var back_fn = cljs.core.get.call(null,map__23120__$1,new cljs.core.Keyword(null,"back-fn","back-fn",-187558063));
+var map__81850 = om.next.props.call(null,this$);
+var map__81850__$1 = ((((!((map__81850 == null)))?((((map__81850.cljs$lang$protocol_mask$partition0$ & (64))) || (map__81850.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__81850):map__81850);
+var back_fn = cljs.core.get.call(null,map__81850__$1,new cljs.core.Keyword(null,"back-fn","back-fn",-187558063));
 if(cljs.core.truth_(back_fn)){
 back_fn.call(null,this$);
 
@@ -324,47 +324,47 @@ return null;
 } else {
 return null;
 }
-});})(x23117_23142))
+});})(x81847_81872))
 ;
 
-x23117_23142.handle_up = ((function (x23117_23142){
+x81847_81872.handle_up = ((function (x81847_81872){
 return (function (e){
 var this$ = this;
-var map__23122 = om.next.get_state.call(null,this$);
-var map__23122__$1 = ((((!((map__23122 == null)))?((((map__23122.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23122.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23122):map__23122);
-var matches = cljs.core.get.call(null,map__23122__$1,new cljs.core.Keyword(null,"matches","matches",635497998));
-var selected_match = cljs.core.get.call(null,map__23122__$1,new cljs.core.Keyword(null,"selected-match","selected-match",2125084326));
+var map__81852 = om.next.get_state.call(null,this$);
+var map__81852__$1 = ((((!((map__81852 == null)))?((((map__81852.cljs$lang$protocol_mask$partition0$ & (64))) || (map__81852.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__81852):map__81852);
+var matches = cljs.core.get.call(null,map__81852__$1,new cljs.core.Keyword(null,"matches","matches",635497998));
+var selected_match = cljs.core.get.call(null,map__81852__$1,new cljs.core.Keyword(null,"selected-match","selected-match",2125084326));
 var index = kanban.util.index_of.call(null,selected_match,matches);
 return om.next.update_state_BANG_.call(null,this$,cljs.core.assoc,new cljs.core.Keyword(null,"selected-match","selected-match",2125084326),cljs.core.get.call(null,matches,(function (){var x__5425__auto__ = (index - (1));
 var y__5426__auto__ = (0);
 return ((x__5425__auto__ > y__5426__auto__) ? x__5425__auto__ : y__5426__auto__);
 })()));
-});})(x23117_23142))
+});})(x81847_81872))
 ;
 
-x23117_23142.handle_down = ((function (x23117_23142){
+x81847_81872.handle_down = ((function (x81847_81872){
 return (function (e){
 var this$ = this;
-var map__23124 = om.next.get_state.call(null,this$);
-var map__23124__$1 = ((((!((map__23124 == null)))?((((map__23124.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23124.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23124):map__23124);
-var matches = cljs.core.get.call(null,map__23124__$1,new cljs.core.Keyword(null,"matches","matches",635497998));
-var selected_match = cljs.core.get.call(null,map__23124__$1,new cljs.core.Keyword(null,"selected-match","selected-match",2125084326));
+var map__81854 = om.next.get_state.call(null,this$);
+var map__81854__$1 = ((((!((map__81854 == null)))?((((map__81854.cljs$lang$protocol_mask$partition0$ & (64))) || (map__81854.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__81854):map__81854);
+var matches = cljs.core.get.call(null,map__81854__$1,new cljs.core.Keyword(null,"matches","matches",635497998));
+var selected_match = cljs.core.get.call(null,map__81854__$1,new cljs.core.Keyword(null,"selected-match","selected-match",2125084326));
 var index = kanban.util.index_of.call(null,selected_match,matches);
 return om.next.update_state_BANG_.call(null,this$,cljs.core.assoc,new cljs.core.Keyword(null,"selected-match","selected-match",2125084326),cljs.core.get.call(null,matches,(function (){var x__5432__auto__ = (index + (1));
 var y__5433__auto__ = (cljs.core.count.call(null,matches) - (1));
 return ((x__5432__auto__ < y__5433__auto__) ? x__5432__auto__ : y__5433__auto__);
 })()));
-});})(x23117_23142))
+});})(x81847_81872))
 ;
 
-x23117_23142.handle_escape = ((function (x23117_23142){
+x81847_81872.handle_escape = ((function (x81847_81872){
 return (function (e){
 var this$ = this;
 return this$.show_matches(false);
-});})(x23117_23142))
+});})(x81847_81872))
 ;
 
-x23117_23142.handle_return = ((function (x23117_23142){
+x81847_81872.handle_return = ((function (x81847_81872){
 return (function (e){
 var this$ = this;
 var temp__4425__auto__ = new cljs.core.Keyword(null,"selected-match","selected-match",2125084326).cljs$core$IFn$_invoke$arity$1(om.next.get_state.call(null,this$));
@@ -374,16 +374,16 @@ return this$.activate_match(match);
 } else {
 return null;
 }
-});})(x23117_23142))
+});})(x81847_81872))
 ;
 
-x23117_23142.key_down = ((function (x23117_23142){
+x81847_81872.key_down = ((function (x81847_81872){
 return (function (e){
 var this$ = this;
 this$.show_matches(true);
 
-var G__23126 = e.keyCode;
-switch (G__23126) {
+var G__81856 = e.keyCode;
+switch (G__81856) {
 case (8):
 return this$.handle_backspace(e);
 
@@ -408,38 +408,38 @@ default:
 return cljs.core.println.call(null,"key down",e.keyCode);
 
 }
-});})(x23117_23142))
+});})(x81847_81872))
 ;
 
-x23117_23142.componentWillMount = ((function (x23117_23142){
+x81847_81872.componentWillMount = ((function (x81847_81872){
 return (function (){
 var this$ = this;
-var indexer__7521__auto___23144 = cljs.core.get_in.call(null,om.next.get_reconciler.call(null,this$),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"config","config",994861415),new cljs.core.Keyword(null,"indexer","indexer",-1774914315)], null));
-if((indexer__7521__auto___23144 == null)){
+var indexer__7521__auto___81874 = cljs.core.get_in.call(null,om.next.get_reconciler.call(null,this$),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"config","config",994861415),new cljs.core.Keyword(null,"indexer","indexer",-1774914315)], null));
+if((indexer__7521__auto___81874 == null)){
 } else {
-om.next.protocols.index_component_BANG_.call(null,indexer__7521__auto___23144,this$);
+om.next.protocols.index_component_BANG_.call(null,indexer__7521__auto___81874,this$);
 }
 
 return this$.update_text("");
-});})(x23117_23142))
+});})(x81847_81872))
 ;
 
-x23117_23142.componentWillReceiveProps = ((function (x23117_23142){
+x81847_81872.componentWillReceiveProps = ((function (x81847_81872){
 return (function (props){
 var this$ = this;
 var props__$1 = om.next._next_props.call(null,props,this$);
 return this$.update_matches(om.next.react_ref.call(null,this$,new cljs.core.Keyword(null,"input","input",556931961)).value);
-});})(x23117_23142))
+});})(x81847_81872))
 ;
 
-x23117_23142.render = ((function (x23117_23142){
+x81847_81872.render = ((function (x81847_81872){
 return (function (){
 var this$ = this;
-var _STAR_reconciler_STAR_23127 = om.next._STAR_reconciler_STAR_;
-var _STAR_depth_STAR_23128 = om.next._STAR_depth_STAR_;
-var _STAR_shared_STAR_23129 = om.next._STAR_shared_STAR_;
-var _STAR_instrument_STAR_23130 = om.next._STAR_instrument_STAR_;
-var _STAR_parent_STAR_23131 = om.next._STAR_parent_STAR_;
+var _STAR_reconciler_STAR_81857 = om.next._STAR_reconciler_STAR_;
+var _STAR_depth_STAR_81858 = om.next._STAR_depth_STAR_;
+var _STAR_shared_STAR_81859 = om.next._STAR_shared_STAR_;
+var _STAR_instrument_STAR_81860 = om.next._STAR_instrument_STAR_;
+var _STAR_parent_STAR_81861 = om.next._STAR_parent_STAR_;
 om.next._STAR_reconciler_STAR_ = om.next.get_reconciler.call(null,this$);
 
 om.next._STAR_depth_STAR_ = (om.next.depth.call(null,this$) + (1));
@@ -450,31 +450,31 @@ om.next._STAR_instrument_STAR_ = om.next.instrument.call(null,this$);
 
 om.next._STAR_parent_STAR_ = this$;
 
-try{return React.DOM.div({"className": "completion-input", "onFocus": ((function (_STAR_reconciler_STAR_23127,_STAR_depth_STAR_23128,_STAR_shared_STAR_23129,_STAR_instrument_STAR_23130,_STAR_parent_STAR_23131,this$,x23117_23142){
+try{return React.DOM.div({"className": "completion-input", "onFocus": ((function (_STAR_reconciler_STAR_81857,_STAR_depth_STAR_81858,_STAR_shared_STAR_81859,_STAR_instrument_STAR_81860,_STAR_parent_STAR_81861,this$,x81847_81872){
 return (function (){
 return this$.show_matches(true);
-});})(_STAR_reconciler_STAR_23127,_STAR_depth_STAR_23128,_STAR_shared_STAR_23129,_STAR_instrument_STAR_23130,_STAR_parent_STAR_23131,this$,x23117_23142))
-, "onFocusOut": ((function (_STAR_reconciler_STAR_23127,_STAR_depth_STAR_23128,_STAR_shared_STAR_23129,_STAR_instrument_STAR_23130,_STAR_parent_STAR_23131,this$,x23117_23142){
+});})(_STAR_reconciler_STAR_81857,_STAR_depth_STAR_81858,_STAR_shared_STAR_81859,_STAR_instrument_STAR_81860,_STAR_parent_STAR_81861,this$,x81847_81872))
+, "onFocusOut": ((function (_STAR_reconciler_STAR_81857,_STAR_depth_STAR_81858,_STAR_shared_STAR_81859,_STAR_instrument_STAR_81860,_STAR_parent_STAR_81861,this$,x81847_81872){
 return (function (){
 return this$.show_matches(false);
-});})(_STAR_reconciler_STAR_23127,_STAR_depth_STAR_23128,_STAR_shared_STAR_23129,_STAR_instrument_STAR_23130,_STAR_parent_STAR_23131,this$,x23117_23142))
-},om.dom.input.call(null,{"ref": new cljs.core.Keyword(null,"input","input",556931961), "value": new cljs.core.Keyword(null,"text","text",-1790561697).cljs$core$IFn$_invoke$arity$1(om.next.get_state.call(null,this$)), "placeholder": new cljs.core.Keyword(null,"placeholder","placeholder",-104873083).cljs$core$IFn$_invoke$arity$1(om.next.props.call(null,this$)), "className": "completion-input-input", "onChange": ((function (_STAR_reconciler_STAR_23127,_STAR_depth_STAR_23128,_STAR_shared_STAR_23129,_STAR_instrument_STAR_23130,_STAR_parent_STAR_23131,this$,x23117_23142){
-return (function (p1__23111_SHARP_){
-return this$.update_text(p1__23111_SHARP_.target.value);
-});})(_STAR_reconciler_STAR_23127,_STAR_depth_STAR_23128,_STAR_shared_STAR_23129,_STAR_instrument_STAR_23130,_STAR_parent_STAR_23131,this$,x23117_23142))
-, "onKeyDown": ((function (_STAR_reconciler_STAR_23127,_STAR_depth_STAR_23128,_STAR_shared_STAR_23129,_STAR_instrument_STAR_23130,_STAR_parent_STAR_23131,this$,x23117_23142){
-return (function (p1__23112_SHARP_){
-return this$.key_down(p1__23112_SHARP_);
-});})(_STAR_reconciler_STAR_23127,_STAR_depth_STAR_23128,_STAR_shared_STAR_23129,_STAR_instrument_STAR_23130,_STAR_parent_STAR_23131,this$,x23117_23142))
-}),(function (){var map__23132 = om.next.get_state.call(null,this$);
-var map__23132__$1 = ((((!((map__23132 == null)))?((((map__23132.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23132.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23132):map__23132);
-var matches = cljs.core.get.call(null,map__23132__$1,new cljs.core.Keyword(null,"matches","matches",635497998));
-var show_matches = cljs.core.get.call(null,map__23132__$1,new cljs.core.Keyword(null,"show-matches","show-matches",410578763));
-var selected_match = cljs.core.get.call(null,map__23132__$1,new cljs.core.Keyword(null,"selected-match","selected-match",2125084326));
-var map__23133 = om.next.props.call(null,this$);
-var map__23133__$1 = ((((!((map__23133 == null)))?((((map__23133.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23133.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23133):map__23133);
-var key_fn = cljs.core.get.call(null,map__23133__$1,new cljs.core.Keyword(null,"key-fn","key-fn",-636154479));
-var element_fn = cljs.core.get.call(null,map__23133__$1,new cljs.core.Keyword(null,"element-fn","element-fn",554034748));
+});})(_STAR_reconciler_STAR_81857,_STAR_depth_STAR_81858,_STAR_shared_STAR_81859,_STAR_instrument_STAR_81860,_STAR_parent_STAR_81861,this$,x81847_81872))
+},om.dom.input.call(null,{"ref": new cljs.core.Keyword(null,"input","input",556931961), "value": new cljs.core.Keyword(null,"text","text",-1790561697).cljs$core$IFn$_invoke$arity$1(om.next.get_state.call(null,this$)), "placeholder": new cljs.core.Keyword(null,"placeholder","placeholder",-104873083).cljs$core$IFn$_invoke$arity$1(om.next.props.call(null,this$)), "className": "completion-input-input", "onChange": ((function (_STAR_reconciler_STAR_81857,_STAR_depth_STAR_81858,_STAR_shared_STAR_81859,_STAR_instrument_STAR_81860,_STAR_parent_STAR_81861,this$,x81847_81872){
+return (function (p1__81841_SHARP_){
+return this$.update_text(p1__81841_SHARP_.target.value);
+});})(_STAR_reconciler_STAR_81857,_STAR_depth_STAR_81858,_STAR_shared_STAR_81859,_STAR_instrument_STAR_81860,_STAR_parent_STAR_81861,this$,x81847_81872))
+, "onKeyDown": ((function (_STAR_reconciler_STAR_81857,_STAR_depth_STAR_81858,_STAR_shared_STAR_81859,_STAR_instrument_STAR_81860,_STAR_parent_STAR_81861,this$,x81847_81872){
+return (function (p1__81842_SHARP_){
+return this$.key_down(p1__81842_SHARP_);
+});})(_STAR_reconciler_STAR_81857,_STAR_depth_STAR_81858,_STAR_shared_STAR_81859,_STAR_instrument_STAR_81860,_STAR_parent_STAR_81861,this$,x81847_81872))
+}),(function (){var map__81862 = om.next.get_state.call(null,this$);
+var map__81862__$1 = ((((!((map__81862 == null)))?((((map__81862.cljs$lang$protocol_mask$partition0$ & (64))) || (map__81862.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__81862):map__81862);
+var matches = cljs.core.get.call(null,map__81862__$1,new cljs.core.Keyword(null,"matches","matches",635497998));
+var show_matches = cljs.core.get.call(null,map__81862__$1,new cljs.core.Keyword(null,"show-matches","show-matches",410578763));
+var selected_match = cljs.core.get.call(null,map__81862__$1,new cljs.core.Keyword(null,"selected-match","selected-match",2125084326));
+var map__81863 = om.next.props.call(null,this$);
+var map__81863__$1 = ((((!((map__81863 == null)))?((((map__81863.cljs$lang$protocol_mask$partition0$ & (64))) || (map__81863.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__81863):map__81863);
+var key_fn = cljs.core.get.call(null,map__81863__$1,new cljs.core.Keyword(null,"key-fn","key-fn",-636154479));
+var element_fn = cljs.core.get.call(null,map__81863__$1,new cljs.core.Keyword(null,"element-fn","element-fn",554034748));
 if(cljs.core.truth_((function (){var and__5082__auto__ = matches;
 if(cljs.core.truth_(and__5082__auto__)){
 return show_matches;
@@ -482,31 +482,31 @@ return show_matches;
 return and__5082__auto__;
 }
 })())){
-return React.DOM.div({"className": "completion-input-matches"},(function (){var iter__5866__auto__ = ((function (map__23132,map__23132__$1,matches,show_matches,selected_match,map__23133,map__23133__$1,key_fn,element_fn,_STAR_reconciler_STAR_23127,_STAR_depth_STAR_23128,_STAR_shared_STAR_23129,_STAR_instrument_STAR_23130,_STAR_parent_STAR_23131,this$,x23117_23142){
-return (function kanban$components$completion_input$iter__23136(s__23137){
-return (new cljs.core.LazySeq(null,((function (map__23132,map__23132__$1,matches,show_matches,selected_match,map__23133,map__23133__$1,key_fn,element_fn,_STAR_reconciler_STAR_23127,_STAR_depth_STAR_23128,_STAR_shared_STAR_23129,_STAR_instrument_STAR_23130,_STAR_parent_STAR_23131,this$,x23117_23142){
+return React.DOM.div({"className": "completion-input-matches"},(function (){var iter__5866__auto__ = ((function (map__81862,map__81862__$1,matches,show_matches,selected_match,map__81863,map__81863__$1,key_fn,element_fn,_STAR_reconciler_STAR_81857,_STAR_depth_STAR_81858,_STAR_shared_STAR_81859,_STAR_instrument_STAR_81860,_STAR_parent_STAR_81861,this$,x81847_81872){
+return (function kanban$components$completion_input$iter__81866(s__81867){
+return (new cljs.core.LazySeq(null,((function (map__81862,map__81862__$1,matches,show_matches,selected_match,map__81863,map__81863__$1,key_fn,element_fn,_STAR_reconciler_STAR_81857,_STAR_depth_STAR_81858,_STAR_shared_STAR_81859,_STAR_instrument_STAR_81860,_STAR_parent_STAR_81861,this$,x81847_81872){
 return (function (){
-var s__23137__$1 = s__23137;
+var s__81867__$1 = s__81867;
 while(true){
-var temp__4425__auto__ = cljs.core.seq.call(null,s__23137__$1);
+var temp__4425__auto__ = cljs.core.seq.call(null,s__81867__$1);
 if(temp__4425__auto__){
-var s__23137__$2 = temp__4425__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,s__23137__$2)){
-var c__5864__auto__ = cljs.core.chunk_first.call(null,s__23137__$2);
+var s__81867__$2 = temp__4425__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,s__81867__$2)){
+var c__5864__auto__ = cljs.core.chunk_first.call(null,s__81867__$2);
 var size__5865__auto__ = cljs.core.count.call(null,c__5864__auto__);
-var b__23139 = cljs.core.chunk_buffer.call(null,size__5865__auto__);
-if((function (){var i__23138 = (0);
+var b__81869 = cljs.core.chunk_buffer.call(null,size__5865__auto__);
+if((function (){var i__81868 = (0);
 while(true){
-if((i__23138 < size__5865__auto__)){
-var m = cljs.core._nth.call(null,c__5864__auto__,i__23138);
-cljs.core.chunk_append.call(null,b__23139,kanban.components.completion_input.completion_match.call(null,om.next.computed.call(null,m,new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"selected","selected",574897764),cljs.core._EQ_.call(null,m,selected_match),new cljs.core.Keyword(null,"key-fn","key-fn",-636154479),key_fn,new cljs.core.Keyword(null,"activate-fn","activate-fn",1968898886),((function (i__23138,m,c__5864__auto__,size__5865__auto__,b__23139,s__23137__$2,temp__4425__auto__,map__23132,map__23132__$1,matches,show_matches,selected_match,map__23133,map__23133__$1,key_fn,element_fn,_STAR_reconciler_STAR_23127,_STAR_depth_STAR_23128,_STAR_shared_STAR_23129,_STAR_instrument_STAR_23130,_STAR_parent_STAR_23131,this$,x23117_23142){
+if((i__81868 < size__5865__auto__)){
+var m = cljs.core._nth.call(null,c__5864__auto__,i__81868);
+cljs.core.chunk_append.call(null,b__81869,kanban.components.completion_input.completion_match.call(null,om.next.computed.call(null,m,new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"selected","selected",574897764),cljs.core._EQ_.call(null,m,selected_match),new cljs.core.Keyword(null,"key-fn","key-fn",-636154479),key_fn,new cljs.core.Keyword(null,"activate-fn","activate-fn",1968898886),((function (i__81868,m,c__5864__auto__,size__5865__auto__,b__81869,s__81867__$2,temp__4425__auto__,map__81862,map__81862__$1,matches,show_matches,selected_match,map__81863,map__81863__$1,key_fn,element_fn,_STAR_reconciler_STAR_81857,_STAR_depth_STAR_81858,_STAR_shared_STAR_81859,_STAR_instrument_STAR_81860,_STAR_parent_STAR_81861,this$,x81847_81872){
 return (function (){
 return this$.activate_match(m);
-});})(i__23138,m,c__5864__auto__,size__5865__auto__,b__23139,s__23137__$2,temp__4425__auto__,map__23132,map__23132__$1,matches,show_matches,selected_match,map__23133,map__23133__$1,key_fn,element_fn,_STAR_reconciler_STAR_23127,_STAR_depth_STAR_23128,_STAR_shared_STAR_23129,_STAR_instrument_STAR_23130,_STAR_parent_STAR_23131,this$,x23117_23142))
+});})(i__81868,m,c__5864__auto__,size__5865__auto__,b__81869,s__81867__$2,temp__4425__auto__,map__81862,map__81862__$1,matches,show_matches,selected_match,map__81863,map__81863__$1,key_fn,element_fn,_STAR_reconciler_STAR_81857,_STAR_depth_STAR_81858,_STAR_shared_STAR_81859,_STAR_instrument_STAR_81860,_STAR_parent_STAR_81861,this$,x81847_81872))
 ,new cljs.core.Keyword(null,"element-fn","element-fn",554034748),element_fn], null))));
 
-var G__23145 = (i__23138 + (1));
-i__23138 = G__23145;
+var G__81875 = (i__81868 + (1));
+i__81868 = G__81875;
 continue;
 } else {
 return true;
@@ -514,26 +514,26 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__23139),kanban$components$completion_input$iter__23136.call(null,cljs.core.chunk_rest.call(null,s__23137__$2)));
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__81869),kanban$components$completion_input$iter__81866.call(null,cljs.core.chunk_rest.call(null,s__81867__$2)));
 } else {
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__23139),null);
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__81869),null);
 }
 } else {
-var m = cljs.core.first.call(null,s__23137__$2);
-return cljs.core.cons.call(null,kanban.components.completion_input.completion_match.call(null,om.next.computed.call(null,m,new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"selected","selected",574897764),cljs.core._EQ_.call(null,m,selected_match),new cljs.core.Keyword(null,"key-fn","key-fn",-636154479),key_fn,new cljs.core.Keyword(null,"activate-fn","activate-fn",1968898886),((function (m,s__23137__$2,temp__4425__auto__,map__23132,map__23132__$1,matches,show_matches,selected_match,map__23133,map__23133__$1,key_fn,element_fn,_STAR_reconciler_STAR_23127,_STAR_depth_STAR_23128,_STAR_shared_STAR_23129,_STAR_instrument_STAR_23130,_STAR_parent_STAR_23131,this$,x23117_23142){
+var m = cljs.core.first.call(null,s__81867__$2);
+return cljs.core.cons.call(null,kanban.components.completion_input.completion_match.call(null,om.next.computed.call(null,m,new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"selected","selected",574897764),cljs.core._EQ_.call(null,m,selected_match),new cljs.core.Keyword(null,"key-fn","key-fn",-636154479),key_fn,new cljs.core.Keyword(null,"activate-fn","activate-fn",1968898886),((function (m,s__81867__$2,temp__4425__auto__,map__81862,map__81862__$1,matches,show_matches,selected_match,map__81863,map__81863__$1,key_fn,element_fn,_STAR_reconciler_STAR_81857,_STAR_depth_STAR_81858,_STAR_shared_STAR_81859,_STAR_instrument_STAR_81860,_STAR_parent_STAR_81861,this$,x81847_81872){
 return (function (){
 return this$.activate_match(m);
-});})(m,s__23137__$2,temp__4425__auto__,map__23132,map__23132__$1,matches,show_matches,selected_match,map__23133,map__23133__$1,key_fn,element_fn,_STAR_reconciler_STAR_23127,_STAR_depth_STAR_23128,_STAR_shared_STAR_23129,_STAR_instrument_STAR_23130,_STAR_parent_STAR_23131,this$,x23117_23142))
-,new cljs.core.Keyword(null,"element-fn","element-fn",554034748),element_fn], null))),kanban$components$completion_input$iter__23136.call(null,cljs.core.rest.call(null,s__23137__$2)));
+});})(m,s__81867__$2,temp__4425__auto__,map__81862,map__81862__$1,matches,show_matches,selected_match,map__81863,map__81863__$1,key_fn,element_fn,_STAR_reconciler_STAR_81857,_STAR_depth_STAR_81858,_STAR_shared_STAR_81859,_STAR_instrument_STAR_81860,_STAR_parent_STAR_81861,this$,x81847_81872))
+,new cljs.core.Keyword(null,"element-fn","element-fn",554034748),element_fn], null))),kanban$components$completion_input$iter__81866.call(null,cljs.core.rest.call(null,s__81867__$2)));
 }
 } else {
 return null;
 }
 break;
 }
-});})(map__23132,map__23132__$1,matches,show_matches,selected_match,map__23133,map__23133__$1,key_fn,element_fn,_STAR_reconciler_STAR_23127,_STAR_depth_STAR_23128,_STAR_shared_STAR_23129,_STAR_instrument_STAR_23130,_STAR_parent_STAR_23131,this$,x23117_23142))
+});})(map__81862,map__81862__$1,matches,show_matches,selected_match,map__81863,map__81863__$1,key_fn,element_fn,_STAR_reconciler_STAR_81857,_STAR_depth_STAR_81858,_STAR_shared_STAR_81859,_STAR_instrument_STAR_81860,_STAR_parent_STAR_81861,this$,x81847_81872))
 ,null,null));
-});})(map__23132,map__23132__$1,matches,show_matches,selected_match,map__23133,map__23133__$1,key_fn,element_fn,_STAR_reconciler_STAR_23127,_STAR_depth_STAR_23128,_STAR_shared_STAR_23129,_STAR_instrument_STAR_23130,_STAR_parent_STAR_23131,this$,x23117_23142))
+});})(map__81862,map__81862__$1,matches,show_matches,selected_match,map__81863,map__81863__$1,key_fn,element_fn,_STAR_reconciler_STAR_81857,_STAR_depth_STAR_81858,_STAR_shared_STAR_81859,_STAR_instrument_STAR_81860,_STAR_parent_STAR_81861,this$,x81847_81872))
 ;
 return iter__5866__auto__.call(null,matches);
 })());
@@ -541,16 +541,16 @@ return iter__5866__auto__.call(null,matches);
 return null;
 }
 })());
-}finally {om.next._STAR_parent_STAR_ = _STAR_parent_STAR_23131;
+}finally {om.next._STAR_parent_STAR_ = _STAR_parent_STAR_81861;
 
-om.next._STAR_instrument_STAR_ = _STAR_instrument_STAR_23130;
+om.next._STAR_instrument_STAR_ = _STAR_instrument_STAR_81860;
 
-om.next._STAR_shared_STAR_ = _STAR_shared_STAR_23129;
+om.next._STAR_shared_STAR_ = _STAR_shared_STAR_81859;
 
-om.next._STAR_depth_STAR_ = _STAR_depth_STAR_23128;
+om.next._STAR_depth_STAR_ = _STAR_depth_STAR_81858;
 
-om.next._STAR_reconciler_STAR_ = _STAR_reconciler_STAR_23127;
-}});})(x23117_23142))
+om.next._STAR_reconciler_STAR_ = _STAR_reconciler_STAR_81857;
+}});})(x81847_81872))
 ;
 
 
@@ -558,10 +558,10 @@ kanban.components.completion_input.CompletionInput.prototype.constructor = kanba
 
 kanban.components.completion_input.CompletionInput.prototype.om$isComponent = true;
 
-var x23140_23146 = kanban.components.completion_input.CompletionInput;
+var x81870_81876 = kanban.components.completion_input.CompletionInput;
 
 
-var x23141_23147 = kanban.components.completion_input.CompletionInput.prototype;
+var x81871_81877 = kanban.components.completion_input.CompletionInput.prototype;
 
 
 kanban.components.completion_input.CompletionInput.cljs$lang$type = true;

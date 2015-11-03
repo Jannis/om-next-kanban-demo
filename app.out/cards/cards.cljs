@@ -2,10 +2,8 @@
   (:require [devcards.core :as dc :refer-macros [defcard]]
             [om.next :as om]
             [om.dom :as dom]
-            [kanban.components.card :as kanban-card]))
-
-(def ^:export front-matter
-  {:base-card-options {:frame false}})
+            [kanban.components.card :as kanban-card]
+            [cards.util :refer [render-cb-info update-cb-info]]))
 
 (enable-console-print!)
 
@@ -99,29 +97,15 @@
 (defcard
   "## Behaviour")
 
-(defn update-cb-info [state & params]
-  (swap! state (fn [state] (-> state
-                               (update :counter inc)
-                               (assoc :params params)))))
-
-(defn render-cb-info [state name]
-  (let [{:keys [counter params]} @state]
-    (dom/div nil
-      (dom/div nil (str name ": " counter " times"))
-      (dom/div nil
-        (str "Parameters: ")
-        (dom/code nil (str params))))))
-
 (defcard
   "### Card with an activate callback"
   (fn [state _]
     (dom/div nil
       (kanban-card/card
         (om/computed (:card @state)
-                     {:activate-fn (partial update-cb-info state)}))
-      (render-cb-info state "Activated")))
-  {:card {:id 1 :text "Initial text"}
-   :counter 0}
+                     {:activate-fn (partial update-cb-info :activate state)}))
+      (render-cb-info :activate state "Activated")))
+  {:card {:id 1 :text "Initial text"}}
   {:inspect-data true :history true})
 
 (defcard
@@ -130,9 +114,10 @@
     (dom/div nil
       (kanban-card/card
         (om/computed (:card @state)
-                     {:drag-fns {:start (partial update-cb-info state)}}))
-      (render-cb-info state "Drag initiated")))
-  {:card {:id 1 :text "Initial text"} :counter 0}
+                     {:drag-fns
+                      {:start (partial update-cb-info :drag-start state)}}))
+      (render-cb-info :drag-start state "Drag initiated")))
+  {:card {:id 1 :text "Initial text"}}
   {:inspect-data true :history true})
 
 (defcard
@@ -141,7 +126,8 @@
     (dom/div nil
       (kanban-card/card
         (om/computed (:card @state)
-                     {:drag-fns {:end (partial update-cb-info state)}}))
-      (render-cb-info state "Drag ended")))
-  {:card {:id 1 :text "Initial text"} :counter 0}
+                     {:drag-fns
+                      {:end (partial update-cb-info :drag-end state)}}))
+      (render-cb-info :drag-end state "Drag ended")))
+  {:card {:id 1 :text "Initial text"}}
   {:inspect-data true :history true})

@@ -5,7 +5,7 @@ goog.require('devcards.core');
 goog.require('cards.cards');
 goog.require('cards.lanes');
 cards.ui.start = (function cards$ui$start(){
-return devcards.core.start_devcard_ui_BANG__STAR_.call(null);
+return devcards.core.start_devcard_ui_BANG__STAR_.call(null,null);
 });
 
 //# sourceMappingURL=ui.js.map

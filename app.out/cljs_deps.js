@@ -8,8 +8,6 @@ goog.addDependency("../om/next/protocols.js", ['om.next.protocols'], ['cljs.core
 goog.addDependency("../clojure/walk.js", ['clojure.walk'], ['cljs.core']);
 goog.addDependency("../om/next.js", ['om.next'], ['om.next.cache', 'clojure.zip', 'om.next.impl.parser', 'goog.string', 'goog.debug.Console', 'cljs.core', 'goog.object', 'goog.log', 'om.next.protocols', 'clojure.walk']);
 goog.addDependency("../kanban/reconciler.js", ['kanban.reconciler'], ['cljs.core', 'goog.object', 'kanban.state', 'om.next']);
-goog.addDependency("../kanban/parsing/users.js", ['kanban.parsing.users'], ['cljs.core', 'kanban.reconciler']);
-goog.addDependency("../kanban/parsing/cards.js", ['kanban.parsing.cards'], ['kanban.parsing.users', 'cljs.core', 'kanban.reconciler']);
 goog.addDependency("../react.inc.js", ['cljsjs.react'], []);
 goog.addDependency("../react-dom.inc.js", ['cljsjs.react.dom'], ['cljsjs.react']);
 goog.addDependency("../om/dom.js", ['om.dom'], ['cljs.core', 'goog.object', 'cljsjs.react', 'cljsjs.react.dom']);
@@ -20,6 +18,8 @@ goog.addDependency("../kanban/components/boards_menu.js", ['kanban.components.bo
 goog.addDependency("../kanban/components/sortable_list.js", ['kanban.components.sortable_list'], ['cljs.core', 'om.dom', 'kanban.util', 'om.next']);
 goog.addDependency("../kanban/components/board_dialog.js", ['kanban.components.board_dialog'], ['kanban.components.card', 'cljs.core', 'kanban.components.sortable_list', 'om.dom', 'goog.object', 'om.next']);
 goog.addDependency("../kanban/components/about.js", ['kanban.components.about'], ['cljs.core', 'om.dom']);
+goog.addDependency("../kanban/parsing/users.js", ['kanban.parsing.users'], ['cljs.core', 'kanban.reconciler']);
+goog.addDependency("../kanban/parsing/cards.js", ['kanban.parsing.cards'], ['kanban.parsing.users', 'cljs.core', 'kanban.reconciler']);
 goog.addDependency("../kanban/parsing/lanes.js", ['kanban.parsing.lanes'], ['kanban.parsing.cards', 'cljs.core', 'kanban.reconciler']);
 goog.addDependency("../kanban/parsing/boards.js", ['kanban.parsing.boards'], ['cljs.core', 'kanban.reconciler', 'kanban.parsing.lanes']);
 goog.addDependency("../kanban/components/lane.js", ['kanban.components.lane'], ['kanban.components.card', 'cljs.core', 'om.dom', 'goog.object', 'om.next']);
@@ -47,7 +47,7 @@ goog.addDependency("../cljs/core/async/impl/channels.js", ['cljs.core.async.impl
 goog.addDependency("../clojure/set.js", ['clojure.set'], ['cljs.core']);
 goog.addDependency("../sablono/util.js", ['sablono.util'], ['goog.Uri', 'cljs.core', 'clojure.set', 'clojure.string']);
 goog.addDependency("../sablono/interpreter.js", ['sablono.interpreter'], ['sablono.util', 'cljs.core', 'goog.object', 'cljsjs.react', 'clojure.string']);
-goog.addDependency("../adzerk/boot_reload.js", ['adzerk.boot_reload'], ['cljs.core', 'adzerk.boot_reload.client', 'kanban.app']);
+goog.addDependency("../adzerk/boot_reload.js", ['adzerk.boot_reload'], ['cljs.core', 'adzerk.boot_reload.client']);
 goog.addDependency("../boot/cljs/main707.js", ['boot.cljs.main707'], ['adzerk.boot_reload', 'cljs.core', 'kanban.app']);
 goog.addDependency("../devcards/util/utils.js", ['devcards.util.utils'], ['cljs.core', 'goog.string.StringBuffer', 'cljs.pprint']);
 goog.addDependency("../cljs/core/async/impl/timers.js", ['cljs.core.async.impl.timers'], ['cljs.core.async.impl.channels', 'cljs.core.async.impl.dispatch', 'cljs.core', 'cljs.core.async.impl.protocols']);
@@ -56,6 +56,7 @@ goog.addDependency("../sablono/core.js", ['sablono.core'], ['goog.dom', 'sablono
 goog.addDependency("../devcards/util/edn_renderer.js", ['devcards.util.edn_renderer'], ['devcards.util.utils', 'cljs.core', 'sablono.core']);
 goog.addDependency("../devcards/system.js", ['devcards.system'], ['devcards.util.utils', 'cljs.core', 'goog.history.EventType', 'goog.History', 'cljs.core.async', 'sablono.core', 'devcards.util.edn_renderer', 'goog.labs.userAgent.device', 'clojure.string', 'goog.events']);
 goog.addDependency("../devcards/core.js", ['devcards.core'], ['devcards.util.utils', 'devcards.system', 'cljs.core', 'cljs.test', 'cljs.core.async', 'sablono.core', 'devcards.util.edn_renderer', 'devcards.util.markdown', 'clojure.string']);
-goog.addDependency("../cards/cards.js", ['cards.cards'], ['kanban.components.card', 'devcards.core', 'cljs.core', 'om.dom', 'om.next']);
-goog.addDependency("../cards/lanes.js", ['cards.lanes'], ['devcards.core', 'cljs.core', 'om.dom', 'kanban.components.lane', 'om.next']);
+goog.addDependency("../cards/util.js", ['cards.util'], ['cljs.core', 'om.dom']);
+goog.addDependency("../cards/cards.js", ['cards.cards'], ['kanban.components.card', 'devcards.core', 'cljs.core', 'om.dom', 'cards.util', 'om.next']);
+goog.addDependency("../cards/lanes.js", ['cards.lanes'], ['devcards.core', 'cljs.core', 'om.dom', 'cards.util', 'kanban.components.lane', 'om.next']);
 goog.addDependency("../cards/ui.js", ['cards.ui'], ['cards.cards', 'devcards.core', 'cards.lanes', 'cljs.core']);

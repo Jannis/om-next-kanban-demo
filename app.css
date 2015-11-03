@@ -117,17 +117,25 @@ body {
   width: 100%;
 }
 .lane .lane-title {
+  display: table;
   margin: 0rem;
   padding: 0.5rem;
+  box-sizing: border-box;
   font-size: 1rem;
   font-weight: 500;
   background: #f7f7f7;
   border-bottom: thin solid #dddddd;
+  width: 100%;
+  border-spacing: 0rem;
+}
+.lane .lane-title .text {
+  display: table-cell;
 }
 .lane .lane-title .count {
-  float: right;
-  line-height: 1.5rem;
+  display: table-cell;
+  text-align: right;
   font-weight: 300;
+  padding-left: 2rem;
 }
 .lane .add a {
   display: block;

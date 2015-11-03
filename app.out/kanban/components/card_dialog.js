@@ -23,17 +23,17 @@ return this__7586__auto__;
 
 kanban.components.card_dialog.CardDialog.prototype = goog.object.clone(React.Component.prototype);
 
-var x23007_23029 = kanban.components.card_dialog.CardDialog.prototype;
-x23007_23029.componentWillUpdate = ((function (x23007_23029){
+var x82084_82106 = kanban.components.card_dialog.CardDialog.prototype;
+x82084_82106.componentWillUpdate = ((function (x82084_82106){
 return (function (next_props__7527__auto__,next_state__7528__auto__){
 var this__7526__auto__ = this;
 om.next.merge_pending_props_BANG_.call(null,this__7526__auto__);
 
 return om.next.merge_pending_state_BANG_.call(null,this__7526__auto__);
-});})(x23007_23029))
+});})(x82084_82106))
 ;
 
-x23007_23029.shouldComponentUpdate = ((function (x23007_23029){
+x82084_82106.shouldComponentUpdate = ((function (x82084_82106){
 return (function (next_props__7527__auto__,next_state__7528__auto__){
 var this__7526__auto__ = this;
 var or__5094__auto__ = cljs.core.not_EQ_.call(null,om.next.props.call(null,this__7526__auto__),goog.object.get(next_props__7527__auto__,"omcljs$value"));
@@ -47,10 +47,10 @@ return cljs.core.not_EQ_.call(null,goog.object.get(this__7526__auto__.state,"omc
 return and__5082__auto__;
 }
 }
-});})(x23007_23029))
+});})(x82084_82106))
 ;
 
-x23007_23029.componentWillUnmount = ((function (x23007_23029){
+x82084_82106.componentWillUnmount = ((function (x82084_82106){
 return (function (){
 var this__7526__auto__ = this;
 var r__7532__auto__ = om.next.get_reconciler.call(null,this__7526__auto__);
@@ -67,24 +67,24 @@ return null;
 } else {
 return om.next.protocols.drop_component_BANG_.call(null,indexer__7531__auto__,this__7526__auto__);
 }
-});})(x23007_23029))
+});})(x82084_82106))
 ;
 
-x23007_23029.componentDidUpdate = ((function (x23007_23029){
+x82084_82106.componentDidUpdate = ((function (x82084_82106){
 return (function (prev_props__7529__auto__,prev_state__7530__auto__){
 var this__7526__auto__ = this;
 return om.next.clear_prev_props_BANG_.call(null,this__7526__auto__);
-});})(x23007_23029))
+});})(x82084_82106))
 ;
 
-x23007_23029.isMounted = ((function (x23007_23029){
+x82084_82106.isMounted = ((function (x82084_82106){
 return (function (){
 var this__7526__auto__ = this;
 return cljs.core.boolean$.call(null,goog.object.getValueByKeys(this__7526__auto__,"_reactInternalInstance","_renderedComponent"));
-});})(x23007_23029))
+});})(x82084_82106))
 ;
 
-x23007_23029.componentWillMount = ((function (x23007_23029){
+x82084_82106.componentWillMount = ((function (x82084_82106){
 return (function (){
 var this__7526__auto__ = this;
 var indexer__7531__auto__ = cljs.core.get_in.call(null,om.next.get_reconciler.call(null,this__7526__auto__),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"config","config",994861415),new cljs.core.Keyword(null,"indexer","indexer",-1774914315)], null));
@@ -93,53 +93,53 @@ return null;
 } else {
 return om.next.protocols.index_component_BANG_.call(null,indexer__7531__auto__,this__7526__auto__);
 }
-});})(x23007_23029))
+});})(x82084_82106))
 ;
 
-x23007_23029.toggle_assignee = ((function (x23007_23029){
+x82084_82106.toggle_assignee = ((function (x82084_82106){
 return (function (ref){
 var this$ = this;
-var map__23008 = om.next.props.call(null,this$);
-var map__23008__$1 = ((((!((map__23008 == null)))?((((map__23008.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23008.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23008):map__23008);
-var assignees = cljs.core.get.call(null,map__23008__$1,new cljs.core.Keyword(null,"assignees","assignees",-298534943));
-var map__23009 = om.next.get_computed.call(null,this$);
-var map__23009__$1 = ((((!((map__23009 == null)))?((((map__23009.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23009.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23009):map__23009);
-var update_fn = cljs.core.get.call(null,map__23009__$1,new cljs.core.Keyword(null,"update-fn","update-fn",711087313));
-var add_or_remove_STAR_ = ((function (map__23008,map__23008__$1,assignees,map__23009,map__23009__$1,update_fn,this$,x23007_23029){
+var map__82085 = om.next.props.call(null,this$);
+var map__82085__$1 = ((((!((map__82085 == null)))?((((map__82085.cljs$lang$protocol_mask$partition0$ & (64))) || (map__82085.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__82085):map__82085);
+var assignees = cljs.core.get.call(null,map__82085__$1,new cljs.core.Keyword(null,"assignees","assignees",-298534943));
+var map__82086 = om.next.get_computed.call(null,this$);
+var map__82086__$1 = ((((!((map__82086 == null)))?((((map__82086.cljs$lang$protocol_mask$partition0$ & (64))) || (map__82086.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__82086):map__82086);
+var update_fn = cljs.core.get.call(null,map__82086__$1,new cljs.core.Keyword(null,"update-fn","update-fn",711087313));
+var add_or_remove_STAR_ = ((function (map__82085,map__82085__$1,assignees,map__82086,map__82086__$1,update_fn,this$,x82084_82106){
 return (function kanban$components$card_dialog$add_or_remove_STAR_(x,xs){
 if(cljs.core.truth_(cljs.core.some.call(null,cljs.core.PersistentHashSet.fromArray([x], true),xs))){
 return cljs.core.remove.call(null,cljs.core.PersistentHashSet.fromArray([x], true),xs);
 } else {
 return cljs.core.conj.call(null,xs,x);
 }
-});})(map__23008,map__23008__$1,assignees,map__23009,map__23009__$1,update_fn,this$,x23007_23029))
+});})(map__82085,map__82085__$1,assignees,map__82086,map__82086__$1,update_fn,this$,x82084_82106))
 ;
-return update_fn.call(null,om.next.get_ident.call(null,this$),cljs.core.assoc.call(null,cljs.core.PersistentArrayMap.EMPTY,new cljs.core.Keyword(null,"assignees","assignees",-298534943),cljs.core.into.call(null,cljs.core.PersistentVector.EMPTY,add_or_remove_STAR_.call(null,ref,cljs.core.map.call(null,((function (map__23008,map__23008__$1,assignees,map__23009,map__23009__$1,update_fn,this$,x23007_23029){
-return (function (p1__22999_SHARP_){
-return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("user","by-id","user/by-id",-2141588742),new cljs.core.Keyword(null,"id","id",-1388402092).cljs$core$IFn$_invoke$arity$1(p1__22999_SHARP_)], null);
-});})(map__23008,map__23008__$1,assignees,map__23009,map__23009__$1,update_fn,this$,x23007_23029))
+return update_fn.call(null,om.next.get_ident.call(null,this$),cljs.core.assoc.call(null,cljs.core.PersistentArrayMap.EMPTY,new cljs.core.Keyword(null,"assignees","assignees",-298534943),cljs.core.into.call(null,cljs.core.PersistentVector.EMPTY,add_or_remove_STAR_.call(null,ref,cljs.core.map.call(null,((function (map__82085,map__82085__$1,assignees,map__82086,map__82086__$1,update_fn,this$,x82084_82106){
+return (function (p1__82076_SHARP_){
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("user","by-id","user/by-id",-2141588742),new cljs.core.Keyword(null,"id","id",-1388402092).cljs$core$IFn$_invoke$arity$1(p1__82076_SHARP_)], null);
+});})(map__82085,map__82085__$1,assignees,map__82086,map__82086__$1,update_fn,this$,x82084_82106))
 ,assignees)))));
-});})(x23007_23029))
+});})(x82084_82106))
 ;
 
-x23007_23029.update_text = ((function (x23007_23029){
+x82084_82106.update_text = ((function (x82084_82106){
 return (function (text){
 var this$ = this;
-var map__23012 = om.next.get_computed.call(null,this$);
-var map__23012__$1 = ((((!((map__23012 == null)))?((((map__23012.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23012.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23012):map__23012);
-var update_fn = cljs.core.get.call(null,map__23012__$1,new cljs.core.Keyword(null,"update-fn","update-fn",711087313));
+var map__82089 = om.next.get_computed.call(null,this$);
+var map__82089__$1 = ((((!((map__82089 == null)))?((((map__82089.cljs$lang$protocol_mask$partition0$ & (64))) || (map__82089.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__82089):map__82089);
+var update_fn = cljs.core.get.call(null,map__82089__$1,new cljs.core.Keyword(null,"update-fn","update-fn",711087313));
 return update_fn.call(null,om.next.get_ident.call(null,this$),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"text","text",-1790561697),text], null));
-});})(x23007_23029))
+});})(x82084_82106))
 ;
 
-x23007_23029.render = ((function (x23007_23029){
+x82084_82106.render = ((function (x82084_82106){
 return (function (){
 var this$ = this;
-var _STAR_reconciler_STAR_23014 = om.next._STAR_reconciler_STAR_;
-var _STAR_depth_STAR_23015 = om.next._STAR_depth_STAR_;
-var _STAR_shared_STAR_23016 = om.next._STAR_shared_STAR_;
-var _STAR_instrument_STAR_23017 = om.next._STAR_instrument_STAR_;
-var _STAR_parent_STAR_23018 = om.next._STAR_parent_STAR_;
+var _STAR_reconciler_STAR_82091 = om.next._STAR_reconciler_STAR_;
+var _STAR_depth_STAR_82092 = om.next._STAR_depth_STAR_;
+var _STAR_shared_STAR_82093 = om.next._STAR_shared_STAR_;
+var _STAR_instrument_STAR_82094 = om.next._STAR_instrument_STAR_;
+var _STAR_parent_STAR_82095 = om.next._STAR_parent_STAR_;
 om.next._STAR_reconciler_STAR_ = om.next.get_reconciler.call(null,this$);
 
 om.next._STAR_depth_STAR_ = (om.next.depth.call(null,this$) + (1));
@@ -150,47 +150,47 @@ om.next._STAR_instrument_STAR_ = om.next.instrument.call(null,this$);
 
 om.next._STAR_parent_STAR_ = this$;
 
-try{var map__23019 = om.next.props.call(null,this$);
-var map__23019__$1 = ((((!((map__23019 == null)))?((((map__23019.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23019.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23019):map__23019);
-var id = cljs.core.get.call(null,map__23019__$1,new cljs.core.Keyword(null,"id","id",-1388402092));
-var text = cljs.core.get.call(null,map__23019__$1,new cljs.core.Keyword(null,"text","text",-1790561697));
-var assignees = cljs.core.get.call(null,map__23019__$1,new cljs.core.Keyword(null,"assignees","assignees",-298534943));
-var map__23020 = om.next.get_computed.call(null,this$);
-var map__23020__$1 = ((((!((map__23020 == null)))?((((map__23020.cljs$lang$protocol_mask$partition0$ & (64))) || (map__23020.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__23020):map__23020);
-var users = cljs.core.get.call(null,map__23020__$1,new cljs.core.Keyword(null,"users","users",-713552705));
-var close_fn = cljs.core.get.call(null,map__23020__$1,new cljs.core.Keyword(null,"close-fn","close-fn",-1779772512));
-var update_fn = cljs.core.get.call(null,map__23020__$1,new cljs.core.Keyword(null,"update-fn","update-fn",711087313));
-return React.DOM.div({"className": "dialog"},React.DOM.div({"className": "dialog-closer", "onClick": close_fn}),React.DOM.div({"className": "dialog-content"},React.DOM.h1({"className": "dialog-title"},"Edit card",React.DOM.span({"className": "card-id"},id)),React.DOM.form({"onSubmit": ((function (map__23019,map__23019__$1,id,text,assignees,map__23020,map__23020__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_23014,_STAR_depth_STAR_23015,_STAR_shared_STAR_23016,_STAR_instrument_STAR_23017,_STAR_parent_STAR_23018,this$,x23007_23029){
-return (function (p1__23000_SHARP_){
-return p1__23000_SHARP_.preventDefault();
-});})(map__23019,map__23019__$1,id,text,assignees,map__23020,map__23020__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_23014,_STAR_depth_STAR_23015,_STAR_shared_STAR_23016,_STAR_instrument_STAR_23017,_STAR_parent_STAR_23018,this$,x23007_23029))
-},React.DOM.div({"className": "form-row"},React.DOM.label(null,"Assignees:"),React.DOM.div({"className": "input"},null,(function (){var iter__5866__auto__ = ((function (map__23019,map__23019__$1,id,text,assignees,map__23020,map__23020__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_23014,_STAR_depth_STAR_23015,_STAR_shared_STAR_23016,_STAR_instrument_STAR_23017,_STAR_parent_STAR_23018,this$,x23007_23029){
-return (function kanban$components$card_dialog$iter__23023(s__23024){
-return (new cljs.core.LazySeq(null,((function (map__23019,map__23019__$1,id,text,assignees,map__23020,map__23020__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_23014,_STAR_depth_STAR_23015,_STAR_shared_STAR_23016,_STAR_instrument_STAR_23017,_STAR_parent_STAR_23018,this$,x23007_23029){
+try{var map__82096 = om.next.props.call(null,this$);
+var map__82096__$1 = ((((!((map__82096 == null)))?((((map__82096.cljs$lang$protocol_mask$partition0$ & (64))) || (map__82096.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__82096):map__82096);
+var id = cljs.core.get.call(null,map__82096__$1,new cljs.core.Keyword(null,"id","id",-1388402092));
+var text = cljs.core.get.call(null,map__82096__$1,new cljs.core.Keyword(null,"text","text",-1790561697));
+var assignees = cljs.core.get.call(null,map__82096__$1,new cljs.core.Keyword(null,"assignees","assignees",-298534943));
+var map__82097 = om.next.get_computed.call(null,this$);
+var map__82097__$1 = ((((!((map__82097 == null)))?((((map__82097.cljs$lang$protocol_mask$partition0$ & (64))) || (map__82097.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__82097):map__82097);
+var users = cljs.core.get.call(null,map__82097__$1,new cljs.core.Keyword(null,"users","users",-713552705));
+var close_fn = cljs.core.get.call(null,map__82097__$1,new cljs.core.Keyword(null,"close-fn","close-fn",-1779772512));
+var update_fn = cljs.core.get.call(null,map__82097__$1,new cljs.core.Keyword(null,"update-fn","update-fn",711087313));
+return React.DOM.div({"className": "dialog"},React.DOM.div({"className": "dialog-closer", "onClick": close_fn}),React.DOM.div({"className": "dialog-content"},React.DOM.h1({"className": "dialog-title"},"Edit card",React.DOM.span({"className": "card-id"},id)),React.DOM.form({"onSubmit": ((function (map__82096,map__82096__$1,id,text,assignees,map__82097,map__82097__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_82091,_STAR_depth_STAR_82092,_STAR_shared_STAR_82093,_STAR_instrument_STAR_82094,_STAR_parent_STAR_82095,this$,x82084_82106){
+return (function (p1__82077_SHARP_){
+return p1__82077_SHARP_.preventDefault();
+});})(map__82096,map__82096__$1,id,text,assignees,map__82097,map__82097__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_82091,_STAR_depth_STAR_82092,_STAR_shared_STAR_82093,_STAR_instrument_STAR_82094,_STAR_parent_STAR_82095,this$,x82084_82106))
+},React.DOM.div({"className": "form-row"},React.DOM.label(null,"Assignees:"),React.DOM.div({"className": "input"},null,(function (){var iter__5866__auto__ = ((function (map__82096,map__82096__$1,id,text,assignees,map__82097,map__82097__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_82091,_STAR_depth_STAR_82092,_STAR_shared_STAR_82093,_STAR_instrument_STAR_82094,_STAR_parent_STAR_82095,this$,x82084_82106){
+return (function kanban$components$card_dialog$iter__82100(s__82101){
+return (new cljs.core.LazySeq(null,((function (map__82096,map__82096__$1,id,text,assignees,map__82097,map__82097__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_82091,_STAR_depth_STAR_82092,_STAR_shared_STAR_82093,_STAR_instrument_STAR_82094,_STAR_parent_STAR_82095,this$,x82084_82106){
 return (function (){
-var s__23024__$1 = s__23024;
+var s__82101__$1 = s__82101;
 while(true){
-var temp__4425__auto__ = cljs.core.seq.call(null,s__23024__$1);
+var temp__4425__auto__ = cljs.core.seq.call(null,s__82101__$1);
 if(temp__4425__auto__){
-var s__23024__$2 = temp__4425__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,s__23024__$2)){
-var c__5864__auto__ = cljs.core.chunk_first.call(null,s__23024__$2);
+var s__82101__$2 = temp__4425__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,s__82101__$2)){
+var c__5864__auto__ = cljs.core.chunk_first.call(null,s__82101__$2);
 var size__5865__auto__ = cljs.core.count.call(null,c__5864__auto__);
-var b__23026 = cljs.core.chunk_buffer.call(null,size__5865__auto__);
-if((function (){var i__23025 = (0);
+var b__82103 = cljs.core.chunk_buffer.call(null,size__5865__auto__);
+if((function (){var i__82102 = (0);
 while(true){
-if((i__23025 < size__5865__auto__)){
-var user = cljs.core._nth.call(null,c__5864__auto__,i__23025);
-cljs.core.chunk_append.call(null,b__23026,(function (){var selected = cljs.core.some.call(null,cljs.core.PersistentHashSet.fromArray([user], true),assignees);
-return kanban.components.card.assignee.call(null,om.next.computed.call(null,user,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"with-name","with-name",597826370),true,new cljs.core.Keyword(null,"activate-fn","activate-fn",1968898886),((function (i__23025,selected,user,c__5864__auto__,size__5865__auto__,b__23026,s__23024__$2,temp__4425__auto__,map__23019,map__23019__$1,id,text,assignees,map__23020,map__23020__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_23014,_STAR_depth_STAR_23015,_STAR_shared_STAR_23016,_STAR_instrument_STAR_23017,_STAR_parent_STAR_23018,this$,x23007_23029){
-return (function (p1__23001_SHARP_){
-return this$.toggle_assignee(p1__23001_SHARP_);
-});})(i__23025,selected,user,c__5864__auto__,size__5865__auto__,b__23026,s__23024__$2,temp__4425__auto__,map__23019,map__23019__$1,id,text,assignees,map__23020,map__23020__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_23014,_STAR_depth_STAR_23015,_STAR_shared_STAR_23016,_STAR_instrument_STAR_23017,_STAR_parent_STAR_23018,this$,x23007_23029))
+if((i__82102 < size__5865__auto__)){
+var user = cljs.core._nth.call(null,c__5864__auto__,i__82102);
+cljs.core.chunk_append.call(null,b__82103,(function (){var selected = cljs.core.some.call(null,cljs.core.PersistentHashSet.fromArray([user], true),assignees);
+return kanban.components.card.assignee.call(null,om.next.computed.call(null,user,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"with-name","with-name",597826370),true,new cljs.core.Keyword(null,"activate-fn","activate-fn",1968898886),((function (i__82102,selected,user,c__5864__auto__,size__5865__auto__,b__82103,s__82101__$2,temp__4425__auto__,map__82096,map__82096__$1,id,text,assignees,map__82097,map__82097__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_82091,_STAR_depth_STAR_82092,_STAR_shared_STAR_82093,_STAR_instrument_STAR_82094,_STAR_parent_STAR_82095,this$,x82084_82106){
+return (function (p1__82078_SHARP_){
+return this$.toggle_assignee(p1__82078_SHARP_);
+});})(i__82102,selected,user,c__5864__auto__,size__5865__auto__,b__82103,s__82101__$2,temp__4425__auto__,map__82096,map__82096__$1,id,text,assignees,map__82097,map__82097__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_82091,_STAR_depth_STAR_82092,_STAR_shared_STAR_82093,_STAR_instrument_STAR_82094,_STAR_parent_STAR_82095,this$,x82084_82106))
 ,new cljs.core.Keyword(null,"selected","selected",574897764),selected], null)));
 })());
 
-var G__23030 = (i__23025 + (1));
-i__23025 = G__23030;
+var G__82107 = (i__82102 + (1));
+i__82102 = G__82107;
 continue;
 } else {
 return true;
@@ -198,45 +198,45 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__23026),kanban$components$card_dialog$iter__23023.call(null,cljs.core.chunk_rest.call(null,s__23024__$2)));
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__82103),kanban$components$card_dialog$iter__82100.call(null,cljs.core.chunk_rest.call(null,s__82101__$2)));
 } else {
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__23026),null);
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__82103),null);
 }
 } else {
-var user = cljs.core.first.call(null,s__23024__$2);
+var user = cljs.core.first.call(null,s__82101__$2);
 return cljs.core.cons.call(null,(function (){var selected = cljs.core.some.call(null,cljs.core.PersistentHashSet.fromArray([user], true),assignees);
-return kanban.components.card.assignee.call(null,om.next.computed.call(null,user,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"with-name","with-name",597826370),true,new cljs.core.Keyword(null,"activate-fn","activate-fn",1968898886),((function (selected,user,s__23024__$2,temp__4425__auto__,map__23019,map__23019__$1,id,text,assignees,map__23020,map__23020__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_23014,_STAR_depth_STAR_23015,_STAR_shared_STAR_23016,_STAR_instrument_STAR_23017,_STAR_parent_STAR_23018,this$,x23007_23029){
-return (function (p1__23001_SHARP_){
-return this$.toggle_assignee(p1__23001_SHARP_);
-});})(selected,user,s__23024__$2,temp__4425__auto__,map__23019,map__23019__$1,id,text,assignees,map__23020,map__23020__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_23014,_STAR_depth_STAR_23015,_STAR_shared_STAR_23016,_STAR_instrument_STAR_23017,_STAR_parent_STAR_23018,this$,x23007_23029))
+return kanban.components.card.assignee.call(null,om.next.computed.call(null,user,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"with-name","with-name",597826370),true,new cljs.core.Keyword(null,"activate-fn","activate-fn",1968898886),((function (selected,user,s__82101__$2,temp__4425__auto__,map__82096,map__82096__$1,id,text,assignees,map__82097,map__82097__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_82091,_STAR_depth_STAR_82092,_STAR_shared_STAR_82093,_STAR_instrument_STAR_82094,_STAR_parent_STAR_82095,this$,x82084_82106){
+return (function (p1__82078_SHARP_){
+return this$.toggle_assignee(p1__82078_SHARP_);
+});})(selected,user,s__82101__$2,temp__4425__auto__,map__82096,map__82096__$1,id,text,assignees,map__82097,map__82097__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_82091,_STAR_depth_STAR_82092,_STAR_shared_STAR_82093,_STAR_instrument_STAR_82094,_STAR_parent_STAR_82095,this$,x82084_82106))
 ,new cljs.core.Keyword(null,"selected","selected",574897764),selected], null)));
-})(),kanban$components$card_dialog$iter__23023.call(null,cljs.core.rest.call(null,s__23024__$2)));
+})(),kanban$components$card_dialog$iter__82100.call(null,cljs.core.rest.call(null,s__82101__$2)));
 }
 } else {
 return null;
 }
 break;
 }
-});})(map__23019,map__23019__$1,id,text,assignees,map__23020,map__23020__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_23014,_STAR_depth_STAR_23015,_STAR_shared_STAR_23016,_STAR_instrument_STAR_23017,_STAR_parent_STAR_23018,this$,x23007_23029))
+});})(map__82096,map__82096__$1,id,text,assignees,map__82097,map__82097__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_82091,_STAR_depth_STAR_82092,_STAR_shared_STAR_82093,_STAR_instrument_STAR_82094,_STAR_parent_STAR_82095,this$,x82084_82106))
 ,null,null));
-});})(map__23019,map__23019__$1,id,text,assignees,map__23020,map__23020__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_23014,_STAR_depth_STAR_23015,_STAR_shared_STAR_23016,_STAR_instrument_STAR_23017,_STAR_parent_STAR_23018,this$,x23007_23029))
+});})(map__82096,map__82096__$1,id,text,assignees,map__82097,map__82097__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_82091,_STAR_depth_STAR_82092,_STAR_shared_STAR_82093,_STAR_instrument_STAR_82094,_STAR_parent_STAR_82095,this$,x82084_82106))
 ;
 return iter__5866__auto__.call(null,users);
-})())),React.DOM.div({"className": "form-row"},React.DOM.label(null,"Text:"),om.dom.textarea.call(null,{"value": text, "placeholder": "Enter a card description here...", "onChange": ((function (map__23019,map__23019__$1,id,text,assignees,map__23020,map__23020__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_23014,_STAR_depth_STAR_23015,_STAR_shared_STAR_23016,_STAR_instrument_STAR_23017,_STAR_parent_STAR_23018,this$,x23007_23029){
-return (function (p1__23002_SHARP_){
-return this$.update_text(p1__23002_SHARP_.target.value);
-});})(map__23019,map__23019__$1,id,text,assignees,map__23020,map__23020__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_23014,_STAR_depth_STAR_23015,_STAR_shared_STAR_23016,_STAR_instrument_STAR_23017,_STAR_parent_STAR_23018,this$,x23007_23029))
+})())),React.DOM.div({"className": "form-row"},React.DOM.label(null,"Text:"),om.dom.textarea.call(null,{"value": text, "placeholder": "Enter a card description here...", "onChange": ((function (map__82096,map__82096__$1,id,text,assignees,map__82097,map__82097__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_82091,_STAR_depth_STAR_82092,_STAR_shared_STAR_82093,_STAR_instrument_STAR_82094,_STAR_parent_STAR_82095,this$,x82084_82106){
+return (function (p1__82079_SHARP_){
+return this$.update_text(p1__82079_SHARP_.target.value);
+});})(map__82096,map__82096__$1,id,text,assignees,map__82097,map__82097__$1,users,close_fn,update_fn,_STAR_reconciler_STAR_82091,_STAR_depth_STAR_82092,_STAR_shared_STAR_82093,_STAR_instrument_STAR_82094,_STAR_parent_STAR_82095,this$,x82084_82106))
 }))),React.DOM.p({"className": "dialog-buttons"},React.DOM.button({"onClick": close_fn},"Close")),React.DOM.div({"className": "help"},React.DOM.h3({"className": "help-title"},"Help"),React.DOM.ul({"className": "instructions"},React.DOM.li(null,"Edit card assignees by clicking on their names"),React.DOM.li(null,"Change the card description via the text field"),React.DOM.li(null,"Click anywhere to close the dialog")))));
-}finally {om.next._STAR_parent_STAR_ = _STAR_parent_STAR_23018;
+}finally {om.next._STAR_parent_STAR_ = _STAR_parent_STAR_82095;
 
-om.next._STAR_instrument_STAR_ = _STAR_instrument_STAR_23017;
+om.next._STAR_instrument_STAR_ = _STAR_instrument_STAR_82094;
 
-om.next._STAR_shared_STAR_ = _STAR_shared_STAR_23016;
+om.next._STAR_shared_STAR_ = _STAR_shared_STAR_82093;
 
-om.next._STAR_depth_STAR_ = _STAR_depth_STAR_23015;
+om.next._STAR_depth_STAR_ = _STAR_depth_STAR_82092;
 
-om.next._STAR_reconciler_STAR_ = _STAR_reconciler_STAR_23014;
-}});})(x23007_23029))
+om.next._STAR_reconciler_STAR_ = _STAR_reconciler_STAR_82091;
+}});})(x82084_82106))
 ;
 
 
@@ -244,43 +244,43 @@ kanban.components.card_dialog.CardDialog.prototype.constructor = kanban.componen
 
 kanban.components.card_dialog.CardDialog.prototype.om$isComponent = true;
 
-var x23027_23031 = kanban.components.card_dialog.CardDialog;
-x23027_23031.om$next$Ident$ = true;
+var x82104_82108 = kanban.components.card_dialog.CardDialog;
+x82104_82108.om$next$Ident$ = true;
 
-x23027_23031.om$next$Ident$ident$arity$2 = ((function (x23027_23031){
+x82104_82108.om$next$Ident$ident$arity$2 = ((function (x82104_82108){
 return (function (this$,props){
 var this$__$1 = this;
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("card","by-id","card/by-id",-2141035693),new cljs.core.Keyword(null,"id","id",-1388402092).cljs$core$IFn$_invoke$arity$1(props)], null);
-});})(x23027_23031))
+});})(x82104_82108))
 ;
 
-x23027_23031.om$next$IQuery$ = true;
+x82104_82108.om$next$IQuery$ = true;
 
-x23027_23031.om$next$IQuery$query$arity$1 = ((function (x23027_23031){
+x82104_82108.om$next$IQuery$query$arity$1 = ((function (x82104_82108){
 return (function (this$){
 var this$__$1 = this;
 return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"id","id",-1388402092),new cljs.core.Keyword(null,"text","text",-1790561697),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"assignees","assignees",-298534943),om.next.get_query.call(null,kanban.components.card.Assignee)], null)], null);
-});})(x23027_23031))
+});})(x82104_82108))
 ;
 
 
-var x23028_23032 = kanban.components.card_dialog.CardDialog.prototype;
-x23028_23032.om$next$Ident$ = true;
+var x82105_82109 = kanban.components.card_dialog.CardDialog.prototype;
+x82105_82109.om$next$Ident$ = true;
 
-x23028_23032.om$next$Ident$ident$arity$2 = ((function (x23028_23032){
+x82105_82109.om$next$Ident$ident$arity$2 = ((function (x82105_82109){
 return (function (this$,props){
 var this$__$1 = this;
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("card","by-id","card/by-id",-2141035693),new cljs.core.Keyword(null,"id","id",-1388402092).cljs$core$IFn$_invoke$arity$1(props)], null);
-});})(x23028_23032))
+});})(x82105_82109))
 ;
 
-x23028_23032.om$next$IQuery$ = true;
+x82105_82109.om$next$IQuery$ = true;
 
-x23028_23032.om$next$IQuery$query$arity$1 = ((function (x23028_23032){
+x82105_82109.om$next$IQuery$query$arity$1 = ((function (x82105_82109){
 return (function (this$){
 var this$__$1 = this;
 return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"id","id",-1388402092),new cljs.core.Keyword(null,"text","text",-1790561697),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"assignees","assignees",-298534943),om.next.get_query.call(null,kanban.components.card.Assignee)], null)], null);
-});})(x23028_23032))
+});})(x82105_82109))
 ;
 
 
@@ -291,8 +291,8 @@ kanban.components.card_dialog.CardDialog.cljs$lang$ctorStr = "kanban.components.
 kanban.components.card_dialog.CardDialog.cljs$lang$ctorPrWriter = (function (this__7588__auto__,writer__7589__auto__,opt__7590__auto__){
 return cljs.core._write.call(null,writer__7589__auto__,"kanban.components.card-dialog/CardDialog");
 });
-kanban.components.card_dialog.card_dialog = om.next.factory.call(null,kanban.components.card_dialog.CardDialog,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keyfn","keyfn",780060332),(function (p1__23033_SHARP_){
-return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"card-dialog","card-dialog",1615998855),new cljs.core.Keyword(null,"id","id",-1388402092).cljs$core$IFn$_invoke$arity$1(p1__23033_SHARP_)], null);
+kanban.components.card_dialog.card_dialog = om.next.factory.call(null,kanban.components.card_dialog.CardDialog,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keyfn","keyfn",780060332),(function (p1__82110_SHARP_){
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"card-dialog","card-dialog",1615998855),new cljs.core.Keyword(null,"id","id",-1388402092).cljs$core$IFn$_invoke$arity$1(p1__82110_SHARP_)], null);
 })], null));
 
 //# sourceMappingURL=card_dialog.js.map
