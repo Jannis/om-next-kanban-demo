@@ -2,7 +2,6 @@
   (:require [om.dom :as dom]))
 
 (defn update-cb-info [tag state & params]
-  (println "update-cb-info" tag state params)
   (swap! state (fn [state] (-> state
                                (update-in [:callbacks tag :counter] inc)
                                (assoc-in [:callbacks tag :params] params)))))
