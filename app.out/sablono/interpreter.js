@@ -65,14 +65,14 @@ sablono.interpreter.option = sablono.interpreter.wrap_form_element.call(null,Rea
 sablono.interpreter.textarea = sablono.interpreter.wrap_form_element.call(null,React.DOM.textarea,"textarea");
 sablono.interpreter.create_element = (function sablono$interpreter$create_element(var_args){
 var args__6159__auto__ = [];
-var len__6152__auto___17420 = arguments.length;
-var i__6153__auto___17421 = (0);
+var len__6152__auto___17421 = arguments.length;
+var i__6153__auto___17422 = (0);
 while(true){
-if((i__6153__auto___17421 < len__6152__auto___17420)){
-args__6159__auto__.push((arguments[i__6153__auto___17421]));
+if((i__6153__auto___17422 < len__6152__auto___17421)){
+args__6159__auto__.push((arguments[i__6153__auto___17422]));
 
-var G__17422 = (i__6153__auto___17421 + (1));
-i__6153__auto___17421 = G__17422;
+var G__17423 = (i__6153__auto___17422 + (1));
+i__6153__auto___17422 = G__17423;
 continue;
 } else {
 }
@@ -89,12 +89,12 @@ return (cljs.core.truth_(sablono.util.wrapped_type_QMARK_.call(null,type))?cljs.
 
 sablono.interpreter.create_element.cljs$lang$maxFixedArity = (2);
 
-sablono.interpreter.create_element.cljs$lang$applyTo = (function (seq17417){
-var G__17418 = cljs.core.first.call(null,seq17417);
-var seq17417__$1 = cljs.core.next.call(null,seq17417);
-var G__17419 = cljs.core.first.call(null,seq17417__$1);
-var seq17417__$2 = cljs.core.next.call(null,seq17417__$1);
-return sablono.interpreter.create_element.cljs$core$IFn$_invoke$arity$variadic(G__17418,G__17419,seq17417__$2);
+sablono.interpreter.create_element.cljs$lang$applyTo = (function (seq17418){
+var G__17419 = cljs.core.first.call(null,seq17418);
+var seq17418__$1 = cljs.core.next.call(null,seq17418);
+var G__17420 = cljs.core.first.call(null,seq17418__$1);
+var seq17418__$2 = cljs.core.next.call(null,seq17418__$1);
+return sablono.interpreter.create_element.cljs$core$IFn$_invoke$arity$variadic(G__17419,G__17420,seq17418__$2);
 });
 sablono.interpreter.attributes = (function sablono$interpreter$attributes(attrs){
 var attrs__$1 = cljs.core.clj__GT_js.call(null,sablono.util.html_to_dom_attrs.call(null,attrs));
@@ -112,10 +112,10 @@ return attrs__$1;
  * Render an element vector as a HTML element.
  */
 sablono.interpreter.element = (function sablono$interpreter$element(element__$1){
-var vec__17424 = sablono.util.normalize_element.call(null,element__$1);
-var type = cljs.core.nth.call(null,vec__17424,(0),null);
-var attrs = cljs.core.nth.call(null,vec__17424,(1),null);
-var content = cljs.core.nth.call(null,vec__17424,(2),null);
+var vec__17425 = sablono.util.normalize_element.call(null,element__$1);
+var type = cljs.core.nth.call(null,vec__17425,(0),null);
+var attrs = cljs.core.nth.call(null,vec__17425,(1),null);
+var content = cljs.core.nth.call(null,vec__17425,(2),null);
 var js_attrs = sablono.interpreter.attributes.call(null,attrs);
 if((cljs.core.sequential_QMARK_.call(null,content)) && (cljs.core._EQ_.call(null,(1),cljs.core.count.call(null,content)))){
 return sablono.interpreter.create_element.call(null,type,js_attrs,sablono.interpreter.interpret.call(null,cljs.core.first.call(null,content)));

@@ -58,7 +58,8 @@
     (.preventDefault e)
     (let [target-key (sortable-key target-child)
           drag-key   (:drag-key (om/get-state this))
-          key-fn     (:key-fn (om/props this))]
+          key-fn     (:key-fn (om/props this))
+          direction  (:direction (om/props this))]
       (when-not (= drag-key target-key)
         (let [x (.-clientX e)
               y (.-clientY e)
@@ -66,7 +67,9 @@
               rect (.getBoundingClientRect node)
               center-x (-> (.-left rect) (+ (.-right rect)) (/ 2))
               center-y (-> (.-top rect) (+ (.-bottom rect)) (/ 2))
-              where (if (< x center-x) :before :after)
+              where (if (= direction :vertical)
+                      (if (< y center-y) :before :after)
+                      (if (< x center-x) :before :after))
               items (or (:items (om/get-state this))
                         (:items (om/props this)))
               items-without-drag (remove #(= drag-key (key-fn %)) items)
@@ -86,9 +89,12 @@
   (render [this]
     (let [items (or (:items (om/get-state this)
                     (:items (om/props this))))
-          {:keys [key-fn element-fn]} (om/props this)
+          {:keys [direction key-fn element-fn]} (om/props this)
           {:keys [dragging drag-key]} (om/get-state this)]
-      (dom/ul #js {:className "sortable-list"
+      (dom/ul #js {:className
+                   (class-names
+                     {:sortable-list true
+                      :sortable-list-vertical (= direction :vertical)})
                    :onDragOver #(.drag-over this %)
                    :onDrop #(.drag-drop this %)}
         (for [item items]

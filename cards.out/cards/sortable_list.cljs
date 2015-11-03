@@ -2,6 +2,7 @@
   (:require [clojure.string :as str]
             [devcards.core :as dc :refer-macros [defcard]]
             [om.dom :as dom]
+            [kanban.components.card :as kanban-card]
             [kanban.components.sortable-list :refer [sortable-list]]))
 
 (defcard
@@ -13,9 +14,10 @@
 
   ## Invocation
 
-  The overall sortable invocation looks like this:
+  The overall sortable list invocation looks like this:
   ```
   (sortable-list {:items ...
+                  :direction ...
                   :key-fn (fn [item] ...)
                   :element-fn (fn [item] ...)
                   :change-fn (fn [items] ...)})
@@ -24,6 +26,9 @@
   Parameters:
 
   * `:items` is an ordered sequence of items of any type
+  * `:direction` specifies the direction of the list and has to be either
+    `:vertical` or `:horizontal`, with `:horizontal` being the default
+    direction
   * `:key-fn` is function that must return a unique key for each item
   * `:element-fn` is a function that must return a React element for each
     item
@@ -65,7 +70,6 @@
   {:items (str/split "This is a list of short words" " ")}
   {:inspect-data true})
 
-
 (defcard
   "### Sortable list with numbers and a different element function"
   (fn [state _]
@@ -79,4 +83,26 @@
                         number))
                     :change-fn #(swap! state assoc :items %)}))
   {:items [10000 20000 30000 40000 50000 60000]}
+  {:inspect-data true})
+
+(defcard
+  "### Vertical sortable list with cards"
+  (fn [state _]
+    (dom/div #js {:className "sortable-list-vertical"}
+      (sortable-list {:items (:items @state)
+                      :direction :vertical
+                      :key-fn :id
+                      :element-fn
+                      (fn [card]
+                        (kanban-card/card card))
+                      :change-fn #(swap! state assoc :items %)})))
+  {:items [{:id 1 :text "This is the first card"}
+           {:id 2 :text "This is the second card, this time with an assignee"
+            :assignees [{:id 10 :username "ada" :name "Ada Lovelace"}]}
+            {:id 3 :text "This is the third card"}
+            {:id 4 :text "This is the fourth card"}
+            {:id 5 :text "This is the fifth card"}
+            {:id 6 :text "This is the sixth card"}
+            {:id 7 :text "This is the seventh card"}
+            {:id 8 :text "This is the eighth card"}]}
   {:inspect-data true})

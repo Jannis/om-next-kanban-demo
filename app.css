@@ -375,3 +375,10 @@ form .form-row textarea {
 .sortable-list .sortable.dragging * {
   opacity: 0;
 }
+.sortable-list.sortable-list-vertical .sortable {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.sortable-list.sortable-list-vertical .sortable:last-child {
+  margin-right: 0rem;
+}
