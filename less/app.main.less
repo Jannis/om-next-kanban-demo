@@ -145,17 +145,26 @@ body {
   width: 100%;
 
   .lane-title {
+    display: table;
     margin: 0rem;
     padding: 0.5rem;
+    box-sizing: border-box;
     font-size: 1rem;
     font-weight: 500;
     background: lighten(@black, 90%);
     border-bottom: thin solid lighten(@black, 80%);
+    width: 100%;
+    border-spacing: 0rem;
+
+    .text {
+      display: table-cell;
+    }
 
     .count {
-      float: right;
-      line-height: 1.5rem;
+      display: table-cell;
+      text-align: right;
       font-weight: 300;
+      padding-left: 2rem;
     }
   }
 
