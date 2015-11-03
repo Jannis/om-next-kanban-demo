@@ -40,7 +40,7 @@
   (sortable-list {:items (:people @data)
                   :key-fn :id
                   :element-fn (fn [person] (dom/span (:name person)))
-                  :change-fn (fn [people] (swap! data assoc :people %))})
+                  :change-fn (fn [people] (swap! data assoc :people people))})
   ```
 
   Of course, rather than operating against a plain atom and having to watch
