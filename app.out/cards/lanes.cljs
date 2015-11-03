@@ -265,6 +265,7 @@
                 new-from (update from :cards #(remove #{%2} %1) card)
                 new-to (update to :cards conj card)]
             (-> state
+                (dissoc :drag-info)
                 (update :lanes #(replace {from new-from
                                           to new-to} %)))))))))
 

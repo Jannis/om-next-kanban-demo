@@ -2,7 +2,7 @@
   (:require [devcards.core :as dc :refer-macros [defcard]]
             [om.next :as om]
             [om.dom :as dom]
-            [kanban.components.card :as kanban-card :refer [Card]]
+            [kanban.components.card :as kanban-card]
             [cards.util :refer [render-cb-info update-cb-info]]))
 
 (enable-console-print!)

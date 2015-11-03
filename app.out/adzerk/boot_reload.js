@@ -2,8 +2,9 @@
 goog.provide('adzerk.boot_reload');
 goog.require('cljs.core');
 goog.require('adzerk.boot_reload.client');
-adzerk.boot_reload.client.connect.call(null,"ws://localhost:36643",new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on-jsload","on-jsload",-395756602),(function (){
-return (0);
+goog.require('kanban.app');
+adzerk.boot_reload.client.connect.call(null,"ws://localhost:46435",new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on-jsload","on-jsload",-395756602),(function (){
+return kanban.app.run.call(null);
 })], null));
 
 //# sourceMappingURL=boot_reload.js.map
