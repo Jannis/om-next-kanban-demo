@@ -78,6 +78,7 @@
                            {:activate-fn #(.board-activate this %)
                             :create-fn #(.board-create this)})))))
       (dom/main nil
+        (println (-> this om/props :boards/active))
         (if-let [active-board (-> this om/props :boards/active)]
           (board
             (om/computed active-board

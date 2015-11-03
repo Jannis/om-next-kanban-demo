@@ -4,14 +4,14 @@ goog.require('cljs.core');
 goog.require('om.dom');
 cards.util.update_cb_info = (function cards$util$update_cb_info(var_args){
 var args__6159__auto__ = [];
-var len__6152__auto___83253 = arguments.length;
-var i__6153__auto___83254 = (0);
+var len__6152__auto___151464 = arguments.length;
+var i__6153__auto___151465 = (0);
 while(true){
-if((i__6153__auto___83254 < len__6152__auto___83253)){
-args__6159__auto__.push((arguments[i__6153__auto___83254]));
+if((i__6153__auto___151465 < len__6152__auto___151464)){
+args__6159__auto__.push((arguments[i__6153__auto___151465]));
 
-var G__83255 = (i__6153__auto___83254 + (1));
-i__6153__auto___83254 = G__83255;
+var G__151466 = (i__6153__auto___151465 + (1));
+i__6153__auto___151465 = G__151466;
 continue;
 } else {
 }
@@ -30,19 +30,19 @@ return cljs.core.assoc_in.call(null,cljs.core.update_in.call(null,state__$1,new 
 
 cards.util.update_cb_info.cljs$lang$maxFixedArity = (2);
 
-cards.util.update_cb_info.cljs$lang$applyTo = (function (seq83250){
-var G__83251 = cljs.core.first.call(null,seq83250);
-var seq83250__$1 = cljs.core.next.call(null,seq83250);
-var G__83252 = cljs.core.first.call(null,seq83250__$1);
-var seq83250__$2 = cljs.core.next.call(null,seq83250__$1);
-return cards.util.update_cb_info.cljs$core$IFn$_invoke$arity$variadic(G__83251,G__83252,seq83250__$2);
+cards.util.update_cb_info.cljs$lang$applyTo = (function (seq151461){
+var G__151462 = cljs.core.first.call(null,seq151461);
+var seq151461__$1 = cljs.core.next.call(null,seq151461);
+var G__151463 = cljs.core.first.call(null,seq151461__$1);
+var seq151461__$2 = cljs.core.next.call(null,seq151461__$1);
+return cards.util.update_cb_info.cljs$core$IFn$_invoke$arity$variadic(G__151462,G__151463,seq151461__$2);
 });
 cards.util.render_cb_info = (function cards$util$render_cb_info(tag,state,label){
-var map__83258 = cljs.core.get_in.call(null,cljs.core.deref.call(null,state),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"callbacks","callbacks",71591310),tag], null));
-var map__83258__$1 = ((((!((map__83258 == null)))?((((map__83258.cljs$lang$protocol_mask$partition0$ & (64))) || (map__83258.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__83258):map__83258);
-var counter = cljs.core.get.call(null,map__83258__$1,new cljs.core.Keyword(null,"counter","counter",804008177));
-var params = cljs.core.get.call(null,map__83258__$1,new cljs.core.Keyword(null,"params","params",710516235));
-return React.DOM.div({"style": {"marginTop": "1rem"}},React.DOM.strong(null,"Callback info: ",label),React.DOM.div(null,[cljs.core.str("Triggered "),cljs.core.str((function (){var or__5094__auto__ = counter;
+var map__151469 = cljs.core.get_in.call(null,cljs.core.deref.call(null,state),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"callbacks","callbacks",71591310),tag], null));
+var map__151469__$1 = ((((!((map__151469 == null)))?((((map__151469.cljs$lang$protocol_mask$partition0$ & (64))) || (map__151469.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__151469):map__151469);
+var counter = cljs.core.get.call(null,map__151469__$1,new cljs.core.Keyword(null,"counter","counter",804008177));
+var params = cljs.core.get.call(null,map__151469__$1,new cljs.core.Keyword(null,"params","params",710516235));
+return React.DOM.div({"style": {"marginTop": "1rem"}},React.DOM.strong(null,"Callback: ",label),React.DOM.div(null,[cljs.core.str("Triggered "),cljs.core.str((function (){var or__5094__auto__ = counter;
 if(cljs.core.truth_(or__5094__auto__)){
 return or__5094__auto__;
 } else {

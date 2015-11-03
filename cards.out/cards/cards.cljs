@@ -2,7 +2,7 @@
   (:require [devcards.core :as dc :refer-macros [defcard]]
             [om.next :as om]
             [om.dom :as dom]
-            [kanban.components.card :as kanban-card]
+            [kanban.components.card :as kanban-card :refer [Card]]
             [cards.util :refer [render-cb-info update-cb-info]]))
 
 (enable-console-print!)
@@ -104,7 +104,7 @@
       (kanban-card/card
         (om/computed (:card @state)
                      {:activate-fn (partial update-cb-info :activate state)}))
-      (render-cb-info :activate state "Activated")))
+      (render-cb-info :activate state "Activate")))
   {:card {:id 1 :text "Initial text"}}
   {:inspect-data true :history true})
 
@@ -116,7 +116,7 @@
         (om/computed (:card @state)
                      {:drag-fns
                       {:start (partial update-cb-info :drag-start state)}}))
-      (render-cb-info :drag-start state "Drag initiated")))
+      (render-cb-info :drag-start state "Drag start")))
   {:card {:id 1 :text "Initial text"}}
   {:inspect-data true :history true})
 
@@ -128,6 +128,6 @@
         (om/computed (:card @state)
                      {:drag-fns
                       {:end (partial update-cb-info :drag-end state)}}))
-      (render-cb-info :drag-end state "Drag ended")))
+      (render-cb-info :drag-end state "Drag end")))
   {:card {:id 1 :text "Initial text"}}
   {:inspect-data true :history true})

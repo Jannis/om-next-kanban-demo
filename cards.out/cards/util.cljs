@@ -9,6 +9,6 @@
 (defn render-cb-info [tag state label]
   (let [{:keys [counter params]} (get-in @state [:callbacks tag])]
     (dom/div #js {:style #js {:marginTop "1rem"}}
-      (dom/strong nil "Callback info: " label)
+      (dom/strong nil "Callback: " label)
       (dom/div nil (str "Triggered " (or counter 0) " times"))
       (dom/div nil "Parameters: " (dom/code nil (str params))))))

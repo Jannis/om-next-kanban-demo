@@ -158,7 +158,7 @@
       (kanban-lane/lane
         (om/computed (:lane @state)
                      {:card-create-fn (partial update-cb-info :create state)}))
-      (render-cb-info :create state "Asked for a card to be created")))
+      (render-cb-info :create state "Card create")))
   {:lane {:id 1 :name "Backlog"}}
   {:inspect-data true :history true})
 
@@ -169,11 +169,11 @@
       (kanban-lane/lane
         (om/computed (:lane @state)
                      {:card-edit-fn (partial update-cb-info :edit state)}))
-      (render-cb-info :edit state "Asked for a card to be edited")))
+      (render-cb-info :edit state "Card edit")))
   {:lane {:id 1
           :name "Backlog"
-          :cards [{:id 2 :text "This card can be clicked to be edited"}
-                  {:id 3 :text "And so can this one"}]}}
+          :cards [{:id 2 :text "Click this card to edit it"}
+                  {:id 3 :text "Or click this one instead"}]}}
   {:inspect-data true :history true})
 
 (defcard
@@ -184,11 +184,11 @@
         (om/computed (:lane @state)
                      {:card-drag-fns
                       {:start (partial update-cb-info :drag-start state)}}))
-      (render-cb-info :drag-start state "Drag for a card initiated")))
+      (render-cb-info :drag-start state "Card drag start")))
   {:lane {:id 1
           :name "Backlog"
-          :cards [{:id 2 :text "This card can be dragged around"}
-                  {:id 3 :text "And so can this one"}]}}
+          :cards [{:id 2 :text "Drag me to trigger the drag start callback"}
+                  {:id 3 :text "Or drag me instead"}]}}
   {:inspect-data true :history true})
 
 (defcard
@@ -199,11 +199,11 @@
         (om/computed (:lane @state)
                      {:card-drag-fns
                       {:end (partial update-cb-info :drag-end state)}}))
-      (render-cb-info :drag-end state "Drag for a card ended")))
+      (render-cb-info :drag-end state "Card drag end")))
   {:lane {:id 1
           :name "Backlog"
-          :cards [{:id 2 :text "This card can be dragged around"}
-                  {:id 3 :text "And so can this one"}]}}
+          :cards [{:id 2 :text "Drop the card anywhere to end dragging it"}
+                  {:id 3 :text "It works with this card as well"}]}}
   {:inspect-data true :history true})
 
 (defcard
@@ -214,11 +214,11 @@
         (om/computed (:lane @state)
                      {:card-drag-fns
                       {:drop (partial update-cb-info :drop state)}}))
-      (render-cb-info :drop state "Card dropped in the lane")))
+      (render-cb-info :drop state "Card drop")))
   {:lane {:id 1
           :name "Backlog"
-          :cards [{:id 2 :text "This card can be dragged around"}
-                  {:id 3 :text "And so can this one"}]}}
+          :cards [{:id 2 :text "Drag and drop this card inside the lane"}
+                  {:id 3 :text "It works with this card as well"}]}}
   {:inspect-data true :history true})
 
 (defcard
@@ -236,9 +236,9 @@
                           {:start (partial update-cb-info :start state)
                            :end (partial update-cb-info :end state)
                            :drop (partial update-cb-info :drop state)}}))))
-      (render-cb-info :start state "Drag started")
-      (render-cb-info :end state "Drag ended")
-      (render-cb-info :drop state "Card dropped")))
+      (render-cb-info :start state "Card drag start")
+      (render-cb-info :end state "Card drag end")
+      (render-cb-info :drop state "Card drop")))
   {:lanes [{:id 1
             :name "Backlog"
             :cards [{:id 20 :text "This is a card from backlog"}
@@ -265,7 +265,6 @@
                 new-from (update from :cards #(remove #{%2} %1) card)
                 new-to (update to :cards conj card)]
             (-> state
-                (dissoc :drag-info)
                 (update :lanes #(replace {from new-from
                                           to new-to} %)))))))))
 

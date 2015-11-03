@@ -369,9 +369,9 @@ form .form-row textarea {
 .sortable-list .sortable:last-child {
   margin-right: 0rem;
 }
-.sortable-list .sortable.placeholder {
+.sortable-list .sortable.dragging {
   background: #eaeaea;
 }
-.sortable-list .sortable.placeholder * {
+.sortable-list .sortable.dragging * {
   opacity: 0;
 }
