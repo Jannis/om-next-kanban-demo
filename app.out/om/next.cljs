@@ -258,8 +258,8 @@
                    (p/basis-t *reconciler*)
                    0)]
          (js/React.createElement class
-          #js {:key key
-               :ref ref
+          #js {:key               key
+               :ref               ref
                :omcljs$value      (om-props props t)
                :omcljs$path       (-> props meta :om-path)
                :omcljs$reconciler *reconciler*
@@ -389,9 +389,18 @@
   [c]
   (get-prop c "omcljs$path"))
 
-(defn shared [component]
-  {:pre [(component? component)]}
-  (get-prop component "omcljs$shared"))
+(defn shared
+  "Return the global shared properties of the Om Next root. See :shared and
+   :shared-fn reconciler options."
+  ([component]
+   (shared component []))
+  ([component k-or-ks]
+   {:pre [(component? component)]}
+   (let [shared (gobj/get (. component -props) "omcljs$shared")
+         ks     (cond-> k-or-ks
+                  (not (sequential? k-or-ks)) vector)]
+     (cond-> shared
+       (not (empty? ks)) (get-in shared ks)))))
 
 (defn instrument [component]
   {:pre [(component? component)]}
@@ -418,7 +427,8 @@
       (-> component .-state get-props))))
 
 (defn computed
-  "Add computed properties to props."
+  "Add computed properties to props. Note will replace any pre-existing
+   computed properties."
   [props computed-map]
   (if (vector? props)
     (cond-> props
@@ -528,8 +538,8 @@
         st  (:state cfg)
         id  (random-uuid)
         _   (.add (:history cfg) id @st)]
-    (when-not (nil? *logger*)
-      (glog/info *logger*
+    (when-let [l (:logger cfg)]
+      (glog/info l
         (str (when-let [ref (ident component (props component))]
                (str (pr-str ref) " "))
           "changed query '" new-query ", " (pr-str id))))
@@ -547,8 +557,8 @@
         st  (:state cfg)
         id  (random-uuid)
         _   (.add (:history cfg) id @st)]
-    (when-not (nil? *logger*)
-      (glog/info *logger*
+    (when-let [l (:logger cfg)]
+      (glog/info l
         (str (when-let [ref (ident component (props component))]
                (str (pr-str ref) " "))
           "changed query params " new-params", " (pr-str id))))
@@ -665,6 +675,13 @@
   [reconciler target]
   (p/remove-root! reconciler target))
 
+(defn mock-root
+  "Create an Om Next root without an actual DOM target. Useful in devcards
+   testing context."
+  [reconciler root-class]
+  {:pre [(reconciler? reconciler) (fn? root-class)]}
+  (p/add-root! reconciler root-class nil nil))
+
 ;; =============================================================================
 ;; Transactions
 
@@ -675,7 +692,7 @@
 
 (defn- to-env [x]
   (let [config (if (reconciler? x) (:config x) x)]
-    (select-keys config [:state :shared :parser])))
+    (select-keys config [:state :shared :parser :logger])))
 
 (defn gather-sends
   [{:keys [parser] :as env} tx remotes]
@@ -697,8 +714,8 @@
                  {:ref ref}))
         id   (random-uuid)
         _    (.add (:history cfg) id @(:state cfg))
-        _    (when-not (nil? *logger*)
-               (glog/info *logger*
+        _    (when-let [l (:logger cfg)]
+               (glog/info l
                  (str (when ref (str (pr-str ref) " "))
                    "transacted '" tx ", " (pr-str id))))
         v    ((:parser cfg) env tx)
@@ -968,12 +985,14 @@
                 (recur (next q) (assoc ret k v))))))
         ret))))
 
-(defn normalize
-  "Given a Om component class or instance and some data, use the component's
-   query to transform the data into normal form. If merge-ref option is true,
-   will return refs in the result instead of as metadata."
+(defn tree->db
+  "Given a Om component class or instance and a tree of data, use the component's
+   query to transform the tree into the default database format. All nodes that
+   can be mapped via Ident implementations wil be replaced with ident links. The
+   original node data will be moved into tables indexed by ident. If merge-ref
+   option is true, will return these tables in the result instead of as metadata."
   ([x data]
-    (normalize x data false))
+    (tree->db x data false))
   ([x data ^boolean merge-refs]
    (let [refs (atom {})
          x    (if (vector? x) x (get-query x))
@@ -995,12 +1014,13 @@
 
 ;; TODO: easy to optimize
 
-(defn denormalize
-  "Given a selector, normalized data, and the normalized application state
-   return the denormalized data."
+(defn db->tree
+  "Given a selector, some data in the default database format, and the entire
+   application state in the default database format, return the tree where all
+   ident links have been replaced with their original node values."
   [selector data refs]
   (if (vector? data)
-    (into [] (map #(denormalize selector (get-in refs %) refs)) data)
+    (into [] (map #(db->tree selector (get-in refs %) refs)) data)
     (let [{props false joins true} (group-by join? selector)]
       (loop [joins (seq joins) ret {}]
         (if-not (nil? joins)
@@ -1009,47 +1029,51 @@
                 v         (get data key)]
             (if-not (ref? v)
               (recur (next joins)
-                (assoc ret key (denormalize sel v refs)))
+                (assoc ret key (db->tree sel v refs)))
               (recur (next joins)
-                (assoc ret key (denormalize sel (get-in refs v) refs)))))
+                (assoc ret key (db->tree sel (get-in refs v) refs)))))
           (merge (select-keys data props) ret))))))
 
 ;; =============================================================================
 ;; Reconciler
-
-(defn- queue-calls! [reconciler res]
-  (p/queue! reconciler (into [] (remove symbol?) (keys res))))
 
 (defn- merge-refs [tree config refs]
   (let [{:keys [merge-ref indexer]} config]
     (letfn [(step [tree' [ref props]]
               (if (:normalize config)
                 (let [c      (ref->any indexer ref)
-                      props' (normalize c props)
+                      props' (tree->db c props)
                       refs   (meta props')]
                   ((:merge-tree config) (merge-ref config tree' ref props') refs))
                 (merge-ref config tree' ref props)))]
       (reduce step tree refs))))
 
 (defn- merge-novelty!
-  [reconciler res]
+  [reconciler state res]
   (let [config      (:config reconciler)
         root        (:root @(:state reconciler))
         [refs res'] (sift-refs res)
         res'        (if (:normalize config)
-                      (normalize root res' true)
+                      (tree->db root res' true)
                       res')]
-    (swap! (:state config)
-      #(-> %
-        (merge-refs config refs)
-        ((:merge-tree config) res')))))
+    (-> state
+      (merge-refs config refs)
+      ((:merge-tree config) res'))))
+
+(defn default-merge [reconciler state res]
+  {:keys (into [] (remove symbol?) (keys res))
+   :next (merge-novelty! reconciler state res)})
 
 (defn merge!
   "Merge a state delta into the application state. Affected components managed
    by the reconciler will re-render."
   [reconciler delta]
-  (queue-calls! reconciler delta)
-  (merge-novelty! reconciler delta))
+  (let [config (:config reconciler)
+        state  (:state config)
+        merge  (:merge config)
+        {:keys [keys next]} (merge reconciler @state delta)]
+    (p/queue! reconciler keys)
+    (reset! state next)))
 
 (defrecord Reconciler [config state]
   IDeref
@@ -1060,21 +1084,30 @@
 
   (add-root! [this root-class target options]
     (let [ret   (atom nil)
-          rctor (factory root-class)]
+          rctor (factory root-class)
+          guid  (random-uuid)]
       (when (satisfies? IQuery root-class)
         (p/index-root (:indexer config) root-class))
       (when (and (:normalize config)
                  (not (:normalized @state)))
-        (let [new-state (normalize root-class @(:state config))
+        (let [new-state (tree->db root-class @(:state config))
               refs      (meta new-state)]
           (reset! (:state config) (merge new-state refs))
           (swap! state assoc :normalized true)
           (p/queue! this [::skip])))
       (let [renderf (fn [data]
                       (binding [*reconciler* this
-                                *shared*     (:shared config)]
-                        (let [c ((:root-render config) (rctor data) target)]
-                          (when (nil? @ret)
+                                *shared*     (merge
+                                               (:shared config)
+                                               (when (:shared-fn config)
+                                                 ((:shared-fn config) data)))]
+                        (let [c (cond
+                                  (not (nil? target)) ((:root-render config) (rctor data) target)
+                                  (nil? @ret) (rctor data)
+                                  :else (when-let [c' @ret]
+                                          (when (mounted? c')
+                                            (.forceUpdate c' data))))]
+                          (when (and (nil? @ret) (not (nil? c)))
                             (swap! state assoc :root c)
                             (reset! ret c)))))
             parsef  (fn []
@@ -1089,24 +1122,25 @@
                               (when-let [send (:send config)]
                                 (send snds
                                   #(do
-                                    (merge-novelty! this %)
+                                    (merge! this %)
                                     (renderf ((:parser config) env sel)))))))
                           (renderf @(:state config)))))]
         (swap! state merge
           {:target target :render parsef :root root-class
            :remove (fn []
-                     (remove-watch (:state config) target)
+                     (remove-watch (:state config) (or target guid))
                      (swap! state
                        #(-> %
                          (dissoc :target) (dissoc :render) (dissoc :root)
                          (dissoc :remove)))
-                     ((:root-unmount config) target))})
-        (add-watch (:state config) target
+                     (when-not (nil? target)
+                       ((:root-unmount config) target)))})
+        (add-watch (:state config) (or target guid)
           (fn [_ _ _ _]
             (swap! state update-in [:t] inc)
             (schedule-render! this)))
         (parsef)
-        ret)))
+        @ret)))
 
   (remove-root! [_ target]
     (when-let [remove (:remove @state)]
@@ -1141,6 +1175,7 @@
     (let [st @state
           q  (:queue st)]
       (cond
+        ;; TODO: need to move root re-render logic outside of batching logic
         (empty? q) ((:render st))
 
         (= [::skip] q) nil
@@ -1170,10 +1205,7 @@
             (-> state
               (assoc :queued-sends {})
               (assoc :sends-queued false))))
-        ((:send config) sends
-          #(do
-             (queue-calls! this %)
-             (merge-novelty! this %)))))))
+        ((:send config) sends #(merge! this %))))))
 
 (defn- default-ui->props
   [{:keys [parser] :as env} c]
@@ -1183,35 +1215,57 @@
       (let [s  (system-time)
             ui (parser env fq)
             e  (system-time)]
-        (when-not (nil? *logger*)
+        (when-let [l (:logger env)]
           (let [dt (- e s)]
             (when (< 16 dt)
-              (glog/warning *logger* (str c " query took " dt " msecs")))))
+              (glog/warning l (str c " query took " dt " msecs")))))
         (get-in ui path)))))
 
 (defn- default-merge-ref
   [_ tree ref props]
   (update-in tree ref merge props))
 
-(defn reconciler
-  "Construct a reconciler from a configuration map, the following options
-   are required:
+(defn- default-merge-tree
+  [a b]
+  (if (map? a)
+    (merge a b)
+    b))
 
-   :state   - the application state, must be IAtom.
-   :parser  - the parser to be used
-   :send    - required only if the parser will return a non-empty value when
-              run against the supplied :remotes. send is a function of two
-              arguments, the map of remote expressions keyed by remote target
-              and a callback which should be invoked with the result from each
-              remote target. Note this means the callback can be invoked
-              multiple times to support parallel fetching and incremental
-              loading if desired.
-   :remotes - a vector of keywords representing remote services which can
-              evaluate query expressions. Defaults to [:remote]"
-  [{:keys [state shared parser indexer
+(defn reconciler
+  "Construct a reconciler from a configuration map.
+
+   Required parameters:
+     :state        - the application state. If IAtom value is not supplied the
+                     data will be normalized into the default database format
+                     using the root query. This can be disabled by explicitly
+                     setting the optional :normalize parameter to false.
+     :parser       - the parser to be used
+
+   Optional parameters:
+     :shared       - a map of global shared properties for the component tree.
+     :shared-fn    - a function to compute global shared properties from the root props.
+                     the result is merged with :shared.
+     :send         - required only if the parser will return a non-empty value when
+                     run against the supplied :remotes. send is a function of two
+                     arguments, the map of remote expressions keyed by remote target
+                     and a callback which should be invoked with the result from each
+                     remote target. Note this means the callback can be invoked
+                     multiple times to support parallel fetching and incremental
+                     loading if desired.
+     :normalize    - whether the state should be normalized. If true it is assumed
+                     all novelty introduced into the system will also need
+                     normalization.
+     :remotes      - a vector of keywords representing remote services which can
+                     evaluate query expressions. Defaults to [:remote]
+     :root-render  - the root render function. Defaults to ReactDOM.render
+     :root-unmount - the root unmount function. Defaults to
+                     ReactDOM.unmountComponentAtNode
+     :logger       - supply a goog.log compatible logger"
+  [{:keys [state shared shared-fn
+           parser indexer
            ui->props normalize
            send merge-sends remotes
-           merge-tree merge-ref
+           merge merge-tree merge-ref
            optimize
            history
            root-render root-unmount]
@@ -1219,7 +1273,8 @@
          indexer      om.next/indexer
          merge-sends  #(merge-with into %1 %2)
          remotes      [:remote]
-         merge-tree   #(merge-with merge %1 %2)
+         merge        default-merge
+         merge-tree   default-merge-tree
          merge-ref    default-merge-ref
          optimize     (fn [cs] (sort-by depth cs))
          history      100
@@ -1230,15 +1285,20 @@
   (let [idxr   (indexer)
         norm?  (satisfies? IAtom state)
         state' (if norm? state (atom state))
+        logger (if (contains? config :logger)
+                 (:logger config)
+                 *logger*)
         ret    (Reconciler.
-                 {:state state' :shared shared :parser parser :indexer idxr
+                 {:state state' :shared shared :shared-fn shared-fn
+                  :parser parser :indexer idxr
                   :ui->props ui->props
                   :send send :merge-sends merge-sends :remotes remotes
-                  :merge-tree merge-tree :merge-ref merge-ref
+                  :merge merge :merge-tree merge-tree :merge-ref merge-ref
                   :optimize optimize
                   :normalize (or (not norm?) normalize)
                   :history (c/cache history)
-                  :root-render root-render :root-unmount root-unmount}
+                  :root-render root-render :root-unmount root-unmount
+                  :logger logger}
                  (atom {:queue [] :queued false :queued-sends {}
                         :sends-queued false
                         :target nil :root nil :render nil :remove nil
@@ -1262,3 +1322,4 @@
    may be configured by the :history option when constructing the reconciler."
   [reconciler uuid]
   (.get (-> reconciler :config :history) uuid))
+

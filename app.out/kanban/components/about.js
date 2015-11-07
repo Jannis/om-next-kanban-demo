@@ -1,9 +1,63 @@
-// Compiled by ClojureScript 1.7.145 {}
+// Compiled by ClojureScript 1.7.170 {:static-fns true, :optimize-constants true}
 goog.provide('kanban.components.about');
 goog.require('cljs.core');
 goog.require('om.dom');
 kanban.components.about.about = (function kanban$components$about$about(){
-return React.DOM.div({"className": "about"},React.DOM.h2(null,"What is this?"),React.DOM.p(null,"This is an inofficial demo application built with ",React.DOM.a({"href": "https://github.com/omcljs/om"},"Om Next"),". It demonstrates how Om Next can be used to write a ","Kanban web app with drag and drop, modal dialogs and more. ","Why not start by selecting a Kanban board from the menu?"),React.DOM.h2(null,"How about user interface tests?"),React.DOM.p(null,"There aren't any for this demo. However, there is a ",React.DOM.a({"href": "cards.html"},"devcard interface")," exercising ","some of the user interface components in isolation from the demo ","app itself."),React.DOM.h2(null,"Where can I find the source code?"),React.DOM.p(null,"The source code for this demo app is ",React.DOM.a({"href": "https://github.com/jannis/om-next-kanban-demo"},"available on GitHub"),". It is licensed under GNU Affero ","General Public License 3.0."),React.DOM.p(null,"For up-to-date source and documentation for Om, please refer to ",React.DOM.a({"href": "https://github.com/omcljs/om"},"its official ","GitHub repository"),"."),React.DOM.h2(null,"Notes"),React.DOM.ul(null,React.DOM.li(null,"The state and data of this app are reset on every page load or ","refresh."),React.DOM.li(null,"Drag and drop may be broken on some browsers. I'm looking ","into a fix already."),React.DOM.li(null,React.DOM.em(null,"This app is based on an alpha version of Om Next, so the ","way Om works may have changed in the meantime. I also do ","notclaim to be using Om Next correctly in all aspects."))));
+var G__13575 = {"className": "about"};
+var G__13576 = React.DOM.h2(null,"What is this?");
+var G__13577 = (function (){var G__13587 = null;
+var G__13588 = "This is an inofficial demo application built with ";
+var G__13589 = (function (){var G__13593 = {"href": "https://github.com/omcljs/om"};
+var G__13594 = "Om Next";
+return React.DOM.a(G__13593,G__13594);
+})();
+var G__13590 = ". It demonstrates how Om Next can be used to write a ";
+var G__13591 = "Kanban web app with drag and drop, modal dialogs and more. ";
+var G__13592 = "Why not start by selecting a Kanban board from the menu?";
+return React.DOM.p(G__13587,G__13588,G__13589,G__13590,G__13591,G__13592);
+})();
+var G__13578 = React.DOM.h2(null,"How about user interface tests?");
+var G__13579 = (function (){var G__13597 = null;
+var G__13598 = "There aren't any for this demo. However, there is a ";
+var G__13599 = (function (){var G__13603 = {"href": "cards.html"};
+var G__13604 = "devcard interface";
+return React.DOM.a(G__13603,G__13604);
+})();
+var G__13600 = " exercising ";
+var G__13601 = "some of the user interface components in isolation from the demo ";
+var G__13602 = "app itself.";
+return React.DOM.p(G__13597,G__13598,G__13599,G__13600,G__13601,G__13602);
+})();
+var G__13580 = React.DOM.h2(null,"Where can I find the source code?");
+var G__13581 = (function (){var G__13607 = null;
+var G__13608 = "The source code for this demo app is ";
+var G__13609 = (function (){var G__13612 = {"href": "https://github.com/jannis/om-next-kanban-demo"};
+var G__13613 = "available on GitHub";
+return React.DOM.a(G__13612,G__13613);
+})();
+var G__13610 = ". It is licensed under GNU Affero ";
+var G__13611 = "General Public License 3.0.";
+return React.DOM.p(G__13607,G__13608,G__13609,G__13610,G__13611);
+})();
+var G__13582 = (function (){var G__13617 = null;
+var G__13618 = "For up-to-date source and documentation for Om, please refer to ";
+var G__13619 = (function (){var G__13621 = {"href": "https://github.com/omcljs/om"};
+var G__13622 = "its official ";
+var G__13623 = "GitHub repository";
+return React.DOM.a(G__13621,G__13622,G__13623);
+})();
+var G__13620 = ".";
+return React.DOM.p(G__13617,G__13618,G__13619,G__13620);
+})();
+var G__13583 = React.DOM.h2(null,"Notes");
+var G__13584 = (function (){var G__13624 = null;
+var G__13625 = React.DOM.li(null,"The state and data of this app are reset on every page load or ","refresh.");
+var G__13626 = React.DOM.li(null,"Drag and drop may be broken on some browsers. I'm looking ","into a fix already.");
+var G__13627 = (function (){var G__13628 = null;
+var G__13629 = React.DOM.em(null,"This app is based on an alpha version of Om Next, so the ","way Om works may have changed in the meantime. I also do ","notclaim to be using Om Next correctly in all aspects.");
+return React.DOM.li(G__13628,G__13629);
+})();
+return React.DOM.ul(G__13624,G__13625,G__13626,G__13627);
+})();
+return React.DOM.div(G__13575,G__13576,G__13577,G__13578,G__13579,G__13580,G__13581,G__13582,G__13583,G__13584);
 });
-
-//# sourceMappingURL=about.js.map

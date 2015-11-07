@@ -1,26 +1,24 @@
-// Compiled by ClojureScript 1.7.145 {}
+// Compiled by ClojureScript 1.7.170 {:static-fns true, :optimize-constants true}
 goog.provide('kanban.parsing.users');
 goog.require('cljs.core');
 goog.require('kanban.reconciler');
 kanban.parsing.users.get_user = (function kanban$parsing$users$get_user(st,ref){
-return cljs.core.get_in.call(null,st,ref);
+return cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(st,ref);
 });
 kanban.parsing.users.get_users = (function kanban$parsing$users$get_users(st,key){
-return cljs.core.into.call(null,cljs.core.PersistentVector.EMPTY,cljs.core.map.call(null,(function (p1__22910_SHARP_){
-return kanban.parsing.users.get_user.call(null,st,p1__22910_SHARP_);
-})),cljs.core.get.call(null,st,key));
+return cljs.core.into.cljs$core$IFn$_invoke$arity$3(cljs.core.PersistentVector.EMPTY,cljs.core.map.cljs$core$IFn$_invoke$arity$1((function (p1__13200_SHARP_){
+return kanban.parsing.users.get_user(st,p1__13200_SHARP_);
+})),cljs.core.get.cljs$core$IFn$_invoke$arity$2(st,key));
 });
 kanban.parsing.users.resolve_users = (function kanban$parsing$users$resolve_users(st,refs){
-return cljs.core.into.call(null,cljs.core.PersistentVector.EMPTY,cljs.core.map.call(null,(function (p1__22911_SHARP_){
-return kanban.parsing.users.get_user.call(null,st,p1__22911_SHARP_);
+return cljs.core.into.cljs$core$IFn$_invoke$arity$2(cljs.core.PersistentVector.EMPTY,cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (p1__13201_SHARP_){
+return kanban.parsing.users.get_user(st,p1__13201_SHARP_);
 }),refs));
 });
-cljs.core._add_method.call(null,kanban.reconciler.read,new cljs.core.Keyword(null,"users","users",-713552705),(function (p__22912,key,_){
-var map__22913 = p__22912;
-var map__22913__$1 = ((((!((map__22913 == null)))?((((map__22913.cljs$lang$protocol_mask$partition0$ & (64))) || (map__22913.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__22913):map__22913);
-var state = cljs.core.get.call(null,map__22913__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
-var st = cljs.core.deref.call(null,state);
-return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"value","value",305978217),kanban.parsing.users.get_users.call(null,st,key)], null);
+kanban.reconciler.read.cljs$core$IMultiFn$_add_method$arity$3(null,cljs.core.cst$kw$users,(function (p__13202,key,_){
+var map__13203 = p__13202;
+var map__13203__$1 = ((((!((map__13203 == null)))?((((map__13203.cljs$lang$protocol_mask$partition0$ & (64))) || (map__13203.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__13203):map__13203);
+var state = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__13203__$1,cljs.core.cst$kw$state);
+var st = (cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(state) : cljs.core.deref.call(null,state));
+return new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$value,kanban.parsing.users.get_users(st,key)], null);
 }));
-
-//# sourceMappingURL=users.js.map

@@ -1,1 +1,2 @@
-{:require [cards.ui adzerk.boot-reload], :init-fns [cards.ui/start]}
+{:require [cards.ui]
+ :init-fns [cards.ui/start]}
