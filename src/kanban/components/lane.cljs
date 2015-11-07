@@ -18,9 +18,11 @@
             (om/get-computed this)]
       (dom/div #js {:className "lane"
                     :onDragOver (fn [e] (.preventDefault e))
-                    :onDrop #(some-> card-drag-fns
-                                     :drop
-                                     (apply [(om/get-ident this)]))}
+                    :onDrop
+                    (fn [e]
+                      (.preventDefault e)
+                      (some-> card-drag-fns :drop
+                              (apply [(om/get-ident this)])))}
         (dom/h3 #js {:className "lane-title"}
           (dom/span #js {:className "text"} name)
           (dom/span #js {:className "count"} (count cards)))

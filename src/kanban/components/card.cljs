@@ -42,7 +42,10 @@
         (dom/div #js {:className "card"
                       :onClick #(some-> activate-fn (apply [ref]))
                       :draggable true
-                      :onDragStart #(some-> drag-fns :start (apply [ref]))
+                      :onDragStart
+                      (fn [e]
+                        (.setData (.-dataTransfer e) "text/plain" (str ref))
+                        (some-> drag-fns :start (apply [ref])))
                       :onDragEnd #(some-> drag-fns :end (apply [ref]))}
           (dom/span #js {:className "card-id"} id)
           (for [a assignees]
