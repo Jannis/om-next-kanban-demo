@@ -36,3 +36,10 @@
           :optimizations :none
           :compiler-options {:devcards true})
     (serve :dir "target")))
+
+(deftask release
+  []
+  (comp
+    (less :compression true)
+    (cljs :optimizations :advanced
+          :compiler-options {:devcards true})))
