@@ -1,4 +1,4 @@
-// Compiled by ClojureScript 1.7.170 {:static-fns true, :optimize-constants true}
+// Compiled by ClojureScript 1.7.170 {}
 goog.provide('om.next.protocols');
 goog.require('cljs.core');
 
@@ -14,13 +14,13 @@ return this$.om$next$protocols$IIndexer$indexes$arity$1(this$);
 var x__5823__auto__ = (((this$ == null))?null:this$);
 var m__5824__auto__ = (om.next.protocols.indexes[goog.typeOf(x__5823__auto__)]);
 if(!((m__5824__auto__ == null))){
-return (m__5824__auto__.cljs$core$IFn$_invoke$arity$1 ? m__5824__auto__.cljs$core$IFn$_invoke$arity$1(this$) : m__5824__auto__.call(null,this$));
+return m__5824__auto__.call(null,this$);
 } else {
 var m__5824__auto____$1 = (om.next.protocols.indexes["_"]);
 if(!((m__5824__auto____$1 == null))){
-return (m__5824__auto____$1.cljs$core$IFn$_invoke$arity$1 ? m__5824__auto____$1.cljs$core$IFn$_invoke$arity$1(this$) : m__5824__auto____$1.call(null,this$));
+return m__5824__auto____$1.call(null,this$);
 } else {
-throw cljs.core.missing_protocol("IIndexer.indexes",this$);
+throw cljs.core.missing_protocol.call(null,"IIndexer.indexes",this$);
 }
 }
 }
@@ -33,13 +33,13 @@ return this$.om$next$protocols$IIndexer$index_root$arity$2(this$,x);
 var x__5823__auto__ = (((this$ == null))?null:this$);
 var m__5824__auto__ = (om.next.protocols.index_root[goog.typeOf(x__5823__auto__)]);
 if(!((m__5824__auto__ == null))){
-return (m__5824__auto__.cljs$core$IFn$_invoke$arity$2 ? m__5824__auto__.cljs$core$IFn$_invoke$arity$2(this$,x) : m__5824__auto__.call(null,this$,x));
+return m__5824__auto__.call(null,this$,x);
 } else {
 var m__5824__auto____$1 = (om.next.protocols.index_root["_"]);
 if(!((m__5824__auto____$1 == null))){
-return (m__5824__auto____$1.cljs$core$IFn$_invoke$arity$2 ? m__5824__auto____$1.cljs$core$IFn$_invoke$arity$2(this$,x) : m__5824__auto____$1.call(null,this$,x));
+return m__5824__auto____$1.call(null,this$,x);
 } else {
-throw cljs.core.missing_protocol("IIndexer.index-root",this$);
+throw cljs.core.missing_protocol.call(null,"IIndexer.index-root",this$);
 }
 }
 }
@@ -52,13 +52,13 @@ return this$.om$next$protocols$IIndexer$index_component_BANG_$arity$2(this$,comp
 var x__5823__auto__ = (((this$ == null))?null:this$);
 var m__5824__auto__ = (om.next.protocols.index_component_BANG_[goog.typeOf(x__5823__auto__)]);
 if(!((m__5824__auto__ == null))){
-return (m__5824__auto__.cljs$core$IFn$_invoke$arity$2 ? m__5824__auto__.cljs$core$IFn$_invoke$arity$2(this$,component) : m__5824__auto__.call(null,this$,component));
+return m__5824__auto__.call(null,this$,component);
 } else {
 var m__5824__auto____$1 = (om.next.protocols.index_component_BANG_["_"]);
 if(!((m__5824__auto____$1 == null))){
-return (m__5824__auto____$1.cljs$core$IFn$_invoke$arity$2 ? m__5824__auto____$1.cljs$core$IFn$_invoke$arity$2(this$,component) : m__5824__auto____$1.call(null,this$,component));
+return m__5824__auto____$1.call(null,this$,component);
 } else {
-throw cljs.core.missing_protocol("IIndexer.index-component!",this$);
+throw cljs.core.missing_protocol.call(null,"IIndexer.index-component!",this$);
 }
 }
 }
@@ -71,13 +71,13 @@ return this$.om$next$protocols$IIndexer$drop_component_BANG_$arity$2(this$,compo
 var x__5823__auto__ = (((this$ == null))?null:this$);
 var m__5824__auto__ = (om.next.protocols.drop_component_BANG_[goog.typeOf(x__5823__auto__)]);
 if(!((m__5824__auto__ == null))){
-return (m__5824__auto__.cljs$core$IFn$_invoke$arity$2 ? m__5824__auto__.cljs$core$IFn$_invoke$arity$2(this$,component) : m__5824__auto__.call(null,this$,component));
+return m__5824__auto__.call(null,this$,component);
 } else {
 var m__5824__auto____$1 = (om.next.protocols.drop_component_BANG_["_"]);
 if(!((m__5824__auto____$1 == null))){
-return (m__5824__auto____$1.cljs$core$IFn$_invoke$arity$2 ? m__5824__auto____$1.cljs$core$IFn$_invoke$arity$2(this$,component) : m__5824__auto____$1.call(null,this$,component));
+return m__5824__auto____$1.call(null,this$,component);
 } else {
-throw cljs.core.missing_protocol("IIndexer.drop-component!",this$);
+throw cljs.core.missing_protocol.call(null,"IIndexer.drop-component!",this$);
 }
 }
 }
@@ -90,13 +90,13 @@ return this$.om$next$protocols$IIndexer$ref_for$arity$2(this$,component);
 var x__5823__auto__ = (((this$ == null))?null:this$);
 var m__5824__auto__ = (om.next.protocols.ref_for[goog.typeOf(x__5823__auto__)]);
 if(!((m__5824__auto__ == null))){
-return (m__5824__auto__.cljs$core$IFn$_invoke$arity$2 ? m__5824__auto__.cljs$core$IFn$_invoke$arity$2(this$,component) : m__5824__auto__.call(null,this$,component));
+return m__5824__auto__.call(null,this$,component);
 } else {
 var m__5824__auto____$1 = (om.next.protocols.ref_for["_"]);
 if(!((m__5824__auto____$1 == null))){
-return (m__5824__auto____$1.cljs$core$IFn$_invoke$arity$2 ? m__5824__auto____$1.cljs$core$IFn$_invoke$arity$2(this$,component) : m__5824__auto____$1.call(null,this$,component));
+return m__5824__auto____$1.call(null,this$,component);
 } else {
-throw cljs.core.missing_protocol("IIndexer.ref-for",this$);
+throw cljs.core.missing_protocol.call(null,"IIndexer.ref-for",this$);
 }
 }
 }
@@ -109,13 +109,13 @@ return this$.om$next$protocols$IIndexer$key__GT_components$arity$2(this$,k);
 var x__5823__auto__ = (((this$ == null))?null:this$);
 var m__5824__auto__ = (om.next.protocols.key__GT_components[goog.typeOf(x__5823__auto__)]);
 if(!((m__5824__auto__ == null))){
-return (m__5824__auto__.cljs$core$IFn$_invoke$arity$2 ? m__5824__auto__.cljs$core$IFn$_invoke$arity$2(this$,k) : m__5824__auto__.call(null,this$,k));
+return m__5824__auto__.call(null,this$,k);
 } else {
 var m__5824__auto____$1 = (om.next.protocols.key__GT_components["_"]);
 if(!((m__5824__auto____$1 == null))){
-return (m__5824__auto____$1.cljs$core$IFn$_invoke$arity$2 ? m__5824__auto____$1.cljs$core$IFn$_invoke$arity$2(this$,k) : m__5824__auto____$1.call(null,this$,k));
+return m__5824__auto____$1.call(null,this$,k);
 } else {
-throw cljs.core.missing_protocol("IIndexer.key->components",this$);
+throw cljs.core.missing_protocol.call(null,"IIndexer.key->components",this$);
 }
 }
 }
@@ -134,13 +134,13 @@ return this$.om$next$protocols$IReconciler$basis_t$arity$1(this$);
 var x__5823__auto__ = (((this$ == null))?null:this$);
 var m__5824__auto__ = (om.next.protocols.basis_t[goog.typeOf(x__5823__auto__)]);
 if(!((m__5824__auto__ == null))){
-return (m__5824__auto__.cljs$core$IFn$_invoke$arity$1 ? m__5824__auto__.cljs$core$IFn$_invoke$arity$1(this$) : m__5824__auto__.call(null,this$));
+return m__5824__auto__.call(null,this$);
 } else {
 var m__5824__auto____$1 = (om.next.protocols.basis_t["_"]);
 if(!((m__5824__auto____$1 == null))){
-return (m__5824__auto____$1.cljs$core$IFn$_invoke$arity$1 ? m__5824__auto____$1.cljs$core$IFn$_invoke$arity$1(this$) : m__5824__auto____$1.call(null,this$));
+return m__5824__auto____$1.call(null,this$);
 } else {
-throw cljs.core.missing_protocol("IReconciler.basis-t",this$);
+throw cljs.core.missing_protocol.call(null,"IReconciler.basis-t",this$);
 }
 }
 }
@@ -153,13 +153,13 @@ return reconciler.om$next$protocols$IReconciler$add_root_BANG_$arity$4(reconcile
 var x__5823__auto__ = (((reconciler == null))?null:reconciler);
 var m__5824__auto__ = (om.next.protocols.add_root_BANG_[goog.typeOf(x__5823__auto__)]);
 if(!((m__5824__auto__ == null))){
-return (m__5824__auto__.cljs$core$IFn$_invoke$arity$4 ? m__5824__auto__.cljs$core$IFn$_invoke$arity$4(reconciler,root_class,target,options) : m__5824__auto__.call(null,reconciler,root_class,target,options));
+return m__5824__auto__.call(null,reconciler,root_class,target,options);
 } else {
 var m__5824__auto____$1 = (om.next.protocols.add_root_BANG_["_"]);
 if(!((m__5824__auto____$1 == null))){
-return (m__5824__auto____$1.cljs$core$IFn$_invoke$arity$4 ? m__5824__auto____$1.cljs$core$IFn$_invoke$arity$4(reconciler,root_class,target,options) : m__5824__auto____$1.call(null,reconciler,root_class,target,options));
+return m__5824__auto____$1.call(null,reconciler,root_class,target,options);
 } else {
-throw cljs.core.missing_protocol("IReconciler.add-root!",reconciler);
+throw cljs.core.missing_protocol.call(null,"IReconciler.add-root!",reconciler);
 }
 }
 }
@@ -172,13 +172,13 @@ return reconciler.om$next$protocols$IReconciler$remove_root_BANG_$arity$2(reconc
 var x__5823__auto__ = (((reconciler == null))?null:reconciler);
 var m__5824__auto__ = (om.next.protocols.remove_root_BANG_[goog.typeOf(x__5823__auto__)]);
 if(!((m__5824__auto__ == null))){
-return (m__5824__auto__.cljs$core$IFn$_invoke$arity$2 ? m__5824__auto__.cljs$core$IFn$_invoke$arity$2(reconciler,target) : m__5824__auto__.call(null,reconciler,target));
+return m__5824__auto__.call(null,reconciler,target);
 } else {
 var m__5824__auto____$1 = (om.next.protocols.remove_root_BANG_["_"]);
 if(!((m__5824__auto____$1 == null))){
-return (m__5824__auto____$1.cljs$core$IFn$_invoke$arity$2 ? m__5824__auto____$1.cljs$core$IFn$_invoke$arity$2(reconciler,target) : m__5824__auto____$1.call(null,reconciler,target));
+return m__5824__auto____$1.call(null,reconciler,target);
 } else {
-throw cljs.core.missing_protocol("IReconciler.remove-root!",reconciler);
+throw cljs.core.missing_protocol.call(null,"IReconciler.remove-root!",reconciler);
 }
 }
 }
@@ -191,13 +191,13 @@ return reconciler.om$next$protocols$IReconciler$schedule_render_BANG_$arity$1(re
 var x__5823__auto__ = (((reconciler == null))?null:reconciler);
 var m__5824__auto__ = (om.next.protocols.schedule_render_BANG_[goog.typeOf(x__5823__auto__)]);
 if(!((m__5824__auto__ == null))){
-return (m__5824__auto__.cljs$core$IFn$_invoke$arity$1 ? m__5824__auto__.cljs$core$IFn$_invoke$arity$1(reconciler) : m__5824__auto__.call(null,reconciler));
+return m__5824__auto__.call(null,reconciler);
 } else {
 var m__5824__auto____$1 = (om.next.protocols.schedule_render_BANG_["_"]);
 if(!((m__5824__auto____$1 == null))){
-return (m__5824__auto____$1.cljs$core$IFn$_invoke$arity$1 ? m__5824__auto____$1.cljs$core$IFn$_invoke$arity$1(reconciler) : m__5824__auto____$1.call(null,reconciler));
+return m__5824__auto____$1.call(null,reconciler);
 } else {
-throw cljs.core.missing_protocol("IReconciler.schedule-render!",reconciler);
+throw cljs.core.missing_protocol.call(null,"IReconciler.schedule-render!",reconciler);
 }
 }
 }
@@ -210,13 +210,13 @@ return reconciler.om$next$protocols$IReconciler$schedule_sends_BANG_$arity$1(rec
 var x__5823__auto__ = (((reconciler == null))?null:reconciler);
 var m__5824__auto__ = (om.next.protocols.schedule_sends_BANG_[goog.typeOf(x__5823__auto__)]);
 if(!((m__5824__auto__ == null))){
-return (m__5824__auto__.cljs$core$IFn$_invoke$arity$1 ? m__5824__auto__.cljs$core$IFn$_invoke$arity$1(reconciler) : m__5824__auto__.call(null,reconciler));
+return m__5824__auto__.call(null,reconciler);
 } else {
 var m__5824__auto____$1 = (om.next.protocols.schedule_sends_BANG_["_"]);
 if(!((m__5824__auto____$1 == null))){
-return (m__5824__auto____$1.cljs$core$IFn$_invoke$arity$1 ? m__5824__auto____$1.cljs$core$IFn$_invoke$arity$1(reconciler) : m__5824__auto____$1.call(null,reconciler));
+return m__5824__auto____$1.call(null,reconciler);
 } else {
-throw cljs.core.missing_protocol("IReconciler.schedule-sends!",reconciler);
+throw cljs.core.missing_protocol.call(null,"IReconciler.schedule-sends!",reconciler);
 }
 }
 }
@@ -229,13 +229,13 @@ return reconciler.om$next$protocols$IReconciler$queue_BANG_$arity$2(reconciler,k
 var x__5823__auto__ = (((reconciler == null))?null:reconciler);
 var m__5824__auto__ = (om.next.protocols.queue_BANG_[goog.typeOf(x__5823__auto__)]);
 if(!((m__5824__auto__ == null))){
-return (m__5824__auto__.cljs$core$IFn$_invoke$arity$2 ? m__5824__auto__.cljs$core$IFn$_invoke$arity$2(reconciler,ks) : m__5824__auto__.call(null,reconciler,ks));
+return m__5824__auto__.call(null,reconciler,ks);
 } else {
 var m__5824__auto____$1 = (om.next.protocols.queue_BANG_["_"]);
 if(!((m__5824__auto____$1 == null))){
-return (m__5824__auto____$1.cljs$core$IFn$_invoke$arity$2 ? m__5824__auto____$1.cljs$core$IFn$_invoke$arity$2(reconciler,ks) : m__5824__auto____$1.call(null,reconciler,ks));
+return m__5824__auto____$1.call(null,reconciler,ks);
 } else {
-throw cljs.core.missing_protocol("IReconciler.queue!",reconciler);
+throw cljs.core.missing_protocol.call(null,"IReconciler.queue!",reconciler);
 }
 }
 }
@@ -248,13 +248,13 @@ return reconciler.om$next$protocols$IReconciler$queue_sends_BANG_$arity$2(reconc
 var x__5823__auto__ = (((reconciler == null))?null:reconciler);
 var m__5824__auto__ = (om.next.protocols.queue_sends_BANG_[goog.typeOf(x__5823__auto__)]);
 if(!((m__5824__auto__ == null))){
-return (m__5824__auto__.cljs$core$IFn$_invoke$arity$2 ? m__5824__auto__.cljs$core$IFn$_invoke$arity$2(reconciler,sends) : m__5824__auto__.call(null,reconciler,sends));
+return m__5824__auto__.call(null,reconciler,sends);
 } else {
 var m__5824__auto____$1 = (om.next.protocols.queue_sends_BANG_["_"]);
 if(!((m__5824__auto____$1 == null))){
-return (m__5824__auto____$1.cljs$core$IFn$_invoke$arity$2 ? m__5824__auto____$1.cljs$core$IFn$_invoke$arity$2(reconciler,sends) : m__5824__auto____$1.call(null,reconciler,sends));
+return m__5824__auto____$1.call(null,reconciler,sends);
 } else {
-throw cljs.core.missing_protocol("IReconciler.queue-sends!",reconciler);
+throw cljs.core.missing_protocol.call(null,"IReconciler.queue-sends!",reconciler);
 }
 }
 }
@@ -267,13 +267,13 @@ return reconciler.om$next$protocols$IReconciler$reindex_BANG_$arity$1(reconciler
 var x__5823__auto__ = (((reconciler == null))?null:reconciler);
 var m__5824__auto__ = (om.next.protocols.reindex_BANG_[goog.typeOf(x__5823__auto__)]);
 if(!((m__5824__auto__ == null))){
-return (m__5824__auto__.cljs$core$IFn$_invoke$arity$1 ? m__5824__auto__.cljs$core$IFn$_invoke$arity$1(reconciler) : m__5824__auto__.call(null,reconciler));
+return m__5824__auto__.call(null,reconciler);
 } else {
 var m__5824__auto____$1 = (om.next.protocols.reindex_BANG_["_"]);
 if(!((m__5824__auto____$1 == null))){
-return (m__5824__auto____$1.cljs$core$IFn$_invoke$arity$1 ? m__5824__auto____$1.cljs$core$IFn$_invoke$arity$1(reconciler) : m__5824__auto____$1.call(null,reconciler));
+return m__5824__auto____$1.call(null,reconciler);
 } else {
-throw cljs.core.missing_protocol("IReconciler.reindex!",reconciler);
+throw cljs.core.missing_protocol.call(null,"IReconciler.reindex!",reconciler);
 }
 }
 }
@@ -286,13 +286,13 @@ return reconciler.om$next$protocols$IReconciler$reconcile_BANG_$arity$1(reconcil
 var x__5823__auto__ = (((reconciler == null))?null:reconciler);
 var m__5824__auto__ = (om.next.protocols.reconcile_BANG_[goog.typeOf(x__5823__auto__)]);
 if(!((m__5824__auto__ == null))){
-return (m__5824__auto__.cljs$core$IFn$_invoke$arity$1 ? m__5824__auto__.cljs$core$IFn$_invoke$arity$1(reconciler) : m__5824__auto__.call(null,reconciler));
+return m__5824__auto__.call(null,reconciler);
 } else {
 var m__5824__auto____$1 = (om.next.protocols.reconcile_BANG_["_"]);
 if(!((m__5824__auto____$1 == null))){
-return (m__5824__auto____$1.cljs$core$IFn$_invoke$arity$1 ? m__5824__auto____$1.cljs$core$IFn$_invoke$arity$1(reconciler) : m__5824__auto____$1.call(null,reconciler));
+return m__5824__auto____$1.call(null,reconciler);
 } else {
-throw cljs.core.missing_protocol("IReconciler.reconcile!",reconciler);
+throw cljs.core.missing_protocol.call(null,"IReconciler.reconcile!",reconciler);
 }
 }
 }
@@ -305,15 +305,17 @@ return reconciler.om$next$protocols$IReconciler$send_BANG_$arity$1(reconciler);
 var x__5823__auto__ = (((reconciler == null))?null:reconciler);
 var m__5824__auto__ = (om.next.protocols.send_BANG_[goog.typeOf(x__5823__auto__)]);
 if(!((m__5824__auto__ == null))){
-return (m__5824__auto__.cljs$core$IFn$_invoke$arity$1 ? m__5824__auto__.cljs$core$IFn$_invoke$arity$1(reconciler) : m__5824__auto__.call(null,reconciler));
+return m__5824__auto__.call(null,reconciler);
 } else {
 var m__5824__auto____$1 = (om.next.protocols.send_BANG_["_"]);
 if(!((m__5824__auto____$1 == null))){
-return (m__5824__auto____$1.cljs$core$IFn$_invoke$arity$1 ? m__5824__auto____$1.cljs$core$IFn$_invoke$arity$1(reconciler) : m__5824__auto____$1.call(null,reconciler));
+return m__5824__auto____$1.call(null,reconciler);
 } else {
-throw cljs.core.missing_protocol("IReconciler.send!",reconciler);
+throw cljs.core.missing_protocol.call(null,"IReconciler.send!",reconciler);
 }
 }
 }
 });
 
+
+//# sourceMappingURL=protocols.js.map
