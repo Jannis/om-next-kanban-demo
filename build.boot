@@ -11,7 +11,7 @@
 
                   ; App dependencies
                   [org.clojure/clojurescript "1.7.170"]
-                  [org.omcljs/om "1.0.0-alpha18-SNAPSHOT"]
+                  [org.omcljs/om "1.0.0-alpha19-SNAPSHOT"]
 
                   ; Other dependencies
                   [devcards "0.2.0-8"]])
@@ -30,7 +30,7 @@
   (comp
     (watch)
     (speak)
-    (reload :on-jsload 'kanban.app/run)
+    (reload)
     (less)
     (cljs :source-map true
           :optimizations :none
@@ -43,3 +43,13 @@
     (less :compression true)
     (cljs :optimizations :advanced
           :compiler-options {:devcards true})))
+
+(deftask run-release
+  []
+  (comp
+    (watch)
+    (reload)
+    (less :compression true)
+    (cljs :optimizations :advanced
+          :compiler-options {:devcards true})
+    (serve :dir "target")))
