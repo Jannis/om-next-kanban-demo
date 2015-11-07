@@ -4,14 +4,14 @@
   :source-paths #{"less" "src"}
   :resource-paths #{"html" "resources"}
   :dependencies '[; Boot setup
-                  [adzerk/boot-cljs "1.7.48-6"]
+                  [adzerk/boot-cljs "1.7.170-1"]
                   [adzerk/boot-reload "0.4.1"]
                   [deraen/boot-less "0.4.2"]
                   [pandeiro/boot-http "0.7.0-SNAPSHOT"]
 
                   ; App dependencies
-                  [org.clojure/clojurescript "1.7.145"]
-                  [org.omcljs/om "1.0.0-alpha14-SNAPSHOT"]
+                  [org.clojure/clojurescript "1.7.170"]
+                  [org.omcljs/om "1.0.0-alpha18-SNAPSHOT"]
 
                   ; Other dependencies
                   [devcards "0.2.0-8"]])
