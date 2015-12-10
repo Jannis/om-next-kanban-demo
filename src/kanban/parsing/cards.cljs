@@ -1,22 +1,14 @@
 (ns kanban.parsing.cards
-  (:require [kanban.parsing.users :as users]
+  (:require [om.next :as om]
+            [kanban.parsing.users :as users]
             [kanban.reconciler :refer [mutate read]]))
 
-(defn get-card [st ref]
-   (-> (get-in st ref)
-       (update :assignees #(users/resolve-users st %))))
-
-(defn get-cards [st key]
-  (->> (get st key)
-       (into [] (map #(get-card st %)))))
-
-(defn resolve-cards [st refs]
-  (->> refs
-       (map #(get-card st %))
-       (into [])))
-
 (defn create-card [st]
-  (let [id   (->> (get-cards st :cards) (map :id) (cons 0) (reduce max) inc)
+  (let [id   (->> (om/db->tree [:id] (get st :cards) st)
+                  (map :id)
+                  (cons 0)
+                  (reduce max)
+                  inc)
         card {:id id :text "" :assignees []}
         ref  [:card/by-id id]]
     {:card ref
@@ -30,9 +22,9 @@
       (update :card/by-id dissoc (second ref))))
 
 (defmethod read :cards
-  [{:keys [state]} key _]
+  [{:keys [state query]} key _]
   (let [st @state]
-    {:value (get-cards st key)}))
+    {:value (om/db->tree query (get st key) st)}))
 
 (defmethod read :cards/dragged
   [{:keys [state]} key _]
@@ -41,24 +33,25 @@
 
 (defmethod mutate 'cards/drag
   [{:keys [state]} _ params]
-  {:value [:cards/dragged]
+  {:value {:keys [:cards/dragged]}
    :action (fn []
              (if-not (empty? params)
                (swap! state assoc :cards/dragged params)
                (swap! state assoc :cards/dragged nil)))})
 
 (defmethod read :cards/editing
-  [{:keys [state]} key _]
+  [{:keys [state query]} key _]
   (let [st @state]
     (if-let [ref (get st key)]
-      {:value (get-card st ref)}
+      {:value (om/db->tree query (get st key) st)}
       {:value nil})))
 
 (defmethod mutate 'cards/edit
   [{:keys [state]} _ {:keys [card]}]
-  {:value [:cards/editing]
+  {:value {:keys [:cards/editing]}
    :action (fn [] (swap! state assoc :cards/editing card))})
 
 (defmethod mutate 'cards/update
   [{:keys [state]} _ {:keys [card data]}]
-  {:action (fn [] (swap! state update-in card #(merge % data)))})
+  {:value {:keys [card]}
+   :action (fn [] (swap! state update-in card #(merge % data)))})

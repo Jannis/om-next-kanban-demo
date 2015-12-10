@@ -11,7 +11,7 @@
     [:board/by-id (:id props)])
   static om/IQuery
   (query [this]
-    [:id :name :description :lanes])
+    [:id :name :description {:lanes [:id :name]}])
   Object
   (update [this prop value]
     (let [{:keys [update-fn]} (om/get-computed this)]
