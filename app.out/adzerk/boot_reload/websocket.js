@@ -14,14 +14,14 @@ adzerk.boot_reload.websocket.open_QMARK_ = (function adzerk$boot_reload$websocke
 if((!((this$ == null))) && (!((this$.adzerk$boot_reload$websocket$IWebSocket$open_QMARK_$arity$1 == null)))){
 return this$.adzerk$boot_reload$websocket$IWebSocket$open_QMARK_$arity$1(this$);
 } else {
-var x__5823__auto__ = (((this$ == null))?null:this$);
-var m__5824__auto__ = (adzerk.boot_reload.websocket.open_QMARK_[goog.typeOf(x__5823__auto__)]);
-if(!((m__5824__auto__ == null))){
-return m__5824__auto__.call(null,this$);
+var x__5641__auto__ = (((this$ == null))?null:this$);
+var m__5642__auto__ = (adzerk.boot_reload.websocket.open_QMARK_[goog.typeOf(x__5641__auto__)]);
+if(!((m__5642__auto__ == null))){
+return m__5642__auto__.call(null,this$);
 } else {
-var m__5824__auto____$1 = (adzerk.boot_reload.websocket.open_QMARK_["_"]);
-if(!((m__5824__auto____$1 == null))){
-return m__5824__auto____$1.call(null,this$);
+var m__5642__auto____$1 = (adzerk.boot_reload.websocket.open_QMARK_["_"]);
+if(!((m__5642__auto____$1 == null))){
+return m__5642__auto____$1.call(null,this$);
 } else {
 throw cljs.core.missing_protocol.call(null,"IWebSocket.open?",this$);
 }
@@ -30,23 +30,23 @@ throw cljs.core.missing_protocol.call(null,"IWebSocket.open?",this$);
 });
 
 adzerk.boot_reload.websocket.websocket_connection = (function adzerk$boot_reload$websocket$websocket_connection(var_args){
-var args9080 = [];
-var len__6226__auto___9083 = arguments.length;
-var i__6227__auto___9084 = (0);
+var args9302 = [];
+var len__6044__auto___9305 = arguments.length;
+var i__6045__auto___9306 = (0);
 while(true){
-if((i__6227__auto___9084 < len__6226__auto___9083)){
-args9080.push((arguments[i__6227__auto___9084]));
+if((i__6045__auto___9306 < len__6044__auto___9305)){
+args9302.push((arguments[i__6045__auto___9306]));
 
-var G__9085 = (i__6227__auto___9084 + (1));
-i__6227__auto___9084 = G__9085;
+var G__9307 = (i__6045__auto___9306 + (1));
+i__6045__auto___9306 = G__9307;
 continue;
 } else {
 }
 break;
 }
 
-var G__9082 = args9080.length;
-switch (G__9082) {
+var G__9304 = args9302.length;
+switch (G__9304) {
 case 0:
 return adzerk.boot_reload.websocket.websocket_connection.cljs$core$IFn$_invoke$arity$0();
 
@@ -60,7 +60,7 @@ return adzerk.boot_reload.websocket.websocket_connection.cljs$core$IFn$_invoke$a
 
 break;
 default:
-throw (new Error([cljs.core.str("Invalid arity: "),cljs.core.str(args9080.length)].join('')));
+throw (new Error([cljs.core.str("Invalid arity: "),cljs.core.str(args9302.length)].join('')));
 
 }
 });
@@ -116,10 +116,10 @@ goog.net.WebSocket.prototype.clojure$browser$event$IEventType$ = true;
 goog.net.WebSocket.prototype.clojure$browser$event$IEventType$event_types$arity$1 = (function (this$){
 var this$__$1 = this;
 return cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.call(null,((function (this$__$1){
-return (function (p__9087){
-var vec__9088 = p__9087;
-var k = cljs.core.nth.call(null,vec__9088,(0),null);
-var v = cljs.core.nth.call(null,vec__9088,(1),null);
+return (function (p__9309){
+var vec__9310 = p__9309;
+var k = cljs.core.nth.call(null,vec__9310,(0),null);
+var v = cljs.core.nth.call(null,vec__9310,(1),null);
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.keyword.call(null,k.toLowerCase()),v], null);
 });})(this$__$1))
 ,cljs.core.merge.call(null,cljs.core.js__GT_clj.call(null,goog.net.WebSocket.EventType))));

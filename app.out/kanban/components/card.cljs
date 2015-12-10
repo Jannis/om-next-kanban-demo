@@ -19,7 +19,8 @@
           {:keys [selected with-name activate-fn]} (om/get-computed this)]
       (dom/span #js {:className (class-names {:assignee true
                                               :selected selected})
-                     :onClick #(activate-fn (om/get-ident this))
+                     :onClick #(when activate-fn
+                                 (activate-fn (om/get-ident this)))
                      :title name}
         (if with-name
           (gstring/format "%s (@%s) " name username)
