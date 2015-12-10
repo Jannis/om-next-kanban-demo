@@ -47,7 +47,7 @@
                  :element-fn #(dom/span #js {:className "lane-name"} (:name %))
                  :change-fn (fn [lanes]
                               (->> lanes
-                                   (map #(-> [:lane/by-id (:id %)]))
+                                   (mapv #(-> [:lane/by-id (:id %)]))
                                    (.update this :lanes)))})))
           (dom/p #js {:className "dialog-buttons"}
             (dom/button #js {:onClick close-fn} "Close"))
