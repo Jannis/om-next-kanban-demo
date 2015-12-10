@@ -1,93 +1,91 @@
-// Compiled by ClojureScript 1.7.170 {}
+// Compiled by ClojureScript 1.7.170 {:static-fns true, :optimize-constants true}
 goog.provide('kanban.parsing.cards');
 goog.require('cljs.core');
 goog.require('om.next');
 goog.require('kanban.parsing.users');
 goog.require('kanban.reconciler');
 kanban.parsing.cards.create_card = (function kanban$parsing$cards$create_card(st){
-var id = (cljs.core.reduce.call(null,cljs.core.max,cljs.core.cons.call(null,(0),cljs.core.map.call(null,new cljs.core.Keyword(null,"id","id",-1388402092),om.next.db__GT_tree.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"id","id",-1388402092)], null),cljs.core.get.call(null,st,new cljs.core.Keyword(null,"cards","cards",169174038)),st)))) + (1));
-var card = new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",-1388402092),id,new cljs.core.Keyword(null,"text","text",-1790561697),"",new cljs.core.Keyword(null,"assignees","assignees",-298534943),cljs.core.PersistentVector.EMPTY], null);
-var ref = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("card","by-id","card/by-id",-2141035693),id], null);
-return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"card","card",-1430355152),ref,new cljs.core.Keyword(null,"state","state",-1988618099),cljs.core.update.call(null,cljs.core.assoc_in.call(null,st,ref,card),new cljs.core.Keyword(null,"cards","cards",169174038),cljs.core.conj,ref)], null);
+var id = (cljs.core.reduce.cljs$core$IFn$_invoke$arity$2(cljs.core.max,cljs.core.cons((0),cljs.core.map.cljs$core$IFn$_invoke$arity$2(cljs.core.cst$kw$id,om.next.db__GT_tree.cljs$core$IFn$_invoke$arity$3(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$id], null),cljs.core.get.cljs$core$IFn$_invoke$arity$2(st,cljs.core.cst$kw$cards),st)))) + (1));
+var card = new cljs.core.PersistentArrayMap(null, 3, [cljs.core.cst$kw$id,id,cljs.core.cst$kw$text,"",cljs.core.cst$kw$assignees,cljs.core.PersistentVector.EMPTY], null);
+var ref = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$card_SLASH_by_DASH_id,id], null);
+return new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$card,ref,cljs.core.cst$kw$state,cljs.core.update.cljs$core$IFn$_invoke$arity$4(cljs.core.assoc_in(st,ref,card),cljs.core.cst$kw$cards,cljs.core.conj,ref)], null);
 });
 kanban.parsing.cards.delete_card = (function kanban$parsing$cards$delete_card(st,ref){
-return cljs.core.update.call(null,cljs.core.update.call(null,st,new cljs.core.Keyword(null,"cards","cards",169174038),(function (p1__27109_SHARP_,p2__27108_SHARP_){
-return cljs.core.remove.call(null,cljs.core.PersistentHashSet.fromArray([p2__27108_SHARP_], true),p1__27109_SHARP_);
-}),ref),new cljs.core.Keyword("card","by-id","card/by-id",-2141035693),cljs.core.dissoc,cljs.core.second.call(null,ref));
+return cljs.core.update.cljs$core$IFn$_invoke$arity$4(cljs.core.update.cljs$core$IFn$_invoke$arity$4(st,cljs.core.cst$kw$cards,(function (p1__14286_SHARP_,p2__14285_SHARP_){
+return cljs.core.remove.cljs$core$IFn$_invoke$arity$2(cljs.core.PersistentHashSet.fromArray([p2__14285_SHARP_], true),p1__14286_SHARP_);
+}),ref),cljs.core.cst$kw$card_SLASH_by_DASH_id,cljs.core.dissoc,cljs.core.second(ref));
 });
-cljs.core._add_method.call(null,kanban.reconciler.read,new cljs.core.Keyword(null,"cards","cards",169174038),(function (p__27110,key,_){
-var map__27111 = p__27110;
-var map__27111__$1 = ((((!((map__27111 == null)))?((((map__27111.cljs$lang$protocol_mask$partition0$ & (64))) || (map__27111.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__27111):map__27111);
-var state = cljs.core.get.call(null,map__27111__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
-var query = cljs.core.get.call(null,map__27111__$1,new cljs.core.Keyword(null,"query","query",-1288509510));
-var st = cljs.core.deref.call(null,state);
-return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"value","value",305978217),om.next.db__GT_tree.call(null,query,cljs.core.get.call(null,st,key),st)], null);
+kanban.reconciler.read.cljs$core$IMultiFn$_add_method$arity$3(null,cljs.core.cst$kw$cards,(function (p__14287,key,_){
+var map__14288 = p__14287;
+var map__14288__$1 = ((((!((map__14288 == null)))?((((map__14288.cljs$lang$protocol_mask$partition0$ & (64))) || (map__14288.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__14288):map__14288);
+var state = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__14288__$1,cljs.core.cst$kw$state);
+var query = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__14288__$1,cljs.core.cst$kw$query);
+var st = (cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(state) : cljs.core.deref.call(null,state));
+return new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$value,om.next.db__GT_tree.cljs$core$IFn$_invoke$arity$3(query,cljs.core.get.cljs$core$IFn$_invoke$arity$2(st,key),st)], null);
 }));
-cljs.core._add_method.call(null,kanban.reconciler.read,new cljs.core.Keyword("cards","dragged","cards/dragged",311055420),(function (p__27113,key,_){
-var map__27114 = p__27113;
-var map__27114__$1 = ((((!((map__27114 == null)))?((((map__27114.cljs$lang$protocol_mask$partition0$ & (64))) || (map__27114.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__27114):map__27114);
-var state = cljs.core.get.call(null,map__27114__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
-var st = cljs.core.deref.call(null,state);
-return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"value","value",305978217),cljs.core.get.call(null,st,key)], null);
+kanban.reconciler.read.cljs$core$IMultiFn$_add_method$arity$3(null,cljs.core.cst$kw$cards_SLASH_dragged,(function (p__14290,key,_){
+var map__14291 = p__14290;
+var map__14291__$1 = ((((!((map__14291 == null)))?((((map__14291.cljs$lang$protocol_mask$partition0$ & (64))) || (map__14291.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__14291):map__14291);
+var state = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__14291__$1,cljs.core.cst$kw$state);
+var st = (cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(state) : cljs.core.deref.call(null,state));
+return new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$value,cljs.core.get.cljs$core$IFn$_invoke$arity$2(st,key)], null);
 }));
-cljs.core._add_method.call(null,kanban.reconciler.mutate,new cljs.core.Symbol("cards","drag","cards/drag",1929040996,null),(function (p__27116,_,params){
-var map__27117 = p__27116;
-var map__27117__$1 = ((((!((map__27117 == null)))?((((map__27117.cljs$lang$protocol_mask$partition0$ & (64))) || (map__27117.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__27117):map__27117);
-var state = cljs.core.get.call(null,map__27117__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
-return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"value","value",305978217),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keys","keys",1068423698),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("cards","dragged","cards/dragged",311055420)], null)], null),new cljs.core.Keyword(null,"action","action",-811238024),((function (map__27117,map__27117__$1,state){
+kanban.reconciler.mutate.cljs$core$IMultiFn$_add_method$arity$3(null,cljs.core.cst$sym$cards_SLASH_drag,(function (p__14293,_,params){
+var map__14294 = p__14293;
+var map__14294__$1 = ((((!((map__14294 == null)))?((((map__14294.cljs$lang$protocol_mask$partition0$ & (64))) || (map__14294.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__14294):map__14294);
+var state = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__14294__$1,cljs.core.cst$kw$state);
+return new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$value,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$keys,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$cards_SLASH_dragged], null)], null),cljs.core.cst$kw$action,((function (map__14294,map__14294__$1,state){
 return (function (){
-if(!(cljs.core.empty_QMARK_.call(null,params))){
-return cljs.core.swap_BANG_.call(null,state,cljs.core.assoc,new cljs.core.Keyword("cards","dragged","cards/dragged",311055420),params);
+if(!(cljs.core.empty_QMARK_(params))){
+return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(state,cljs.core.assoc,cljs.core.cst$kw$cards_SLASH_dragged,params);
 } else {
-return cljs.core.swap_BANG_.call(null,state,cljs.core.assoc,new cljs.core.Keyword("cards","dragged","cards/dragged",311055420),null);
+return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(state,cljs.core.assoc,cljs.core.cst$kw$cards_SLASH_dragged,null);
 }
-});})(map__27117,map__27117__$1,state))
+});})(map__14294,map__14294__$1,state))
 ], null);
 }));
-cljs.core._add_method.call(null,kanban.reconciler.read,new cljs.core.Keyword("cards","editing","cards/editing",1422138420),(function (p__27119,key,_){
-var map__27120 = p__27119;
-var map__27120__$1 = ((((!((map__27120 == null)))?((((map__27120.cljs$lang$protocol_mask$partition0$ & (64))) || (map__27120.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__27120):map__27120);
-var state = cljs.core.get.call(null,map__27120__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
-var query = cljs.core.get.call(null,map__27120__$1,new cljs.core.Keyword(null,"query","query",-1288509510));
-var st = cljs.core.deref.call(null,state);
-var temp__4423__auto__ = cljs.core.get.call(null,st,key);
+kanban.reconciler.read.cljs$core$IMultiFn$_add_method$arity$3(null,cljs.core.cst$kw$cards_SLASH_editing,(function (p__14296,key,_){
+var map__14297 = p__14296;
+var map__14297__$1 = ((((!((map__14297 == null)))?((((map__14297.cljs$lang$protocol_mask$partition0$ & (64))) || (map__14297.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__14297):map__14297);
+var state = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__14297__$1,cljs.core.cst$kw$state);
+var query = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__14297__$1,cljs.core.cst$kw$query);
+var st = (cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(state) : cljs.core.deref.call(null,state));
+var temp__4423__auto__ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(st,key);
 if(cljs.core.truth_(temp__4423__auto__)){
 var ref = temp__4423__auto__;
-return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"value","value",305978217),om.next.db__GT_tree.call(null,query,cljs.core.get.call(null,st,key),st)], null);
+return new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$value,om.next.db__GT_tree.cljs$core$IFn$_invoke$arity$3(query,cljs.core.get.cljs$core$IFn$_invoke$arity$2(st,key),st)], null);
 } else {
-return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"value","value",305978217),null], null);
+return new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$value,null], null);
 }
 }));
-cljs.core._add_method.call(null,kanban.reconciler.mutate,new cljs.core.Symbol("cards","edit","cards/edit",93128254,null),(function (p__27122,_,p__27123){
-var map__27124 = p__27122;
-var map__27124__$1 = ((((!((map__27124 == null)))?((((map__27124.cljs$lang$protocol_mask$partition0$ & (64))) || (map__27124.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__27124):map__27124);
-var state = cljs.core.get.call(null,map__27124__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
-var map__27125 = p__27123;
-var map__27125__$1 = ((((!((map__27125 == null)))?((((map__27125.cljs$lang$protocol_mask$partition0$ & (64))) || (map__27125.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__27125):map__27125);
-var card = cljs.core.get.call(null,map__27125__$1,new cljs.core.Keyword(null,"card","card",-1430355152));
-return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"value","value",305978217),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keys","keys",1068423698),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("cards","editing","cards/editing",1422138420)], null)], null),new cljs.core.Keyword(null,"action","action",-811238024),((function (map__27124,map__27124__$1,state,map__27125,map__27125__$1,card){
+kanban.reconciler.mutate.cljs$core$IMultiFn$_add_method$arity$3(null,cljs.core.cst$sym$cards_SLASH_edit,(function (p__14299,_,p__14300){
+var map__14301 = p__14299;
+var map__14301__$1 = ((((!((map__14301 == null)))?((((map__14301.cljs$lang$protocol_mask$partition0$ & (64))) || (map__14301.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__14301):map__14301);
+var state = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__14301__$1,cljs.core.cst$kw$state);
+var map__14302 = p__14300;
+var map__14302__$1 = ((((!((map__14302 == null)))?((((map__14302.cljs$lang$protocol_mask$partition0$ & (64))) || (map__14302.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__14302):map__14302);
+var card = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__14302__$1,cljs.core.cst$kw$card);
+return new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$value,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$keys,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$cards_SLASH_editing], null)], null),cljs.core.cst$kw$action,((function (map__14301,map__14301__$1,state,map__14302,map__14302__$1,card){
 return (function (){
-return cljs.core.swap_BANG_.call(null,state,cljs.core.assoc,new cljs.core.Keyword("cards","editing","cards/editing",1422138420),card);
-});})(map__27124,map__27124__$1,state,map__27125,map__27125__$1,card))
+return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(state,cljs.core.assoc,cljs.core.cst$kw$cards_SLASH_editing,card);
+});})(map__14301,map__14301__$1,state,map__14302,map__14302__$1,card))
 ], null);
 }));
-cljs.core._add_method.call(null,kanban.reconciler.mutate,new cljs.core.Symbol("cards","update","cards/update",-1682200138,null),(function (p__27129,_,p__27130){
-var map__27131 = p__27129;
-var map__27131__$1 = ((((!((map__27131 == null)))?((((map__27131.cljs$lang$protocol_mask$partition0$ & (64))) || (map__27131.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__27131):map__27131);
-var state = cljs.core.get.call(null,map__27131__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
-var map__27132 = p__27130;
-var map__27132__$1 = ((((!((map__27132 == null)))?((((map__27132.cljs$lang$protocol_mask$partition0$ & (64))) || (map__27132.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__27132):map__27132);
-var card = cljs.core.get.call(null,map__27132__$1,new cljs.core.Keyword(null,"card","card",-1430355152));
-var data = cljs.core.get.call(null,map__27132__$1,new cljs.core.Keyword(null,"data","data",-232669377));
-return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"value","value",305978217),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"keys","keys",1068423698),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [card], null)], null),new cljs.core.Keyword(null,"action","action",-811238024),((function (map__27131,map__27131__$1,state,map__27132,map__27132__$1,card,data){
+kanban.reconciler.mutate.cljs$core$IMultiFn$_add_method$arity$3(null,cljs.core.cst$sym$cards_SLASH_update,(function (p__14306,_,p__14307){
+var map__14308 = p__14306;
+var map__14308__$1 = ((((!((map__14308 == null)))?((((map__14308.cljs$lang$protocol_mask$partition0$ & (64))) || (map__14308.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__14308):map__14308);
+var state = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__14308__$1,cljs.core.cst$kw$state);
+var map__14309 = p__14307;
+var map__14309__$1 = ((((!((map__14309 == null)))?((((map__14309.cljs$lang$protocol_mask$partition0$ & (64))) || (map__14309.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__14309):map__14309);
+var card = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__14309__$1,cljs.core.cst$kw$card);
+var data = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__14309__$1,cljs.core.cst$kw$data);
+return new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$value,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$keys,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [card], null)], null),cljs.core.cst$kw$action,((function (map__14308,map__14308__$1,state,map__14309,map__14309__$1,card,data){
 return (function (){
-return cljs.core.swap_BANG_.call(null,state,cljs.core.update_in,card,((function (map__27131,map__27131__$1,state,map__27132,map__27132__$1,card,data){
-return (function (p1__27128_SHARP_){
-return cljs.core.merge.call(null,p1__27128_SHARP_,data);
-});})(map__27131,map__27131__$1,state,map__27132,map__27132__$1,card,data))
+return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(state,cljs.core.update_in,card,((function (map__14308,map__14308__$1,state,map__14309,map__14309__$1,card,data){
+return (function (p1__14305_SHARP_){
+return cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.array_seq([p1__14305_SHARP_,data], 0));
+});})(map__14308,map__14308__$1,state,map__14309,map__14309__$1,card,data))
 );
-});})(map__27131,map__27131__$1,state,map__27132,map__27132__$1,card,data))
+});})(map__14308,map__14308__$1,state,map__14309,map__14309__$1,card,data))
 ], null);
 }));
-
-//# sourceMappingURL=cards.js.map

@@ -1,4 +1,4 @@
-// Compiled by ClojureScript 1.7.170 {}
+// Compiled by ClojureScript 1.7.170 {:static-fns true, :optimize-constants true}
 goog.provide('om.next.cache');
 goog.require('cljs.core');
 
@@ -15,14 +15,14 @@ om.next.cache.Cache.prototype.add = (function (id,x){
 var self__ = this;
 var this$ = this;
 if((self__.size <= self__.arr.length)){
-var id_SINGLEQUOTE__7715 = self__.arr.shift();
-cljs.core.swap_BANG_.call(null,self__.index,((function (id_SINGLEQUOTE__7715,this$){
-return (function (p1__7714_SHARP_){
-return cljs.core.assoc.call(null,cljs.core.dissoc.call(null,p1__7714_SHARP_,id_SINGLEQUOTE__7715),id,x);
-});})(id_SINGLEQUOTE__7715,this$))
+var id_SINGLEQUOTE__12326 = self__.arr.shift();
+cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(self__.index,((function (id_SINGLEQUOTE__12326,this$){
+return (function (p1__12325_SHARP_){
+return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(cljs.core.dissoc.cljs$core$IFn$_invoke$arity$2(p1__12325_SHARP_,id_SINGLEQUOTE__12326),id,x);
+});})(id_SINGLEQUOTE__12326,this$))
 );
 } else {
-cljs.core.swap_BANG_.call(null,self__.index,cljs.core.assoc,id,x);
+cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(self__.index,cljs.core.assoc,id,x);
 }
 
 return self__.arr.push(id);
@@ -31,11 +31,11 @@ return self__.arr.push(id);
 om.next.cache.Cache.prototype.get = (function (id){
 var self__ = this;
 var this$ = this;
-return cljs.core.get.call(null,cljs.core.deref.call(null,self__.index),id);
+return cljs.core.get.cljs$core$IFn$_invoke$arity$2((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(self__.index) : cljs.core.deref.call(null,self__.index)),id);
 });
 
 om.next.cache.Cache.getBasis = (function (){
-return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"arr","arr",2115492975,null),new cljs.core.Symbol(null,"index","index",108845612,null),new cljs.core.Symbol(null,"size","size",-1555742762,null)], null);
+return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$sym$arr,cljs.core.cst$sym$index,cljs.core.cst$sym$size], null);
 });
 
 om.next.cache.Cache.cljs$lang$type = true;
@@ -43,7 +43,7 @@ om.next.cache.Cache.cljs$lang$type = true;
 om.next.cache.Cache.cljs$lang$ctorStr = "om.next.cache/Cache";
 
 om.next.cache.Cache.cljs$lang$ctorPrWriter = (function (this__5584__auto__,writer__5585__auto__,opt__5586__auto__){
-return cljs.core._write.call(null,writer__5585__auto__,"om.next.cache/Cache");
+return cljs.core._write(writer__5585__auto__,"om.next.cache/Cache");
 });
 
 om.next.cache.__GT_Cache = (function om$next$cache$__GT_Cache(arr,index,size){
@@ -51,7 +51,7 @@ return (new om.next.cache.Cache(arr,index,size));
 });
 
 om.next.cache.cache = (function om$next$cache$cache(size){
-return (new om.next.cache.Cache([],cljs.core.atom.call(null,cljs.core.PersistentArrayMap.EMPTY),size));
+return (new om.next.cache.Cache([],(function (){var G__12328 = cljs.core.PersistentArrayMap.EMPTY;
+return (cljs.core.atom.cljs$core$IFn$_invoke$arity$1 ? cljs.core.atom.cljs$core$IFn$_invoke$arity$1(G__12328) : cljs.core.atom.call(null,G__12328));
+})(),size));
 });
-
-//# sourceMappingURL=cache.js.map

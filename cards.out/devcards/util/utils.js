@@ -1,4 +1,4 @@
-// Compiled by ClojureScript 1.7.170 {}
+// Compiled by ClojureScript 1.7.170 {:static-fns true, :optimize-constants true}
 goog.provide('devcards.util.utils');
 goog.require('cljs.core');
 goog.require('cljs.pprint');
@@ -17,16 +17,14 @@ return !((goog.nodeGlobalRequire == null));
 });
 devcards.util.utils.pprint_str = (function devcards$util$utils$pprint_str(obj){
 var sb = (new goog.string.StringBuffer());
-cljs.pprint.pprint.call(null,obj,(new cljs.core.StringBufferWriter(sb)));
+cljs.pprint.pprint.cljs$core$IFn$_invoke$arity$2(obj,(new cljs.core.StringBufferWriter(sb)));
 
 return [cljs.core.str(sb)].join('');
 });
 devcards.util.utils.pprint_code = (function devcards$util$utils$pprint_code(code){
-var _STAR_print_pprint_dispatch_STAR_10380 = cljs.pprint._STAR_print_pprint_dispatch_STAR_;
+var _STAR_print_pprint_dispatch_STAR_15588 = cljs.pprint._STAR_print_pprint_dispatch_STAR_;
 cljs.pprint._STAR_print_pprint_dispatch_STAR_ = cljs.pprint.code_dispatch;
 
-try{return devcards.util.utils.pprint_str.call(null,code);
-}finally {cljs.pprint._STAR_print_pprint_dispatch_STAR_ = _STAR_print_pprint_dispatch_STAR_10380;
+try{return devcards.util.utils.pprint_str(code);
+}finally {cljs.pprint._STAR_print_pprint_dispatch_STAR_ = _STAR_print_pprint_dispatch_STAR_15588;
 }});
-
-//# sourceMappingURL=utils.js.map

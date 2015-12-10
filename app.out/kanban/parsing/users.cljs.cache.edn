@@ -1,2 +1,0 @@
-;; Analyzed by ClojureScript 1.7.170
-{:name kanban.parsing.users, :doc nil, :excludes #{}, :use-macros nil, :require-macros {om om.next, om.next om.next}, :uses {mutate kanban.reconciler, read kanban.reconciler}, :requires {om om.next, om.next om.next, kanban.reconciler kanban.reconciler}, :imports nil, :cljs.analyzer/constants {:seen #{:value :state :query :users}, :order [:users :state :query :value]}}
